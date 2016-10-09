@@ -1,0 +1,136 @@
+/*@!Encoding:1250*/
+includes {
+}
+
+variables {
+    message Message_1 m1;
+    message Message_2 m2;
+    Timer firstTimer;
+    Timer secondTimer;
+}
+
+int toDecDigit(char digit) {
+    if(digit >= '0' && digit <= '9')
+        return digit - '0';
+    if(digit >= 'a' && digit <= 'f')
+        return digit - 'a' + 10;
+    return digit - 'A' + 10;
+}
+char toHexDigit(int number) {
+    if(number >= 10)
+        return 'A' + number - 10;
+    return number + '0';
+}
+int getDec(char number[]) {
+    if(strlen(number) == 2) 
+        return toDecDigit(number[0]) * 16 + toDecDigit(number[1]);
+    if(strlen(number) == 1)
+        return toDecDigit(number[0]);
+    return -1;
+}
+void getHex(char number[], int dec_number) {
+    number[2] = '\0';
+    number[1] = toHexDigit(dec_number % 16);
+    number[0] = toHexDigit(dec_number / 16);
+}
+on start {
+}
+
+on envVar send_1 {
+    char hexValue[3];
+    if(getValue(send_1) == 1) {
+        m1.id = getValue(ID_1);
+        
+        getValue(first_1, hexValue);
+        m1.byte(0) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(first_2, hexValue);
+        m1.byte(1) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(first_3, hexValue);
+        m1.byte(2) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(first_4, hexValue);
+        m1.byte(3) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(first_5, hexValue);
+        m1.byte(4) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(first_6, hexValue);
+        m1.byte(5) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(first_7, hexValue);
+        m1.byte(6) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(first_8, hexValue);
+        m1.byte(7) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        
+        putValue(send_1, 0);
+        output(m1);
+        putValue(sent_1, 1);
+        putValue(sent_2, 0);
+    }
+}
+
+on envVar send_2 {
+    char hexValue[3];
+    if(getValue(send_2) == 1) {
+        m2.id = getValue(ID_2);
+        
+        getValue(second_1, hexValue);
+        m2.byte(0) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(second_2, hexValue);
+        m2.byte(1) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(second_3, hexValue);
+        m2.byte(2) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(second_4, hexValue);
+        m2.byte(3) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(second_5, hexValue);
+        m2.byte(4) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(second_6, hexValue);
+        m2.byte(5) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(second_7, hexValue);
+        m2.byte(6) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        getValue(second_8, hexValue);
+        m2.byte(7) = (getDec(hexValue) != -1 ? getDec(hexValue) : 0);
+        
+        putValue(send_2, 0);
+        output(m2);
+        putValue(sent_1, 0);
+        putValue(sent_2, 1);
+    }
+}
+
+on envVar repeat_1 {
+    if(getValue(repeat_1) == 1)
+        setTimer(firstTimer, 0);
+}
+on envVar repeat_2 {
+    if(getValue(repeat_2) == 1)
+        setTimer(secondTimer, 0);
+}
+on timer firstTimer {
+    if(getValue(repeat_1) == 1) {
+        setTimer(firstTimer, 1);
+        putValue(send_1, 1);
+    }
+}
+on timer secondTimer {
+    if(getValue(repeat_2) == 1) {
+        setTimer(secondTimer, 1);
+        putValue(send_2, 1);
+    }
+}
+
+on message * {
+    char hexValue[3];
+    getHex(hexValue, this.byte(0));
+    putValue(output_1, hexValue);
+    getHex(hexValue, this.byte(1));
+    putValue(output_2, hexValue);
+    getHex(hexValue, this.byte(2));
+    putValue(output_3, hexValue);
+    getHex(hexValue, this.byte(3));
+    putValue(output_4, hexValue);
+    getHex(hexValue, this.byte(4));
+    putValue(output_5, hexValue);
+    getHex(hexValue, this.byte(5));
+    putValue(output_6, hexValue);
+    getHex(hexValue, this.byte(6));
+    putValue(output_7, hexValue);
+    getHex(hexValue, this.byte(7));
+    putValue(output_8, hexValue);
+}

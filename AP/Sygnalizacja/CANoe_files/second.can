@@ -1,0 +1,69 @@
+/*@!Encoding:1250*/
+includes {
+    #include "change_lights.cin"
+    #include "estimators.cin"
+}
+
+variables {
+    message begin bgn;
+    message started strtd;
+    message stop stp;
+    message finished fnshd;
+    msTimer firstDidNotStart;
+    msTimer firstDidNotFinnish;
+    timer cycleTime;
+    msTimer changeCycle;
+    timer updateGlobals;
+}
+
+on start { 
+    setTimer(firstDidNotStart, 2000);
+}
+
+on message begin {
+    cancelTimer(cycleTime);
+    cancelTimer(changeCycle);
+    cancelTimer(firstDidNotFinnish);
+    cancelTimer(firstDidNotStart);
+    setTimer(firstDidNotStart, 2000);
+}
+
+on message started {
+    cancelTimer(firstDidNotStart);
+    setTimer(cycleTime, getNextTime());
+}
+
+on timer firstDidNotStart {
+    setTimer(cycleTime, getNextTime());
+    setCycle();
+    output(strtd);
+}
+
+on timer cycleTime {
+    setTimer(firstDidNotFinnish, 2000);
+}
+
+on message finished {
+    cancelTimer(firstDidNotFinnish);
+    if(getValue(timer1) == 0 && getValue(timer2) == 0 && getValue(timer3) == 0 && getValue(timer4) == 0)
+        setTimer(updateGlobals, 1);
+}
+
+on timer firstDidNotFinnish {
+    endCycle();
+    setNextToBegin(getNextCycle());
+    setTimer(changeCycle, 3000);
+    output(fnshd);
+}
+
+on timer changeCycle {
+    output(bgn);
+}
+
+on timer updateGlobals {
+    putValue(timer1, getValue(timer1) + 1);
+    putValue(timer2, getValue(timer2) + 1);
+    putValue(timer3, getValue(timer3) + 1);
+    putValue(timer4, getValue(timer4) + 1);
+    setTimer(updateGlobals,4);
+}

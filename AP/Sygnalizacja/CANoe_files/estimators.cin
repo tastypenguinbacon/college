@@ -1,0 +1,67 @@
+/*@!Encoding:1250*/
+long relay(long a) {
+    if(a <= 1)
+        return 1;
+    return a;
+}
+
+long upperBound(long a) {
+    if(a <= 40)
+        return a;
+    return 40;
+}
+
+int getNextCycle() { 
+    long tf1, tf2, tf3, tf4;
+    long t1, t2, t3, t4;
+    t1 = relay(getValue(timer1));
+    t2 = relay(getValue(timer2));
+    t3 = relay(getValue(timer3));
+    t4 = relay(getValue(timer4));
+    
+    tf1 = relay(getValue(traffic1)) + t1;
+    tf2 = relay(getValue(traffic2)) + t2;
+    tf3 = relay(getValue(traffic3)) + t3;
+    tf4 = relay(getValue(traffic4)) + t4;
+    
+    if(tf1 >= tf2 && tf1 >= tf3 && tf1 >= tf4)
+        return 1;
+    if(tf2 >= tf1 && tf2 >= tf3 && tf2 >= tf4)
+        return 2;
+    if(tf3 >= tf2 && tf3 >= tf1 && tf3 >= tf4)
+        return 3;
+    if(tf4 >= tf2 && tf4 >= tf3 && tf4 >= tf1)
+        return 4;
+    return 1;
+}
+
+int getNextTime() {
+    long tf1, tf2, tf3, tf4;
+    long t1, t2, t3, t4;
+    
+    t1 = upperBound(relay(getValue(timer1)));
+    t2 = upperBound(relay(getValue(timer2)));
+    t3 = upperBound(relay(getValue(timer3)));
+    t4 = upperBound(relay(getValue(timer4)));
+    
+    tf1 = upperBound(relay(getValue(traffic1)));
+    tf2 = upperBound(relay(getValue(traffic2)));
+    tf3 = upperBound(relay(getValue(traffic3)));
+    tf4 = upperBound(relay(getValue(traffic4)));
+    
+    switch(getValue(currState)) {
+        case 1:
+            putValue(timer1, 0);
+            return upperBound(t1*t1 + tf1*tf1) + 5;
+        case 2:
+            putValue(timer2, 0);
+            return upperBound(t2*t2 + tf2*tf2) + 5;
+        case 3:
+            putValue(timer3, 0);
+            return upperBound(t3*t3 + tf3*tf3) + 5;
+        case 4:
+            putValue(timer4, 0);
+            return upperBound(t4*t4 + tf4*tf4) + 5;
+    }
+    return 5000;
+}

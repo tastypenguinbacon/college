@@ -1,0 +1,50 @@
+/*@!Encoding:1250*/
+includes {
+    #include "change_lights.cin"
+    #include "estimators.cin"
+}
+
+variables {
+    message begin bgn;
+    message started strtd;
+    message stop stp;
+    message finished fnshd;
+    timer cycleTime;
+    msTimer changeCycle;
+    timer updateGlobals;
+}
+
+on start {
+    setCycle();
+    setTimer(cycleTime, 5);
+    output(strtd);
+    setTimer(updateGlobals, 4);
+}
+
+on message begin {
+    cancelTimer(cycleTime);
+    cancelTimer(changeCycle);
+    setCycle();
+    setTimer(cycleTime, getNextTime());
+    if(getValue(timer1) == 0 && getValue(timer2) == 0 && getValue(timer3) == 0 && getValue(timer4) == 0)
+        setTimer(updateGlobals, 1);
+}
+
+on timer cycleTime {
+    endCycle();
+    setNextToBegin(getNextCycle());
+    setTimer(changeCycle, 3000);
+    output(fnshd);
+}
+
+on timer changeCycle {
+    output(bgn);
+}
+
+on timer updateGlobals {
+    putValue(timer1, getValue(timer1) + 1);
+    putValue(timer2, getValue(timer2) + 1);
+    putValue(timer3, getValue(timer3) + 1);
+    putValue(timer4, getValue(timer4) + 1);
+    setTimer(updateGlobals,4);
+}

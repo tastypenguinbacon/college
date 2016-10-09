@@ -1,0 +1,129 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Trouble_shooting Lights Crowd
+
+
+BO_ 3 finished: 0 Vector__XXX
+
+BO_ 2 started: 0 Vector__XXX
+
+BO_ 1 stop: 0 Vector__XXX
+
+BO_ 0 begin: 0 Vector__XXX
+
+
+
+EV_ timer4: 0 [0|2147483647] "" 0 1 DUMMY_NODE_VECTOR0  Crowd,Lights,Trouble_shooting;
+
+EV_ timer3: 0 [0|2147483647] "" 0 2 DUMMY_NODE_VECTOR0  Crowd,Lights,Trouble_shooting;
+
+EV_ timer2: 0 [0|2147483647] "" 0 3 DUMMY_NODE_VECTOR0  Crowd,Lights,Trouble_shooting;
+
+EV_ timer1: 0 [0|2147483647] "" 0 4 DUMMY_NODE_VECTOR0  Crowd,Lights,Trouble_shooting;
+
+EV_ currState: 0 [0|4] "" 1 5 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ prevState: 0 [0|4] "" 4 6 DUMMY_NODE_VECTOR0  Crowd,Lights,Trouble_shooting;
+
+EV_ traffic4: 0 [0|4096] "" 0 7 DUMMY_NODE_VECTOR0  Crowd,Lights,Trouble_shooting;
+
+EV_ traffic3: 0 [0|4096] "" 0 8 DUMMY_NODE_VECTOR0  Crowd,Lights,Trouble_shooting;
+
+EV_ traffic2: 0 [0|4096] "" 0 9 DUMMY_NODE_VECTOR0  Crowd,Lights,Trouble_shooting;
+
+EV_ traffic1: 0 [0|4096] "" 0 10 DUMMY_NODE_VECTOR0  Crowd,Lights,Trouble_shooting;
+
+EV_ stripes_5: 0 [0|1] "" 1 11 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ stripes_4: 0 [0|1] "" 1 12 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ stripes_3: 0 [0|1] "" 1 13 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ stripes_2: 0 [0|1] "" 1 14 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ stripes_1: 0 [0|1] "" 1 15 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ yellow_8: 0 [0|1] "" 1 16 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ yellow_7: 0 [0|1] "" 1 17 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ yellow_6: 0 [0|1] "" 1 18 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ yellow_5: 0 [0|1] "" 1 19 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ yellow_4: 0 [0|1] "" 1 20 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ yellow_3: 0 [0|1] "" 1 21 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ yellow_2: 0 [0|1] "" 1 22 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ yellow_1: 0 [0|1] "" 1 23 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ red_8: 0 [0|1] "" 1 24 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ red_7: 0 [0|1] "" 1 25 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ red_6: 0 [0|1] "" 1 26 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ red_5: 0 [0|1] "" 1 27 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ red_4: 0 [0|1] "" 1 28 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ red_3: 0 [0|1] "" 1 29 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ red_2: 0 [0|1] "" 1 30 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ red_1: 0 [0|1] "" 1 31 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ green_8: 0 [0|1] "" 1 32 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ green_7: 0 [0|1] "" 1 33 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ green_6: 0 [0|1] "" 1 34 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ green_5: 0 [0|1] "" 1 35 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ green_4: 0 [0|1] "" 1 36 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ green_3: 0 [0|1] "" 1 37 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ green_2: 0 [0|1] "" 1 38 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+EV_ green_1: 0 [0|1] "" 1 39 DUMMY_NODE_VECTOR0 Vector__XXX;
+
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "BusType" "";
+
