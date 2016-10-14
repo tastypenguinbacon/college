@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.16)  14 OCT 2016 21:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.16)  14 OCT 2016 21:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**czwarte.tex
-(./czwarte.tex
+**szoste.tex
+(./szoste.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -537,8 +537,8 @@ Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (./czwarte.aux)
-\openout1 = `czwarte.aux'.
+ (./szoste.aux)
+\openout1 = `szoste.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -646,164 +646,31 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<./grafika/lena.png, id=1, 1814.78pt x 775.89874pt>
-File: ./grafika/lena.png Graphic file (type png)
- <use ./grafika/lena.png>
-Package pdftex.def Info: ./grafika/lena.png used on input line 15.
-(pdftex.def)             Requested size: 483.68355pt x 170.71008pt.
+<./img/rozciagniete.png, id=1, 240.14719pt x 180.675pt>
+File: ./img/rozciagniete.png Graphic file (type png)
 
-<./grafika/schemat.png, id=3, 1824.8175pt x 699.61375pt>
-File: ./grafika/schemat.png Graphic file (type png)
-
-<use ./grafika/schemat.png>
-Package pdftex.def Info: ./grafika/schemat.png used on input line 22.
-(pdftex.def)             Requested size: 483.69687pt x 185.43945pt.
-
-<./grafika/PID.png, id=4, 900.36375pt x 451.6875pt>
-File: ./grafika/PID.png Graphic file (type png)
- <use ./grafika/PID.png>
-Package pdftex.def Info: ./grafika/PID.png used on input line 32.
-(pdftex.def)             Requested size: 241.84843pt x 121.32317pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 26--33
-
- []
-
-[1
+<use ./img/rozciagniete.png>
+Package pdftex.def Info: ./img/rozciagniete.png used on input line 15.
+(pdftex.def)             Requested size: 483.73763pt x 170.7167pt.
+ [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./grafika/lena.png> <./gra
-fika/schemat.png>]
-LaTeX Font Info:    Try loading font information for OML+plm on input line 35.
- (/usr/share/texlive/texmf-dist/tex/latex/polski/omlplm.fd
-File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
-)
-LaTeX Font Info:    Try loading font information for OMS+plsy on input line 35.
-
-(/usr/share/texlive/texmf-dist/tex/latex/polski/omsplsy.fd
-File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
-)
-LaTeX Font Info:    Try loading font information for OMX+plex on input line 35.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/polski/omxplex.fd
-File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
-)
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <12> on input line 35.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 35.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 35.
-
-Underfull \hbox (badness 10000) in paragraph at lines 39--44
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 45.
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 45.
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--64
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--64
-
- []
-
-[2 <./grafika/PID.png>] <./grafika/PI.png, id=25, 982.67125pt x 622.325pt>
-File: ./grafika/PI.png Graphic file (type png)
-
-<use ./grafika/PI.png>
-Package pdftex.def Info: ./grafika/PI.png used on input line 68.
-(pdftex.def)             Requested size: 435.32422pt x 275.68504pt.
- <./grafika/PD.png, id=26, 820.06375pt x 581.17125pt>
-File: ./grafika/PD.png Graphic file (type png)
-
-<use ./grafika/PD.png>
-Package pdftex.def Info: ./grafika/PD.png used on input line 80.
-(pdftex.def)             Requested size: 435.32422pt x 308.5159pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--81
-
- []
-
-[3 <./grafika/PI.png>] <./grafika/PIDI.png, id=30, 911.405pt x 577.15625pt>
-File: ./grafika/PIDI.png Graphic file (type png)
-
-<use ./grafika/PIDI.png>
-Package pdftex.def Info: ./grafika/PIDI.png used on input line 87.
-(pdftex.def)             Requested size: 435.32422pt x 275.67561pt.
- [4 <./grafika/PD.png> <./grafika/PIDI.png>]
-<./grafika/cudo1.png, id=34, 734.745pt x 186.6975pt>
-File: ./grafika/cudo1.png Graphic file (type png)
- <use ./grafika/cudo1.png>
-Package pdftex.def Info: ./grafika/cudo1.png used on input line 98.
-(pdftex.def)             Requested size: 435.33444pt x 170.72397pt.
-
-<./grafika/cudo2.png, id=35, 736.7525pt x 187.70125pt>
-File: ./grafika/cudo2.png Graphic file (type png)
-
-<use ./grafika/cudo2.png>
-Package pdftex.def Info: ./grafika/cudo2.png used on input line 104.
-(pdftex.def)             Requested size: 435.321pt x 170.72821pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 106--108
-
- []
-
-<./grafika/error.png, id=36, 625.33624pt x 171.64125pt>
-File: ./grafika/error.png Graphic file (type png)
-
-<use ./grafika/error.png>
-Package pdftex.def Info: ./grafika/error.png used on input line 120.
-(pdftex.def)             Requested size: 483.69687pt x 132.76653pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--121
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--121
-
- []
-
-[5 <./grafika/cudo1.png> <./grafika/cudo2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 122--126
-
- []
-
-[6 <./grafika/error.png>] (./czwarte.aux) ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/rozciagniete.png>] (
+./szoste.aux) ) 
 Here is how much of TeX's memory you used:
- 3045 strings out of 493029
- 41327 string characters out of 6136234
- 116425 words of memory out of 5000000
- 6517 multiletter control sequences out of 15000+600000
- 8884 words of font info for 28 fonts, out of 8000000 for 9000
+ 2941 strings out of 493029
+ 39337 string characters out of 6136234
+ 109425 words of memory out of 5000000
+ 6444 multiletter control sequences out of 15000+600000
+ 4433 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,6n,24p,793b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts
-/enc/dvips/pl/plms.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.e
-nc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texli
-ve/texmf-dist/fonts/enc/dvips/pl/plme.enc}</usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/pl/plbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plex1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/pl/plmi6.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/pl/plmi8.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/pl/plr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr6
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/pl/plsy8.pfb>
-Output written on czwarte.pdf (6 pages, 503173 bytes).
+ 37i,5n,24p,792b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}</usr
+/share/texlive/texmf-dist/fonts/type1/public/pl/plr12.pfb>
+Output written on szoste.pdf (1 page, 9764 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
+ 15 PDF objects out of 1000 (max. 8388607)
+ 8 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
