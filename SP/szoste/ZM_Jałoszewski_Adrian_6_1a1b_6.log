@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.16)  14 OCT 2016 21:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.16)  16 OCT 2016 23:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**szoste.tex
-(./szoste.tex
+**ZM_Jałoszewski_Adrian_6_1a1b_6.tex
+(./ZM_Jałoszewski_Adrian_6_1a1b_6.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -537,8 +537,9 @@ Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (./szoste.aux)
-\openout1 = `szoste.aux'.
+
+(./ZM_Jałoszewski_Adrian_6_1a1b_6.aux)
+\openout1 = `ZM_Jałoszewski_Adrian_6_1a1b_6.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -656,18 +657,19 @@ Package pdftex.def Info: ./img/rozciagniete.png used on input line 15.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/rozciagniete.png>] (
-./szoste.aux) ) 
+./ZM_Jałoszewski_Adrian_6_1a1b_6.aux) ) 
 Here is how much of TeX's memory you used:
  2941 strings out of 493029
- 39337 string characters out of 6136234
+ 39562 string characters out of 6136234
  109425 words of memory out of 5000000
  6444 multiletter control sequences out of 15000+600000
  4433 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,5n,24p,792b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}</usr
-/share/texlive/texmf-dist/fonts/type1/public/pl/plr12.pfb>
-Output written on szoste.pdf (1 page, 9764 bytes).
+ 37i,5n,24p,817b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/en
+c/dvips/pl/plrm.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr12.
+pfb>
+Output written on ZM_Jałoszewski_Adrian_6_1a1b_6.pdf (1 page, 9764 bytes).
 PDF statistics:
  15 PDF objects out of 1000 (max. 8388607)
  8 compressed objects within 1 object stream
