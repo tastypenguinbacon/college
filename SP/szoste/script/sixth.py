@@ -75,15 +75,18 @@ def uac_x():
 
 def uac_udc():
     configure_plot()
-    plt.plot(U_DC, U_AC, [0.001], [0.02648], 'ro')
-    plt.ylabel("{\\Large $\\mathrm{U_{AC}}$ [V]}")
-    plt.xlabel("{\\Large $\\mathrm{U_{DC}}$ [V]}")
+    for i in range(len(U_DC)):
+        if U_DC[i] < 0:
+            U_AC[i] *= -1
+    plt.plot(U_AC, U_DC, [0.02648], [0.001], 'ro')
+    plt.ylabel("{\\Large $\\mathrm{U_{DC}}$ [V]}")
+    plt.xlabel("{\\Large $\\mathrm{U_{AC}}$ [V]}")
     plt.savefig("../img/Uac_od_Udc.png")
     configure_plot()
-    error = abs_error(U_DC, U_AC, 0.001) * 1000
-    plt.plot(U_DC, error)
+    error = abs_error(U_AC, U_DC) * 1000
+    plt.plot(U_AC, error)
     plt.ylabel("{\\Large $\\mathrm{\\Delta_U$ [mV]}")
-    plt.xlabel("{\\Large $\\mathrm{U_{DC}}$ [V]}")
+    plt.xlabel("{\\Large $\\mathrm{U_{AC}}$ [V]}")
     plt.savefig("../img/Uac_Udc_blad.png")
 
 
