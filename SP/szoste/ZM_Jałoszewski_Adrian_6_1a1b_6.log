@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.16)  17 OCT 2016 03:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.16)  17 OCT 2016 06:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -714,7 +714,7 @@ File: ./img/tor_pierwsze.png Graphic file (type png)
 
 <use ./img/tor_pierwsze.png>
 Package pdftex.def Info: ./img/tor_pierwsze.png used on input line 42.
-(pdftex.def)             Requested size: 364.19667pt x 197.53946pt.
+(pdftex.def)             Requested size: 341.43307pt x 185.18245pt.
  [2]
 <./img/Uac_od_x.png, id=18, 578.16pt x 433.62pt>
 File: ./img/Uac_od_x.png Graphic file (type png)
@@ -735,7 +735,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--54
 File: ./img/Uac_blad.png Graphic file (type png)
  <use ./img/Uac_blad.png>
 Package pdftex.def Info: ./img/Uac_blad.png used on input line 58.
-(pdftex.def)             Requested size: 364.19667pt x 273.14235pt.
+(pdftex.def)             Requested size: 341.43307pt x 256.07178pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (15.2466pt): 
@@ -743,73 +743,84 @@ Package Fancyhdr Warning: \headheight is too small (15.2466pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3 <./img/tor_pierwsze.png> <./img/Uac_od_x.png>]
-<./img/scisniete.png, id=27, 240.9pt x 180.675pt>
+[3 <./img/tor_pierwsze.png> <./img/Uac_od_x.png>] [4 <./img/Uac_blad.png>]
+<./img/scisniete.png, id=35, 240.9pt x 180.675pt>
 File: ./img/scisniete.png Graphic file (type png)
  <use ./img/scisniete.png>
-Package pdftex.def Info: ./img/scisniete.png used on input line 76.
-(pdftex.def)             Requested size: 364.19667pt x 273.1732pt.
+Package pdftex.def Info: ./img/scisniete.png used on input line 78.
+(pdftex.def)             Requested size: 295.90588pt x 221.95047pt.
 
-[4 <./img/Uac_blad.png>]
 <./img/punkt_neutralny.png, id=36, 240.9pt x 180.675pt>
 File: ./img/punkt_neutralny.png Graphic file (type png)
 
 <use ./img/punkt_neutralny.png>
-Package pdftex.def Info: ./img/punkt_neutralny.png used on input line 81.
-(pdftex.def)             Requested size: 364.19667pt x 273.1732pt.
+Package pdftex.def Info: ./img/punkt_neutralny.png used on input line 84.
+(pdftex.def)             Requested size: 295.90588pt x 221.95047pt.
 
 <./img/rozciagniete.png, id=37, 240.14719pt x 180.675pt>
 File: ./img/rozciagniete.png Graphic file (type png)
 
 <use ./img/rozciagniete.png>
-Package pdftex.def Info: ./img/rozciagniete.png used on input line 86.
-(pdftex.def)             Requested size: 364.19667pt x 274.02783pt.
- [5 <./img/scisniete.png> <./img/punkt_neutralny.png>] <./img/Uac_od_Udc.png, i
-d=43, 578.16pt x 433.62pt>
+Package pdftex.def Info: ./img/rozciagniete.png used on input line 90.
+(pdftex.def)             Requested size: 295.90588pt x 222.64244pt.
+ [5 <./img/scisniete.png> <./img/punkt_neutralny.png>] <./img/tor_drugie.png, i
+d=43, 644.4075pt x 439.6425pt>
+File: ./img/tor_drugie.png Graphic file (type png)
+
+<use ./img/tor_drugie.png>
+Package pdftex.def Info: ./img/tor_drugie.png used on input line 97.
+(pdftex.def)             Requested size: 341.43307pt x 232.94904pt.
+ <./img/Uac_od_Udc.png, id=44, 578.16pt x 433.62pt>
 File: ./img/Uac_od_Udc.png Graphic file (type png)
 
 <use ./img/Uac_od_Udc.png>
-Package pdftex.def Info: ./img/Uac_od_Udc.png used on input line 92.
-(pdftex.def)             Requested size: 364.19667pt x 273.14235pt.
-
-<./img/Uac_Udc_blad.png, id=44, 578.16pt x 433.62pt>
+Package pdftex.def Info: ./img/Uac_od_Udc.png used on input line 103.
+(pdftex.def)             Requested size: 341.43307pt x 256.07178pt.
+ [6 <./img/rozciagniete.png> <./img/tor_drugie.png>]
+<./img/Uac_Udc_blad.png, id=50, 578.16pt x 433.62pt>
 File: ./img/Uac_Udc_blad.png Graphic file (type png)
 
 <use ./img/Uac_Udc_blad.png>
-Package pdftex.def Info: ./img/Uac_Udc_blad.png used on input line 97.
-(pdftex.def)             Requested size: 364.19667pt x 273.14235pt.
- [6 <./img/rozciagniete.png> <./img/Uac_od_Udc.png>] <./img/Udc_od_x.png, id=51
-, 578.16pt x 433.62pt>
+Package pdftex.def Info: ./img/Uac_Udc_blad.png used on input line 108.
+(pdftex.def)             Requested size: 341.43307pt x 256.07178pt.
+ [7 <./img/Uac_od_Udc.png> <./img/Uac_Udc_blad.png>] <./img/trzecie_tor.png, id
+=56, 908.39375pt x 581.17125pt>
+File: ./img/trzecie_tor.png Graphic file (type png)
+
+<use ./img/trzecie_tor.png>
+Package pdftex.def Info: ./img/trzecie_tor.png used on input line 115.
+(pdftex.def)             Requested size: 341.43307pt x 218.44415pt.
+ <./img/Udc_od_x.png, id=57, 578.16pt x 433.62pt>
 File: ./img/Udc_od_x.png Graphic file (type png)
- <use ./img/Udc_od_x.png>
-Package pdftex.def Info: ./img/Udc_od_x.png used on input line 103.
-(pdftex.def)             Requested size: 364.19667pt x 273.14235pt.
 
-<./img/Udc_blad.png, id=52, 578.16pt x 433.62pt>
+<use ./img/Udc_od_x.png>
+Package pdftex.def Info: ./img/Udc_od_x.png used on input line 121.
+(pdftex.def)             Requested size: 341.43307pt x 256.07178pt.
+ <./img/Udc_blad.png, id=58, 578.16pt x 433.62pt>
 File: ./img/Udc_blad.png Graphic file (type png)
- <use ./img/Udc_blad.png>
-Package pdftex.def Info: ./img/Udc_blad.png used on input line 108.
-(pdftex.def)             Requested size: 364.19667pt x 273.14235pt.
 
-[7 <./img/Uac_Udc_blad.png> <./img/Udc_od_x.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 112--117
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 112--117
+<use ./img/Udc_blad.png>
+Package pdftex.def Info: ./img/Udc_blad.png used on input line 126.
+(pdftex.def)             Requested size: 341.43307pt x 256.07178pt.
+ [8 <./img/trzecie_tor.png> <./img/Udc_od_x.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 131--136
 
  []
 
-[8 <./img/Udc_blad.png>] (./ZM_Jałoszewski_Adrian_6_1a1b_6.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--136
+
+ []
+
+[9 <./img/Udc_blad.png>] (./ZM_Jałoszewski_Adrian_6_1a1b_6.aux) ) 
 Here is how much of TeX's memory you used:
- 3186 strings out of 493029
- 43209 string characters out of 6136234
+ 3196 strings out of 493029
+ 43440 string characters out of 6136234
  115534 words of memory out of 5000000
- 6647 multiletter control sequences out of 15000+600000
+ 6655 multiletter control sequences out of 15000+600000
  14649 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,11n,43p,817b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,43p,817b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/t
 exlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/texmf-dist/fo
 nts/enc/dvips/pl/plms.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plm
@@ -822,10 +833,11 @@ re/texlive/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/pl/plr8.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/pl/plsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy8.pfb>
-Output written on ZM_Jałoszewski_Adrian_6_1a1b_6.pdf (9 pages, 508902 bytes).
+Output written on ZM_Jałoszewski_Adrian_6_1a1b_6.pdf (10 pages, 731595 bytes).
+
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 106 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

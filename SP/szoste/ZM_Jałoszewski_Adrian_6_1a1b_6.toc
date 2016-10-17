@@ -5,5 +5,5 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Wyznaczenie charakterystyki statycznej czujnika LVDT}{2}
 \contentsline {subsubsection}{\numberline {3.1.2}Obserwacja sygna\IeC {\l }\IeC {\'o}w na poszczeg\IeC {\'o}lnych etapach przetwarzania czujnik LVDT -- wzmacniacz z modulacj\IeC {\k a}\IeC {\nobreakspace }AM}{4}
 \contentsline {subsection}{\numberline {3.2}Wyznaczenie charakterystyki statycznej wzmacniacza pomiarowego z modulacj\IeC {\k a} AM}{6}
-\contentsline {subsection}{\numberline {3.3}Wyznaczenie charakterystyki statycznej uk\IeC {\l }adu czujnik + tor z modulacj\IeC {\k a} amplitudow\IeC {\k a}}{7}
-\contentsline {section}{\numberline {4}Wnioski i podsumowanie}{8}
+\contentsline {subsection}{\numberline {3.3}Wyznaczenie charakterystyki statycznej uk\IeC {\l }adu czujnik + tor z modulacj\IeC {\k a} amplitudow\IeC {\k a}}{8}
+\contentsline {section}{\numberline {4}Wnioski i podsumowanie}{9}

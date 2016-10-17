@@ -61,12 +61,14 @@ def abs_error(x, y, swap_point=-1000000.0):
 
 def uac_x():
     configure_plot()
+    plt.plot(length, U_AC, 'bo')
     plt.plot(length, U_AC, [62.2], [0.02648], 'ro')
     plt.ylabel("{\\Large $\\mathrm{U_{AC}}$ [V]}")
     plt.xlabel("{\\Large x [mm]}")
     plt.savefig("../img/Uac_od_x.png")
     configure_plot()
     error = abs_error(length, U_AC, 62.2) * 1000
+    plt.plot(length, error, 'bo')
     plt.plot(length, error)
     plt.ylabel("{\\Large $\\mathrm{\\Delta_U$ [mV]}")
     plt.xlabel("{\\Large x [mm]}")
@@ -78,12 +80,14 @@ def uac_udc():
     for i in range(len(U_DC)):
         if U_DC[i] < 0:
             U_AC[i] *= -1
+    plt.plot(U_AC, U_DC, 'bo')
     plt.plot(U_AC, U_DC, [0.02648], [0.001], 'ro')
     plt.ylabel("{\\Large $\\mathrm{U_{DC}}$ [V]}")
     plt.xlabel("{\\Large $\\mathrm{U_{AC}}$ [V]}")
     plt.savefig("../img/Uac_od_Udc.png")
     configure_plot()
     error = abs_error(U_AC, U_DC) * 1000
+    plt.plot(U_AC, error, 'bo')
     plt.plot(U_AC, error)
     plt.ylabel("{\\Large $\\mathrm{\\Delta_U$ [mV]}")
     plt.xlabel("{\\Large $\\mathrm{U_{AC}}$ [V]}")
@@ -92,12 +96,14 @@ def uac_udc():
 
 def udc_x():
     configure_plot()
+    plt.plot(length, U_DC, 'bo')
     plt.plot(length, U_DC, [62.2], [0.001], 'ro')
     plt.ylabel("{\\Large $\\mathrm{U_{DC}}$ [V]}")
     plt.xlabel("{\\Large x [mm]}")
     plt.savefig("../img/Udc_od_x.png")
     configure_plot()
     error = abs_error(length, U_DC) * 1000
+    plt.plot(length, error, 'bo')
     plt.plot(length, error)
     plt.ylabel("{\\Large $\\mathrm{\\Delta_U$ [mV]}")
     plt.xlabel("{\\Large x [mm]}")

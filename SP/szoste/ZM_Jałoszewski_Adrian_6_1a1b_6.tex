@@ -39,8 +39,8 @@
 				Poniższy schemat przedstawia połączenia w układzie dla punktu pierwszego ćwiczenia. Zawarte na nim jest poprawne podłączenie multimetrów, z których mierzy wartość napięcia referencyjnego, a drugi wartość skuteczną napięcia. %todo nazwać napięcia
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.8\textwidth]{./img/tor_pierwsze.png}
-					\caption{\small{Schemat połączeń przy współpracy toru pomiarowego z czujnikiem LVDT}}
+					\includegraphics[width=0.75\textwidth]{./img/tor_pierwsze.png}
+					\caption{\small{Schemat połączeń}}
 				\end{figure} \noindent
 				Aby wyznaczyć charakterystykę statyczną czujnika LVDT rozpoczęliśmy od ustawienia poprawnego napięcia referencyjnego tak aby jego wartość była jak najbliższa $10\,\mathrm{V}$. Strojenia dokonaliśmy przy pomocy potencjometru ${R_R}$.
 				\newline \newline
@@ -52,13 +52,13 @@
 					\includegraphics[width=0.75\textwidth]{./img/Uac_od_x.png}
 					\caption{\small{Zależność wartości skutecznej napięcia od położenia rdzenia}}
 				\end{figure} \noindent
-				Do wyznaczenia błędu bezwzględnego potrzebna jest charakterystyka czujnika, która dla wartości poniżej zera konstrukcyjnego przyjmuje wartości ujemne. Po dokonaniu tej modyfikacji na zestawie danych mogliśmy wyznaczyć zależność błędu bezwzględnego danego wzorem $\Delta_U = U_{pomiar} - U_{oblicz}$. Gdzie $U_{oblicz}$ uzyskaliśmy dzięki regresji liniowej. Prosta najlepiej dopasowana do charakterystyki jest zadana wzorem: $y = 0.1198 \cdot x -7.455$
+				Do wyznaczenia błędu bezwzględnego potrzebna jest charakterystyka czujnika, która dla wartości poniżej zera konstrukcyjnego przyjmuje wartości ujemne. Po dokonaniu tej modyfikacji na zestawie danych mogliśmy wyznaczyć zależność błędu bezwzględnego danego wzorem $\Delta_U = U_{pomiar} - U_{oblicz}$. Gdzie $U_{oblicz}$ uzyskaliśmy dzięki regresji liniowej. Prosta najlepiej dopasowana do charakterystyki jest zadana wzorem: $y = 0.1198 \cdot x -7.455$.
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.8\textwidth]{./img/Uac_blad.png}
+					\includegraphics[width=0.75\textwidth]{./img/Uac_blad.png}
 					\caption{\small{Zależność błędu bezwzględnego od położenia rdzenia}}
 				\end{figure} \noindent
-				Na podstawie tych danych wyznaczyliśmy błąd nieliniowości $\delta_{U_{max}} = 0,981\cdot10^{-3}$ zadany wzorem:
+				Na podstawie tych danych wyznaczyliśmy błąd nieliniowości $\delta_{U_{max}} = 1,29\cdot10^{-3}$ zadany wzorem:
 				\begin{equation}
 					\delta_{U_{max}} = \frac{|\Delta_U|_{max}}{U_{max}-U_{min}}
 				\end{equation}
@@ -66,48 +66,67 @@
 				Realizację tego podpunktu rozpoczęliśmy od podłączenia oscyloskopu do interesujących nas sygnałów:
 				\begin{enumerate}
 					\item OSC - składowa nośna - żółty
-					\item Sygnał wyjściowy z czujnika LVDT
-					\item Sygnał po demodulacji
-					\item Sygnał na wyjściu DC
+					\item Sygnał wyjściowy z czujnika LVDT - niebieski
+					\item Sygnał po demodulacji - fioletowy
+					\item Sygnał na wyjściu DC - zielony
 				\end{enumerate}
 				Sygnały te były obserwowane przez nas w położeniach ściśnięcia, rozciągnięcia oraz w zerze konstrukcyjnym czujnika.
+				\newpage \noindent
+				W przypadku wsuniętego rdzenia można zauważyć, że sygnał wyjściowy z czujnika jest w przeciwfazie do składowej nośnej.
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.8\textwidth]{./img/scisniete.png}
-					\caption{\small{Ściśnięty czujnik}}
+					\includegraphics[width=0.65\textwidth]{./img/scisniete.png}
+					\caption{\small{Wsunięty rdzeń}}
 				\end{figure} \noindent
+				W przypadku zera konstrukcyjnego można zauważyć, że wszystkie sygnały oprócz składowej nośnej ulegają wyzerowaniu.
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.8\textwidth]{./img/punkt_neutralny.png}
+					\includegraphics[width=0.65\textwidth]{./img/punkt_neutralny.png}
 					\caption{\small{Zero konstrukcyjne}}
 				\end{figure} \noindent
+				W przypadku wysuniętego rdzenia można zauważyć, że sygnał wyjściowy z czujnika jest w fazie z sygnałem nośnym.
 				\begin{figure}[H]
 					\centering
-					\includegraphics[width=0.8\textwidth]{./img/rozciagniete.png}
-					\caption{\small{Ściśnięty czujnik}}
+					\includegraphics[width=0.65\textwidth]{./img/rozciagniete.png}
+					\caption{\small{Wysunięty rdzeń}}
 				\end{figure} \noindent
+				Można zauważyć, że położenie rdzenia nie ma wpływu na składową nośną, przez co nie nadaje się ona do przenoszenia informacji o jego położeniu. Sygnał będący na wejściu demodulatora (wyjściowy z LVDT) lepiej się do tego nadaje, jednak ze względu na to, że jest sinusoidą, która daną amplitudę przyjmuje przy rdzeniu wsuniętym i wysuniętym jest niejednoznaczna. Sygnał, który otrzymujemy po wyjściu z demodulatora jest jednoznaczny, jego znak wskazuje czy rdzeń jest wysunięty czy wsunięty, a amplituda pokazuje jak bardzo wsunięty jest rdzeń -- sygnał ten jest miarodajny.
 		\subsection{Wyznaczenie charakterystyki statycznej wzmacniacza pomiarowego z modulacją AM}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.8\textwidth]{./img/Uac_od_Udc.png}
-				\caption{\small{Zależność }}
+				\includegraphics[width=0.75\textwidth]{./img/tor_drugie.png}
+				\caption{\small{Schemat połączeń}}
+			\end{figure} \noindent
+			Ze względu na to, że w punkcie trzecim i pierwszym dokonaliśmy pomiarów dla tych samych wychyleń rdzenia, możemy je wykorzystać do wyznaczenia charakterystyki napięcia stałego w zależności od wartości skutecznej napięcia przemiennego. Mogliśmy w ten sposób pominąć pomiary dokonywane przy pomocy rezystorów, które tylko by symulowały obecność czujnika. Po przetworzeniu danych tak aby dla ujemnych napięć DC były ujemne wartości skuteczne AC otrzymaliśmy zestaw danych do którego najlepiej wpasowywała się prosta $y = 1,78 \cdot x + 0,007$.
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.75\textwidth]{./img/Uac_od_Udc.png}
+				\caption{\small{Zależność napięcia DC od wartości skutecznej AC}}
 			\end{figure} \noindent
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.8\textwidth]{./img/Uac_Udc_blad.png}
-				\caption{\small{Ściśnięty czujnik}}
+				\includegraphics[width=0.75\textwidth]{./img/Uac_Udc_blad.png}
+				\caption{\small{Zależność błędu bezwzględnego od położenia rdzenia}}
 			\end{figure} \noindent
+			Wartość błędu nieliniowości wynosi $\delta_{U_{max}} = 4,4 \cdot 10^{-4}$
 		\subsection{Wyznaczenie charakterystyki statycznej układu czujnik + tor z modulacją amplitudową}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.8\textwidth]{./img/Udc_od_x.png}
-				\caption{\small{Zależność }}
+				\includegraphics[width=0.75\textwidth]{./img/trzecie_tor.png}
+				\caption{\small{Schemat połączeń}}
+			\end{figure} \noindent
+			Prosta dopasowana do charakterystyki ma równanie $y = 1.781 \cdot x + 13.27$
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.75\textwidth]{./img/Udc_od_x.png}
+				\caption{\small{Zależność napięcia DC od przesunięcia rdzenia}}
 			\end{figure} \noindent
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.8\textwidth]{./img/Udc_blad.png}
-				\caption{\small{Ściśnięty czujnik}}
+				\includegraphics[width=0.75\textwidth]{./img/Udc_blad.png}
+				\caption{\small{Zależność błędu bezwzględnego od położenia rdzenia}}
 			\end{figure} \noindent
+			Wartość błędu nieliniowości wynosi w tym przypadku $\delta_{U_{max}} = 1.604 \cdot 10^{-3}$.
 	\section{Wnioski i podsumowanie}
 		Na podstawie ćwiczenia dowiedzieliśmy się dlaczego w zadanym torze pomiarowym wybrano konkretne wartości do przetwarzania informacji o przesunięciu rdzenia w czujniku. Z punktu drugiego dowiedzieliśmy się jak można zasymulować obecność czujnika przy pomocy zwykłego dzielnika napięcia.
 		\newline \newline
