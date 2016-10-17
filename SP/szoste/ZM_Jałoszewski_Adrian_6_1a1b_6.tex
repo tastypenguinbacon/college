@@ -27,9 +27,11 @@
 		\item Czujnik transformatorowy PTx20 firmy Peltron zintegrowany mechanicznie ze śrubą mikrommetryczną
 	\end{enumerate}
 	\section{Wykonanie ćwiczenia}
-		Ćwiczenie było wykonane dla obydwu podpunktów punktu pierwszego oraz dla punktu trzeciego. Punkt drugi został pominięty w wykonaniu pomiarów ze względu na to, że dane potrzebne do jego realizacji zostały pobrane w trakcie wykonania pozostałych dwóch punktów.
+		Ćwiczenie było wykonane dla obydwu podpunktów punktu pierwszego oraz dla punktu trzeciego. Punkt drugi został pominięty w wykonaniu pomiarów ze względu na to, że dane potrzebne do jego realizacji zostały pobrane w trakcie wykonania pozostałych dwóch punktów. Na wykresach czerwoną kropką zaznaczone jest zero konstrukcyjne czujnika.
+		\newline \newline
+		Część punktów pomiarowych zostało wyjętych z rozważań, gdyż znacznie odstawały od pozostałych pomiarów -- przyjęliśmy je jako błędy grube.
 		\subsection{Badanie właściwości metrologicznych transformatorowego czujnika LVDT drogi}
-			Pomiary mają na celu wyznaczenie charakterystyki czujnika oraz obserwację przebiegów czasowych w torze przetwarzania wzmacniacza z modulacją AM. Badany tor pomiarowy jest złożony z transformatorowego czujnika LVDT zbudowanego na bazie układu scalonego NE5521, który zawiera oscylator generujący sygnał zasilającyczujnik oraz elementy przetwarzania: 
+			Pomiary mają na celu wyznaczenie charakterystyki czujnika oraz obserwację przebiegów czasowych w torze przetwarzania wzmacniacza z modulacją AM. Badany tor pomiarowy jest złożony z transformatorowego czujnika LVDT zbudowanego na bazie układu scalonego NE5521, który zawiera oscylator generujący sygnał zasilający czujnik oraz elementy przetwarzania: 
 			\begin{itemize}
 				\item[--] wzmacniacz zmiennoprądowy
 				\item[--] demodulator fazoczuły
@@ -52,7 +54,7 @@
 					\includegraphics[width=0.75\textwidth]{./img/Uac_od_x.png}
 					\caption{\small{Zależność wartości skutecznej napięcia od położenia rdzenia}}
 				\end{figure} \noindent
-				Do wyznaczenia błędu bezwzględnego potrzebna jest charakterystyka czujnika, która dla wartości poniżej zera konstrukcyjnego przyjmuje wartości ujemne. Po dokonaniu tej modyfikacji na zestawie danych mogliśmy wyznaczyć zależność błędu bezwzględnego danego wzorem $\Delta_U = U_{pomiar} - U_{oblicz}$. Gdzie $U_{oblicz}$ uzyskaliśmy dzięki regresji liniowej. Prosta najlepiej dopasowana do charakterystyki jest zadana wzorem: $y = 0.1198 \cdot x -7.455$.
+				Do wyznaczenia błędu bezwzględnego potrzebna jest charakterystyka czujnika, która dla wartości poniżej zera konstrukcyjnego przyjmuje wartości ujemne. Po dokonaniu tej modyfikacji na zestawie danych mogliśmy wyznaczyć zależność błędu bezwzględnego danego wzorem $\Delta_U = U_{pomiar} - U_{oblicz}$. Gdzie $U_{oblicz}$ uzyskaliśmy dzięki regresji liniowej. Prosta najlepiej dopasowana do charakterystyki jest zadana wzorem: $y = 0.1198 \cdot x -7.455$, gdzie $x$ to przesunięcie w milimetrach, a y to napięcie w woltach.
 				\begin{figure}[H]
 					\centering
 					\includegraphics[width=0.75\textwidth]{./img/Uac_blad.png}
@@ -97,7 +99,7 @@
 				\includegraphics[width=0.75\textwidth]{./img/tor_drugie.png}
 				\caption{\small{Schemat połączeń}}
 			\end{figure} \noindent
-			Ze względu na to, że w punkcie trzecim i pierwszym dokonaliśmy pomiarów dla tych samych wychyleń rdzenia, możemy je wykorzystać do wyznaczenia charakterystyki napięcia stałego w zależności od wartości skutecznej napięcia przemiennego. Mogliśmy w ten sposób pominąć pomiary dokonywane przy pomocy rezystorów, które tylko by symulowały obecność czujnika. Po przetworzeniu danych tak aby dla ujemnych napięć DC były ujemne wartości skuteczne AC otrzymaliśmy zestaw danych do którego najlepiej wpasowywała się prosta $y = 1,78 \cdot x + 0,007$.
+			Ze względu na to, że w punkcie trzecim i pierwszym dokonaliśmy pomiarów dla tych samych wychyleń rdzenia, możemy je wykorzystać do wyznaczenia charakterystyki napięcia stałego w zależności od wartości skutecznej napięcia przemiennego. Mogliśmy w ten sposób pominąć pomiary dokonywane przy pomocy rezystorów, które tylko by symulowały obecność czujnika. Po przetworzeniu danych tak aby dla ujemnych napięć DC były ujemne wartości skuteczne AC otrzymaliśmy zestaw danych do którego najlepiej wpasowywała się prosta $y = 1,78 \cdot x + 0,007$, gdzie $y$ i $x$ są podane w woltach.
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=0.75\textwidth]{./img/Uac_od_Udc.png}
@@ -110,12 +112,13 @@
 			\end{figure} \noindent
 			Wartość błędu nieliniowości wynosi $\delta_{U_{max}} = 4,4 \cdot 10^{-4}$
 		\subsection{Wyznaczenie charakterystyki statycznej układu czujnik + tor z modulacją amplitudową}
+			Wielkością mierzoną jest napięcie stałe na wyjściu toru pomiarowego w zależności od przesunięcia rdzenia w czujniku.
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=0.75\textwidth]{./img/trzecie_tor.png}
 				\caption{\small{Schemat połączeń}}
 			\end{figure} \noindent
-			Prosta dopasowana do charakterystyki ma równanie $y = 1.781 \cdot x + 13.27$
+			Prosta dopasowana do charakterystyki ma równanie $y = 1.781 \cdot x + 13.27$, gdzie $y$ jest w woltach, a $x$ w milimetrach.
 			\begin{figure}[H]
 				\centering
 				\includegraphics[width=0.75\textwidth]{./img/Udc_od_x.png}
@@ -133,4 +136,6 @@
 		Obróbka dostępnych danych pokazuje w jakim zakresie badany czujnik zachowuje się liniowo i jak dobre jest przybliżenie przy pomocy prostej w przypadku odpowiednich charakterystyk. Ze względu na to, że błędy te są niewielkie w stosunku do wartości mierzonych można przyjąć, że linia prosta jest bardzo dobrym przybliżeniem charakterystyk i jako taka może być używana w modelach matematycznych.
 		\newline \newline
 		W przypadku likwidacji offsetu jaki towarzyszy pomiarom wartości można by było nawet założyć liniowość charakterystyki, co jest niezmiernie przydatne w wielu przypadkach.
+		\newline \newline 
+		Na poszczególnych wykresach widać jak błędy nieliniowości się kumulują i miejscami kompensują, powodując tym samym, że ostatni wykres błędu bezwzględnego, który pokazuje zależność wyjścia z toru $U_{DC}$ od przemieszczenia $x$ ma znacznie większe wartości błędu bezwzględnego niż pozostałe dwa, które pokazywały przejścia z których się składa.
 \end{document}
