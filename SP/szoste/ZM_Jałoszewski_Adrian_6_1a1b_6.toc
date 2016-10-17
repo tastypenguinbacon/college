@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}Cel \IeC {\'c}wiczenia}{2}
+\contentsline {section}{\numberline {2}Wykaz aparatury}{2}
+\contentsline {section}{\numberline {3}Wykonanie \IeC {\'c}wiczenia}{2}
+\contentsline {subsection}{\numberline {3.1}Badanie w\IeC {\l }a\IeC {\'s}ciwo\IeC {\'s}ci metrologicznych transformatorowego czujnika LVDT drogi}{2}
+\contentsline {subsubsection}{\numberline {3.1.1}Wyznaczenie charakterystyki statycznej czujnika LVDT}{2}
+\contentsline {subsubsection}{\numberline {3.1.2}Obserwacja sygna\IeC {\l }\IeC {\'o}w na poszczeg\IeC {\'o}lnych etapach przetwarzania czujnik LVDT -- wzmacniacz z modulacj\IeC {\k a}\IeC {\nobreakspace }AM}{4}
+\contentsline {subsection}{\numberline {3.2}Wyznaczenie charakterystyki statycznej wzmacniacza pomiarowego z modulacj\IeC {\k a} AM}{6}
+\contentsline {subsection}{\numberline {3.3}Wyznaczenie charakterystyki statycznej uk\IeC {\l }adu czujnik + tor z modulacj\IeC {\k a} amplitudow\IeC {\k a}}{7}
+\contentsline {section}{\numberline {4}Wnioski i podsumowanie}{8}

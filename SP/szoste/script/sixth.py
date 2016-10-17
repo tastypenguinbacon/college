@@ -39,7 +39,7 @@ def get_values():
             U_DC.append(float(row[2]))
 
 
-def configure_plot(i=iter(range(1,20))):
+def configure_plot(i=iter(range(1, 20))):
     plt.figure(next(i))
     plt.rc('text', usetex=True)
     plt.rc('font', family='serif')
@@ -55,7 +55,7 @@ def abs_error(x, y, swap_point=-1000000.0):
     a, b = linear_regression(xx, yy)
     calculated = a * xx + b
     nonlinear = max(abs(yy - calculated)) / (max(yy) - min(yy))
-    print("Max error %f" % nonlinear)
+    print("a = %f, b = %f Max error %f" % (a, b, nonlinear))
     return yy - calculated
 
 
