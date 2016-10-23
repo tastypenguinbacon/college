@@ -1,11 +1,11 @@
 \contentsline {section}{\numberline {1}Cel \IeC {\'c}wiczenia}{2}
-\contentsline {section}{\numberline {2}Wykaz aparatury}{2}
-\contentsline {section}{\numberline {3}Wykonanie \IeC {\'c}wiczenia}{2}
-\contentsline {subsection}{\numberline {3.1}Pomiar masy lub si\IeC {\l }y metod\IeC {\k a} mostka niezr\IeC {\'o}wnowa\IeC {\.z}onego}{2}
-\contentsline {subsubsection}{\numberline {3.1.1}konfiguracja p\IeC {\'o}\IeC {\l }-mostka z tensometrami wzd\IeC {\l }u\IeC {\.z}nymi}{2}
-\contentsline {subsubsection}{\numberline {3.1.2}konfiguracja p\IeC {\'o}\IeC {\l }-mostka z tensometrem wzd\IeC {\l }u\IeC {\.z}nym i poprzecznym}{2}
-\contentsline {subsubsection}{\numberline {3.1.3}konfiguracja pe\IeC {\l }nego mostka z tensometrami wzd\IeC {\l }u\IeC {\.z}nymi i poprzecznymi}{2}
-\contentsline {subsection}{\numberline {3.2}Skalowanie tor\IeC {\'o}w pomiarowych w oparciu o obliczone teoretyczne czu\IeC {\l }o\IeC {\'s}ci}{2}
-\contentsline {subsection}{\numberline {3.3}Skalowanie tor\IeC {\'o}w pomiarowych w oparciu o wzorzec masy}{2}
-\contentsline {subsection}{\numberline {3.4}Konfigurowanie tor\IeC {\'o}w pomiarowych w oparciu o oprogramowanie Catman\textregistered \ Express}{2}
-\contentsline {section}{\numberline {4}Wnioski i podsumowanie}{2}
+\contentsline {section}{\numberline {2}Wykonanie \IeC {\'c}wiczenia}{2}
+\contentsline {subsection}{\numberline {2.1}Pomiar masy lub si\IeC {\l }y metod\IeC {\k a} mostka niezr\IeC {\'o}wnowa\IeC {\.z}onego}{2}
+\contentsline {subsubsection}{\numberline {2.1.1}konfiguracja p\IeC {\'o}\IeC {\l }-mostka z tensometrami wzd\IeC {\l }u\IeC {\.z}nymi}{2}
+\contentsline {subsubsection}{\numberline {2.1.2}konfiguracja p\IeC {\'o}\IeC {\l }-mostka z tensometrem wzd\IeC {\l }u\IeC {\.z}nym i poprzecznym}{2}
+\contentsline {subsubsection}{\numberline {2.1.3}konfiguracja pe\IeC {\l }nego mostka z tensometrami wzd\IeC {\l }u\IeC {\.z}nymi i poprzecznymi}{2}
+\contentsline {subsection}{\numberline {2.2}Skalowanie tor\IeC {\'o}w pomiarowych w oparciu o obliczone teoretyczne czu\IeC {\l }o\IeC {\'s}ci}{2}
+\contentsline {subsection}{\numberline {2.3}Skalowanie tor\IeC {\'o}w pomiarowych w oparciu o wzorzec masy}{2}
+\contentsline {subsection}{\numberline {2.4}Konfigurowanie tor\IeC {\'o}w pomiarowych w oparciu o oprogramowanie Catman\textregistered \ Express}{2}
+\contentsline {subsection}{\numberline {2.5}Badanie wp\IeC {\l }ywu rezystancji kabla na b\IeC {\l }\IeC {\k e}dy pomiaru w torze pomiarowym}{2}
+\contentsline {section}{\numberline {3}Wnioski i podsumowanie}{2}

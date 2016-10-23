@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.16)  23 OCT 2016 15:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.16)  23 OCT 2016 23:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**ZM_Jałoszewski_Adrian_5_1a1b_6.tex
-(./ZM_Jałoszewski_Adrian_5_1a1b_6.tex
+**Jałoszewski_Kotowski_gr_1b.tex
+(./Jałoszewski_Kotowski_gr_1b.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -549,8 +549,8 @@ Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-(./ZM_Jałoszewski_Adrian_5_1a1b_6.aux)
-\openout1 = `ZM_Jałoszewski_Adrian_5_1a1b_6.aux'.
+(./Jałoszewski_Kotowski_gr_1b.aux)
+\openout1 = `Jałoszewski_Kotowski_gr_1b.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
 LaTeX Font Info:    ... okay on input line 16.
@@ -684,78 +684,253 @@ LaTeX Font Info:    External font `plex10' loaded for size
  [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./ZM_Jałoszewski_Adrian_
-5_1a1b_6.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+<img/pid_scheme.png, id=8, 1323.94624pt x 559.08875pt>
+File: img/pid_scheme.png Graphic file (type png)
+
+<use img/pid_scheme.png>
+Package pdftex.def Info: img/pid_scheme.png used on input line 24.
+(pdftex.def)             Requested size: 455.24411pt x 192.23746pt.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <12> on input line 3.
+(Font)              <12> on input line 28.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 3.
+(Font)              <8> on input line 28.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 3.
+(Font)              <6> on input line 28.
+ <img/p.png, id=9, 1464.47125pt x 700.6175pt>
+File: img/p.png Graphic file (type png)
 
-Overfull \hbox (1.82616pt too wide) in paragraph at lines 6--6
- [][] []\OT4/cmr/m/n/12 konfiguracja pe�-ne-go most-ka z ten-so-me-tra-mi wzd�u
-�-ny-mi i po-przecz- 
- []
+<use img/p.png>
+Package pdftex.def Info: img/p.png used on input line 34.
+(pdftex.def)             Requested size: 318.66948pt x 152.44722pt.
+ <img/err_p.png, id=10, 1200.485pt x 608.2725pt>
+File: img/err_p.png Graphic file (type png)
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
-
-Overfull \hbox (3.11662pt too wide) in paragraph at lines 9--9
- [][] []\OT4/cmr/m/n/12 Konfigurowanie to-r�w po-mia-ro-wych w opar-ciu o opro-
-gra-mo-wa-nie Catman[] 
- []
-
-)
-\tf@toc=\write3
-\openout3 = `ZM_Jałoszewski_Adrian_5_1a1b_6.toc'.
-
+<use img/err_p.png>
+Package pdftex.def Info: img/err_p.png used on input line 39.
+(pdftex.def)             Requested size: 318.66948pt x 161.4606pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 15.2466pt.
+ Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1]
-LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <14.4> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 29.
+[1 <./img/pid_scheme.png> <./img/p.png>]
+<img/p_noise.png, id=18, 1156.32pt x 539.01375pt>
+File: img/p_noise.png Graphic file (type png)
+ <use img/p_noise.png>
+Package pdftex.def Info: img/p_noise.png used on input line 45.
+(pdftex.def)             Requested size: 318.66948pt x 148.54588pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--39
+<img/err_p_noise.png, id=19, 1139.25626pt x 574.145pt>
+File: img/err_p_noise.png Graphic file (type png)
 
- []
+<use img/err_p_noise.png>
+Package pdftex.def Info: img/err_p_noise.png used on input line 50.
+(pdftex.def)             Requested size: 318.66948pt x 160.59305pt.
+ <img/p_tacho.png, id=20, 820.06375pt x 381.425pt>
+File: img/p_tacho.png Graphic file (type png)
 
+<use img/p_tacho.png>
+Package pdftex.def Info: img/p_tacho.png used on input line 57.
+(pdftex.def)             Requested size: 318.66948pt x 148.2197pt.
+ <img/err_p_tacho.png, id=21, 812.03375pt x 411.5375pt>
+File: img/err_p_tacho.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 32--39
+<use img/err_p_tacho.png>
+Package pdftex.def Info: img/err_p_tacho.png used on input line 62.
+(pdftex.def)             Requested size: 318.66948pt x 161.49742pt.
+ [2 <./img/err_p.png> <./img/p_noise.png> <./img/err_p_noise.png>] <img/p_noise
+_tacho.png, id=25, 1208.515pt x 568.1225pt>
+File: img/p_noise_tacho.png Graphic file (type png)
 
- []
+<use img/p_noise_tacho.png>
+Package pdftex.def Info: img/p_noise_tacho.png used on input line 68.
+(pdftex.def)             Requested size: 318.66948pt x 149.80621pt.
 
-[2] (./ZM_Jałoszewski_Adrian_5_1a1b_6.aux) ) 
+<img/err_p_noise_tacho.png, id=26, 1192.455pt x 606.265pt>
+File: img/err_p_noise_tacho.png Graphic file (type png)
+
+<use img/err_p_noise_tacho.png>
+Package pdftex.def Info: img/err_p_noise_tacho.png used on input line 73.
+(pdftex.def)             Requested size: 318.66948pt x 162.01009pt.
+ [3 <./img/p_tacho.png> <./img/err_p_tacho.png> <./img/p_noise_tacho.png>] <img
+/pi.png, id=30, 1331.97626pt x 613.29124pt>
+File: img/pi.png Graphic file (type png)
+
+<use img/pi.png>
+Package pdftex.def Info: img/pi.png used on input line 86.
+(pdftex.def)             Requested size: 318.66948pt x 146.72499pt.
+ <img/err_pi.png, id=31, 1133.23375pt x 571.13374pt>
+File: img/err_pi.png Graphic file (type png)
+
+<use img/err_pi.png>
+Package pdftex.def Info: img/err_pi.png used on input line 91.
+(pdftex.def)             Requested size: 318.66948pt x 160.60483pt.
+ [4 <./img/err_p_noise_tacho.png> <./img/pi.png>]
+<img/pi_tacho.png, id=36, 994.71625pt x 468.75125pt>
+File: img/pi_tacho.png Graphic file (type png)
+ <use img/pi_tacho.png>
+Package pdftex.def Info: img/pi_tacho.png used on input line 97.
+(pdftex.def)             Requested size: 318.66948pt x 150.16797pt.
+
+<img/err_pi_tacho.png, id=37, 975.645pt x 505.89pt>
+File: img/err_pi_tacho.png Graphic file (type png)
+ <use img/err_pi_tacho.png>
+Package pdftex.def Info: img/err_pi_tacho.png used on input line 102.
+(pdftex.def)             Requested size: 318.66948pt x 165.23825pt.
+
+<img/pi_noise_tacho.png, id=38, 1104.125pt x 513.92pt>
+File: img/pi_noise_tacho.png Graphic file (type png)
+
+<use img/pi_noise_tacho.png>
+Package pdftex.def Info: img/pi_noise_tacho.png used on input line 108.
+(pdftex.def)             Requested size: 318.66948pt x 148.32721pt.
+
+<img/err_pi_noise_tacho.png, id=39, 1078.0275pt x 547.04375pt>
+File: img/err_pi_noise_tacho.png Graphic file (type png)
+
+<use img/err_pi_noise_tacho.png>
+Package pdftex.def Info: img/err_pi_noise_tacho.png used on input line 113.
+(pdftex.def)             Requested size: 318.66948pt x 161.71039pt.
+ [5 <./img/err_pi.png> <./img/pi_tacho.png> <./img/err_pi_tacho.png>] [6 <./img
+/pi_noise_tacho.png> <./img/err_pi_noise_tacho.png>] <img/tri_scheme.png, id=47
+, 1303.87125pt x 572.1375pt>
+File: img/tri_scheme.png Graphic file (type png)
+
+<use img/tri_scheme.png>
+Package pdftex.def Info: img/tri_scheme.png used on input line 122.
+(pdftex.def)             Requested size: 455.24411pt x 199.76224pt.
+ <img/tri.png, id=48, 849.1725pt x 865.2325pt>
+File: img/tri.png Graphic file (type png)
+
+<use img/tri.png>
+Package pdftex.def Info: img/tri.png used on input line 129.
+(pdftex.def)             Requested size: 250.38564pt x 255.12256pt.
+ <img/err_tri.png, id=49, 845.1575pt x 854.19125pt>
+File: img/err_tri.png Graphic file (type png)
+
+<use img/err_tri.png>
+Package pdftex.def Info: img/err_tri.png used on input line 134.
+(pdftex.def)             Requested size: 250.38564pt x 253.06606pt.
+ [7 <./img/tri_scheme.png> <./img/tri.png>]
+<img/tri_noise.png, id=53, 806.01125pt x 819.06pt>
+File: img/tri_noise.png Graphic file (type png)
+ <use img/tri_noise.png>
+Package pdftex.def Info: img/tri_noise.png used on input line 140.
+(pdftex.def)             Requested size: 250.38564pt x 254.43088pt.
+
+<img/err_tri_noise.png, id=54, 805.0075pt x 826.08624pt>
+File: img/err_tri_noise.png Graphic file (type png)
+
+<use img/err_tri_noise.png>
+Package pdftex.def Info: img/err_tri_noise.png used on input line 145.
+(pdftex.def)             Requested size: 250.38564pt x 256.94122pt.
+ [8 <./img/err_tri.png> <./img/tri_noise.png>]
+<img/tri_tacho.png, id=58, 847.165pt x 862.22125pt>
+File: img/tri_tacho.png Graphic file (type png)
+ <use img/tri_tacho.png>
+Package pdftex.def Info: img/tri_tacho.png used on input line 152.
+(pdftex.def)             Requested size: 250.38564pt x 254.82669pt.
+
+<img/err_tri_tacho.png, id=59, 844.15375pt x 859.21pt>
+File: img/err_tri_tacho.png Graphic file (type png)
+
+<use img/err_tri_tacho.png>
+Package pdftex.def Info: img/err_tri_tacho.png used on input line 157.
+(pdftex.def)             Requested size: 250.38564pt x 254.85446pt.
+ [9 <./img/err_tri_noise.png> <./img/tri_tacho.png>] <img/tri_noise_tacho.png, 
+id=63, 843.15pt x 862.22125pt>
+File: img/tri_noise_tacho.png Graphic file (type png)
+
+<use img/tri_noise_tacho.png>
+Package pdftex.def Info: img/tri_noise_tacho.png used on input line 163.
+(pdftex.def)             Requested size: 250.38564pt x 256.05025pt.
+
+<img/err_tri_noise_tacho.png, id=64, 837.1275pt x 857.2025pt>
+File: img/err_tri_noise_tacho.png Graphic file (type png)
+
+<use img/err_tri_noise_tacho.png>
+Package pdftex.def Info: img/err_tri_noise_tacho.png used on input line 168.
+(pdftex.def)             Requested size: 227.62206pt x 233.06967pt.
+ [10 <./img/err_tri_tacho.png> <./img/tri_noise_tacho.png>] <img/two.png, id=68
+, 815.045pt x 834.11626pt>
+File: img/two.png Graphic file (type png)
+ <use img/two.png>
+Package pdftex.def Info: img/two.png used on input line 177.
+(pdftex.def)             Requested size: 227.62206pt x 232.94003pt.
+
+<img/err_two.png, id=69, 791.95876pt x 820.06375pt>
+File: img/err_two.png Graphic file (type png)
+ <use img/err_two.png>
+Package pdftex.def Info: img/err_two.png used on input line 182.
+(pdftex.def)             Requested size: 227.62206pt x 235.69768pt.
+
+[11 <./img/err_tri_noise_tacho.png> <./img/two.png>]
+<img/two_noise.png, id=73, 734.745pt x 746.79pt>
+File: img/two_noise.png Graphic file (type png)
+ <use img/two_noise.png>
+Package pdftex.def Info: img/two_noise.png used on input line 188.
+(pdftex.def)             Requested size: 227.62206pt x 231.35437pt.
+
+<img/err_two_noise.png, id=74, 738.76pt x 747.79375pt>
+File: img/err_two_noise.png Graphic file (type png)
+
+<use img/err_two_noise.png>
+Package pdftex.def Info: img/err_two_noise.png used on input line 193.
+(pdftex.def)             Requested size: 227.62206pt x 230.39877pt.
+ [12 <./img/err_two.png> <./img/two_noise.png>]
+<img/two_tacho.png, id=79, 705.63625pt x 712.6625pt>
+File: img/two_tacho.png Graphic file (type png)
+ <use img/two_tacho.png>
+Package pdftex.def Info: img/two_tacho.png used on input line 200.
+(pdftex.def)             Requested size: 227.62206pt x 229.88354pt.
+
+<img/err_two_tacho.png, id=80, 692.5875pt x 710.655pt>
+File: img/err_two_tacho.png Graphic file (type png)
+
+<use img/err_two_tacho.png>
+Package pdftex.def Info: img/err_two_tacho.png used on input line 205.
+(pdftex.def)             Requested size: 227.62206pt x 233.55177pt.
+ [13 <./img/err_two_noise.png> <./img/two_tacho.png>] <img/two_noise_tacho.png,
+ id=84, 806.01125pt x 825.0825pt>
+File: img/two_noise_tacho.png Graphic file (type png)
+
+<use img/two_noise_tacho.png>
+Package pdftex.def Info: img/two_noise_tacho.png used on input line 211.
+(pdftex.def)             Requested size: 227.62206pt x 232.99811pt.
+
+<img/err_two_noise_tacho.png, id=85, 806.01125pt x 828.09375pt>
+File: img/err_two_noise_tacho.png Graphic file (type png)
+
+<use img/err_two_noise_tacho.png>
+Package pdftex.def Info: img/err_two_noise_tacho.png used on input line 216.
+(pdftex.def)             Requested size: 227.62206pt x 233.84846pt.
+ [14 <./img/err_two_tacho.png> <./img/two_noise_tacho.png>] [15 <./img/err_two_
+noise_tacho.png>]
+(./Jałoszewski_Kotowski_gr_1b.aux) ) 
 Here is how much of TeX's memory you used:
- 3154 strings out of 493029
- 42399 string characters out of 6136234
- 116583 words of memory out of 5000000
- 6622 multiletter control sequences out of 15000+600000
- 15171 words of font info for 43 fonts, out of 8000000 for 9000
+ 3291 strings out of 493029
+ 45336 string characters out of 6136234
+ 114386 words of memory out of 5000000
+ 6734 multiletter control sequences out of 15000+600000
+ 14153 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,10n,43p,817b,236s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fon
-ts/enc/dvips/pl/plrm.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plbx10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/pl/plr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/pl/plr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr8.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsl12.pfb>
-Output written on ZM_Jałoszewski_Adrian_5_1a1b_6.pdf (3 pages, 66780 bytes).
+ 37i,11n,43p,813b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/d
+vips/pl/plms.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/u
+sr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}</usr/share/texlive/tex
+mf-dist/fonts/type1/public/pl/plbx12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/pl/plmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/
+plmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr12.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/pl/plsl12.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/pl/plsy10.pfb>
+Output written on Jałoszewski_Kotowski_gr_1b.pdf (16 pages, 1700861 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 
