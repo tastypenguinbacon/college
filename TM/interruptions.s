@@ -1,21 +1,31 @@
 .ORG 0
-    JMP     start
-    
-.ORG 0BH
-    JMP     interrupted_by_timer
+    SJMP    main
 
-.ORG 030H
-start:
-    MOV     TMOD,   #1  ; set timer mode to 16 bits
-    MOV     TL0,    #0FFh
-    MOV     TH0,    #0FFh 
-    MOV     EA,     #1  ; enable global interrupts
-    SETB    TR0         ; start timer 0
-    JMP     $           ; whie (true)
-interrupted_by_timer:
+.ORG 0x0B
+    ljmp timer
+    
+.ORG 0x30
+main:
+    SETB    EA
+    SETB    ET0
+    SETB    TR0
+    MOV     R1,      #0x7f
+    mov     TL0,     R1
+    JMP     $
+timer:
+    CJNE    P1,     #1,     zero_value
+one_value:
     CLR     TR0
-    MOV     TL0     #0FFh
-    MOV     TH0     #0FFh
-    XRL     A,      #0FFh
-    MOV     P0,     A
+    MOV     P1,     #0
+    MOV     TL0,    R1
+    SETB    TR0
     RETI
+zero_value:
+    CLR     TR0
+    MOV     P1,     #1
+    MOV     A,      #Oxff
+    SUBB    A,      R1
+    MOV     TL0,    A
+    SETB    TR0
+    RETI
+END
