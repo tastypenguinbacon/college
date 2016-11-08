@@ -1,17 +1,22 @@
 .ORG 0
-    SJMP    main
+    LJMP    main
 
-.ORG 0x0B
-    ljmp timer
+.ORG 0x03
+    LJMP    change
     
+.ORG 0x0B
+    LJMP    timer
+
 .ORG 0x30
 main:
     SETB    EA
     SETB    ET0
     SETB    TR0
     MOV     R1,      #0x7f
-    mov     TL0,     R1
+    MOV     TL0,     R1
+    SETB    IT0
     JMP     $
+    
 timer:
     CJNE    P1,     #1,     zero_value
 one_value:
@@ -27,5 +32,11 @@ zero_value:
     SUBB    A,      R1
     MOV     TL0,    A
     SETB    TR0
+    RETI
+    
+change:
+    CLR     EA
+    INC     R1
+    SETB    EA
     RETI
 END
