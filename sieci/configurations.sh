@@ -1,3 +1,8 @@
+# ważne uwagi wstępne: 
+1.) CLI w Cisco ma autouzupełnienia - jeżeli wpiszesz wystarczająco, to może być dany biały znak
+2.) Jeżeli dasz w CLI Cisco "?" po jakiejś komendzie, to wskaże ci możliwe uzupełnienia
+3.) tabulator uzupełnia tekst do pełnej formy
+
 # ważne elementy składniowe:
 do  # pozwala na wykonanie czegoś tak jakby się nie weszło w konfiguracje
 no  # wyłącza daną opcję w konfiguracji
