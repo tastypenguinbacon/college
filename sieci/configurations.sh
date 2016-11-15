@@ -112,3 +112,38 @@ Kwiatek(config)# vlan 50
 # bazowa ilość VLAN to 5, tworzenie nowych zwiększa tę liczbę
 Kwiatek(config)# vtp mode transparent   # ustawienie vtp jako transparendt
 Kwiatek(config)# vtp mode server        # guess what
+
+####################################################################################
+#                                                                                  #
+#                         Kanały komunikacyjne i STP                               #
+#                                                                                  #
+####################################################################################
+
+# konfigurowanie Telnet - najpierw postawić jakieś interfejsy fa z adresami IP
+Kwiatek(config)# line vty 0 15  # konfigurujemy linie zakres 0-15
+Kwiatek(config-line)# password "ściśle tajne" # ustanowienie lokalnego hasła przy logowaniu
+Kwiatek(config-line)# login # ustanowienie nakazu używania lokalnego hasła przy logowaniu
+Kwiatek(config-line)# transport input telnet    # zezwolenie na ruch telnet z wykorzystaniem wybranych linii
+Kwiatek(config)# no aaa new-model   # login jest blokowane jeżeli jest new-model - sprawdzamy to przy pomocy #show run
+
+Kwiatek(config)# enable password "ściśle tajne" # aby można było wejść w enable - bez hasła nie da się
+
+# konfigurowanie SSH
+Kwiatek(config)# ip domain-name "nazwa domeny"  # należy ustawić domenę internetową dla przełącznika, musi być
+Kwiatek(config)# hostname "nazwa hosta" # należy ustawić nazwę hosta, musi być inna niż domyślna
+Kwiatek(config)# crypto key generate rsa    # zapyta o ilość bitów, odpowiedź z przedziału 360-2048
+Kwiatek# show ip ssh
+Kwiatek(config)# aaa new-model  # przełączam
+
+Kwiatek(config)# username "nazwa" priv 15 password 0 "hasło"    # 0 - jawny tekst, 7 - szyfrowane, 15 - priorytet użytkownika (najwyższy)
+Kwiatek(config)# line vty 0 15
+Switch(config-line)# transport input ssh    # Włącza ssh
+
+Switch(config-line)# transport input none   # W niektórych wersjach CatOSa wyłącza to transport inputy
+
+# Ograniczenie dostępu przez linie
+Kwiatek(config)# access-list 55 permit 192.168.1.0 0.0.0.255 # filtruje adresy IP, które mogą, maska w inwersji
+Kwiatek(config)# line vty 0 15
+Kwiatek(config-line)# access-class 55 in
+
+# TODO Podpunkt B i dalej
