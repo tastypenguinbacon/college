@@ -1,0 +1,290 @@
+\documentclass[a4paper, 12pt, titlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\title{Notatki z sieci komputerowych}
+\author{Adrian Jałoszewski}
+\date{}
+
+\begin{document}
+	\maketitle
+	\begin{abstract}
+		Częściowo stworzone z nudów, częściowo dla pozbierania wszystkich sensownych informacji w jednym miejscu (aby nie były porozrzucane w losowych miejscach na prezentacjach). Ogólnie bez konfiguracji specyficznej pod Cisco, rozłożone na ładnych stronach A4.
+	\end{abstract}
+	\tableofcontents
+	\newpage
+	\section{NAT + IPv6}
+		\subsection{NAT}
+			NAT może dokonywać translacji w trybie:
+			\begin{itemize}
+				\item Jeden adres ip $\leftrightarrow$ jeden adres
+				\item Wiele adresów IP (pula IP) $\leftrightarrow$ jeden adres
+				\item Wiele adresów IP $\leftrightarrow$ wiele adresów IP
+			\end{itemize}
+			Konwersja nie musi być wiązana z przejściem datagramu przez bramkę -- możliwe jest użycie tzw. rutera na patyku (router on a stick), gdzie datagram po konwersji wraca do tej samej sieci
+			\newline 
+			\newline 
+			Z reguły NAT operuje na trzech blokach adresów przypisanych do tzw. sieci prywatnych. Znaczna większość ruterów nie posiada jedneak ograniczenia NAD do adresacji sieci prywatnej. Bloki adresów traktowanych jako przynależne do sieci prywatnych:
+			\begin{itemize}
+				\item Klasa A: 10.0.0.0 -- 10.255.255.255
+				\item Klasa B: 172.16.0.0 -- 172.31.255.255
+				\item Klasa C: 192.168.0.0 -- 192.168.255.255
+			\end{itemize}
+			\subsubsection{Overloading}
+				Overloading umożliwia stworzenie relacji typu ,,jeden do wielu'' pomiędzy adresami IP podczas translacji (NAT). NAT bez trybu overloading pozwala tylko na translację kolejnych adresów IP na kolejne inne.
+				\newline
+				\newline
+				W większości ruterów funkcjonalność NAT jest konfigurowalna w oparciu o tzw. pule adresów IP (w ten sposób określa się zakres adresów). Kontrola procesu translacji jest regulowana przez standardowe listy kontrolne (ACL)
+				\newline
+				\newline
+				Wyróżniane są dodatkowe interfejsy pomiędzy którymi następuje translacja:
+				\begin{itemize}
+					\item inside
+					\item outside
+				\end{itemize}
+				W trybie overloading możliwe jest zdefiniowanie puli adresów -- lecz wtedy tylko jedno-adresowej i przypisanie jej do interfejsu inside (z tego interfejsu odbierane są datagramy od różnych nadawców -- więc z różnymi adresami IP do konwersji na ,,adres nadawcy'' w outside).
+			\subsubsection{Rodzaje adresów}
+				Podział ze względu na występowanie:
+				\begin{itemize}
+					\item Adres local -- występujący w datagramach sieci inside (prywatnej)
+					\item Adres global -- występujący w datagramach IP w sieci outside
+				\end{itemize}
+				Z zachowaniem tego podziału w NAT występują 4 rodzaje adresów:
+				\begin{itemize}
+					\item inside local -- adres hosta w sieci prywatnej (inside)
+					\item inside global -- adres interfejsu IP w sieci prywatnej, który jest nadawcą datagramów do sieci publicznej po konwersji (występuje w imieniu hostów z sieci prywatnej). Gdy wybieramy opcję overloading adres ten będzie adresem interfejsu outside w ruterze NAT. W przeciwnym wypadku -- interfejsu inside w tym ruterze. 
+					\item outside global -- rzeczywisty adres hosta w sieci publicznej (outside)
+					\item outside local -- adres hosta z sieci publicznej, pod którym występuje on w sieci prywatnej (przeważnie taki sam jak outside global)
+				\end{itemize}
+		\subsection{Adresowanie IPv6}
+			\subsubsection{Adresacja}
+				IPv6 posiada adresy 128 bitowe. Maska jest zapisywana na końcu po znaku /. Ogólnie są zapisywane jako pełna notacja szesnastkowa z dwukropkami co 16 bitów, możliwe jest pomijanie zer (6A2E:0:0:0:0:0:B6:A25E = 6A2E::B6:A25E).
+				\newline\newline
+				Adres IPv6 składa się z następujących części:
+				\begin{itemize}
+					\item 3 bity Format (prefix)
+					\item 13 bitów TLA (Top Level Aggregation) ID -- określają identyfikator dostawcy pierwszego poziomu (Top Level Aggregator) -- odpowiadają wpisom w globalnej tablicy rutowania, może ich być 8192, ilość tę można w przyszłości powiększyć biorąc bity z 8 zarezerwowanych
+					\item 8 bitów -- zarezerwowane
+					\item 24 bity NLA (Next Level Aggregation) ID -- identyfikator dostawcy drugiego poziomu (Next Level Aggregator) -- powinny określać cel w ramach jednego TLA, typowo jeden identyfikator może być przyznawany jednej instytucji
+					\item 16 bitów SLA (Site Level Aggregation) ID -- lokalny identyfikator sieci -- pozwala na określenie podsieci lokalnych, może ich być 65535
+					\item 64 bity -- identyfikator interfejsu -- jest kojarzony z adresem Ethernet (MAC), ale przeznaczono na niego 65, a nie 48 bitów. Często konstruuje się go z MAC wstawiając po 3-cim bajcie MAC dodatkowe 16 bitów o wartoci 0xFFFE.
+				\end{itemize}
+			\subsubsection{EUI-64}
+				Notacja EUI-64 (64-bIT eXTENDED Unique Identifier) -- gdy istnieje interface id (64-bitowa najmłodsza część adresu IPv6) zawiera MAC address (48 bitów) uzupełniony pośrodku wartością 0xFFFE (np. dla Cisco 5555:1111:1111:1111::/64 eui-64)interfejs otrzyma adres będący połączeniem powyższej konstrukcji i MAC (dodatkowo 7-my najstarszy bit MAC jest ustawiany na wartość 1).
+				\begin{itemize}
+					\item 2000::/3 -- Global Unicast
+					\item fc00::/7 -- Unique Local Unicast
+					\item fe80::/10 - Link Local Unicast
+				\end{itemize}
+			\subsubsection{Adresy specjalne i prefiksy}
+				Przeznaczenie adresu IP określa jego prefiks (określany jako pewn ilość najstarszych bitów przy odpowiedniej masce), np.:
+				\begin{itemize}
+					\item ::/128 -- adres nie wyspecyfikowany (odpowiednik 0.0.0.0/32 w IPv4) -- używany do określania dozwolonych klientów dla połączeń
+					\item ::/0 -- używany do określenia default routes przy rutowaniu (odpowiednik 0.0.0.0/0 w IPv4)
+					\item ::1 - odpowiednik 127.0.0.1 w IPv4
+					\item fc80:prefix::/10 -- unique local address, służący do (unikatowego także w przypadku wydostania się poza bieżącą sieć) adresowania hostów lokalnych. Nierutowalny,. Często uzupełniany przez EUI-64. Prefix to 41+16 bitów (subnet+ link ID).
+					\item fe80::/10 -- link-local prefix (odpowiednik adresu auto-konfiguracji \linebreak169.254.0.0/16 w IPv4), każdy interfejs go posiada awaryjnie, często uzupełniony przez EUI-64.
+					\item fec0::/7 -- unikatowe adresy lokalne (site local), nie przeznaczone do rutowania (lub rutowalne w bardzo ograniczonych sytuacjach w grupie kilku wyróżnionych węzłów sieci)
+					\item 2001::/?, 2002::? -- adresy przeznaczone do tunelowania (różne technologie, przy maskach '?')
+					\item ff01::?, ff02::?, ff05?=::? - adresy multicast przeznaczone do wspierania funkcji specjalnych (cyfra zmienna oznacza liczbę, która identyfikuje kolejną funkcję). Przykładowe funkcje to ruch związany z procesami rutowania (np. identyfikacja ruterów, protokoły RIPng, OSPF, EIGRP dla IPv6), DHCP, propagowanie nazwenictwa sieci i łącz, DNS, NTP i inne
+					\item ff::0/8 są zarezerwowane
+				\end{itemize}
+			\subsubsection{Cechy interfejsów IPv6}
+				Interfejs może mieć wiele adresów IPv6, np: kilka link-local address, global address itp. Adresy mogą być trwałe lub tymczasowe (mogę być użyte tylko dla konkretnego połączenia wychodzącego identyfikując klient + usługę na bazie treści adresu IPv6). \newline \newline 
+				Istnieją konfigurowalne ,,tablice preferencji'' łączące każdy prefiks danego adresu (routing prefix) z tzw. precedence level (liczbę będącą priorytetem). W przypadku posiadania (np. chwilowego) danego adresu możliwe jest podjęcie decyzji, którego adresu użyć np. jako źródłowego dla połączenia wychodzącego.
+				\newline \newline
+				Każdy adres IPv6 ma czas życia (domyślnie skonfigurowany jako nieskończony). Ruter konfigurujący adresy zdalnych interfejsów IPv6 może wymieniać ich adresy podając interfejsom dodatkową wartość lifetime adresu. Przeterminowany adres IPv6 przechodzi w interfejsie ze stanu preferred do deprecated (dalej może być używany lecz bez nawiązywania nowych połączeń). Po dalszym czasie przechodzi do stanu invalid i może być przypisany innemu interfejsowi.
+			\subsection{IPv6 multicast}
+				Zawiera:
+				\begin{itemize}
+					\item 8-bitowy prefiks o wartości 0xFF
+					\item 4-bitowe pole flag (3 bity używane)
+					\item 4-bitowe pole scope field identyfikujące unikatowość adresu i (częściowo) przynależność do konkretnej usługi oraz przede wszystkim zasięg w jakim znajdować się mogą odbiorcy datagramu
+					\item 112-bitowe pole identyfikatora grupy multicast
+				\end{itemize}
+				Adresy IPv6 multicast są powszechnie użytkowane do wspierania protokołów Internetu zarządzających ruchem nad IPv6.
+				\newline \newline
+				Istotne wartości pola scope decydującego o klasyfikacji ruchu IPv6 multicast (x to dowolna liczba z przedziału od 1 do 8)
+				\begin{itemize}
+					\item ff00::/128-ff0f::/128 -- zarezerwowane
+					\item ffx1::/16 -- Intrface-local -- datagramy nie wychodzą poza localhost (możliwe jest rozgłaszanie w obrębie jednego hosta z prezkazaniem ruchu do wielu aplikacji)
+					\item ffx2::16 - Link-local -- z przeznaczeniem dla lokalnego segmentu sieci, datagramy nie będą rutowane (odpowiedznik IPv4 224.0.0.0/24)
+					\item ffx5::16 -- Site-local -- z przeznaczeniem dla lokalnej sieci fizycznej -- w tym przypadku dodatkowo (zależnie od specyfiki urządzeń) -- ruch może być blokowany w urządzeniach konwertujących medium (np. w Access Point WiFi)
+					\item ffxe::/16 - Global scope -- zwykłe i rutowalne grupy IPv6 multicast
+				\end{itemize}
+			\subsubsection{Rutowanie i maski}
+				W przypadku hostów nie stosuje się przypisań masek do interfejsów. Natywne rozgraniczeni prefiksu sieci następuje w połowie długości adresu (młodsze 64 bity to identyfikator interfejsu). Inne niż /64 maski definiowane są w ruterach dla sieci bezpośrednio podłączonyc. W praktyce tylko dla tych, które nie zawierają hostów docelowych.
+				\newline 
+				\newline
+				Host posiada tablicę rutowania. Domyślna reguła powinna kierować ruch na bramkę (uwage -- dotyczy ona wszystkich adresów nie link--local). W zależności od wybranego adresu różne jest zachowanie hosta-nadawcy (inny adres źródłowy w datagramie IP, inna interpretacja lokalnej tablicy rutowania). Np. gdy wyślemy pakiet multicast typu global scope zostanie użyty adres nadawcy global. Gdy local scope -- adres nadawcy unicast local scope.
+			\subsubsection{Mapowanie IPv4}
+				Użytkowanie IPv6 jest obecnie w dużej mierze oparte na tunelach wykorzystujących poprzednią wersję protokołu. Technika ta określana jest skrótem \textbf{6to4}. Mapowanie adresów IPv4:
+				$$
+					2002:xxxx:xxxx::/16
+				$$
+				gdzie $xxxx:xxxx$ to adres IPv4. Istnieją także adresy IPv6 mapowane z IPv4:
+				$$
+					::FFFF:x.x.x.x/96
+				$$
+				lub
+				$$
+					::x.x.x.x/96
+				$$
+				gdzie $x.x.x.x$ to adres IPv4 (stosuje się tu notację dziesiętną, która jest z automatu zamieniana na hex).
+			\subsubsection{Tunelowanie IPv6 -- mechanizm 6in4}
+				Mechanizm polega na umieszczeniu datagramów IPv6 w tunelach punkt--punkt tworzonych w sieciach IPv4 (następuje enkapsulacja). Do oznaczenia protokołu tunelowanie 6in4 w datagramach IP wykorzystywana jest wartość 41. Tunele są zestawiane manualnie przez odpowiednią konfigurację ruterów-bramek. Istnieje możliwość zestawienia tuneli ,,dynamicznych'' ('proto-41heartbeat' tunnels) -- gdzie przeciwległy koniec tunelu może migrować pomiędzy kilkoma hostami (ruterami). Nowy adres tunelu jest przekazywany przez komunikat heartbeat.
+				\newline \newline 
+				Mechanizm ten nie wymaga ręcznego konfigurowania tuneli pomiędzy sieciami IPv6. Bazuje na stosowaniu indywidualnych hostów 6to4 lub ruterów brzegowych 6to4 ekranujących całe sieci IPv6 (tzn. wyspy IPv6). W obydwu przypadkach wymagane jest posiadanie adresu IPv4 w sieci globaclnej. Emulowany jest wówczas pseudo-interfejs IPv6 o adresie: 2002:xxxx:xxxx::/48 gdzie xxxx:xxxx to globalny adres IP. Ruter 6to4 automatycznie turneluje datagramy IPv6 gdy posiadają one prefiks 20002:. 
+				\newline \newline
+				Tunele także korzystają z protokołu tunelowania z wykorzystywaniem wartości identyfikatora protokołu: 41, lecz adresy końców tuneli są generowane na podstawie treści IPv6.
+			\subsubsection{Użytkowanie adresów IPv6 w systemie operacyjnym}
+				W przypadku typowania URL stosujemy nawias [ ] -- należy go wpisać do UR, np:
+				\begin{itemize}
+					\item http://[adres IPv6]/ 
+					\item https://[adres IPv6]:443/
+				\end{itemize}
+				Ścieżka UNC wykorzystująca IPv6 wygląda następująco (kreski zamiast :, oraz przyrostek DNS typujący adres IPv6): \newline
+				$\backslash \backslash$1111-1-1-1-1-1-1-1111.ipv6-literal.net
+				\newline
+				\newline
+				W DNS do konwersji (name resolving) służy rekord AAAA, analogicznie do rekordu A w przypadku IPv4.
+				\newline 
+				\newline
+				Istnieje protokół ICMPv6 - analog do ICMP w IPv4
+			\subsubsection{NAT w IPv6}
+				NAT z uwagi na szeroki zakres adresacyjny nie jest z nie jest technologią bezpośrednio z IPv6 powiązaną (powstał jako odpowiedź na braki adresów w IPv4). Implementowane jest prowadzenie kowersji host-host (bez overloading) -- tehchnologia nosi nazwę NAT66. Jest to tak zwany wariant stateless.
+				\newline \newline
+				NAT stosowany jest tdość często do prowadzenia konwersji IPv4 $\leftrightarrow$ IPb6 -- gdy hosty nie posiadające przeciwległych adresów potrzebują się komunikować -- technologia nosi nazwę NAT65. W jej przypadku konieczna jest translacja wszystkiego, co napływa do interfejsu IPv6 (nie są definiowane pule adresów IP). Po stronie IPv6 technika używa pseudo-interfejsów IPv6 (generuje adresy IPv6 nadawcy). Po stronie IPv4 używany jest adres urządzenia, które dokonuje translacji rutera.
+	\newpage
+	\section{Rutowanie IPv4, BGP}
+		\subsection{Border Gatway Protocol}
+			\subsubsection{Ogólne wiadomości}
+				BGP -- jest to \textit{Border Gateway Protocol}. Protokół ten pracuje przy pomocy TCP (port 179) i dzieli się na protokół typu exterior (EGP) oraz interior (IGP). Wykorzystuje wielowarstwowe sesje między ruterami (peering) -- tworzy relacje pomiędzy ruterami, na których pracuje: 
+				\begin{itemize}
+					\item Wewnętrzne, internal (iBGP) -- pomiędzy ruterami w tym samym Systemie Autonomicznym
+					\item Zewnętrzne, external (eBGP) -- pomiędzy ruterami w różnych systemach autonomicznych
+				\end{itemize}
+				Różnice między eBGP, a iBGP:
+				\begin{itemize}
+					\item domyślna wartość TTL w datagramach IP eBGP to 1 (tylko to najbliższego rutera w innym AS), dla iBGP jest to najczęściej 64
+					\item Administrative Distance w tablicy rutowania wynosi 20 dla eBGP i 200 dla iBGP (Cisco)
+					\item iBGP przesyła dodatkowe dane dotyczące LOCAL-PREFERENCE
+				\end{itemize}
+			\subsubsection{Internal BGP (iBGP)}
+				Ten wariant protokołu operuje w jednym systemie autonomicznym (jako IGP). Zaletą rozwiązania jest brak konieczności konwertowania komunikatów o trasach pomiędzy AS (jak to miało miejsce np. w OSPF).
+				\newline
+				\newline
+				Rutery iBGP mogą:
+				\begin{itemize}
+					\item przekazywać między sobą informacje o prefiksach z innych AS
+					\item przekazywać informacje o prefiksach do innych AS
+					\item odbierać informacje o prefiksach z innych AS
+				\end{itemize}	
+				Rutery iBGP nie mogą przekazywać informacji o prefiksach z innych ruterów w swoim AS między sobą (zapętlenia). Dlatego -- w przypadku iBGP (aby ruter posiadał informacje o komplecie prefiksów) -- konieczne jest utrzymywanie secji pomiędzy ruterami iBGP w trybie ,,każdy z każdym'' przez TCP -- full mesh. Generuje to jednak duży ruch -- ruch ten niekoniecznie przebiega tylko po segmencie sieci współdzielonej przez dwa rutery uczestniczące w sesji iBGP (TCP może korzystać z wielu innych segmentów).
+				\newline \newline 
+				Dwie techniki skalowania iBGP:
+				\begin{itemize}
+					\item Konfederacje Systemów Autonomicznych (AS Confederations) -- stworzenie kilku fikcyjnych systemów autonomicznych w istniejącym już AS i skonfigurowaniu ruterów do wymiana ruterów pomiędzy nimi (uwaga -- trzeba kontrolować możliwość zapętleń)
+					\item Route Reflector (RR) -- zdefiniowanie rutera ze zmodyfikowaną implementacją iBGP wyjątkowo pozwalającą na przekazywanie informacji o prefiksach w bieżącym AS do innych wyróżnionych ruterów iBGP (zwanych RRC -- Route REflector Client)
+					\begin{itemize}
+						\item dzieli obszar działania na części -- radykalnie zmniejsza liczbę sesji
+						\item w jednym AS może występować wiele RR
+						\item RR przekazuje komunikaty od klientów RR do innych ruterów iBGP
+						\item RR nie przekazuje komunikatów pomiędzy innymi ruterami iBGP (nie-klientami)
+						\item RR nie przyjmuje komunikatów od innych RR (mogą być jednak klientami)
+					\end{itemize}
+				\end{itemize}
+			\subsubsection{Ogólne zasady komunikacji w BGP}
+				Przestrzeń działania BGP (Internet) dzielona jest na systemy autonomiczne (AS - Autonomic System). Są one identyfikowane 16-bitowymi liczbami (powyżej 65 000 zarezerwowane do testów). Komunikacja odbywa się w oparciu o wiadomości:
+				\begin{itemize}
+					\item OPEN (otwarcie połączenia) -- pierwsza wiadomość wysyłana przez obie strony, jak przyjęta i zaakceptowana, to w zwrocie jest KEEPALIVE
+					\item KEEPALIVE (potwierdzenie aktualności) -- wysyłane ciągle z wynegocjowaną podczas otwierania sesji BGP częstotliwością
+					\item UPDATE (wprowadzenie zmian) -- przesyłanie między połączonymi routerami informacji o prefiksach oraz o ich dezaktualizacji 
+					\item NOTIFICATION (obsługa awarii) -- wysyłanie w przypadku błędu, powoduje zamknięcie sesji między ruterami BGP
+				\end{itemize}
+			\subsubsection{Prefiksy i ich atrybuty}
+				Prefiks to ogólnie zakres adresów IP określony adresem sieci i maską (dowolną -- VLSM). W BGP jest on opisywany wieloma dalszymi cechami. Informacja jest przesyłana w komunikatach BGP. Inne znaczenie prefiksu -- informacja o zdalnej sieci posiadana przez dany ruter, powiązana z ID docelowego systemu autonomicznego, w którym sieci opisane prefiksem się znajdują.
+				\newline \newline
+				Klasy atrybutów w prefiksach:
+				\begin{itemize}
+					\item Powszechne Obowiązkowe (Well-known Mandatory)
+					\item Powszechne Dowolne (Well-known Discretionary)
+					\item Opcjonalne Przechodnie (Optional Transitive)
+					\item Opcjonalne Nieprzechodnie (Optional Non-transitive)
+				\end{itemize}
+				Atrybuty Well-known muszą być rozpoznawalne przez wszystkie implementacje BGP i obowiązkowo przetwarzane. Atrybuty przechodnie przekazywane są dalej do następnych ruterów.
+				\newline \newline
+				Lista parametrów:
+				\begin{itemize}
+					\item ORIGIN - źródło informacji o prefiksie -- atrybut określa, czy prefiks pochodzi iBGP, eBGP lub jest tworzony przez redystrybucję (wtedy wartość: \textit{incomplete})
+					\item AS-PATH -- kolejka systemów autonomicznych, przez które trzeba przejść aby dotrzeć do prefiksu
+					\item NEXT-HOP -- któryś z adresów na ścieżce do którego trzeba kierować ruch w stronę prefiksu (niekoniecznie najbliższy)
+					\item Parametry dodatkowe -- pochodzenie ich to przynależność do default-communities o nazwach:
+						\subitem No-Export -- zakaz rozgłaszania do innych sąsiadów eBGP
+						\subitem No-Advertise -- zakaz rozgłaszania gdziekolwiek
+						\subitem Local-as -- zakaz wysyłania poza lokalny AS w konfederacji 
+						\subitem Internet -- zezwalaj na wysyłanie gdziekolwiek
+					\item WEIGHT -- parametr definiowany lokalnie dla rutera -- priorytet zapisany w bazie danych określonego rutera, na podstawie którego będzie wybierana trasa, nie jest przekazywany poza bieżący ruter -- implementacja zależy od producenta
+					\item MED (Multi Exit Discriminator) -- określa preferowane wyjście, gdy dwa AS mają wiele połączeń i nie wiadomo przez które powinna prowadzić droga wskazywana przez AS-PATH
+				\end{itemize}
+			\subsubsection{Procedura wyboru trasy}
+				Każdy ruter korzysta z informacji zawartej w bazie prefiksów na podstawie zoptymalizowanego przez producenta algorytmu, który dokonuje wyboru trasy na podstawie porównania kolejnych atrybutów. Dla Cisco kolejność brana pod uwagę to:
+				\begin{itemize}
+					\item WEIGHT - najwyższa
+					\item LOCAL-PREFERENCE --najwyższa
+					\item trasy zgłoszone ręcznie przez komendę network w BGP
+					\item ORIGIN --preferowane są trasy z iBGP
+					\item AS-PATH -- jak najmniej AS do odwiedzenia po drodze
+					\item MED -- najniższa 
+					\item starsza (dłużej istniejąca) ścieżka
+					\item ścieżka do rutera o niższym Router\_id
+					\item ścieżka do rutera o niższym IP
+				\end{itemize}
+				Reguły przy wyborze tras:
+				\begin{itemize}
+					\item Nie wybieraj trasy, dla której NEXT-HOP jest nieosiągalny
+					\item Nie bierz pod uwagę trasy iBGP, jeśli sesja pomiędzy procesami nie jest aktywna (np. została zamknięta)
+					\item Następnie stosuj kolejno kryteria wyboru trasy zgodnie z listą preferencji
+					\item Najlepsza trasa jest także wysyłana do następnych ruterów w innych AS
+					\item Możliwy jest multithoming -- czyli definiowanie kilku dobrych tras z dopuszczeniem podziału ruchu
+				\end{itemize}
+			\subsubsection{Atrybut AS-PATH}
+				Ogólnie jest to podobnie jak z regexami:
+				\begin{itemize}
+					\item . -- dokładnie jeden znak w ścieżce
+					\item * -- dowolna liczba znaków
+					\item \^ -- początek ścieżki
+					\item \$ -- koniec ścieżki 
+					\item \_ -- dowolny fragment ścieżki
+				\end{itemize}
+				Przykłady:
+				\begin{itemize}
+					\item .* -- cokolwiek
+					\item \^\$ -- trasy lokalne dla tego AS
+					\item \_65002\$ -- trasy stworzone w AS 65002
+					\item \^65002\_-- trasy z AS 65002 (jako pierwszego na ścieżce)
+					\item \_65002\_ -- trasy przez AS 65002
+					\item \_65005\_65004\_ - trasy przez AS 65004, a później przez AS 65005
+				\end{itemize}
+			\subsubsection{Zabezpiecnia przeciw zapętleniom}
+				Aby zabezpieczyć przed zapętleniami eBGP korzysta z AS-PATH. iBGP nie przekazuje informacji o trasach wewnątrz AS (więc nie ma mowy o zapętleniu). 
+				\newline \newline
+				W zamian sesje iBGP utrzymywane są ciągle tworząc Full mesh (każdy z każdym utrzymuje sesję). Nie jest przy tym wymagane fizyczne połączenie każdego z każdym, gdyż TTL wynosi dla iBGP 64.
+				\newline \newline
+				Rute Reflector (dla iBGP) -- przy dużych AS liczba sesji jest znaczna, wprowadza się dlatego jeden ruter (Route REflector), który utrzymuje i przekazuje dalej informacje z innych. Inne rutery (Rourte Reflector Client) są skonfigurowane tak aby przekazywać informację do RR.
+			\subsubsection{Redystrybucja protokołów rutowania}
+				W ruterze obsługującym kilka protokołów rutowania dynamicznego jednocześnie istnieje możliwość przenoszenia inforamacji o trasach pozyskanych z użyciem jednego z nich do struktur danych utrzymywanych przez procesy związane z innym. Zabieg ten jest nazywany redystrybucją (danych o sieciach). W związku z tym informacje o trasach opuszczają ruter, ale tylko w kierunku sąsiadów powiązanych innym protokołem rutowania dynamicznego.
+				\newline \newline 
+				Oprócz tego możliwa jest także redystrybucja danych ze statycznej tablicy rutowania IP.
+				\newline \newline
+				Jeżeli dane dodatkowe dotyczące trasy nie są generowane przez protokół źródłowy, to należy je uzupełnić (np. wartość liczby przeskoków przy redystrybucji do RIP, czy wartość metryki przy redystrybucji do OSPF).
+			\subsubsection{RIPE}
+				Jednostką rejestrującą informację o adresach IP i o systemach autonomicznych BGP w Europie jest RIPE (Reseaux IP Europeens) -- https://www.ripe.net, strona dysponuje wyszukiwarką rejestrów https://apps.db.ripe.net/search/query/html. Na świecie istnieją ogólnie cztery inne odpowiedniki RIPE. RIS -- Routing Information Service - system informacyjny RIPE o Systemach Autonomicznych BGB i trasach między nimi.
+			
+\end{document}

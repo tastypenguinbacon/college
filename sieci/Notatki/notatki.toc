@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {1}NAT + IPv6}{2}
+\contentsline {subsection}{\numberline {1.1}NAT}{2}
+\contentsline {subsubsection}{\numberline {1.1.1}Overloading}{2}
+\contentsline {subsubsection}{\numberline {1.1.2}Rodzaje adres\IeC {\'o}w}{3}
+\contentsline {subsection}{\numberline {1.2}Adresowanie IPv6}{3}
+\contentsline {subsubsection}{\numberline {1.2.1}Adresacja}{3}
+\contentsline {subsubsection}{\numberline {1.2.2}EUI-64}{4}
+\contentsline {subsubsection}{\numberline {1.2.3}Adresy specjalne i prefiksy}{4}
+\contentsline {subsubsection}{\numberline {1.2.4}Cechy interfejs\IeC {\'o}w IPv6}{5}
+\contentsline {subsection}{\numberline {1.3}IPv6 multicast}{5}
+\contentsline {subsubsection}{\numberline {1.3.1}Rutowanie i maski}{6}
+\contentsline {subsubsection}{\numberline {1.3.2}Mapowanie IPv4}{7}
+\contentsline {subsubsection}{\numberline {1.3.3}Tunelowanie IPv6 -- mechanizm 6in4}{7}
+\contentsline {subsubsection}{\numberline {1.3.4}U\IeC {\.z}ytkowanie adres\IeC {\'o}w IPv6 w systemie operacyjnym}{7}
+\contentsline {subsubsection}{\numberline {1.3.5}NAT w IPv6}{8}
+\contentsline {section}{\numberline {2}Rutowanie IPv4, BGP}{9}
+\contentsline {subsection}{\numberline {2.1}Border Gatway Protocol}{9}
+\contentsline {subsubsection}{\numberline {2.1.1}Og\IeC {\'o}lne wiadomo\IeC {\'s}ci}{9}
+\contentsline {subsubsection}{\numberline {2.1.2}Internal BGP (iBGP)}{9}
+\contentsline {subsubsection}{\numberline {2.1.3}Og\IeC {\'o}lne zasady komunikacji w BGP}{10}
+\contentsline {subsubsection}{\numberline {2.1.4}Prefiksy i ich atrybuty}{11}
+\contentsline {subsubsection}{\numberline {2.1.5}Procedura wyboru trasy}{12}
+\contentsline {subsubsection}{\numberline {2.1.6}Atrybut AS-PATH}{13}
+\contentsline {subsubsection}{\numberline {2.1.7}Zabezpiecnia przeciw zap\IeC {\k e}tleniom}{13}
+\contentsline {subsubsection}{\numberline {2.1.8}Redystrybucja protoko\IeC {\l }\IeC {\'o}w rutowania}{14}
+\contentsline {subsubsection}{\numberline {2.1.9}RIPE}{14}
