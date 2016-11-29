@@ -1,5 +1,10 @@
 .ORG    0h
         LJMP    INIT
+.ORG    0Bh
+        LJMP    TIMER
+.ORG    023h
+        LJMP    SERIAL
+        
 .ORG    30h
 INIT:   MOV     TMOD,   #0010000b   ;ustawia timer1 w tryb pracy ośmiobitowej
         SETB    EA  ; zezwolenie na przerwania
@@ -11,17 +16,16 @@ INIT:   MOV     TMOD,   #0010000b   ;ustawia timer1 w tryb pracy ośmiobitowej
         SETB    TR1
         
 SEND:   MOV     SBUF, #to co wysyłamy
-        LCALL   TIMER
+        LCALL   SLEEP
         SJMP    SEND
         
-TIMER:  clr TR0 ;   tutaj poprawić
-        mov TH0, #0xbe
-        mov TL0, #0xe6
-        setb TR0
-        djnz R1, once_a_second ; skips every 50th
-        mov R1, #50
-        xrl A, #0xFF
-        mov P0, A
-        reti
-once_a_second:
-        reti
+SLEEP:  SETB    ET0
+        MOV     R1,     #1
+HERE:   CJNE    R1,     #0,     HERE
+        CLR     ET0
+        RET
+TIMER:  
+        MOV     R1      #0
+        RETI
+        
+SERIAL:
