@@ -166,28 +166,28 @@ CHANGE_LED:
 	MOV A, R0
 	MOVC A, @A+DPTR
 	MOV	P0, A
-	MOV R5 #2
+	MOV R5, #2
 	RET
 NOT3:	CJNE R5, #2, NOT2
 	MOV P1, #4
 	MOV A, R1
 	MOVC A, @A+DPTR
 	MOV	P0, A
-	MOV R5 #1
+	MOV R5, #1
 	RET
 NOT2:	CJNE R5, #1, NOT1
 	MOV P1, #2
 	MOV A, R2
 	MOVC A, @A+DPTR
 	MOV	P0, A
-	MOV R5 #0
+	MOV R5, #0
 	RET
 NOT1:	MOV R5, #3
 	MOV P1, #1
 	MOV A, R3
 	MOVC A, @A+DPTR
 	MOV	P0, A
-	MOV R5 #3
+	MOV R5, #3
 	RET
 \end{lstlisting}
 \newpage\noindent
