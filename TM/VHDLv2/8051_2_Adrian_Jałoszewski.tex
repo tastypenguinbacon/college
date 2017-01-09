@@ -160,7 +160,7 @@ T0_ISR:
 Funkcja odświeżająca wyświetlacze, R5 trzyma stan wyświetlacza aktywnego:
 \begin{lstlisting}
 CHANGE_LED:
-	MOV P0, #FF 
+	MOV P0, #0xFF 
 	CJNE R5, #3, NOT3
 	MOV P1, #8
 	MOV A, R0
@@ -169,21 +169,21 @@ CHANGE_LED:
 	MOV R5 #2
 	RET
 NOT3:	CJNE R5, #2, NOT2
-	MOV P1, #8
+	MOV P1, #4
 	MOV A, R1
 	MOVC A, @A+DPTR
 	MOV	P0, A
 	MOV R5 #1
 	RET
 NOT2:	CJNE R5, #1, NOT1
-	MOV P1, #8
+	MOV P1, #2
 	MOV A, R2
 	MOVC A, @A+DPTR
 	MOV	P0, A
 	MOV R5 #0
 	RET
 NOT1:	MOV R5, #3
-	MOV P1, #8
+	MOV P1, #1
 	MOV A, R3
 	MOVC A, @A+DPTR
 	MOV	P0, A
