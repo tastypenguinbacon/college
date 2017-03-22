@@ -1,0 +1,85 @@
+%% Creator: Inkscape inkscape 0.91, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'zera.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{448bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.75)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{zera.pdf}}%
+    \put(0.51071464,0.01130946){\makebox(0,0)[lb]{\smash{x}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{zera.pdf}}%
+    \put(0.11964286,0.04761911){\makebox(0,0)[lb]{\smash{-1}}}%
+    \put(0.18732143,0.04761911){\makebox(0,0)[lb]{\smash{-0.5}}}%
+    \put(0.27821429,0.04761911){\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.34589286,0.04761911){\makebox(0,0)[lb]{\smash{0.5}}}%
+    \put(0.43321429,0.04761911){\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.50089286,0.04761911){\makebox(0,0)[lb]{\smash{1.5}}}%
+    \put(0.58821429,0.04761911){\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.65589286,0.04761911){\makebox(0,0)[lb]{\smash{2.5}}}%
+    \put(0.74321429,0.04761911){\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0.81089286,0.04761911){\makebox(0,0)[lb]{\smash{3.5}}}%
+    \put(0.89821429,0.04761911){\makebox(0,0)[lb]{\smash{4}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{zera.pdf}}%
+    \put(0.09940482,0.07232143){\makebox(0,0)[lb]{\smash{-5}}}%
+    \put(0.09940482,0.13357143){\makebox(0,0)[lb]{\smash{-4}}}%
+    \put(0.09940482,0.19482143){\makebox(0,0)[lb]{\smash{-3}}}%
+    \put(0.09940482,0.25607143){\makebox(0,0)[lb]{\smash{-2}}}%
+    \put(0.09940482,0.31732143){\makebox(0,0)[lb]{\smash{-1}}}%
+    \put(0.10654768,0.37857143){\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.10654768,0.43982143){\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.10654768,0.50107143){\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.10654768,0.56232143){\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0.10654768,0.62357143){\makebox(0,0)[lb]{\smash{4}}}%
+    \put(0.10654768,0.68482143){\makebox(0,0)[lb]{\smash{5}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{zera.pdf}}%
+    \put(0.76607143,0.64345232){\makebox(0,0)[lb]{\smash{f(x)}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{zera.pdf}}%
+    \put(0.76607143,0.60714286){\makebox(0,0)[lb]{\smash{Q(x) = f(x)}}}%
+    \put(0.86428571,0.61785714){\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{zera.pdf}}%
+  \end{picture}%
+\endgroup%

@@ -1,0 +1,106 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{svg}
+
+\title{Portrety fazowe}
+\author{Adrian Jałoszewski}
+\date{7 marca 2017, godzina 12:30}
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+
+
+\begin{document}
+	\lstset{language=Matlab, basicstyle=\footnotesize,
+		keepspaces=true,frame=single,tabsize=4}
+	\maketitle
+	\section{Wstęp}
+		Celem laboratorium było wspomagane komputerowo przedstawienie portretów fazowych dla obiektu dynamicznego drugiego rzędu w zależności od tego jakiego typu wartości własne miała macierz stanu.
+		\newline
+		\newline 
+		Zadanie ze skryptu zostało wzbogacone o realizację interfejsu użytkownika w postaci menu, umożliwiającego wybór pośród dziewięciu predefiniowanych opcji oraz wybór własnej macierzy do otrzymania portretu fazowego.
+	\section{Skrypty}
+		\subsection{Opis}
+			Funkcjonalności tworzenia macierzy stanu oraz generowania warunków początkowych zostały wydzielone do oddzielnej funkcji, która ma również za zadanie komunikować się z użytkownikiem:
+			\newline \newline
+			Interfejs posiada prostą obsługę błędów, która przerywa wykonanie programu ze względu na niepoprawne wpisanie danych. Zależnie od tego jaką macierz wybierze użytkownik program dobierze do niej odpowiednie warunki początkowe. Program główny jest m-plikiem, który zaczyna od pobrania warunków początkowych oraz macierzy stanu przy pomocy wcześniej opisanej funkcji.
+			\newline \newline
+			Zależnie od tego czy wartości własne są rzeczywiste czy nie, zostają następnie wyznaczone ukazane na wykresie ciemną grubą linią kierunki wektorów własnych.
+			Wykres jest następnie uzupełniany strzałkami wskazującymi kierunek trajektorii oraz opisem wraz z informacją o macierzy i jej wartościach własnych.
+		\subsection{Obsługa}
+			Należy uruchomić plik \texttt{program.m} w tym samym katalogu, co jest umieszczony plik \texttt{get\_matrix.m} oraz \texttt{model.slx}. Po uruchomieniu pojawi się menu z możliwością wyboru jednej z dziewięciu macierzy oraz wybór własnej macierzy. W przypadku wyboru którejś z predefiniowanych macierzy następuje symulacja wyświetlenie portretu fazowego. W przypadku wyboru własnego wprowadzenia macierzy należy wpisać ją do linii komend. Możliw jest również wybór wyrażenia pozwalającego wyznaczyć macierz o wymiarach 2x2. 
+	\section{Wyniki}
+		Wektory własne na poniższych portretach fazowych znajdują się na kierunku linii prostych.
+		\begin{figure}[H]
+			\centering 
+			\includesvg[width=0.8\linewidth, svgpath = ./svg/]{wezel}
+			\caption{Węzeł}
+		\end{figure}
+		\begin{figure}[H]
+			\centering 
+			\includesvg[width=0.8\linewidth, svgpath = ./svg/]{siodlo}
+			\caption{Siodło}
+		\end{figure}
+		\begin{figure}[H]
+			\centering 
+			\includesvg[width=0.8\linewidth, svgpath = ./svg/]{ognisko}
+			\caption{Ognisko}
+		\end{figure}
+		\begin{figure}[H]
+			\centering 
+			\includesvg[width=0.8\linewidth, svgpath = ./svg/]{srodek}
+			\caption{Środek}
+		\end{figure}
+		\begin{figure}[H]
+			\centering 
+			\includesvg[width=0.8\linewidth, svgpath = ./svg/]{wezel_zdegenerowany}
+			\caption{Węzeł zdegenerowany}
+		\end{figure}	
+		\begin{figure}[H]
+			\centering 
+			\includesvg[width=0.8\linewidth, svgpath = ./svg/]{gwiazda}
+			\caption{Gwiazda}
+		\end{figure}
+		\newpage
+		W przypadku gdy jedna wartość własna jest zerem, a druga dowolną inną liczbą mamy do czynienia ze zbiorem punktów równowagi dla $x1 = 0$
+		\begin{figure}[H]
+			\centering 
+			\includesvg[width=0.8\linewidth, svgpath = ./svg/]{different}
+			\caption{Dwie wartości własne z czego jendna zerem.}
+		\end{figure}
+		W przypadku gdy obydwie wartości są zerowe i macierz posiada tylko jeden liniowo niezależny istnieje zbiór punktów równowagi dla $y1 = 0$.=
+		\begin{figure}[H]
+			\centering 
+			\includesvg[width=0.8\linewidth, svgpath = ./svg/]{jordan_cage_zeroes}
+			\caption{Obydwie wartości własne zerami, jeden wektor własny}
+		\end{figure}
+		\newpage
+		Dla macierzy zerowej wszystkie punkty płaszczyzny są punktami równowagi, gdyż dowolny wektor przemnożony przez macierz zerową jest wektorem zerowym - pochodna jest równa zero.
+		\begin{figure}[H]
+			\centering 
+			\includesvg[width=0.8\linewidth, svgpath = ./svg/]{zeroes}
+			\caption{Macierz zerowa}
+		\end{figure}
+		Postacie uzyskane przez przekształcenie odpowiednio portretu fazowego typu węzeł oraz portretu fazowego typu ognisko. 
+		\begin{figure}[H]
+			\centering 
+			\includesvg[width=0.8\linewidth, svgpath = ./svg/]{custom_1}
+			\caption{Przekształcony węzeł}
+		\end{figure}
+		\begin{figure}[H]
+			\centering 
+			\includesvg[width=0.8\linewidth, svgpath = ./svg/]{custom_2}
+			\caption{Przekształcone ognisko}
+		\end{figure}
+	\section{Wnioski}
+		Ze względu na postać liniowego, stacjonarngego równania stanu: $\dot{x} = A x$, można na podstawie wartości własnych oraz wektorów własnych macierzy $A$ opisać zachowanie układu. Ponieważ dla wektora zerowego następuje $\dot{x} = A \cdot 0 = 0$ to punkt $(0, 0)$ jest punktem równowagi dla każdego układu dającego się opisać tym modelem matematycznym.
+		\\ \\
+		Przy pomocy portretów fazowych można zaobserwować wiele ciekawych zależności, które zdają się być trywialne dla przypadków rozpatrywanych na zajęciach laboratoryjnych, ale już pozwalają pojąć znacznie szerzej spojrzeć na zagadnienia związane z obiektami nieliniowymi, gdzie nie zawsze da się znaleźć rozwiązanie równań.
+\end{document}

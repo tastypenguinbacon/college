@@ -1,0 +1,83 @@
+%% Creator: Inkscape inkscape 0.91, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'wezel_zdegenerowany.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{448bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.75)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{wezel_zdegenerowany.pdf}}%
+    \put(0.50357179,0.01130946){\makebox(0,0)[lb]{\smash{x1}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{wezel_zdegenerowany.pdf}}%
+    \put(0.11964286,0.04761911){\makebox(0,0)[lb]{\smash{-1}}}%
+    \put(0.18732143,0.04761911){\makebox(0,0)[lb]{\smash{-0.8}}}%
+    \put(0.26482143,0.04761911){\makebox(0,0)[lb]{\smash{-0.6}}}%
+    \put(0.34232143,0.04761911){\makebox(0,0)[lb]{\smash{-0.4}}}%
+    \put(0.41982143,0.04761911){\makebox(0,0)[lb]{\smash{-0.2}}}%
+    \put(0.51071429,0.04761911){\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.57839286,0.04761911){\makebox(0,0)[lb]{\smash{0.2}}}%
+    \put(0.65589286,0.04761911){\makebox(0,0)[lb]{\smash{0.4}}}%
+    \put(0.73339286,0.04761911){\makebox(0,0)[lb]{\smash{0.6}}}%
+    \put(0.81089286,0.04761911){\makebox(0,0)[lb]{\smash{0.8}}}%
+    \put(0.89821429,0.04761911){\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.06547625,0.36250036){\rotatebox{90}{\makebox(0,0)[lb]{\smash{y1}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{wezel_zdegenerowany.pdf}}%
+    \put(0.09940482,0.07232143){\makebox(0,0)[lb]{\smash{-1}}}%
+    \put(0.07976196,0.13125){\makebox(0,0)[lb]{\smash{-0.8}}}%
+    \put(0.07976196,0.19017857){\makebox(0,0)[lb]{\smash{-0.6}}}%
+    \put(0.07976196,0.24910714){\makebox(0,0)[lb]{\smash{-0.4}}}%
+    \put(0.07976196,0.30803571){\makebox(0,0)[lb]{\smash{-0.2}}}%
+    \put(0.10654768,0.36696429){\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.08690482,0.42589286){\makebox(0,0)[lb]{\smash{0.2}}}%
+    \put(0.08690482,0.48482143){\makebox(0,0)[lb]{\smash{0.4}}}%
+    \put(0.08690482,0.54375){\makebox(0,0)[lb]{\smash{0.6}}}%
+    \put(0.08690482,0.60267857){\makebox(0,0)[lb]{\smash{0.8}}}%
+    \put(0.10654768,0.66160714){\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{wezel_zdegenerowany.pdf}}%
+    \put(0.39285768,0.71919643){\makebox(0,0)[lb]{\smash{\textbf{lambda (A) = [-1, -1]}}}}%
+    \put(0.43303625,0.68348214){\makebox(0,0)[lb]{\smash{\textbf{ A =[-1 1;0 -1]}}}}%
+  \end{picture}%
+\endgroup%

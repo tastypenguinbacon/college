@@ -1,0 +1,67 @@
+%% Creator: Inkscape inkscape 0.91, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'model.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{200.24985726bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.20599289)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{model.pdf}}%
+    \put(0.07490636,0.1235957){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{model.pdf}}%
+    \put(0.01123595,0.03277173){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Constant}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{model.pdf}}%
+    \put(0.33333332,0.14606761){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{x' = Ax+Bu}}}%
+    \put(0.329588,0.10112379){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ y = Cx+Du}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{model.pdf}}%
+    \put(0.31835204,0.0252811){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{State-Space}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{model.pdf}}%
+    \put(0.8651685,0.1235957){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{x}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{model.pdf}}%
+    \put(0.75187262,0.03277173){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{To Workspace}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{model.pdf}}%
+  \end{picture}%
+\endgroup%

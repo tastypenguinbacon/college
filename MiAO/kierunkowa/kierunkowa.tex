@@ -1,0 +1,151 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{svg}
+
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+
+
+\begin{document}
+	\noindent
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|c|c|c|c|}
+			\hline 
+			\multicolumn{4}{|l|}{Optymalizacja na kierunku} \\ 
+			\hline 
+			Adrian Jałoszewski & 8 III 2017 & Środa 14:00 &  \\ 
+			\hline 
+		\end{tabular}
+	} 
+	\lstset{language=Matlab, basicstyle=\footnotesize,
+		keepspaces=true,frame=single,tabsize=4}
+	\section{Cel ćwiczenia}
+		Ćwiczenie miało na celu pokazanie zastosowań optymalizacji na kierunku. Algorytmy używane do tego miały zostać wykorzystane do wyznaczenia minimum funkcji oraz do wyznaczania miejsc zerowych funkcji.
+	\section{Przebieg ćwiczenia}
+		\subsection{Zadanie 1}
+			Wzór analityczny funkcji celu w kierunku $d = [1\,\, 2]^T$ jest dany wzorem:
+			$$
+				Q(k) = 5 k^2 - 7k + 2.5
+			$$
+			Funkcja ta jest parabolą o wierzchołku w punkcie $(x_w, y_w) = (0,7, \,\,0,05)$. Jest to minimum funkcji.
+			\begin{figure}[H]
+				\centering 
+				\includegraphics[width=0.8\textwidth]{old/poziomicowy.png}
+				\caption{Wykres poziomicowy i przekrój zaznaczony czerwoną linią}
+			\end{figure}
+			\newpage \noindent
+			\subsubsection{Metoda ekspansji}
+				Poszukiwanie minimum metodą ekspansji zwróciło minimum dla $k - 0.9$ \newline o wartości $Q(k) = 0.25$.
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.7\columnwidth}
+					\input{ekspan.pdf_tex}
+					\caption{Poszukiwanie minimum metodą ekspansji}
+				\end{figure}\noindent
+			\subsubsection{Metoda złotego podziału}
+				Poszukiwanie minimum metodą złotego podziału zwróciło minimum dla $k - 0.71$ \newline o wartości $Q(k) = 0.0507$.
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.7\columnwidth}
+					\input{zloty.pdf_tex}
+					\caption{Poszukiwanie minimum metodą złotego podziału}
+				\end{figure}\noindent
+			
+			\subsubsection{Metoda Gaussa-Seidela}
+				Poszukiwanie minimum metodą Gaussa-Seidela poszukiwania na prostej zwróciło minimum dla $k - 0.7$ \newline o wartości $Q(k) = 0.05$.
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.65\columnwidth}
+					\input{prosta.pdf_tex}
+					\caption{Poszukiwanie minimum metodą Gaussa-Seidela}
+				\end{figure}\noindent
+			\subsubsection{Aproksymacja paraboliczna II stopnia}
+				Poszukiwanie minimum metodą aproksymacji parabolicznej II stopnia zwróciło minimum dla $k - 0.7$ \newline o wartości $Q(k) = 0.05$.
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.65\columnwidth}
+					\input{apr_para.pdf_tex}
+					\caption{Poszukiwanie minimum metodą aproksymacji parabolicznej II stopnia}
+				\end{figure}\noindent
+		\subsection{Zadanie 2}
+			Wyznaczenie miejsc zerowych funkcji:
+			$$
+				f(x) = x e^x + 1,54xe^{-x} - 3,5 e^x - 5,38e^{-x} + 9,7
+			$$
+			Dokonuje się tego poprzez minimalizację funkcji celu $Q(x) = f(x)^2$. Minima tej funkcji występują dla $x \in \left\lbrace-0.1459, 1.5138, 3.01\right\rbrace$ i są to również miejsca zerowe funkcji $f(x)$.
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{\columnwidth}
+				\input{zera.pdf_tex}
+				\caption{Miejsca zerowe znalezione przy pomocy minimalizacji}
+			\end{figure}\noindent
+			
+		\subsection{Zadanie 4}
+			Przy szukaniu minimum funkcjonału w kierunku $d = [1\,\, 1\,\, 1\,\, 1]^T$ otrzymuję wzór na funkcję $Q(x) = 190(x^2-x)^2+ 42 (x-1)^2$, która posiada minimum $Q(x_{min}) = 0$ dla $k_{min} = 1$ \\ \\
+			Na wykresie są zaznaczone dwa punkty, które zostały odwiedzone w trakcie metody ekspansji. Dla punktu trzeciego współrzędna na osi odciętych była znacznie większa od pozostałych i zaćmiłaby wykres. Zostało znalezione minimum po jednym kroku.
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{czwarte.pdf_tex}
+				\caption{Poszukiwanie minimum metodą pięciokrotnej ekspansji}
+			\end{figure}\noindent.
+		\subsection{Zadanie 5}
+			Rodzina funkcji zadanych jako $Q(x) = max \left\{ax, bx\right\} = 0.5(a + b)x - 0.5(a-b) |x|$  dla $a \leq 0$ $b >> 0$ nie posiada maksimum. Zakładam, że zadanie polega na tym samym, tyle, że dla przypadku minimalizacji. \\ \\
+			Sprawdzam tempo zbieżności dla różnych przedziałów nieokreśloności dla $a$ bliskiego zera.
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{old/a-01b5.pdf_tex}
+				\caption{Zbieżność dla współczynnika $a \approx 0 $}
+			\end{figure}\noindent
+			Sprawdzam tempo zbieżności dla różnych przedziałów nieokreśloności dla $a$ mniejszego od zera.
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{old/a-3b5.pdf_tex}
+				\caption{Zbieżność dla współczynnika $a < 0 $}
+			\end{figure}\noindent
+			Poniższe wykresy przedstawiają rodziny funkcji dla zadanego współczynnika $b$ oraz zmiennego współczynnika $a$. Współczynnik $a$ jest odpowiedzialny za kąt nachylenia półprostej dla ujemnych wartości, a $b$ dla wartości dodatnich.
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{\columnwidth}
+				\input{old/rodziny.pdf_tex}
+				\caption{rodziny funkcji w zależności od zmiany współczynnika a i b}
+			\end{figure}\noindent
+	\section{Wnioski z wykonanego ćwiczenia}
+		\subsection{Wnioski}
+			\subsubsection{Zadanie 1}
+				Metoda ekspansji wypadła najgorzej ze wszystkich ze względu na to, że im bliżej minimum się znajduje tym bierze większy krok, co uniemożliwia zastosowanie jej w celach dokładnego wyznaczenia punktów.
+				\\ \\
+				Metoda złotego podziału znajduje szybko prawie dokładną wartość minimum.
+				\\ \\
+				Metoda Aproksymacji parabolicznej II stopnia znajduje wartości funkcji dla parametrów wokół minimum, aż znajdzie je dokładnie.
+				\\
+				\\
+				Metoda Gaussa-Seidela poszukiwania na prostej zwraca bardzo dokładny wynik, stosując szacowanie przedziału metodą ekspansji, a następnie stosując metodę aproksymacji parabolicznej II stopnia.
+			\subsubsection{Zadanie 2}
+				Minima funkcji celu są miejscami zerowymi wtedy, gdy są również miejscami zerowymi funkcji celu. W innym przypadku mogą to być również ekstrema funkcji, której miejsc zerowych szukamy, gdyż:
+				$$
+					(f(x)^2)' = 2 f(x) \cdot f'(x)
+				$$
+				Pochodna kwadratu funkcji zeruje się więc w jej miejscach zerowych oraz ekstremach. Minimalizacja wychwytuje wtedy niektóre ekstrema (jeżeli funkcja dodatnia, to minima, jeżeli ujemna, to maksima) oraz miejsca zerowe funkcji.
+			\subsubsection{Zadanie 5}
+				Zależnie od parametru $a$ mamy różne nachylenie półprostej dla argumentów ujemnych, a w zależności od parametru $b$ inne nachylenie półprostej dla argumentów dodatnich. \\ \\
+				Jeżeli mamy do czynienia z niewielkim nachyleniem półprostej, to zbieżność jest powolna. Jeżeli nachylenie jest większe, to dla tego samego przedziału nieoznaczoności zbieżność jest znacznie szybsza. \\ \\
+				Im mniejszy przedział nieoznaczoności tym szybsza zbieżność.
+		\subsection{Uwagi}
+			W zadaniu drugim niejasne było analityczne wyznaczenie miejsc zerowych funkcji - zostały użyte  wartości wyznaczone przy pomocy obliczeń komputerowych.
+			\\ \\ \noindent
+			Część skryptów nie działała ze względu na dodany warunek w pliku \texttt{koszt.m}, który zgłaszał błąd w przypadku, gdy zmienna $x$ miała rozmiar inny niż 1.
+			\\ \\ \noindent
+			W zadaniu czwartym zostało użyte pojęcie ,,dokładność względna''. Nigdzie w skryptach nie występuje zmienna, którą można by było określić jako ,,dokładność względna''.
+\end{document}

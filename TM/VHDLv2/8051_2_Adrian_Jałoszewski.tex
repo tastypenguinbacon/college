@@ -21,8 +21,8 @@
 		Inicjalizacja:
 \begin{lstlisting}
 INIT:	MOV TMOD, #20H
-	MOV TL1, #245	; 2400 baud
-	MOV TH1, #245
+	MOV TL1, #246	; 2400 baud
+	MOV TH1, #246
 	MOV SCON, #50H
 	SETB TR1
 \end{lstlisting}
@@ -133,8 +133,8 @@ LED_TABLE:	;0...9
 \begin{lstlisting}
 INIT:	MOV	TMOD,	#0x1
 	MOV	IE,	#0x82
-	MOV	TH0,	#60
-	MOV	TL0,	#176
+	MOV	TH0,	#239
+	MOV	TL0,	#186
 	SETB	TR0
 	MOV	DPTR,	#LED_TABLE
 	MOV	R0,	#0
@@ -149,8 +149,8 @@ INIT:	MOV	TMOD,	#0x1
 T0_ISR:    
 	PUSH A
 	CLR	TR0
-	MOV	TH0,    #60
-	MOV	TL0,    #176
+	MOV	TH0,    #239
+	MOV	TL0,    #186
 	SETB	TR0
 	CALL	CHANGE_LED
 	POP A
@@ -162,28 +162,27 @@ Funkcja odświeżająca wyświetlacze, R5 trzyma stan wyświetlacza aktywnego:
 CHANGE_LED:
 	MOV P0, #0xFF 
 	CJNE R5, #3, NOT3
-	MOV P1, #8
+	MOV P1, #1
 	MOV A, R0
 	MOVC A, @A+DPTR
 	MOV	P0, A
 	MOV R5, #2
 	RET
 NOT3:	CJNE R5, #2, NOT2
-	MOV P1, #4
+	MOV P1, #2
 	MOV A, R1
 	MOVC A, @A+DPTR
 	MOV	P0, A
 	MOV R5, #1
 	RET
 NOT2:	CJNE R5, #1, NOT1
-	MOV P1, #2
+	MOV P1, #4
 	MOV A, R2
 	MOVC A, @A+DPTR
 	MOV	P0, A
 	MOV R5, #0
 	RET
-NOT1:	MOV R5, #3
-	MOV P1, #1
+NOT1:	MOV P1, #8
 	MOV A, R3
 	MOVC A, @A+DPTR
 	MOV	P0, A

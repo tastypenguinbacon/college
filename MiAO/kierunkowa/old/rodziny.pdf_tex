@@ -1,0 +1,116 @@
+%% Creator: Inkscape inkscape 0.91, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'rodziny.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{704.8bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.47673099)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{old/rodziny.pdf}}%
+    \put(0.29284926,0.00718876){\makebox(0,0)[lb]{\smash{x}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{old/rodziny.pdf}}%
+    \put(0.12372304,0.03026867){\makebox(0,0)[lb]{\smash{-5}}}%
+    \put(0.17139614,0.03026867){\makebox(0,0)[lb]{\smash{-4}}}%
+    \put(0.21906924,0.03026867){\makebox(0,0)[lb]{\smash{-3}}}%
+    \put(0.26674234,0.03026867){\makebox(0,0)[lb]{\smash{-2}}}%
+    \put(0.31441544,0.03026867){\makebox(0,0)[lb]{\smash{-1}}}%
+    \put(0.36435868,0.03026867){\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.41203178,0.03026867){\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.45970488,0.03026867){\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.08929251,0.23439296){\rotatebox{90}{\makebox(0,0)[lb]{\smash{f(x)}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{old/rodziny.pdf}}%
+    \put(0.0983731,0.04597049){\makebox(0,0)[lb]{\smash{-0.5}}}%
+    \put(0.11539921,0.08136413){\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.10291339,0.11675778){\makebox(0,0)[lb]{\smash{0.5}}}%
+    \put(0.11539921,0.15215142){\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.10291339,0.18754518){\makebox(0,0)[lb]{\smash{1.5}}}%
+    \put(0.11539921,0.22293882){\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.10291339,0.25833246){\makebox(0,0)[lb]{\smash{2.5}}}%
+    \put(0.11539921,0.29372611){\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0.10291339,0.32911975){\makebox(0,0)[lb]{\smash{3.5}}}%
+    \put(0.11539921,0.36451351){\makebox(0,0)[lb]{\smash{4}}}%
+    \put(0.10291339,0.39990715){\makebox(0,0)[lb]{\smash{4.5}}}%
+    \put(0.11539921,0.43530079){\makebox(0,0)[lb]{\smash{5}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{old/rodziny.pdf}}%
+    \put(0.37116913,0.4089311){\makebox(0,0)[lb]{\smash{a =-0.2b = 5}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{old/rodziny.pdf}}%
+    \put(0.37116913,0.38989784){\makebox(0,0)[lb]{\smash{a =-1.2b = 5}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{old/rodziny.pdf}}%
+    \put(0.37116913,0.37086459){\makebox(0,0)[lb]{\smash{a =-2.2b = 5}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{old/rodziny.pdf}}%
+    \put(0.73269024,0.00718876){\makebox(0,0)[lb]{\smash{x}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{old/rodziny.pdf}}%
+    \put(0.56299659,0.03026867){\makebox(0,0)[lb]{\smash{-5}}}%
+    \put(0.6108319,0.03026867){\makebox(0,0)[lb]{\smash{-4}}}%
+    \put(0.65866708,0.03026867){\makebox(0,0)[lb]{\smash{-3}}}%
+    \put(0.70650238,0.03026867){\makebox(0,0)[lb]{\smash{-2}}}%
+    \put(0.75433757,0.03026867){\makebox(0,0)[lb]{\smash{-1}}}%
+    \put(0.80444302,0.03026867){\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.85227821,0.03026867){\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.90011351,0.03026867){\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.52856606,0.23439296){\rotatebox{90}{\makebox(0,0)[lb]{\smash{f(x)}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{old/rodziny.pdf}}%
+    \put(0.53764665,0.04597049){\makebox(0,0)[lb]{\smash{-0.5}}}%
+    \put(0.55467276,0.08136413){\makebox(0,0)[lb]{\smash{0}}}%
+    \put(0.54218695,0.11675778){\makebox(0,0)[lb]{\smash{0.5}}}%
+    \put(0.55467276,0.15215142){\makebox(0,0)[lb]{\smash{1}}}%
+    \put(0.54218695,0.18754518){\makebox(0,0)[lb]{\smash{1.5}}}%
+    \put(0.55467276,0.22293882){\makebox(0,0)[lb]{\smash{2}}}%
+    \put(0.54218695,0.25833246){\makebox(0,0)[lb]{\smash{2.5}}}%
+    \put(0.55467276,0.29372611){\makebox(0,0)[lb]{\smash{3}}}%
+    \put(0.54218695,0.32911975){\makebox(0,0)[lb]{\smash{3.5}}}%
+    \put(0.55467276,0.36451351){\makebox(0,0)[lb]{\smash{4}}}%
+    \put(0.54218695,0.39990715){\makebox(0,0)[lb]{\smash{4.5}}}%
+    \put(0.55467276,0.43530079){\makebox(0,0)[lb]{\smash{5}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{old/rodziny.pdf}}%
+    \put(0.80363224,0.4089311){\makebox(0,0)[lb]{\smash{a =-0.2b = 10}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{old/rodziny.pdf}}%
+    \put(0.80363224,0.38989784){\makebox(0,0)[lb]{\smash{a =-1.2b = 10}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{old/rodziny.pdf}}%
+    \put(0.80363224,0.37086459){\makebox(0,0)[lb]{\smash{a =-2.2b = 10}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{old/rodziny.pdf}}%
+  \end{picture}%
+\endgroup%
