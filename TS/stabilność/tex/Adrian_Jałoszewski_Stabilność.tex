@@ -1,0 +1,136 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{svg}
+
+\title{Częstotliwościowe kryteria stabilności}
+\author{Adrian Jałoszewski}
+\date{21 marca 2017, godzina 12:30}
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+
+
+\begin{document}
+	\lstset{language=Python, basicstyle=\footnotesize,
+		keepspaces=true,frame=single,tabsize=4}
+	\maketitle
+	\section{Wstęp}
+		Celem laboratorium było zapoznanie się z zastosowaniem częstotliwościowych kryteriów stabilności. Przykłady obejmowały kryterium Nyquista w zastosowaniu dla układu, który jest niestabilny bez sprzężenia zwrotnego, przypadku obiektu inercyjnego pierwszego rzędu z opóźnieniem oraz zadania dodatkowego, gdzie należy wyznaczyć dla jakiego wzmocnienia układ znajduje się na granicy stabilności.
+	\section{Wykonanie}
+		\subsection{Zadanie 2.1}
+		Transmitancja jest zadana jako:
+		$$
+			G_0(s) = \frac{s + 1}{0,01s^4 + 0,5s^3 + 3 s^2 -10s + 10}
+		$$ \noindent
+		Należy wyznaczyć krytyczne wartości współczynnika wzmocnienia $K$ dla jakiego $K \cdot G_0(s)$ po zapięciu sprzężenia zwrotnego jest stabilne.
+		\\
+		\\
+		Najpierw sprawdzam pierwiastki wielomianu charakterystycznego układu aby sprawdzić ile z nich posiada dodatnią liczb rzeczywistą. Pierwiastki wielomianu: 
+		$$
+			M(s) = 0,01s^4 + 0,5s^3 + 3 s^2 -10s + 10
+		$$
+		są w przybliżeniu następujące $s_0 \in \{-42,3443, -10,2412, 1,29278 \pm j\cdot 0,79665\}$. Dwa \linebreak pierwiastki mają więc dodatnią część rzeczywistą, dlatego też przyrost \linebreak $\Delta_{0 \leq \omega \leq \infty} \arg(1 + G_0(j\omega)) = \pi$. \\ \\
+		\begin{figure}[H]
+			\centering
+			\def \svgwidth{0.7\columnwidth}
+			\input{zad_1_first.pdf_tex}
+			\caption{Wykres Nyquista dla $G_0(j\omega)$}
+		\end{figure}\noindent
+		Wykres ten oś rzeczywistą dla wartości rzeczywistych $-0,07074$ oraz $-0,007642$. Dlatego współczynnik $K$ musi się znajdować w przedziale około:
+		$$
+			K \in [14.14, 130.86]
+		$$
+		Dowodem tego są oscylacje nietłumione dla dokładniej wyznaczonych wartości:
+		\begin{figure}[H]
+			\centering
+			\def \svgwidth{0.49\columnwidth}
+			\input{zad_1_snd.pdf_tex}
+			\def \svgwidth{0.49\columnwidth}
+			\input{zad_1_thrd.pdf_tex}
+			\caption{Odpowiedzi skokowe dla układu ze sprzężeniem zwrotnym}
+		\end{figure}\noindent
+		\newpage
+		\subsection{Zadanie 2.2}
+			Transmitancja dana wzorem:
+			$$
+				G(s) = \frac{4 e^ {-0.5s}}{s + 1}
+			$$
+			Podstawiając $s = j\omega$. I zapisując w postaci trygonometrycznej otrzymuję.
+			$$
+				G(j\omega) = \frac{4}{1 + \omega^2}
+				\cdot(\cos 0.5\omega - \omega \cos 0.5\omega) - j(\sin0.5\omega + )
+			$$
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{drugie.pdf_tex}
+				\caption{Wykres Nyquista dla $G(j\omega)$}
+			\end{figure}\noindent
+			Układ jest niestabilny.
+		\subsection{Zadanie dodatkowe}
+		Zadanie dodatkowe polegało na wyznaczeniu wzmocnienia krytycznego dla układu o transmitancji:
+		$$
+			G_0(s) = \frac{1}{s(T_1s+1)(T_2s+1)}
+		$$
+		Gdzie w szczególnym przypadku $T_1 = 1$, $T_2 = 2$. Więc wszystkie pierwiastki wielomianu charakterystycznego są niedodatnie, więc wykres nie może obejmować punktu $(-1, j0)$
+		\begin{figure}[H]
+			\centering
+			\def \svgwidth{0.7\columnwidth}
+			\input{dodatkowe.pdf_tex}
+			\caption{Wykres Nyquista dla $G_0(j\omega)$}
+		\end{figure}\noindent
+		Punkt przecięcia wykresu z osią rzeczywistą wypada w $-\frac{2}{3}$, dlatego też wzmocnienie krytyczne wynosi $K = 1,5$.
+		\\ \\
+		Do wyznaczenia miejsc zerowych ujemnych posłużyła następująca funkcja.
+\begin{lstlisting}
+def extract_from_poly(num, den):
+	numerator = np.poly1d(num)
+	num_re, num_im = real_imag_poly(numerator)
+	num_re, num_im = np.poly1d(num_re), np.poly1d(num_im)
+	denominator = np.poly1d(den)
+	den_re, den_im = real_imag_poly(denominator)
+	den_re, den_im = np.poly1d(den_re), np.poly1d(den_im)
+	multiplier = den_re - den_im * 1j
+	new_num = num_re + num_im * 1j
+	new_num *= multiplier
+	new_num_im = np.poly1d(np.imag(new_num.coeffs))
+	roots = np.roots(new_num_im)
+	roots = [root for root in roots if root.real >= 0]
+	print(roots)
+	real_parts = np.polyval(new_num, roots) / \
+	    (np.polyval(den_re, roots) *
+	    np.polyval(den_re, roots) +
+	    np.polyval(den_im, roots) *
+	    np.polyval(den_im, roots))
+	return np.array([x for x in real_parts.real if x < 0])
+\end{lstlisting}
+		Posiłkowała się ona funkcją, która dzieli wielomian na jego część rzeczywistą i urojoną:
+\begin{lstlisting}
+def real_imag_poly(polynomial: np.poly1d):
+	pol = polynomial.coeffs
+	rev = [x for x in reversed(pol)]
+	sign = 1
+	real_ans = []
+	imag_ans = []
+	for i in range(0, len(rev)):
+		if i % 2 == 0:
+			real_ans.append(rev[i] * sign)
+			imag_ans.append(0)
+		else:
+			real_ans.append(0)
+			imag_ans.append(rev[i] * sign)
+			sign *= -1
+	real_ans = [x for x in reversed(real_ans)]
+	imag_ans = [x for x in reversed(imag_ans)]
+	return real_ans, imag_ans
+\end{lstlisting}
+	\section{Wnioski}
+		
+\end{document}
