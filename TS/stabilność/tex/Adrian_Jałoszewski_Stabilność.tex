@@ -56,7 +56,13 @@
 			\input{zad_1_thrd.pdf_tex}
 			\caption{Odpowiedzi skokowe dla układu ze sprzężeniem zwrotnym}
 		\end{figure}\noindent
-		\newpage
+		Charakterystyka amplitudowa Bodego ukazuje własności tłumiące układu otwartego. Na charakterystyce amplitudowej można zobaczyć dwa przegięcia, które następują dla dwóch pierwiastków o części rzeczywistej dodatniej. Występują również znaczne przesunięcia fazowe.
+		\begin{figure}[H]
+			\centering
+			\def \svgwidth{0.7\columnwidth}
+			\input{bode.pdf_tex}
+			\caption{Wykres Bodego dla $G_0(j\omega)$}
+		\end{figure}\noindent
 		\subsection{Zadanie 2.2}
 			Transmitancja dana wzorem:
 			$$
@@ -64,8 +70,9 @@
 			$$
 			Podstawiając $s = j\omega$. I zapisując w postaci trygonometrycznej otrzymuję.
 			$$
-				G(j\omega) = \frac{4}{1 + \omega^2}
-				\cdot(\cos 0.5\omega - \omega \cos 0.5\omega) - j(\sin0.5\omega + )
+				G(j\omega)
+				= \frac{4}{1 + \omega^2} \cdot
+				((\cos 0.5\omega - \omega \sin 0.5 \omega) - j(\sin 0.5\omega + \omega \cos0.5 \omega))
 			$$
 			\begin{figure}[H]
 				\centering
@@ -73,7 +80,9 @@
 				\input{drugie.pdf_tex}
 				\caption{Wykres Nyquista dla $G(j\omega)$}
 			\end{figure}\noindent
-			Układ jest niestabilny.
+			Mimo tego, że układ opóźniany sam z siebie jest stabilny, to dodanie opóźnienia sprawiło, że stał się niestabilny, gdyż przecina oś rzeczywistą na lewo od punktu $-1 + j0$. Można wyznaczyć to również analitycznie wyznaczając $\omega$
+			z $\sin 0.5\omega + \omega \cos0.5 \omega = 0$. Pierwszą dodatnią wartością dla jakiej to jest prawdziwe jest $
+			\omega \approx 3.6732$. Część rzeczywista transmitancji dla tej wartości wynosi: $G(3.6732) \approx -1.0507$, więc punkt przecięcia znajduje się na lewo od punktu $-1 + j0$, co sprawia, że układ jest niestabilny.
 		\subsection{Zadanie dodatkowe}
 		Zadanie dodatkowe polegało na wyznaczeniu wzmocnienia krytycznego dla układu o transmitancji:
 		$$
@@ -87,7 +96,7 @@
 			\caption{Wykres Nyquista dla $G_0(j\omega)$}
 		\end{figure}\noindent
 		Punkt przecięcia wykresu z osią rzeczywistą wypada w $-\frac{2}{3}$, dlatego też wzmocnienie krytyczne wynosi $K = 1,5$.
-		\\ \\
+		\newpage
 		Do wyznaczenia miejsc zerowych ujemnych posłużyła następująca funkcja.
 \begin{lstlisting}
 def extract_from_poly(num, den):
@@ -132,5 +141,7 @@ def real_imag_poly(polynomial: np.poly1d):
 	return real_ans, imag_ans
 \end{lstlisting}
 	\section{Wnioski}
-		
+		Układy niestabilne da się ustabilizować dokładając sprzężenie zwrotne ujemne. O ile w przypadku układu stabilnego współczynnik wzmocnienia należał do przedziału zaczynającego się w zerze o tyle tu jest już to pewien przedział dobrany tak aby wykres Nyquista otoczył punkt $-1 + j$ odpowiednio wiele razy.
+		\\ \\
+		Opóźnienia potrafią doprowadzić do braku stabilności dla układów, które bez nich byłyby stabilne. Ma to znaczne znaczenie przy zdalnym sterowaniu oraz przy innych rodzajach sterowania, które wprowadzają opóźnienia (np. taśmociąg z węglem do normalnie stabilnego pieca).
 \end{document}

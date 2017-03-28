@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+import os
 import matplotlib.pyplot as plt
 import numpy as np
 from control import pade, bode
@@ -67,22 +69,14 @@ def plot_nyquist(transfer_function):
     plt.plot(real, imag)
     plt.grid()
     plt.axis(get_axes(real, imag))
+    plt.xlabel('Re')
+    plt.ylabel('Im')
     plt.axhline(0, color='black')
     plt.axvline(0, color='black')
     get_arrow(real, imag)
     plt.plot([-1], [0], 'r+')
     plt.title(tf2str(transfer_function))
 
-
-# print(np.roots([0.01, 0.5, 3, -10, 10]))
-# plot_nyquist(a)
-# plt.savefig("tex/svg/zad_1_first.svg")
-# y, t = step((a * 50).feedback())
-# plt.figure()
-# plt.plot(t, y)
-# degree = 20
-# num, den = pade(0.5, degree, numdeg=degree - 1)
-# a = tf(num, den) * tf([3], [1, 1])
 
 def real_imag_poly(polynomial: np.poly1d):
     pol = polynomial.coeffs
@@ -101,9 +95,6 @@ def real_imag_poly(polynomial: np.poly1d):
     real_ans = [x for x in reversed(real_ans)]
     imag_ans = [x for x in reversed(imag_ans)]
     return real_ans, imag_ans
-
-
-print(real_imag_poly(np.poly1d([1 for x in range(1, 10)])))
 
 
 def extract_from_poly(num, den):
@@ -128,33 +119,42 @@ def extract_from_poly(num, den):
     return np.array([x for x in real_parts.real if x < 0])
 
 
-#
-# real_parts = extract_from_poly([1, 1], [0.01, 0.5, 3, -10, 10])
-#
-# print([x for x in real_parts.real])
-# print([-1 / x for x in real_parts.real])
-# for i in range(0, 2):
-#     K = - 1 / real_parts[i].real
-#     temp_a = a * K
-#     y, t = step(temp_a.feedback(), np.arange(0, 30, 0.01))
-#     plt.figure()
-#     plt.plot(t, y)
-#     plt.grid()
-#     plt.title('Step response for K=' + str(K))
-#     plt.savefig('tex/svg/step' + str(K // 10) + '.svg')
-#
-# bode([a], dB=True)
-# plt.savefig('tex/svg/bode.svg')
-#
-# real_parts = extract_from_poly([1], [2, 3, 1, 0])
-# plot_nyquist(tf([1], [2, 3, 1, 0]))
-# print(real_parts)
-# plt.savefig('tex/svg/dodatkowe.svg')
+if not os.path.exists('tex/svg'):
+    os.makedirs('tex/svg')
 
+real_parts = extract_from_poly([1, 1], [0.01, 0.5, 3, -10, 10])
+print([x for x in real_parts.real])
+print([-1 / x for x in real_parts.real])
+for i in range(0, 2):
+    K = - 1 / real_parts[i].real
+    temp_a = a * K
+    y, t = step(temp_a.feedback(), np.arange(0, 30, 0.01))
+    plt.figure()
+    plt.plot(t, y)
+    plt.grid()
+    plt.ylabel('y')
+    plt.xlabel('t')
+    plt.title('Step response for K=' + str(K))
+    plt.savefig('tex/svg/step' + str(K // 10) + '.svg')
+
+
+real_parts = extract_from_poly([1], [2, 3, 1, 0])
+plot_nyquist(tf([1], [2, 3, 1, 0]))
+print(real_parts)
+plt.savefig('tex/svg/dodatkowe.svg')
 
 num, den = pade(0.5, 10, 9)
 delay = tf(num, den)
-a = tf([4], [1, 1])
-plot_nyquist(a * delay)
+not_delayed = tf([4], [1, 1])
+plot_nyquist(not_delayed * delay)
 plt.savefig('tex/svg/drugie.svg')
+
+print(np.roots([0.01, 0.5, 3, -10, 10]))
+plot_nyquist(a)
+plt.savefig("tex/svg/zad_1_first.svg")
+
+plt.figure()
+bode([a], dB=True)
+plt.savefig('tex/svg/bode.svg')
+
 plt.show()
