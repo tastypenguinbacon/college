@@ -1,0 +1,89 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{svg}
+
+\title{Regulator PID jako filtr}
+\author{Adrian Jałoszewski}
+\date{21 marca 2017, godzina 12:30}
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+
+
+\begin{document}
+	\lstset{language=Python, basicstyle=\footnotesize,
+		keepspaces=true,frame=single,tabsize=4}
+	\maketitle
+	\section{Wstęp}
+		Celem laboratorium było zapoznanie się z regulatorami P, PI, PD oraz PID w dziedzinie częstotliwości, traktując je jako filtry. Oprócz tego należało zaprojektować filtr pasmowoprzepustowy.
+	\section{Wykonanie}
+		Aby móc sensownie dopasować rozważać regulatory w kategoriach filtrów należy zapisać ich transmitancje w postaci ułamku - licznika i mianownika, oraz współczynnika $K$:
+		$$
+			G_r(s) = K\frac{L(s)}{M(s)}
+		$$
+		Następnie należy przedstawić zarówno licznik jak i mianownik w postaci iloczynowej, jednak w przypadku regulatora PID nie zawsze jest to możliwe, gdyż miejsca zerowe mogą być zespolone sprzężone. Wtedy licznik należy zostawić w postaci funkcji kwadratowej. 
+		\\
+		\\
+		Na podstawie zer i biegunów transmitancji można opisać jej zachowanie jako filtr. Każde zero zwiększa tempo wzrostu charakterystyki amplitudowej o 20dB na dekadę, a każdy biegun zmniejsza jej tempo wzrostu o 20dB na dekadę. Współczynnik $K$ decyduje natomiast o jej przesunięciu.
+		$$
+			20 \log |G(j\omega)| = 20 \log K + 20 \log |L(j\omega)| + 20 \log \left|\frac{1}{M(j\omega)}\right|
+		$$
+		$$
+			20 \log |G(j\omega)| =  20 \log K + 20 \log |L(j\omega)| - 20 \log \left|M(j\omega)\right|
+		$$ 
+		Pojedynczy jednomian natomiast:
+		$$
+			\omega \ll \frac{1}{T} \Rightarrow 20 \log |jT\omega + 1| = 0 
+		$$
+		Dla pulsacji znacznie wyższych od $\frac{1}{T}$ natomiast wartość ta zbliża się do \linebreak $20 \log |jT\omega| = 20\log T + 20 \log |j\omega|$. Pierwszy człon odpowiada za przesunięcie takie aby zgięcie te nastąpiło dla $\omega = \frac{1}{T}$, drugi natomiast odpowiada za wzrost o 20dB na dekadę, gdyż: 
+		$$
+			20\log 10\omega - 20\log \omega = 20 \log 10 + 20 \log \omega - 20 \log \omega = 20
+		$$
+		\subsection{Regulator P}
+			Ze względu na swoją transmitancję regulator P przepuszcza wszystkie pulsacje jednakowo.
+			$$
+				G_P(s) = k
+			$$
+		\subsection{Regulator PI}
+			Regulator PI jest filtrem dolnoprzepustowym
+			$$
+				G_{PI}(s) = k\left(1 + \frac{1}{T_Is}\right) = \frac{k}{T_i} \cdot\frac{T_Is + 1}{s}
+			$$
+		\subsection{Regulator PD}
+			Regulator PD jest filtrem górnoprzepustowym, który dobrze przepuszcza pulsacji większe od $ \frac{1}{T_D}$
+			$$
+				G_{PD}(s) = k\left(1 + T_Ds\right)
+			$$
+		\subsection{Regulator PID}
+			Regulator PID jest natomiast filtrem pasmowozaporowym, gdyż biegun transmitancji jest mniejszy niż może być jej zero (mamy do czynienia z funkcją kwadratową o współczynnikach dodatnich - pierwiastki jej mają część rzeczywistą mniejszą od 0, a więc moduł większy niż 0). 
+			$$
+				G_{PID}(s) = k\left(1 + \frac{1}{T_Is} + T_Ds\right) = \frac{k}{T_i}
+					\cdot \frac{T_DT_Is^2 + T_Is + 1}{s}
+			$$
+		\subsection{Filtr pasmowoprzepustowy}
+			Filtr pasmowoprzepustowy musi mieć charakterystykę amplitudową zmieniającą się w trzech miejscach - miejsce, gdzie zaczyna narastać, gdzie wzrost jej hamuje oraz miejsce gdzie wartość zaczyna maleć. Dlatego jej transmitancja jest dana wzorem:
+			$$
+				G(s) = K\cdot\frac{(T_1 s + 1)(T_4 s + 1)}{(T_2 s + 1)(T_3 s + 1)}
+			$$
+			gdzie $T_1 < T_2 < T_3 < T4$, a w najlepszym przypadku $\frac{T2}{T1} = \frac{T3}{T4}$, wtedy charakterystyka amplitudowa rośnie równie długo (w myśli dekad) jak opada.
+			\\ \\
+			Przykładem takiego filtru pasmowoprzepustowego jest:
+			$$
+				G(s) = \frac{(1 s + 1)(10^{-9} s + 1)}{(0.1 s + 1)(10^{-8} s + 1)}
+			$$
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.8\columnwidth}
+				\input{band_pass.pdf_tex}
+				\caption{Filtr pasmowoprzepustowy przepuszczający dla $\omega \in [10^1, 10^8]$}
+			\end{figure}\noindent
+	\section{Wnioski}
+		
+\end{document}
