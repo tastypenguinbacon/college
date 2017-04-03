@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.91, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'band_pass.pdf' (pdf, eps, ps)
+%% Accompanies image file 'PID.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -49,6 +49,6 @@
   \global\let\svgscale\undefined%
   \makeatother%
   \begin{picture}(1,0.75423735)%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{band_pass.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{PID.pdf}}%
   \end{picture}%
 \endgroup%

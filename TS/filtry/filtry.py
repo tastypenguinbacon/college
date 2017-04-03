@@ -1,6 +1,7 @@
 import os
 from control import tf
 from control import bode
+from subprocess import call
 import numpy as np
 
 import matplotlib.pyplot as plt
@@ -11,10 +12,14 @@ if not os.path.exists('svg'):
 
 def plot(file_name):
     def plot_decorator(f):
-        plt.figure()
-        f()
-        plt.legend(loc='lower right', prop={'size': 6})
-        plt.savefig(file_name)
+        def wrapped():
+            plt.figure()
+            f()
+            plt.legend(loc='lower right', prop={'size': 6})
+            plt.savefig(file_name, bbox_inches='tight')
+
+        wrapped()
+        return wrapped
 
     return plot_decorator
 
@@ -48,8 +53,8 @@ def pi_regulator():
 def pid_regulator():
     k, i = 1, 1
     omega = np.geomspace(10 ** -2, 10 ** 4, 1000, True)
-    for (T_i, T_d) in zip([2 * 0.1, 10, 0.1, 10 ** -2],
-                          [0.5 * 0.1, 10 ** -3, 0.1, 1]):
+    for T_i, T_d in zip([1, 2 * 0.1, 10 ** -2],
+                        [10 ** -2, 0.5 * 0.1, 1]):
         PID = k * (tf([1], [1]) + tf([T_d, 1], [1]) + tf([1], [T_i, 0]))
         bode(PID, omega=omega, dB=True, Plot=True, label='k = 1, T_i = ' + str(T_i) + ', T_d = ' + str(T_d))
         i += 1
@@ -63,4 +68,8 @@ def band_pass():
     bode(a, omega=omega, dB=True, Plot=True)
 
 
+fileNames = ['P', 'PD', 'PI', 'PID', 'band_pass']
+for fileName in fileNames:
+    call(['inkscape -D -z --file=svg/' + fileName + '.svg' +
+          ' --export-pdf=' + fileName + '.pdf --export-latex'], shell=True)
 plt.show()

@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \usepackage{polski}
@@ -14,7 +14,7 @@
 \title{Regulator PID jako filtr}
 \author{Adrian Jałoszewski}
 \date{21 marca 2017, godzina 12:30}
-\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2cm, top=2cm}
 
 
 \begin{document}
@@ -46,27 +46,52 @@
 		$$
 			20\log 10\omega - 20\log \omega = 20 \log 10 + 20 \log \omega - 20 \log \omega = 20
 		$$
+		\newpage
 		\subsection{Regulator P}
 			Ze względu na swoją transmitancję regulator P przepuszcza wszystkie pulsacje jednakowo.
 			$$
 				G_P(s) = k
 			$$
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{P.pdf_tex}
+				\caption{Charakterystyki bodego dla regulatora P}
+			\end{figure}\noindent
 		\subsection{Regulator PI}
-			Regulator PI jest filtrem dolnoprzepustowym
+			Regulator PI jest filtrem dolnoprzepustowym, który przepuszcza pulsacje mniejsze od $\frac{1}{T_I}$.
 			$$
 				G_{PI}(s) = k\left(1 + \frac{1}{T_Is}\right) = \frac{k}{T_i} \cdot\frac{T_Is + 1}{s}
 			$$
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{PI.pdf_tex}
+				\caption{Charakterystyki bodego dla regulatora PI}
+			\end{figure}\noindent
 		\subsection{Regulator PD}
 			Regulator PD jest filtrem górnoprzepustowym, który dobrze przepuszcza pulsacji większe od $ \frac{1}{T_D}$
 			$$
 				G_{PD}(s) = k\left(1 + T_Ds\right)
 			$$
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{PD.pdf_tex}
+				\caption{Charakterystyki bodego dla regulatora PD}
+			\end{figure}\noindent
 		\subsection{Regulator PID}
 			Regulator PID jest natomiast filtrem pasmowozaporowym, gdyż biegun transmitancji jest mniejszy niż może być jej zero (mamy do czynienia z funkcją kwadratową o współczynnikach dodatnich - pierwiastki jej mają część rzeczywistą mniejszą od 0, a więc moduł większy niż 0). 
 			$$
 				G_{PID}(s) = k\left(1 + \frac{1}{T_Is} + T_Ds\right) = \frac{k}{T_i}
 					\cdot \frac{T_DT_Is^2 + T_Is + 1}{s}
 			$$
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{PID.pdf_tex}
+				\caption{Charakterystyki bodego dla regulatora PID}
+			\end{figure}\noindent
 		\subsection{Filtr pasmowoprzepustowy}
 			Filtr pasmowoprzepustowy musi mieć charakterystykę amplitudową zmieniającą się w trzech miejscach - miejsce, gdzie zaczyna narastać, gdzie wzrost jej hamuje oraz miejsce gdzie wartość zaczyna maleć. Dlatego jej transmitancja jest dana wzorem:
 			$$
@@ -80,7 +105,7 @@
 			$$
 			\begin{figure}[H]
 				\centering
-				\def \svgwidth{0.8\columnwidth}
+				\def \svgwidth{0.7\columnwidth}
 				\input{band_pass.pdf_tex}
 				\caption{Filtr pasmowoprzepustowy przepuszczający dla $\omega \in [10^1, 10^8]$}
 			\end{figure}\noindent

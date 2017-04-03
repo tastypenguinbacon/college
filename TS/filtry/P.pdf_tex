@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.91, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'band_pass.pdf' (pdf, eps, ps)
+%% Accompanies image file 'P.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -36,7 +36,7 @@
   }%
   \providecommand\rotatebox[2]{#2}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{416.802812bp}%
+    \setlength{\unitlength}{426.343437bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -48,7 +48,7 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.75423735)%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{band_pass.pdf}}%
+  \begin{picture}(1,0.73735919)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{P.pdf}}%
   \end{picture}%
 \endgroup%
