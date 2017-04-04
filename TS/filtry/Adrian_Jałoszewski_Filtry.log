@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.8)  4 APR 2017 01:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.8)  4 APR 2017 22:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -912,44 +912,71 @@ Package pdftex.def Info: PID.pdf, page1 used on input line 52.
 pdfTeX warning: /usr/bin/pdflatex (file ./PID.pdf): PDF inclusion: multiple pdf
 s with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 99--103
+Overfull \hbox (23.99998pt too wide) in paragraph at lines 99--112
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--122
 
  []
 
 (./band_pass.pdf_tex
-<band_pass.pdf, id=1005, page=1, 418.36583pt x 315.54713pt>
+<band_pass.pdf, id=1017, page=1, 418.36583pt x 315.54713pt>
 File: band_pass.pdf Graphic file (type pdf)
 
 <use band_pass.pdf, page 1>
 Package pdftex.def Info: band_pass.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 318.66948pt x 240.36237pt.
-) [4 <./band_pass.pdf>]
-(./Adrian_Jałoszewski_Filtry.aux) ) 
+) [4 <./band_pass.pdf>] (./band_pass_2.pdf_tex
+<band_pass_2.pdf, id=1097, page=1, 418.36583pt x 315.54713pt>
+File: band_pass_2.pdf Graphic file (type pdf)
+
+<use band_pass_2.pdf, page 1>
+Package pdftex.def Info: band_pass_2.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 318.66948pt x 240.36237pt.
+) (./band_pass_3.pdf_tex
+<band_pass_3.pdf, id=1098, page=1, 424.75218pt x 315.54713pt>
+File: band_pass_3.pdf Graphic file (type pdf)
+
+<use band_pass_3.pdf, page 1>
+Package pdftex.def Info: band_pass_3.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 318.66948pt x 236.73679pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 153--156
+
+ []
+
+[5 <./band_pass_2.pdf> <./band_pass_3.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./band_pass_3.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+>] [6] (./Adrian_Jałoszewski_Filtry.aux) ) 
 Here is how much of TeX's memory you used:
- 7167 strings out of 493013
- 101220 string characters out of 6135683
- 198423 words of memory out of 5000000
- 10560 multiletter control sequences out of 15000+600000
+ 7184 strings out of 493013
+ 101538 string characters out of 6135683
+ 199423 words of memory out of 5000000
+ 10571 multiletter control sequences out of 15000+600000
  12777 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,9n,98p,812b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dv
-ips/pl/plms.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/us
-r/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/texm
-f-dist/fonts/enc/dvips/pl/plme.enc}</usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/pl/plbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plex10
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/pl/plmi5.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/pl/plmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/pl/plr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/pl/plr7.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/pl/plsy7.pfb>
-Output written on Adrian_Jałoszewski_Filtry.pdf (4 pages, 298417 bytes).
+ 68i,10n,98p,812b,394s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts
+/enc/dvips/pl/plms.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plmi.e
+nc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texli
+ve/texmf-dist/fonts/enc/dvips/pl/plme.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/pl/plbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl
+/plex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi5.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/pl/plr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/p
+l/plr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr17.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/pl/plr7.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/pl/plsy7.pfb>
+Output written on Adrian_Jałoszewski_Filtry.pdf (6 pages, 364477 bytes).
 PDF statistics:
- 1124 PDF objects out of 1200 (max. 8388607)
- 745 compressed objects within 8 object streams
+ 1280 PDF objects out of 1440 (max. 8388607)
+ 848 compressed objects within 9 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

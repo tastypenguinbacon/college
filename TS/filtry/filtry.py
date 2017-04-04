@@ -53,9 +53,9 @@ def pi_regulator():
 def pid_regulator():
     k, i = 1, 1
     omega = np.geomspace(10 ** -2, 10 ** 4, 1000, True)
-    for T_i, T_d in zip([1, 2 * 0.1, 10 ** -2],
-                        [10 ** -2, 0.5 * 0.1, 1]):
-        PID = k * (tf([1], [1]) + tf([T_d, 1], [1]) + tf([1], [T_i, 0]))
+    for T_i, T_d in zip([1, 2 * 0.1, 10 ** -2 * 4, 10 ** -3],
+                        [10 ** -2, 0.5 * 0.1, 0.25, 10]):
+        PID = k * (tf([1], [1]) + tf([T_d, 0], [1]) + tf([1], [T_i, 0]))
         bode(PID, omega=omega, dB=True, Plot=True, label='k = 1, T_i = ' + str(T_i) + ', T_d = ' + str(T_d))
         i += 1
 
@@ -68,8 +68,24 @@ def band_pass():
     bode(a, omega=omega, dB=True, Plot=True)
 
 
-fileNames = ['P', 'PD', 'PI', 'PID', 'band_pass']
+@plot('svg/band_pass_2.svg')
+def band_pass_2():
+    T1, T2 = 0.1, 10 ** -8
+    a = tf([1, 0], [T1, 1]) * tf([1], [T2, 1])
+    omega = np.geomspace(10 ** -1, 10 ** 10, 1000, True)
+    bode(a, omega=omega, dB=True, Plot=True)
+
+
+@plot('svg/band_pass_3.svg')
+def band_pass_2():
+    T1, T2 = 0.1, 10 ** -8
+    a = tf([1, 0], [T1, 1]) * tf([1], [T2, 1]) * tf([1, 0], [T1, 1]) * tf([1], [T2, 1])
+    omega = np.geomspace(10 ** -1, 10 ** 10, 1000, True)
+    bode(a, omega=omega, dB=True, Plot=True)
+
+
+fileNames = ['P', 'PD', 'PI', 'PID', 'band_pass', 'band_pass_2', 'band_pass_3']
 for fileName in fileNames:
     call(['inkscape -D -z --file=svg/' + fileName + '.svg' +
-          ' --export-pdf=' + fileName + '.pdf --export-latex'], shell=True)
+          ' --export-pdf=' + fileName + '.pdf --export-latex &'], shell=True)
 plt.show()

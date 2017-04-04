@@ -83,7 +83,7 @@
 		\subsection{Regulator PID}
 			Regulator PID jest natomiast filtrem pasmowozaporowym, gdyż biegun transmitancji jest mniejszy niż może być jej zero (mamy do czynienia z funkcją kwadratową o współczynnikach dodatnich - pierwiastki jej mają część rzeczywistą mniejszą od 0, a więc moduł większy niż 0). 
 			$$
-				G_{PID}(s) = k\left(1 + \frac{1}{T_Is} + T_Ds\right) = \frac{k}{T_i}
+				G_{PID}(s) = k\left(1 + \frac{1}{T_Is} + T_Ds\right) = \frac{k}{T_I}
 					\cdot \frac{T_DT_Is^2 + T_Is + 1}{s}
 			$$
 			\begin{figure}[H]
@@ -92,12 +92,31 @@
 				\input{PID.pdf_tex}
 				\caption{Charakterystyki bodego dla regulatora PID}
 			\end{figure}\noindent
+			Regulator PID łączy w sobie cechy regulatora PI oraz PD, wzmacniając bardziej częstotliwości znajdujące się poza pasmem zaporowym. Miejsca w których charakterystyka ulega przegięciu zależą od tego jak dobrane zostaną czas całkowania i czas różniczkowania (pulsacje dla jakich się zeruje licznik transmitancji decydują o tym gdzie nastąpią te przegięcia). W przypadku gdy wyróżnik licznika transmitancji okazuje się być ujemny mamy do czynienia z zespolonymi pierwiastkami. Charakterystyki są symetryczne  względem $\omega = \frac{1}{\sqrt{T_IT_D}}$, a współczynniki zostały tak dobrane aby zachodziło to dla $\omega = 10$.
+			\begin{center}
+				\begin{table}[H]
+					\caption{Porównanie charakterystyk regulatora PID}
+					\begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}
+						\hline 
+						Kolor charakterystyki& Opis\\
+						\hline
+						niebieski &  w liczniku transmitancji dwa pierwiastki rzeczywiste -- typowy filtr pasmowozaporowy \\ 
+						\hline 
+						pomarańczowy & w liczniku transmitancji jeden pierwiastek podwójny -- niewielkie pasmo zaporowe, płynne przejście w charakterystyce fazowej \\ 
+						\hline 
+						zielony & w liczniku transmitancji pierwiastki zepolone, stosunek części urojonej do rzeczywistej niewielki -- pojawia się niewielkie zagłębienie w charakterystyce amplitudowej   \\ 
+						\hline 
+						czerwony & w liczniku transmitancji pierwiastki zespolone, stosunek części urojonej do rzeczywistej duży -- wgłębienie jest znacznie większe \\ 
+						\hline 
+					\end{tabular}
+				\end{table}
+			\end{center}
 		\subsection{Filtr pasmowoprzepustowy}
 			Filtr pasmowoprzepustowy musi mieć charakterystykę amplitudową zmieniającą się w trzech miejscach - miejsce, gdzie zaczyna narastać, gdzie wzrost jej hamuje oraz miejsce gdzie wartość zaczyna maleć. Dlatego jej transmitancja jest dana wzorem:
 			$$
 				G(s) = K\cdot\frac{(T_1 s + 1)(T_4 s + 1)}{(T_2 s + 1)(T_3 s + 1)}
 			$$
-			gdzie $T_1 < T_2 < T_3 < T4$, a w najlepszym przypadku $\frac{T2}{T1} = \frac{T3}{T4}$, wtedy charakterystyka amplitudowa rośnie równie długo (w myśli dekad) jak opada.
+			gdzie $T_1 < T_2 < T_3 < T4$, a w najlepszym przypadku $\frac{T2}{T1} = \frac{T3}{T4}$, wtedy charakterystyka amplitudowa rośnie tyle samo dekad co opada.
 			\\ \\
 			Przykładem takiego filtru pasmowoprzepustowego jest:
 			$$
@@ -109,6 +128,30 @@
 				\input{band_pass.pdf_tex}
 				\caption{Filtr pasmowoprzepustowy przepuszczający dla $\omega \in [10^1, 10^8]$}
 			\end{figure}\noindent
+			Ten filtr jednak działa na zasadzie wzmacniania sygnału w paśmie przepustowym, sygnał który znajduje się poza nim nie jest tłumiony. Stosując transmitancję:
+			$$
+				G(s) = \frac{s}{(T_1 s + 1)(T_2 s + 1)}
+			$$
+			Dla zerowej pulsacji sygnał jest tłumiony do zera, dla pulsacji zmierzającej do nieskończoności sygnał jest również tłumiony do zera. Przykładem takiego filtru jest:
+			$$
+				G(s) = \frac{s}{(0.1 s + 1)(10^{-8} s + 1)}
+			$$
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{band_pass_2.pdf_tex}
+				\caption{Filtr pasmowoprzepustowy przepuszczający dla $\omega \in [10^1, 10^8]$}
+			\end{figure}\noindent
+			Jeżeli w transmitancji powieli się zera i bieguny, można otrzymać znacznie bardziej stromą charakterystykę (w tym przypadku zastosowano podwojenie):
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{band_pass_3.pdf_tex}
+				\caption{Filtr pasmowoprzepustowy przepuszczający dla $\omega \in [10^1, 10^8]$}
+			\end{figure}\noindent
 	\section{Wnioski}
+		Traktując regulatory jako filtry można zmieniać czułość regulatora w zależności od częstotliwości podawanego na niego sygnału. Można w ten sposób zapinając sprzężenie zwrotne reagować lepiej na szybkie zmiany sygnału wyjściowego (regulator PD) lub na zmiany powolne (regulator PI) lub na obydwa rodzaje zmian - wykorzystując regulator PID.
+		\\ \\
+		Filtr pasmowo przepustowy może zostać zrealizowany przy pomocy obiektu drugiego rzędu. Jednak narasta on i opada wtedy  łagodnie na brzegach (20 dB na dekadę). Można te tępo wzrostu i spadku zwiększyć, powiększając bieguny oraz zera transmitancji. Należy jednak być z tym ostrożnym, gdyż zwiększa to rząd transmitancji, a to może być niekorzystne w sytuacji zapinania sprzężenia zwrotnego -- układ może stać się łatwo niestabilny.
 		
 \end{document}
