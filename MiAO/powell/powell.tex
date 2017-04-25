@@ -1,0 +1,106 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{svg}
+
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+
+
+\begin{document}
+	\noindent
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|c|c|c|c|}
+			\hline 
+			\multicolumn{4}{|l|}{Optymalizacja na kierunku} \\ 
+			\hline 
+			Adrian Jałoszewski & 29 III 2017 & Środa 14:00 &  \\ 
+			\hline 
+		\end{tabular}
+	} 
+	\section{Cel ćwiczenia}
+		Celem ćwiczenia było zapoznanie się z obydwiema metodami Powella dla przypadku funkcjonału kwadratowego oraz doliny bananowej Rossenbrocka.
+	\section{Przebieg ćwiczenia}
+		\subsection{Zadanie 1}
+			Zadanie pierwsze polegało na minimalizacji funkcjonału kwadratowego postaci:
+			$$
+				Q(x) = x^T A x + b^T x + c
+			$$
+			Minimalizacja przebiegała obiema metodami Powella dla następujących parametrów:
+			\begin{itemize}
+				\item[] $A = \begin{bmatrix}
+				8 & -2 \\ 
+				-2 & 5
+				\end{bmatrix}$
+				\item[] $b = \begin{bmatrix}
+				3 \\ 
+				4
+				\end{bmatrix}$ 
+				\item[] $c = 10$
+			\end{itemize}
+			Punktem początkowym był punkt $x = [7, 4]^T$
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{1_1.pdf_tex}
+				\caption{Pierwsza metoda Powella}
+			\end{figure}\noindent
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{1_2.pdf_tex}
+				\caption{Druga metoda Powella}
+			\end{figure}\noindent
+		\subsection{Zadanie 2}
+			Dolina bananowa Rossenbrocka jest dana równaniem:
+			$$
+				Q(x_1, x_2) = 100 (x_2 - x_1^2)^2 + (1 - x_1)^2
+			$$
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{2_1.pdf_tex}
+				\caption{Pierwsza metoda Powella}
+			\end{figure}\noindent
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{2_2.pdf_tex}
+				\caption{Druga metoda Powella}
+			\end{figure}\noindent
+		\subsection{Zadanie 3}
+			Należy zbadać wartości funkcji celu dla maksymalnie 100 iteracji metod Powella. Funkcja celu była dana jako:
+			$$
+				\begin{aligned}
+					Q(x) = 100(x_1^2-x_2) ^ 2 + (1 - x_1)^2 + 90 (x_3^3 - x_4)^2
+					+ (1 - x_3)^2 \\
+					+ 10.1 [(x_2 - 1)^2 + (x_4-1)^2] + 19.8 (x_2-1)(x_4-1)
+				\end{aligned}
+			$$
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{3_1.pdf_tex}
+				\caption{Pierwsza metoda Powella}
+			\end{figure}\noindent
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.7\columnwidth}
+				\input{3_2.pdf_tex}
+				\caption{Druga metoda Powella}
+			\end{figure}\noindent
+	\section{Wnioski z wykonanego ćwiczenia}
+		Wykresy w zadaniu pierwszym pokazały, że zarówno pierwsza i druga metoda Powella są szybko zbieżne dla funkcjonałów kwadratowych, gdyż zaledwie w dwóch krokach wyznaczyły położenie minimum. Ponieważ obydwie metody posiadają zbieżność drugiego rzędu, to trudno tutaj powiedzieć o przypadku dla którego występuje brak zbieżności. Można jednak powiedzieć o przypadku powolnej zbieżności jeżeli wybrana początkowa baza będzie bliska zdegenerowanej (na podstawie skryptu).
+		\\ \\
+		W zadaniu drugim druga metoda okazała się zdecydowanie wolniej zbieżna od pierwszej. 
+		\\ \\
+		W zadaniu trzecim druga metoda Powella wykonała wszystkie iteracje, pierwsza zakończyła się po pięciu iteracjach. W przypadku drugiej metody Powella funkcja celu maleje wolniej, jest to powiązane z tym, że pierwsze dwa człony to dolina bananowa Rossenbrocka (potwierdzenie obserwacji z zadania drugiego).
+\end{document}
