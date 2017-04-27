@@ -1,160 +1,289 @@
 import os
 from subprocess import call
+from time import time
 
 import matplotlib.pyplot as plt
-import numpy as np
-from scipy.integrate import ode
+
+from diff_equations import *
+from initial_conditions import special_init_for_negative_spring, init_points_on_rectangle, \
+    corner_case_dumping_init_points
+from plot import fileNames, for_name
 
 if not os.path.exists('tex/svg'):
     os.makedirs('tex/svg')
 
+begin = time()
 
-def van_der_poll(t, y, a):
-    y1 = y[1] - y[0] ** 3 - 2 * a * y[0]
-    y2 = -y[0]
-    return np.array([y1, y2])
+width, height = 10, 10
+for_name("van_der_poll_1", width, height, arrows=[0.2, 0.6]) \
+    (lambda t, y: van_der_poll(y, 1),
+     lambda: init_points_on_rectangle(width, height))
 
+for_name("van_der_poll_1_lin", width, height, arrows=[0.2, 0.6], linear=1) \
+    (lambda t, y: van_der_poll(y, 1),
+     lambda: init_points_on_rectangle(width, height, n=40))
 
-def mechanical_system(t, y, b, c, d):
-    y1 = y[1]
-    y2 = - b * y[1] - c * y[0] - d * y[0] ** 3
-    return np.array([y1, y2])
+for_name("van_der_poll_1_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: van_der_poll(y, 1),
+     lambda: init_points_on_rectangle(width, height, n=40))
 
-
-def pendulum(t, y, a, b):
-    y1 = y[1]
-    y2 = -b * y[1] - a * np.sin(y[0])
-    return np.array([y1, y2])
-
-
-def plot(file_name, width, height):
-    def plot_decorator(f):
-        def wrapped(function_name, init_point_provider):
-            plt.figure()
-            f(function_name, init_point_provider)
-            plt.axis([-width / 2, width / 2, -height / 2, height / 2])
-            plt.xlabel("x1")
-            plt.ylabel("x2")
-            plt.savefig('tex/svg/' + file_name, bbox_inches='tight')
-
-        return wrapped
-
-    return plot_decorator
+width /= 10
+height /= 10
+for_name("van_der_poll_1_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: van_der_poll(y, 1),
+     lambda: init_points_on_rectangle(width, height, n=20))
 
 
-def init_points_on_rectangle(width, height, n=30):
-    angles = np.linspace(0, 2 * np.pi, n)
-    starting_points = np.transpose([np.sin(angles), np.cos(angles)])
-    for i in range(0, len(starting_points)):
-        starting_points[i] /= np.max(np.abs(starting_points[i]))
-        starting_points[i, 0] *= width / 2
-        starting_points[i, 1] *= height / 2
-    return starting_points
+width, height = 10, 10
+for_name("van_der_poll_5", width, height, arrows=[0.2, 0.6]) \
+    (lambda t, y: van_der_poll(y, 5),
+     lambda: init_points_on_rectangle(width, height))
+
+for_name("van_der_poll_5_lin", width, height, arrows=[0.2, 0.6], linear=1) \
+    (lambda t, y: van_der_poll(y, 5),
+     lambda: init_points_on_rectangle(width, height, n=40))
+
+for_name("van_der_poll_5_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: van_der_poll(y, 5),
+     lambda: init_points_on_rectangle(width, height, n=40))
+
+width /= 10
+height /= 10
+for_name("van_der_poll_5_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: van_der_poll(y, 5),
+     lambda: init_points_on_rectangle(width, height, n=20))
 
 
-def special_init_for_negative_spring():
-    xs = np.concatenate((np.linspace(-5, -2.5, 10),
-                         np.linspace(-2.5, -1.5, 20),
-                         np.linspace(-2, 3, 10),
-                         np.linspace(3, 5, 10)))
-    ys = np.ones(len(xs)) * 5
-    xs = np.concatenate((xs, -xs))
-    ys = np.concatenate((ys, -ys))
-    return np.array([xs, ys]).transpose()
+width, height = 10, 10
+for_name("van_der_poll_0", width, height, arrows=[0.1, 0.2]) \
+    (lambda t, y: van_der_poll(y, 0),
+     lambda: init_points_on_rectangle(width, height))
+
+for_name("van_der_poll_0_lin", width, height, arrows=[0.2, 0.6], linear=1) \
+    (lambda t, y: van_der_poll(y, 0),
+     lambda: init_points_on_rectangle(width, height, n=40))
+
+for_name("van_der_poll_0_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: van_der_poll(y, 0),
+     lambda: init_points_on_rectangle(width, height, n=40))
+
+width /= 10
+height /= 10
+for_name("van_der_poll_0_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: van_der_poll(y, 0),
+     lambda: init_points_on_rectangle(width, height, n=20))
 
 
-def corner_case_dumping_init_points(width, height):
-    outer = init_points_on_rectangle(width, height, 80)
-    inner = np.array([np.linspace(-width / 2, width / 2, 31),
-                      np.zeros(31)]).transpose()
-    return np.concatenate((outer, inner))
+width, height = 10, 10
+for_name("van_der_poll_0_5", width, height, arrows=[0.2, 0.6]) \
+    (lambda t, y: van_der_poll(y, 0.5),
+     lambda: init_points_on_rectangle(width, height))
+for_name("van_der_poll_0_5_lin", width, height, arrows=[0.2, 0.6], linear=1) \
+    (lambda t, y: van_der_poll(y, 0.5),
+     lambda: init_points_on_rectangle(width, height, n=40))
 
+for_name("van_der_poll_0_5_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: van_der_poll(y, 0.5),
+     lambda: init_points_on_rectangle(width, height, n=40))
 
-def pythagoras(start, end):
-    return np.sqrt((end[0] - start[0]) ** 2 + (end[1] - start[1]) ** 2)
+width /= 10
+height /= 10
+for_name("van_der_poll_0_5_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: van_der_poll(y, 0.5),
+     lambda: init_points_on_rectangle(width, height, n=20))
 
+temp = lambda x: 0.02517517 * x ** 3 + 0.23480313 * x ** 2 - 0.93830795 * x - 4.47556726 if -8 < x < 1 else -255 * x - 6
+x = np.linspace(-20, 20, 300)
+right = lambda x: temp(x - 2 * np.pi)
+more_right = lambda x: right(x - 2 * np.pi)
+middle = lambda x: right(x + 2 * np.pi)
+left = lambda x: middle(x + 2 * np.pi)
+left = np.array(list(map(left, x)))
+middle = np.array(list(map(middle, x)))
+more_right = np.array(list(map(more_right, x)))
+right = np.array(list(map(right, x)))
+height, width = 10, 20
 
-def add_arrow(curve, arrows):
-    arrows.append(1)
-    prev, length = curve[0], 0
-    for point in curve[1:]:
-        length += pythagoras(point, prev)
-        prev = point
-    if length >= 2:
-        prev, partial_length, i = curve[0], 0, 0
-        for point in curve[1:]:
-            partial_length += pythagoras(point, prev)
-            if partial_length / length > arrows[i]:
-                arrow_start_x = prev[0]
-                arrow_start_y = prev[1]
-                arrow_end_x = point[0]
-                arrow_end_y = point[1]
-                ax = plt.axes()
-                ax.arrow(arrow_start_x, arrow_start_y,
-                         (arrow_end_x - arrow_start_x) * 0.001,
-                         (arrow_end_y - arrow_start_y) * 0.001,
-                         head_width=0.2, head_length=0.2)
-                i += 1
-            prev = point
-
-
-def for_name(name, width, height, arrows=None):
-    if arrows is None:
-        arrows = [0.2, 0.3]
-
-    @plot(name + ".svg", width, height)
-    def phase_portrait(diff_equation, get_starting_points):
-        sp = get_starting_points()
-        for initial_value in sp:
-            solver = ode(diff_equation).set_integrator('zvode', method='bdf')
-            solver.set_initial_value(initial_value, 0)
-            dt, points = 0.01, [initial_value]
-
-            while solver.successful() and solver.t < 100:
-                point = solver.integrate(solver.t + dt)
-                points.append(point)
-                if np.abs(point[0]) > width / 2 or np.abs(point[1]) > height / 2:
-                    break
-
-            points = np.real(points)
-            plt.plot(points[:, 0], points[:, 1], 'C0', linewidth=0.5)
-            add_arrow(points, arrows)
-
-    return phase_portrait
-
-
-# for_name("van_der_poll_1", 10, 10, arrows=[0.2, 0.4]) \
-#     (lambda t, y: van_der_poll(t, y, 1),
-#      lambda: init_points_on_rectangle(10, 10))
-# for_name("van_der_poll_5", 10, 10, arrows=[0.2, 0.4]) \
-#     (lambda t, y: van_der_poll(t, y, 5),
-#      lambda: init_points_on_rectangle(10, 10))
-# for_name("van_der_poll_0", 10, 10, arrows=[0.1, 0.2]) \
-#     (lambda t, y: van_der_poll(t, y, 0),
-#      lambda: init_points_on_rectangle(10, 10))
-# for_name("van_der_poll_0_5", 10, 10, arrows=[0.2, 0.5]) \
-#     (lambda t, y: van_der_poll(t, y, 0.5),
-#      lambda: init_points_on_rectangle(10, 10))
 for_name("pendulum_1", 20, 10, arrows=[0.2, 0.6]) \
-    (lambda t, y: pendulum(t, y, 1, 1),
-     lambda: init_points_on_rectangle(20, 10, n=100))
-for_name("pendulum_2", 20, 10, arrows=[0.2, 0.6]) \
-    (lambda t, y: pendulum(t, y, 4, 1),
-     lambda: init_points_on_rectangle(20, 10, n=100))
+    (lambda t, y: pendulum(y, 1, 1),
+     lambda: init_points_on_rectangle(20, 10, n=100),
+     [lambda: plt.fill_between(x, left, -height / 2 * np.ones(len(x)),
+                               where=left > -height / 2,
+                               facecolor='red', alpha=0.1),
+      lambda: plt.fill_between(x, more_right, height / 2 * np.ones(len(x)),
+                               where=right < height / 2,
+                               facecolor='orange', alpha=0.1),
+      lambda: plt.fill_between(x, more_right, right,
+                               where=right < more_right / 2,
+                               facecolor='green', alpha=0.1),
+      lambda: plt.fill_between(x, left, middle,
+                               where=left < middle,
+                               facecolor='blue', alpha=0.1),
+      lambda: plt.fill_between(x, middle, right,
+                               where=left < right,
+                               facecolor='yellow', alpha=0.1)
+      ])
+
+for_name("pendulum_1_lin", width, height, arrows=[0.2, 0.6], linear=1) \
+    (lambda t, y: pendulum(y, 1, 1),
+     lambda: init_points_on_rectangle(width, height, n=100))
+
+for_name("pendulum_1_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: pendulum(y, 1, 1),
+     lambda: init_points_on_rectangle(width, height, n=100))
+
+width /= 10
+height /= 10
+for_name("pendulum_1_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: pendulum(y, 1, 1),
+     lambda: init_points_on_rectangle(width, height, n=20))
+
+temp = lambda x: -2.267609 * x - 6.77998446
+x = np.linspace(-20, 20, 300)
+right = lambda x: temp(x - 2 * np.pi)
+more_right = lambda x: right(x - 2 * np.pi)
+middle = lambda x: right(x + 2 * np.pi)
+left = lambda x: middle(x + 2 * np.pi)
+left = np.array(list(map(left, x)))
+middle = np.array(list(map(middle, x)))
+more_right = np.array(list(map(more_right, x)))
+right = np.array(list(map(right, x)))
+height, width = 10, 20
+
+for_name("pendulum_2", width, height, arrows=[0.2, 0.6]) \
+    (lambda t, y: pendulum(y, 4, 1),
+     lambda: init_points_on_rectangle(20, 10, n=100),
+     [lambda: plt.fill_between(x, left, -height / 2 * np.ones(len(x)),
+                               where=left > -height / 2,
+                               facecolor='red', alpha=0.1),
+      lambda: plt.fill_between(x, more_right, height / 2 * np.ones(len(x)),
+                               where=right < height / 2,
+                               facecolor='orange', alpha=0.1),
+      lambda: plt.fill_between(x, more_right, right,
+                               where=right < more_right / 2,
+                               facecolor='green', alpha=0.1),
+      lambda: plt.fill_between(x, left, middle,
+                               where=left < middle,
+                               facecolor='blue', alpha=0.1),
+      lambda: plt.fill_between(x, middle, right,
+                               where=left < right,
+                               facecolor='yellow', alpha=0.1)
+      ])
+
+for_name("pendulum_2_lin", width, height, arrows=[0.2, 0.6], linear=1) \
+    (lambda t, y: pendulum(y, 4, 1),
+     lambda: init_points_on_rectangle(width, height, n=100))
+
+for_name("pendulum_2_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: pendulum(y, 4, 1),
+     lambda: init_points_on_rectangle(width, height, n=100))
+
+width /= 10
+height /= 10
+for_name("pendulum_2_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: pendulum(y, 4, 1),
+     lambda: init_points_on_rectangle(width, height, n=20))
+
 for_name("pendulum_3", 20, 10, arrows=[0.2, 0.6]) \
-    (lambda t, y: pendulum(t, y, 4, 0),
+    (lambda t, y: pendulum(y, 4, 0),
      lambda: corner_case_dumping_init_points(20, 10))
-for_name("pendulum_4", 20, 10, arrows=[0.2, 0.6]) \
-    (lambda t, y: pendulum(t, y, 1, 3),
-     lambda: corner_case_dumping_init_points(20, 10))
+
+x = np.linspace(-20, 20, 300)
+right = lambda x: -3.26072184 * x + 10.24415909
+more_right = lambda x: right(x - 2 * np.pi)
+middle = lambda x: right(x + 2 * np.pi)
+left = lambda x: middle(x + 2 * np.pi)
+left = np.array(list(map(left, x)))
+middle = np.array(list(map(middle, x)))
+more_right = np.array(list(map(more_right, x)))
+right = np.array(list(map(right, x)))
+height, width = 10, 20
+
+for_name("pendulum_4", width, height, arrows=[0.2, 0.6]) \
+    (lambda t, y: pendulum(y, 1, 3),
+     lambda: init_points_on_rectangle(width, height, 80),
+     [lambda: plt.fill_between(x, left, -height / 2 * np.ones(len(x)),
+                               where=left > -height / 2,
+                               facecolor='red', alpha=0.1),
+      lambda: plt.fill_between(x, more_right, height / 2 * np.ones(len(x)),
+                               where=right < height / 2,
+                               facecolor='orange', alpha=0.1),
+      lambda: plt.fill_between(x, more_right, right,
+                               where=right < more_right / 2,
+                               facecolor='green', alpha=0.1),
+      lambda: plt.fill_between(x, left, middle,
+                               where=left < middle,
+                               facecolor='blue', alpha=0.1),
+      lambda: plt.fill_between(x, middle, right,
+                               where=left < right,
+                               facecolor='yellow', alpha=0.1)
+      ])
+
+for_name("pendulum_4_lin", width, height, arrows=[0.2, 0.6], linear=1) \
+    (lambda t, y: pendulum(y, 1, 3),
+     lambda: init_points_on_rectangle(width, height, 80))
+
+for_name("pendulum_4_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: pendulum(y, 1, 3),
+     lambda: init_points_on_rectangle(20, 10, 80))
+
+for_name("pendulum_4_both_close", 2, 1, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: pendulum(y, 1, 3),
+     lambda: init_points_on_rectangle(2, 1, 20))
+
+
 for_name("mechanical_1", 10, 10, arrows=[0.3, 0.6]) \
-    (lambda t, y: mechanical_system(t, y, 1, 1, 1.5),
-     lambda: init_points_on_rectangle(10, 10, n=50))
-for_name("mechanical_2", 10, 10, arrows=[0.4, 0.6]) \
-    (lambda t, y: mechanical_system(t, y, 1, 1, -1.5),
+    (lambda t, y: mechanical_system(y, 1, 1, 1.5),
+     lambda: init_points_on_rectangle(10, 10, n=30))
+
+for_name("mechanical_1_lin", 10, 10, arrows=[0.3, 0.6], linear=1) \
+    (lambda t, y: mechanical_system(y, 1, 1, 1.5),
+     lambda: init_points_on_rectangle(10, 10, n=30))
+
+for_name("mechanical_1_both_far", 10, 10, arrows=[0.3, 0.6], linear=2) \
+    (lambda t, y: mechanical_system(y, 1, 1, 1.5),
+     lambda: init_points_on_rectangle(10, 10, n=30))
+
+for_name("mechanical_1_both_close", 1, 1, arrows=[0.3, 0.6], linear=2) \
+    (lambda t, y: mechanical_system(y, 1, 1, 1.5),
+     lambda: init_points_on_rectangle(1, 1, n=20))
+
+width, height = 4, 4
+x = np.linspace(-width / 2, width / 2)
+lower_poly = lambda x: -0.13094286 * x ** 3 + 0.37710916 * x ** 2 - 1.08021611 * x - 1.1802789
+upper_poly = lambda x: -lower_poly(-x)
+upper_poly = np.array(list(map(upper_poly, x)))
+lower_poly = np.array(list(map(lower_poly, x)))
+
+for_name("mechanical_2", width, height, arrows=[0.4, 0.6]) \
+    (lambda t, y: mechanical_system(y, 1, 1, -1.5),
+     lambda: special_init_for_negative_spring(),
+     [lambda: plt.fill_between(x, lower_poly, -height / 2 * np.ones(len(x)),
+                               where=lower_poly > -height / 2,
+                               facecolor='red', alpha=0.1),
+      lambda: plt.fill_between(x, upper_poly, height / 2 * np.ones(len(x)),
+                               where=upper_poly < height / 2,
+                               facecolor='red', alpha=0.1),
+      lambda: plt.fill_between(x, lower_poly, upper_poly,
+                               where=lower_poly < upper_poly,
+                               facecolor='green', alpha=0.1)
+      ])
+
+for_name("mechanical_2_lin", width, height, arrows=[0.4, 0.6], linear=1) \
+    (lambda t, y: mechanical_system(y, 1, 1, -1.5),
+     lambda: init_points_on_rectangle(width, height))
+
+for_name("mechanical_2_both_far", width, height, arrows=[0.4, 0.6], linear=2) \
+    (lambda t, y: mechanical_system(y, 1, 1, -1.5),
      lambda: special_init_for_negative_spring())
 
-fileNames = []
+for_name("mechanical_2_both_close", width/10, height/10, arrows=[0.4, 0.6], linear=2) \
+    (lambda t, y: mechanical_system(y, 1, 1, -1.5),
+     lambda: init_points_on_rectangle(width/10, height/10, n=20))
+
 for fileName in fileNames:
     call(['inkscape -D -z --file=tex/svg/' + fileName + '.svg' +
-          ' --export-pdf=' + fileName + '.pdf --export-latex'], shell=True)
+          ' --export-pdf=tex/' + fileName + '.pdf --export-latex'], shell=True)
+
+end = time()
+print(end - begin)
