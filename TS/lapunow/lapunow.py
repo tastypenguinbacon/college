@@ -18,41 +18,55 @@ width, height = 10, 10
 for_name("van_der_poll_1", width, height, arrows=[0.2, 0.6]) \
     (lambda t, y: van_der_poll(y, 1),
      lambda: init_points_on_rectangle(width, height), [
-         lambda: plt.plot([0], [0], 'o', )
+         lambda: plt.plot([0], [0], 'ro', label="Punkt stabilny")
      ])
 
 for_name("van_der_poll_1_lin", width, height, arrows=[0.2, 0.6], linear=1) \
     (lambda t, y: van_der_poll(y, 1),
-     lambda: init_points_on_rectangle(width, height, n=40))
+     lambda: init_points_on_rectangle(width, height, n=40), [
+        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+     ])
 
 for_name("van_der_poll_1_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: van_der_poll(y, 1),
-     lambda: init_points_on_rectangle(width, height, n=40))
+     lambda: init_points_on_rectangle(width, height, n=40), [
+        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+     ])
 
 width /= 10
 height /= 10
 for_name("van_der_poll_1_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: van_der_poll(y, 1),
-     lambda: init_points_on_rectangle(width, height, n=20))
+     lambda: init_points_on_rectangle(width, height, n=20), [
+        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+     ])
 
 width, height = 10, 10
 for_name("van_der_poll_5", width, height, arrows=[0.2, 0.6]) \
     (lambda t, y: van_der_poll(y, 5),
-     lambda: init_points_on_rectangle(width, height))
+     lambda: init_points_on_rectangle(width, height), [
+        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+     ])
 
 for_name("van_der_poll_5_lin", width, height, arrows=[0.2, 0.6], linear=1) \
     (lambda t, y: van_der_poll(y, 5),
-     lambda: init_points_on_rectangle(width, height, n=40))
+     lambda: init_points_on_rectangle(width, height, n=40), [
+        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+     ])
 
 for_name("van_der_poll_5_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: van_der_poll(y, 5),
-     lambda: init_points_on_rectangle(width, height, n=40))
+     lambda: init_points_on_rectangle(width, height, n=40), [
+        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+     ])
 
 width /= 10
 height /= 10
 for_name("van_der_poll_5_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: van_der_poll(y, 5),
-     lambda: init_points_on_rectangle(width, height, n=20))
+     lambda: init_points_on_rectangle(width, height, n=20), [
+        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+     ])
 
 width, height = 10, 10
 for_name("van_der_poll_0", width, height, arrows=[0.1, 0.2]) \
@@ -76,20 +90,28 @@ for_name("van_der_poll_0_both_close", width, height, arrows=[0.2, 0.6], linear=2
 width, height = 10, 10
 for_name("van_der_poll_0_5", width, height, arrows=[0.2, 0.6]) \
     (lambda t, y: van_der_poll(y, 0.5),
-     lambda: init_points_on_rectangle(width, height))
+     lambda: init_points_on_rectangle(width, height), [
+        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+     ])
 for_name("van_der_poll_0_5_lin", width, height, arrows=[0.2, 0.6], linear=1) \
     (lambda t, y: van_der_poll(y, 0.5),
-     lambda: init_points_on_rectangle(width, height, n=40))
+     lambda: init_points_on_rectangle(width, height, n=40), [
+        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+     ])
 
 for_name("van_der_poll_0_5_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: van_der_poll(y, 0.5),
-     lambda: init_points_on_rectangle(width, height, n=40))
+     lambda: init_points_on_rectangle(width, height, n=40), [
+        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+     ])
 
 width /= 10
 height /= 10
 for_name("van_der_poll_0_5_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: van_der_poll(y, 0.5),
-     lambda: init_points_on_rectangle(width, height, n=20))
+     lambda: init_points_on_rectangle(width, height, n=20), [
+        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+     ])
 
 temp = lambda x: 0.02517517 * x ** 3 + 0.23480313 * x ** 2 - 0.93830795 * x - 4.47556726 if -8 < x < 1 else -255 * x - 6
 x = np.linspace(-20, 20, 300)
