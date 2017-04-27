@@ -10,6 +10,9 @@ def pythagoras(start, end):
 
 
 def add_arrow(curve, arrows, color, relative_size=10):
+    arrows = arrows[:]
+    for i in range(0, len(arrows)):
+        arrows[i] += np.random.uniform(-0.1, 0.1)
     arrows.append(1)
     prev, length = curve[0], 0
     for point in curve[1:]:
@@ -48,14 +51,14 @@ def for_name(name, width, height, arrows=None, linear=0):
         if fillings is None:
             fillings = []
         sp = get_starting_points()
-        colors_and_functions = [('C0', diff_equation)]
+        colors_and_functions = [('C0', diff_equation, "system nieliniowy")]
         jacobian = get_jacobian_for_point(np.array([0, 0]), diff_equation)
         if linear == 1:
-            colors_and_functions = [('C2', lambda t, y: linear_form(y, jacobian))]
+            colors_and_functions = [('C1', lambda t, y: linear_form(y, jacobian), "system zlinearyzowany")]
         if linear == 2:
-            colors_and_functions.append(('C2', lambda t, y: linear_form(y, jacobian)))
+            colors_and_functions.append(('C1', lambda t, y: linear_form(y, jacobian), "system zlinearyzowany"))
 
-        for color, function in colors_and_functions:
+        for color, function, label in colors_and_functions:
             for initial_value in sp:
                 solver = ode(function).set_integrator('zvode', method='bdf')
                 solver.set_initial_value(initial_value, 0)
@@ -70,6 +73,7 @@ def for_name(name, width, height, arrows=None, linear=0):
                 points = np.real(points)
                 plt.plot(points[:, 0], points[:, 1], color, linewidth=0.5)
                 add_arrow(points, arrows, relative_size=np.sqrt(width * height), color=color)
+            plt.plot([0], [0], color=color, label=label)
         for filling in fillings:
             filling()
 
@@ -86,9 +90,11 @@ def plot(file_name, width, height):
             plt.axis([-width / 2, width / 2, -height / 2, height / 2])
             plt.xlabel("x1")
             plt.ylabel("x2")
+            plt.legend(loc='lower right', prop={'size': 6})
             plt.savefig('tex/svg/' + file_name, bbox_inches='tight')
             fig.canvas.mpl_connect('button_press_event',
                                    lambda event: print("x=%f, y=%f" % (event.xdata, event.ydata)))
+            plt.close()
 
         return wrapped
 

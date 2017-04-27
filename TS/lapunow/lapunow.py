@@ -17,7 +17,9 @@ begin = time()
 width, height = 10, 10
 for_name("van_der_poll_1", width, height, arrows=[0.2, 0.6]) \
     (lambda t, y: van_der_poll(y, 1),
-     lambda: init_points_on_rectangle(width, height))
+     lambda: init_points_on_rectangle(width, height), [
+         lambda: plt.plot([0], [0], 'o', )
+     ])
 
 for_name("van_der_poll_1_lin", width, height, arrows=[0.2, 0.6], linear=1) \
     (lambda t, y: van_der_poll(y, 1),
@@ -32,7 +34,6 @@ height /= 10
 for_name("van_der_poll_1_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: van_der_poll(y, 1),
      lambda: init_points_on_rectangle(width, height, n=20))
-
 
 width, height = 10, 10
 for_name("van_der_poll_5", width, height, arrows=[0.2, 0.6]) \
@@ -53,7 +54,6 @@ for_name("van_der_poll_5_both_close", width, height, arrows=[0.2, 0.6], linear=2
     (lambda t, y: van_der_poll(y, 5),
      lambda: init_points_on_rectangle(width, height, n=20))
 
-
 width, height = 10, 10
 for_name("van_der_poll_0", width, height, arrows=[0.1, 0.2]) \
     (lambda t, y: van_der_poll(y, 0),
@@ -72,7 +72,6 @@ height /= 10
 for_name("van_der_poll_0_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: van_der_poll(y, 0),
      lambda: init_points_on_rectangle(width, height, n=20))
-
 
 width, height = 10, 10
 for_name("van_der_poll_0_5", width, height, arrows=[0.2, 0.6]) \
@@ -231,7 +230,6 @@ for_name("pendulum_4_both_close", 2, 1, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: pendulum(y, 1, 3),
      lambda: init_points_on_rectangle(2, 1, 20))
 
-
 for_name("mechanical_1", 10, 10, arrows=[0.3, 0.6]) \
     (lambda t, y: mechanical_system(y, 1, 1, 1.5),
      lambda: init_points_on_rectangle(10, 10, n=30))
@@ -277,13 +275,23 @@ for_name("mechanical_2_both_far", width, height, arrows=[0.4, 0.6], linear=2) \
     (lambda t, y: mechanical_system(y, 1, 1, -1.5),
      lambda: special_init_for_negative_spring())
 
-for_name("mechanical_2_both_close", width/10, height/10, arrows=[0.4, 0.6], linear=2) \
+for_name("mechanical_2_both_close", width / 10, height / 10, arrows=[0.4, 0.6], linear=2) \
     (lambda t, y: mechanical_system(y, 1, 1, -1.5),
-     lambda: init_points_on_rectangle(width/10, height/10, n=20))
+     lambda: init_points_on_rectangle(width / 10, height / 10, n=20))
 
-for fileName in fileNames:
-    call(['inkscape -D -z --file=tex/svg/' + fileName + '.svg' +
-          ' --export-pdf=tex/' + fileName + '.pdf --export-latex'], shell=True)
+tex_image_format = """
+\\begin{figure}[H]
+    \\centering
+    \\def \\svgwidth{0.7\\columnwidth}
+    \\input{%s.pdf_tex}
+    \\caption{TODO}
+\\end{figure}\\noindent
+"""
+with open('tex/temp.tex', mode='w') as temp_tex:
+    for fileName in fileNames:
+        call(['inkscape -D -z --file=tex/svg/' + fileName + '.svg' +
+              ' --export-pdf=tex/' + fileName + '.pdf --export-latex'], shell=True)
+        print(tex_image_format % fileName, file=temp_tex)
 
 end = time()
 print(end - begin)
