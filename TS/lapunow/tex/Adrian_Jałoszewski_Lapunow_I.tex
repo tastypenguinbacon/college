@@ -7,6 +7,7 @@
 \usepackage{etoolbox,refcount}
 \usepackage{multicol}
 \usepackage{fancyhdr}
+\usepackage{amsfonts}
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{svg}
@@ -21,9 +22,57 @@
 	\maketitle
 	\section{Wstęp}
 		Celem laboratorium było zapoznanie się z układami nieliniowymi oraz ich przybliżeniami liniowymi. //TODO
-	\section{Wykonanie}
+	\section{Wykonanie laboratorium}
 		\subsection{Układ równań van der Polla}
+			Układ równań Van der Pola jest dany jako:
+			$$
+				\begin{aligned}
+					\dot{x}_1(t) & = x_2(t) - x_1^3(t) - a x_1(t) \\
+					\dot{x}_2(t) & = - x_1(t)
+				\end{aligned}
+			$$
+			Punkty równowagi wyznaczam podstawiając za pochodne 0:
+				$$
+				\begin{aligned}
+					0 & = x_2 - x_1^3 - a x_1 \\
+					0 & = -x_1
+				\end{aligned}
+				$$
+			Wynika z tego, że $x_1 = x_2 = 0$. Jakobian tego systemu jest następujący:
+			$$
+				J = \begin{bmatrix}
+					-3x_1^2 -a & 1 \\
+					-1 & 0
+				\end{bmatrix}
+			$$
+			W punkcie równowagi macierz A ma postać:
+			$$
+				A = \begin{bmatrix}
+				-a & 1 \\
+				-1 & 0
+				\end{bmatrix}
+			$$
+			Wielomian charakterystyczny macierzy A:
+			$$
+				\det(\lambda I - A) = \lambda ^ 2 + a \lambda + 1
+			$$
+			Dla poszczególnych wartości współczynnika $a$ własnych:
+			\begin{itemize}
+				\item[] $a = 0$ -- środek 
+				\item[] $a \in (0, 2)$ -- ognisko asymptotycznie stabilne
+				\item[] $a = 2$ -- węzeł zdegenerowany asymptotycznie stabilny
+				\item[]	$a > 2$ -- węzeł asymptotycznie stabilny
+			\end{itemize}
+			
 			\subsubsection{Współczynnik a = 1}
+				Jest to przypadek kiedy zlinearyzowany układ posiada portret fazowy typu ogniska asymptotycznie stabilnego o macierzy stanu:
+				$$
+				A = \begin{bmatrix}
+					-1 & 1 \\
+					-1 & 0
+				\end{bmatrix}
+				$$
+				Wartości własne macierzy: $\lambda_1 = -\frac{1}{2} + \frac{\sqrt{3}}{2}$, $\lambda_2 = -\frac{1}{2} - \frac{\sqrt{3}}{2}$, układ jest więc asymptotycznie stabilny w okolicy punktu (0, 0)
 				\begin{figure}[H]
 					\centering
 					\def \svgwidth{0.75\columnwidth}
@@ -45,16 +94,51 @@
 					\input{van_der_poll_1_both_close.pdf_tex}
 					\caption{Porównanie w otoczeniu punktu równowagi}
 				\end{figure}\noindent
-
-			\subsubsection{Współczynnik a = 5}
+			\subsubsection{Współczynnik a = 2}
+					Jest to przypadek kiedy zlinearyzowany układ posiada portret fazowy typu węzła zdegenerowanego asymptotycznie stabilnego o macierzy stanu:
+					$$
+					A = \begin{bmatrix}
+					-2 & 1 \\
+					-1 & 0
+					\end{bmatrix}
+					$$
+					Wartości własne macierzy: $\lambda_{1/2} = -1$, układ jest więc asymptotycznie stabilny w okolicy punktu (0, 0)
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.7\columnwidth}
+					\input{van_der_poll_2.pdf_tex}
+					\caption{Układ nieliniowy}
+				\end{figure}\noindent
+				
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.7\columnwidth}
+					\input{van_der_poll_2_lin.pdf_tex}
+					\caption{Układ zlinearyzowany}
+				\end{figure}\noindent
+				
+				
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.7\columnwidth}
+					\input{van_der_poll_2_both_close.pdf_tex}
+					\caption{Porównanie w otoczeniu punktu równowagi}
+				\end{figure}\noindent
+			\subsubsection{Współczynnik a = $\frac{5}{2}$}
+				Współczynnik został dobrany tak aby trajektorie układu dla macierzy w postaci kanonicznej były postaci $x_2 = x_1^4$ -- stosunek wartości własnych powinien być równy 4. Stopień wielomianu został wybrany w ten sposób aby krzywizna trajektorii była dobrze widoczna na portretach fazowych -- (dla wielomianu drugiego stopnia $a=\frac{3}{\sqrt{2}} \approx 2,12$, dla trzeciego stopnia $a=\frac{4}{\sqrt{3}} \approx 2,31$ -- wartości na tyle bliskie tym z przypadku węzła zdegenerowanego, że trudno było rozróżnić poszczególne przypadki).
+				$$
+					A = \begin{bmatrix}
+						-5/2 & 1 \\
+						-1 & 0
+					\end{bmatrix}
+				$$
+				Wartości własne macierzy: $\lambda_1 = -\frac{1}{2}$, $\lambda_2 = -2$, układ jest więc asymptotycznie stabilny w okolicy punktu (0, 0)
 				\begin{figure}[H]
 					\centering
 					\def \svgwidth{0.75\columnwidth}
 					\input{van_der_poll_5.pdf_tex}
 					\caption{Układ nieliniowy}
 				\end{figure}\noindent
-
-
 				\begin{figure}[H]
 					\centering
 					\def \svgwidth{0.75\columnwidth}
@@ -70,39 +154,71 @@
 				\end{figure}\noindent
 
 			\subsubsection{Współczynnik a = 0}
+				Jest to przypadek kiedy zlinearyzowany układ posiada portret fazowy typu koła o macierzy stanu:
+				$$
+				A = \begin{bmatrix}
+				0 & 1 \\
+				-1 & 0
+				\end{bmatrix}
+				$$
+				Wartości własne $\lambda_1 = -j$, $\lambda_2 = j$ mają zerową część rzeczywistą -- o stabilności układu nieliniowego nie można wnioskować. Jest to przypadek niespełniający warunków opisanych w poleceniu, więc nie będzie szczególnie rozważany.
 				\begin{figure}[H]
 					\centering
 					\def \svgwidth{0.75\columnwidth}
 					\input{van_der_poll_0.pdf_tex}
 					\caption{Układ nieliniowy}
 				\end{figure}\noindent
-
-
-			\subsubsection{Współczynnik a = 0,5}
-				\begin{figure}[H]
-					\centering
-					\def \svgwidth{0.75\columnwidth}
-					\input{van_der_poll_0_5.pdf_tex}
-					\caption{Układ nieliniowy}
-				\end{figure}\noindent
-
-
-				\begin{figure}[H]
-					\centering
-					\def \svgwidth{0.75\columnwidth}
-					\input{van_der_poll_0_5_lin.pdf_tex}
-					\caption{Układ zlinearyzowany}
-				\end{figure}\noindent
-
-
-				\begin{figure}[H]
-					\centering
-					\def \svgwidth{0.75\columnwidth}
-					\input{van_der_poll_0_5_both_close.pdf_tex}
-					\caption{Porównanie w otoczeniu punktu równowagi}
-				\end{figure}\noindent
-
 		\subsection{Wahadło tłumione}
+			Wahadło tłumione jest zadane wzorem:
+			$$
+				\ddot{y}(t) + \frac{g}{l} \sin y(t) + \frac{c}{lm} \dot{y}(t) = 0
+			$$
+			Dla uproszczenia rozważań podstawiam $a = \frac{g}{l}$, $b = \frac{c}{lm}$, otrzymuję w ten sposób:
+			$$
+				\ddot{y}(t) + a \sin y(t) + b \dot{y}(t) = 0
+			$$
+			Ze względu na charakter parametrów \textit{g, l, c, m} parametry \textit{a, b} są większe lub równe 0. Układ ten można przedstawić równoważnie:
+			$$
+				\begin{aligned}
+					\dot{x}_1 & = x_2 \\
+					\dot{x}_2 & = - b x_2 - a \sin x_1 
+				\end{aligned}
+			$$
+			Gdzie $x_2 = \dot{y}$ oraz $x_1 = y$. Aby wyznaczyć punkty równowagi podstawiam za pochodne 0.
+			$$
+				\begin{aligned}
+					0 & = x_2 \\
+					0 & = - b x_2 - a \sin x_1
+				\end{aligned}
+			$$
+			Punkty równowagi następują więc dla $(x_1, x_2) = (k \pi, 0)$, gdzie $k \in \mathbb{Z}$. Jakobian dla tego układu jest następujący:
+			$$
+				J = \begin{bmatrix}
+					0 & 1 \\
+					- a \cos x_1 & -b
+				\end{bmatrix}
+			$$
+			Należy rozważyć dwa przypadki punktów stabilności:
+			\begin{itemize}
+				\item[] $x_2 = 0$, $x_1 = 2k \pi$ dla $k \in \mathbb{Z}$ -- wtedy $\cos x_1 = 1$
+					$$
+						A = \begin{bmatrix}
+							0 & 1 \\
+							- a  & -b
+						\end{bmatrix}
+					$$
+					Wielomian charakterystyczny macierzy A jest dany jako: $\lambda^2 + b\lambda + a$, jeżeli wartości \textit{a, b} są dodatnie, to wielomian drugiego rzędu posiada pierwiastki w lewej półpłaszczyźnie zespolonej -- są to punkty równowagi asymptotycznie stabilne.
+					Wielomian charakterystyczny macierzy A dany jest jako $\lambda^2 + \lambda b$
+				\item[] $x_2 = 0$, $x_1 = (2k + 1) \pi$ dla $k \in \mathbb{Z}$ -- wtedy $\cos x_1 = -1$
+					$$
+						A = \begin{bmatrix}
+							0 & 1 \\
+							a  & -b
+						\end{bmatrix}
+					$$
+					Wielomian charakterystyczny macierzy A jest dany jako: $\lambda^2 + b\lambda - a$, gdy parametry \textit{a, b}, ponieważ badamy układ nieliniowy, to współczynnik $a$ musi być większy od zera -- wyraz wolny wielomianu jest zawsze mniejszy od zera, z czego wynika, że w tych punktach występuje równowaga niestabilna.
+			\end{itemize}
+			Ponieważ układ zachowuje się cyklicznie względem $x_1$ z okresem $2 \pi$, wystarczy w rozważaniach układu zlinearyzowanego wziąć pod uwagę tylko punkt (0, 0).
 			\subsubsection{Współczynniki a=1, b=1}
 				\begin{figure}[H]
 					\centering

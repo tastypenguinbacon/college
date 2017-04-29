@@ -18,19 +18,19 @@ width, height = 10, 10
 for_name("van_der_poll_1", width, height, arrows=[0.2, 0.6]) \
     (lambda t, y: van_der_poll(y, 1),
      lambda: init_points_on_rectangle(width, height), [
-         lambda: plt.plot([0], [0], 'ro', label="Punkt stabilny")
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
      ])
 
 for_name("van_der_poll_1_lin", width, height, arrows=[0.2, 0.6], linear=1) \
     (lambda t, y: van_der_poll(y, 1),
      lambda: init_points_on_rectangle(width, height, n=40), [
-        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
      ])
 
 for_name("van_der_poll_1_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: van_der_poll(y, 1),
      lambda: init_points_on_rectangle(width, height, n=40), [
-        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
      ])
 
 width /= 10
@@ -38,34 +38,62 @@ height /= 10
 for_name("van_der_poll_1_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: van_der_poll(y, 1),
      lambda: init_points_on_rectangle(width, height, n=20), [
-        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
      ])
 
 width, height = 10, 10
-for_name("van_der_poll_5", width, height, arrows=[0.2, 0.6]) \
-    (lambda t, y: van_der_poll(y, 5),
+for_name("van_der_poll_2", width, height, arrows=[0.2, 0.6]) \
+    (lambda t, y: van_der_poll(y, 2),
      lambda: init_points_on_rectangle(width, height), [
-        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
+     ])
+
+for_name("van_der_poll_2_lin", width, height, arrows=[0.2, 0.6], linear=1) \
+    (lambda t, y: van_der_poll(y, 2),
+     lambda: init_points_on_rectangle(width, height, n=40), [
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
+     ])
+
+for_name("van_der_poll_2_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: van_der_poll(y, 2),
+     lambda: init_points_on_rectangle(width, height, n=40), [
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
+     ])
+
+width /= 10
+height /= 10
+for_name("van_der_poll_2_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
+    (lambda t, y: van_der_poll(y, 2),
+     lambda: init_points_on_rectangle(width, height, n=20), [
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
+     ])
+
+width, height = 10, 10
+a = 5 / 2
+for_name("van_der_poll_5", width, height, arrows=[0.2, 0.6]) \
+    (lambda t, y: van_der_poll(y, a),
+     lambda: init_points_on_rectangle(width, height), [
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
      ])
 
 for_name("van_der_poll_5_lin", width, height, arrows=[0.2, 0.6], linear=1) \
-    (lambda t, y: van_der_poll(y, 5),
+    (lambda t, y: van_der_poll(y, a),
      lambda: init_points_on_rectangle(width, height, n=40), [
-        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
      ])
 
 for_name("van_der_poll_5_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
-    (lambda t, y: van_der_poll(y, 5),
+    (lambda t, y: van_der_poll(y, a),
      lambda: init_points_on_rectangle(width, height, n=40), [
-        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
      ])
 
 width /= 10
 height /= 10
 for_name("van_der_poll_5_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
-    (lambda t, y: van_der_poll(y, 5),
+    (lambda t, y: van_der_poll(y, a),
      lambda: init_points_on_rectangle(width, height, n=20), [
-        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
      ])
 
 width, height = 10, 10
@@ -91,18 +119,18 @@ width, height = 10, 10
 for_name("van_der_poll_0_5", width, height, arrows=[0.2, 0.6]) \
     (lambda t, y: van_der_poll(y, 0.5),
      lambda: init_points_on_rectangle(width, height), [
-        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
      ])
 for_name("van_der_poll_0_5_lin", width, height, arrows=[0.2, 0.6], linear=1) \
     (lambda t, y: van_der_poll(y, 0.5),
      lambda: init_points_on_rectangle(width, height, n=40), [
-        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
      ])
 
 for_name("van_der_poll_0_5_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: van_der_poll(y, 0.5),
      lambda: init_points_on_rectangle(width, height, n=40), [
-        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
      ])
 
 width /= 10
@@ -110,7 +138,7 @@ height /= 10
 for_name("van_der_poll_0_5_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: van_der_poll(y, 0.5),
      lambda: init_points_on_rectangle(width, height, n=20), [
-        lambda: plt.plot([0],[0], 'ro', label="Punkt stabilny")
+         lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
      ])
 
 temp = lambda x: 0.02517517 * x ** 3 + 0.23480313 * x ** 2 - 0.93830795 * x - 4.47556726 if -8 < x < 1 else -255 * x - 6
@@ -142,22 +170,27 @@ for_name("pendulum_1", 20, 10, arrows=[0.2, 0.6]) \
                                facecolor='blue', alpha=0.1),
       lambda: plt.fill_between(x, middle, right,
                                where=left < right,
-                               facecolor='yellow', alpha=0.1)
+                               facecolor='yellow', alpha=0.1),
+      lambda: plt.plot([-2 * np.pi, 0, 2 * np.pi], np.zeros(3), 'ro', label="Punkty równowagi asymptotycznie stabilne")
       ])
 
 for_name("pendulum_1_lin", width, height, arrows=[0.2, 0.6], linear=1) \
     (lambda t, y: pendulum(y, 1, 1),
-     lambda: init_points_on_rectangle(width, height, n=100))
+     lambda: init_points_on_rectangle(width, height, n=100),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 for_name("pendulum_1_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: pendulum(y, 1, 1),
-     lambda: init_points_on_rectangle(width, height, n=100))
+     lambda: init_points_on_rectangle(width, height, n=100),
+     [lambda: plt.plot([-2 * np.pi, 0, 2 * np.pi], np.zeros(3), 'ro',
+                       label="Punkty równowagi asymptotycznie stabilne")])
 
 width /= 10
 height /= 10
 for_name("pendulum_1_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: pendulum(y, 1, 1),
-     lambda: init_points_on_rectangle(width, height, n=20))
+     lambda: init_points_on_rectangle(width, height, n=20),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 temp = lambda x: -2.267609 * x - 6.77998446
 x = np.linspace(-20, 20, 300)
@@ -188,22 +221,27 @@ for_name("pendulum_2", width, height, arrows=[0.2, 0.6]) \
                                facecolor='blue', alpha=0.1),
       lambda: plt.fill_between(x, middle, right,
                                where=left < right,
-                               facecolor='yellow', alpha=0.1)
+                               facecolor='yellow', alpha=0.1),
+      lambda: plt.plot([-2 * np.pi, 0, 2 * np.pi], np.zeros(3), 'ro', label="Punkty równowagi asymptotycznie stabilne")
       ])
 
 for_name("pendulum_2_lin", width, height, arrows=[0.2, 0.6], linear=1) \
     (lambda t, y: pendulum(y, 4, 1),
-     lambda: init_points_on_rectangle(width, height, n=100))
+     lambda: init_points_on_rectangle(width, height, n=100),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 for_name("pendulum_2_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: pendulum(y, 4, 1),
-     lambda: init_points_on_rectangle(width, height, n=100))
+     lambda: init_points_on_rectangle(width, height, n=100),
+     [lambda: plt.plot([-2 * np.pi, 0, 2 * np.pi], np.zeros(3), 'ro',
+                       label="Punkty równowagi asymptotycznie stabilne")])
 
 width /= 10
 height /= 10
 for_name("pendulum_2_both_close", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: pendulum(y, 4, 1),
-     lambda: init_points_on_rectangle(width, height, n=20))
+     lambda: init_points_on_rectangle(width, height, n=20),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 for_name("pendulum_3", 20, 10, arrows=[0.2, 0.6]) \
     (lambda t, y: pendulum(y, 4, 0),
@@ -237,36 +275,45 @@ for_name("pendulum_4", width, height, arrows=[0.2, 0.6]) \
                                facecolor='blue', alpha=0.1),
       lambda: plt.fill_between(x, middle, right,
                                where=left < right,
-                               facecolor='yellow', alpha=0.1)
+                               facecolor='yellow', alpha=0.1),
+      lambda: plt.plot([-2 * np.pi, 0, 2 * np.pi], np.zeros(3), 'ro', label="Punkty równowagi asymptotycznie stabilne")
       ])
 
 for_name("pendulum_4_lin", width, height, arrows=[0.2, 0.6], linear=1) \
     (lambda t, y: pendulum(y, 1, 3),
-     lambda: init_points_on_rectangle(width, height, 80))
+     lambda: init_points_on_rectangle(width, height, 80),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 for_name("pendulum_4_both_far", width, height, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: pendulum(y, 1, 3),
-     lambda: init_points_on_rectangle(20, 10, 80))
+     lambda: init_points_on_rectangle(20, 10, 80),
+     [lambda: plt.plot([-2 * np.pi, 0, 2 * np.pi], np.zeros(3), 'ro',
+                       label="Punkty równowagi asymptotycznie stabilne")])
 
 for_name("pendulum_4_both_close", 2, 1, arrows=[0.2, 0.6], linear=2) \
     (lambda t, y: pendulum(y, 1, 3),
-     lambda: init_points_on_rectangle(2, 1, 20))
+     lambda: init_points_on_rectangle(2, 1, 20),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 for_name("mechanical_1", 10, 10, arrows=[0.3, 0.6]) \
     (lambda t, y: mechanical_system(y, 1, 1, 1.5),
-     lambda: init_points_on_rectangle(10, 10, n=30))
+     lambda: init_points_on_rectangle(10, 10, n=30),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 for_name("mechanical_1_lin", 10, 10, arrows=[0.3, 0.6], linear=1) \
     (lambda t, y: mechanical_system(y, 1, 1, 1.5),
-     lambda: init_points_on_rectangle(10, 10, n=30))
+     lambda: init_points_on_rectangle(10, 10, n=30),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 for_name("mechanical_1_both_far", 10, 10, arrows=[0.3, 0.6], linear=2) \
     (lambda t, y: mechanical_system(y, 1, 1, 1.5),
-     lambda: init_points_on_rectangle(10, 10, n=30))
+     lambda: init_points_on_rectangle(10, 10, n=30),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 for_name("mechanical_1_both_close", 1, 1, arrows=[0.3, 0.6], linear=2) \
     (lambda t, y: mechanical_system(y, 1, 1, 1.5),
-     lambda: init_points_on_rectangle(1, 1, n=20))
+     lambda: init_points_on_rectangle(1, 1, n=20),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 width, height = 4, 4
 x = np.linspace(-width / 2, width / 2)
@@ -286,20 +333,24 @@ for_name("mechanical_2", width, height, arrows=[0.4, 0.6]) \
                                facecolor='red', alpha=0.1),
       lambda: plt.fill_between(x, lower_poly, upper_poly,
                                where=lower_poly < upper_poly,
-                               facecolor='green', alpha=0.1)
+                               facecolor='green', alpha=0.1),
+      lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")
       ])
 
 for_name("mechanical_2_lin", width, height, arrows=[0.4, 0.6], linear=1) \
     (lambda t, y: mechanical_system(y, 1, 1, -1.5),
-     lambda: init_points_on_rectangle(width, height))
+     lambda: init_points_on_rectangle(width, height),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 for_name("mechanical_2_both_far", width, height, arrows=[0.4, 0.6], linear=2) \
     (lambda t, y: mechanical_system(y, 1, 1, -1.5),
-     lambda: special_init_for_negative_spring())
+     lambda: special_init_for_negative_spring(),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 for_name("mechanical_2_both_close", width / 10, height / 10, arrows=[0.4, 0.6], linear=2) \
     (lambda t, y: mechanical_system(y, 1, 1, -1.5),
-     lambda: init_points_on_rectangle(width / 10, height / 10, n=20))
+     lambda: init_points_on_rectangle(width / 10, height / 10, n=20),
+     [lambda: plt.plot([0], [0], 'ro', label="Punkt równowagi asymptotycznie stabilny")])
 
 tex_image_format = """
 \\begin{figure}[H]

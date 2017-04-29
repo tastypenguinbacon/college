@@ -2,9 +2,8 @@ import numpy as np
 
 
 def van_der_poll(y, a):
-    y1 = y[1] - y[0] ** 3 - 2 * a * y[0]
+    y1 = y[1] - y[0] ** 3 - a * y[0]
     y2 = -y[0]
-    asdfkjasd;fkljasd;fkas asdf as fs  sdf af sadfsa;f kjpowri jvnzlskfjgpoiw jefjvmlz,mfj posafjup0oawifj;l dfkvzjs; # to be sure you don't forget to check the function
     return np.array([y1, y2])
 
 
@@ -21,13 +20,15 @@ def pendulum(y, a, b):
 
 
 def get_jacobian_for_point(x, fun):
-    delta = 0.001
+    delta = 0.0001
     a11 = fun(0, x + np.array([delta, 0]))[0] / delta
     a12 = fun(0, x + np.array([0, delta]))[0] / delta
     a21 = fun(0, x + np.array([delta, 0]))[1] / delta
     a22 = fun(0, x + np.array([0, delta]))[1] / delta
-    return np.array([[a11, a12],
-                     [a21, a22]])
+    A = np.array([[a11, a12],
+                  [a21, a22]])
+    print(A)
+    return A
 
 
 def linear_form(y, A):
