@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.8)  29 APR 2017 22:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.8)  30 APR 2017 01:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -884,7 +884,7 @@ File: van_der_poll_1.pdf Graphic file (type pdf)
 
 <use van_der_poll_1.pdf, page 1>
 Package pdftex.def Info: van_der_poll_1.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
 ) [1
 
 
@@ -895,7 +895,7 @@ File: van_der_poll_1_lin.pdf Graphic file (type pdf)
 
 <use van_der_poll_1_lin.pdf, page 1>
 Package pdftex.def Info: van_der_poll_1_lin.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
 ) (./van_der_poll_1_both_close.pdf_tex
 <van_der_poll_1_both_close.pdf, id=18, page=1, 421.55586pt x 315.54713pt>
 File: van_der_poll_1_both_close.pdf Graphic file (type pdf)
@@ -903,7 +903,7 @@ File: van_der_poll_1_both_close.pdf Graphic file (type pdf)
 <use van_der_poll_1_both_close.pdf, page 1>
 Package pdftex.def Info: van_der_poll_1_both_close.pdf, page1 used on input lin
 e 52.
-(pdftex.def)             Requested size: 341.43307pt x 255.58694pt.
+(pdftex.def)             Requested size: 364.19667pt x 272.62671pt.
 ) [2 <./van_der_poll_1.pdf> <./van_der_poll_1_lin.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./van_der_poll_1_lin.pdf): PDF inclusio
@@ -914,14 +914,14 @@ File: van_der_poll_2.pdf Graphic file (type pdf)
 
 <use van_der_poll_2.pdf, page 1>
 Package pdftex.def Info: van_der_poll_2.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 318.66948pt x 244.07944pt.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
 ) (./van_der_poll_2_lin.pdf_tex
 <van_der_poll_2_lin.pdf, id=632, page=1, 411.97946pt x 315.54713pt>
 File: van_der_poll_2_lin.pdf Graphic file (type pdf)
 
 <use van_der_poll_2_lin.pdf, page 1>
 Package pdftex.def Info: van_der_poll_2_lin.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 318.66948pt x 244.07944pt.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
 ) [3 <./van_der_poll_1_both_close.pdf> <./van_der_poll_2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./van_der_poll_2.pdf): PDF inclusion: m
@@ -933,25 +933,25 @@ File: van_der_poll_2_both_close.pdf Graphic file (type pdf)
 <use van_der_poll_2_both_close.pdf, page 1>
 Package pdftex.def Info: van_der_poll_2_both_close.pdf, page1 used on input lin
 e 52.
-(pdftex.def)             Requested size: 318.66948pt x 238.54236pt.
-) (./van_der_poll_5.pdf_tex
-<van_der_poll_5.pdf, id=1250, page=1, 411.97946pt x 315.54713pt>
-File: van_der_poll_5.pdf Graphic file (type pdf)
-
-<use van_der_poll_5.pdf, page 1>
-Package pdftex.def Info: van_der_poll_5.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+(pdftex.def)             Requested size: 364.19667pt x 272.62671pt.
 ) [4 <./van_der_poll_2_lin.pdf> <./van_der_poll_2_both_close.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./van_der_poll_2_both_close.pdf): PDF i
 nclusion: multiple pdfs with page group included in a single page
->] (./van_der_poll_5_lin.pdf_tex
+>] (./van_der_poll_5.pdf_tex
+<van_der_poll_5.pdf, id=1949, page=1, 411.97946pt x 315.54713pt>
+File: van_der_poll_5.pdf Graphic file (type pdf)
+
+<use van_der_poll_5.pdf, page 1>
+Package pdftex.def Info: van_der_poll_5.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
+) (./van_der_poll_5_lin.pdf_tex
 <van_der_poll_5_lin.pdf, id=1950, page=1, 411.97946pt x 315.54713pt>
 File: van_der_poll_5_lin.pdf Graphic file (type pdf)
 
 <use van_der_poll_5_lin.pdf, page 1>
 Package pdftex.def Info: van_der_poll_5_lin.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
 ) (./van_der_poll_5_both_close.pdf_tex
 <van_der_poll_5_both_close.pdf, id=1951, page=1, 421.55586pt x 315.54713pt>
 File: van_der_poll_5_both_close.pdf Graphic file (type pdf)
@@ -959,7 +959,7 @@ File: van_der_poll_5_both_close.pdf Graphic file (type pdf)
 <use van_der_poll_5_both_close.pdf, page 1>
 Package pdftex.def Info: van_der_poll_5_both_close.pdf, page1 used on input lin
 e 52.
-(pdftex.def)             Requested size: 341.43307pt x 255.58694pt.
+(pdftex.def)             Requested size: 364.19667pt x 272.62671pt.
 ) [5 <./van_der_poll_5.pdf> <./van_der_poll_5_lin.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./van_der_poll_5_lin.pdf): PDF inclusio
@@ -970,25 +970,30 @@ File: van_der_poll_0.pdf Graphic file (type pdf)
 
 <use van_der_poll_0.pdf, page 1>
 Package pdftex.def Info: van_der_poll_0.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
 ) [6 <./van_der_poll_5_both_close.pdf> <./van_der_poll_0.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./van_der_poll_0.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] (./pendulum_1.pdf_tex
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 220--223
+
+ []
+
+(./pendulum_1.pdf_tex
 <pendulum_1.pdf, id=3177, page=1, 419.6409pt x 315.54713pt>
 File: pendulum_1.pdf Graphic file (type pdf)
 
 <use pendulum_1.pdf, page 1>
 Package pdftex.def Info: pendulum_1.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 256.74733pt.
+(pdftex.def)             Requested size: 364.19667pt x 273.86414pt.
 ) [7] (./pendulum_1_lin.pdf_tex
 <pendulum_1_lin.pdf, id=3184, page=1, 419.6409pt x 315.54713pt>
 File: pendulum_1_lin.pdf Graphic file (type pdf)
 
 <use pendulum_1_lin.pdf, page 1>
 Package pdftex.def Info: pendulum_1_lin.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 256.74733pt.
+(pdftex.def)             Requested size: 364.19667pt x 273.86414pt.
 ) (./pendulum_1_both_close.pdf_tex
 <pendulum_1_both_close.pdf, id=3185, page=1, 429.21729pt x 315.54713pt>
 File: pendulum_1_both_close.pdf Graphic file (type pdf)
@@ -996,7 +1001,7 @@ File: pendulum_1_both_close.pdf Graphic file (type pdf)
 <use pendulum_1_both_close.pdf, page 1>
 Package pdftex.def Info: pendulum_1_both_close.pdf, page1 used on input line 52
 .
-(pdftex.def)             Requested size: 341.43307pt x 251.02728pt.
+(pdftex.def)             Requested size: 364.19667pt x 267.76372pt.
 ) [8 <./pendulum_1.pdf> <./pendulum_1_lin.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./pendulum_1_lin.pdf): PDF inclusion: m
@@ -1007,14 +1012,14 @@ File: pendulum_2.pdf Graphic file (type pdf)
 
 <use pendulum_2.pdf, page 1>
 Package pdftex.def Info: pendulum_2.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 256.74733pt.
+(pdftex.def)             Requested size: 364.19667pt x 273.86414pt.
 ) (./pendulum_2_lin.pdf_tex
 <pendulum_2_lin.pdf, id=4859, page=1, 419.6409pt x 315.54713pt>
 File: pendulum_2_lin.pdf Graphic file (type pdf)
 
 <use pendulum_2_lin.pdf, page 1>
 Package pdftex.def Info: pendulum_2_lin.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 256.74733pt.
+(pdftex.def)             Requested size: 364.19667pt x 273.86414pt.
 ) [9 <./pendulum_1_both_close.pdf> <./pendulum_2.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./pendulum_2.pdf): PDF inclusion: multi
@@ -1026,142 +1031,261 @@ File: pendulum_2_both_close.pdf Graphic file (type pdf)
 <use pendulum_2_both_close.pdf, page 1>
 Package pdftex.def Info: pendulum_2_both_close.pdf, page1 used on input line 52
 .
-(pdftex.def)             Requested size: 341.43307pt x 251.02728pt.
+(pdftex.def)             Requested size: 364.19667pt x 267.76372pt.
 ) (./pendulum_3.pdf_tex
 <pendulum_3.pdf, id=6053, page=1, 419.6409pt x 315.54713pt>
 File: pendulum_3.pdf Graphic file (type pdf)
 
 <use pendulum_3.pdf, page 1>
 Package pdftex.def Info: pendulum_3.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 256.74733pt.
+(pdftex.def)             Requested size: 364.19667pt x 273.86414pt.
 ) [10 <./pendulum_2_lin.pdf> <./pendulum_2_both_close.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./pendulum_2_both_close.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
 >] (./pendulum_4.pdf_tex
-<pendulum_4.pdf, id=7156, page=1, 419.6409pt x 315.54713pt>
+<pendulum_4.pdf, id=7243, page=1, 419.6409pt x 315.54713pt>
 File: pendulum_4.pdf Graphic file (type pdf)
 
 <use pendulum_4.pdf, page 1>
 Package pdftex.def Info: pendulum_4.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 256.74733pt.
+(pdftex.def)             Requested size: 364.19667pt x 273.86414pt.
 ) (./pendulum_4_lin.pdf_tex
-<pendulum_4_lin.pdf, id=7157, page=1, 419.6409pt x 315.54713pt>
+<pendulum_4_lin.pdf, id=7244, page=1, 419.6409pt x 315.54713pt>
 File: pendulum_4_lin.pdf Graphic file (type pdf)
 
 <use pendulum_4_lin.pdf, page 1>
 Package pdftex.def Info: pendulum_4_lin.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 256.74733pt.
+(pdftex.def)             Requested size: 364.19667pt x 273.86414pt.
 ) [11 <./pendulum_3.pdf> <./pendulum_4.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./pendulum_4.pdf): PDF inclusion: multi
 ple pdfs with page group included in a single page
 >] (./pendulum_4_both_close.pdf_tex
-<pendulum_4_both_close.pdf, id=8733, page=1, 429.21729pt x 315.54713pt>
+<pendulum_4_both_close.pdf, id=8821, page=1, 429.21729pt x 315.54713pt>
 File: pendulum_4_both_close.pdf Graphic file (type pdf)
 
 <use pendulum_4_both_close.pdf, page 1>
 Package pdftex.def Info: pendulum_4_both_close.pdf, page1 used on input line 52
 .
-(pdftex.def)             Requested size: 341.43307pt x 251.02728pt.
-) (./mechanical_1.pdf_tex
-<mechanical_1.pdf, id=8734, page=1, 411.97946pt x 315.54713pt>
-File: mechanical_1.pdf Graphic file (type pdf)
-
-<use mechanical_1.pdf, page 1>
-Package pdftex.def Info: mechanical_1.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+(pdftex.def)             Requested size: 364.19667pt x 267.76372pt.
 ) [12 <./pendulum_4_lin.pdf> <./pendulum_4_both_close.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ./pendulum_4_both_close.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
->] (./mechanical_1_lin.pdf_tex
-<mechanical_1_lin.pdf, id=9758, page=1, 411.97946pt x 315.54713pt>
-File: mechanical_1_lin.pdf Graphic file (type pdf)
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 354--357
 
-<use mechanical_1_lin.pdf, page 1>
-Package pdftex.def Info: mechanical_1_lin.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
-) (./mechanical_1_both_close.pdf_tex
-<mechanical_1_both_close.pdf, id=9759, page=1, 421.55586pt x 315.54713pt>
-File: mechanical_1_both_close.pdf Graphic file (type pdf)
+ []
 
-<use mechanical_1_both_close.pdf, page 1>
-Package pdftex.def Info: mechanical_1_both_close.pdf, page1 used on input line 
-52.
-(pdftex.def)             Requested size: 341.43307pt x 255.58694pt.
-) [13 <./mechanical_1.pdf> <./mechanical_1_lin.pdf
+(./mechanical_hard_1.pdf_tex
+<mechanical_hard_1.pdf, id=9844, page=1, 411.97946pt x 315.54713pt>
+File: mechanical_hard_1.pdf Graphic file (type pdf)
 
-pdfTeX warning: /usr/bin/pdflatex (file ./mechanical_1_lin.pdf): PDF inclusion:
- multiple pdfs with page group included in a single page
->] (./mechanical_2.pdf_tex
-<mechanical_2.pdf, id=10273, page=1, 426.02412pt x 315.84749pt>
-File: mechanical_2.pdf Graphic file (type pdf)
+<use mechanical_hard_1.pdf, page 1>
+Package pdftex.def Info: mechanical_hard_1.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
+) (./mechanical_hard_1_lin.pdf_tex
+<mechanical_hard_1_lin.pdf, id=9845, page=1, 411.97946pt x 315.54713pt>
+File: mechanical_hard_1_lin.pdf Graphic file (type pdf)
 
-<use mechanical_2.pdf, page 1>
-Package pdftex.def Info: mechanical_2.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 253.14581pt.
-) (./mechanical_2_lin.pdf_tex
-<mechanical_2_lin.pdf, id=10274, page=1, 426.02412pt x 315.84749pt>
-File: mechanical_2_lin.pdf Graphic file (type pdf)
+<use mechanical_hard_1_lin.pdf, page 1>
+Package pdftex.def Info: mechanical_hard_1_lin.pdf, page1 used on input line 52
+.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
+) [13 <./mechanical_hard_1.pdf>]
+(./mechanical_hard_1_both_close.pdf_tex
+<mechanical_hard_1_both_close.pdf, id=10098, page=1, 421.55586pt x 315.54713pt>
+File: mechanical_hard_1_both_close.pdf Graphic file (type pdf)
+<use mechanical_hard_1_both_close.pdf, page 1>
+Package pdftex.def Info: mechanical_hard_1_both_close.pdf, page1 used on input 
+line 52.
+(pdftex.def)             Requested size: 364.19667pt x 272.62671pt.
+) (./mechanical_hard_2.pdf_tex
+<mechanical_hard_2.pdf, id=10099, page=1, 411.97946pt x 315.54713pt>
+File: mechanical_hard_2.pdf Graphic file (type pdf)
 
-<use mechanical_2_lin.pdf, page 1>
-Package pdftex.def Info: mechanical_2_lin.pdf, page1 used on input line 52.
-(pdftex.def)             Requested size: 341.43307pt x 253.14581pt.
-) [14 <./mechanical_1_both_close.pdf> <./mechanical_2.pdf
+<use mechanical_hard_2.pdf, page 1>
+Package pdftex.def Info: mechanical_hard_2.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
+) [14 <./mechanical_hard_1_lin.pdf> <./mechanical_hard_1_both_close.pdf
 
-pdfTeX warning: /usr/bin/pdflatex (file ./mechanical_2.pdf): PDF inclusion: mul
-tiple pdfs with page group included in a single page
->] (./mechanical_2_both_close.pdf_tex
-<mechanical_2_both_close.pdf, id=10987, page=1, 435.60367pt x 315.84749pt>
-File: mechanical_2_both_close.pdf Graphic file (type pdf)
+pdfTeX warning: /usr/bin/pdflatex (file ./mechanical_hard_1_both_close.pdf): PD
+F inclusion: multiple pdfs with page group included in a single page
+>] (./mechanical_hard_2_lin.pdf_tex
+<mechanical_hard_2_lin.pdf, id=10709, page=1, 411.97946pt x 315.54713pt>
+File: mechanical_hard_2_lin.pdf Graphic file (type pdf)
 
-<use mechanical_2_both_close.pdf, page 1>
-Package pdftex.def Info: mechanical_2_both_close.pdf, page1 used on input line 
-52.
-(pdftex.def)             Requested size: 341.43307pt x 247.56972pt.
+<use mechanical_hard_2_lin.pdf, page 1>
+Package pdftex.def Info: mechanical_hard_2_lin.pdf, page1 used on input line 52
+.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 361--371
+(./mechanical_hard_2_both_close.pdf_tex
+<mechanical_hard_2_both_close.pdf, id=10710, page=1, 421.55586pt x 315.54713pt>
+File: mechanical_hard_2_both_close.pdf Graphic file (type pdf)
+<use mechanical_hard_2_both_close.pdf, page 1>
+Package pdftex.def Info: mechanical_hard_2_both_close.pdf, page1 used on input 
+line 52.
+(pdftex.def)             Requested size: 364.19667pt x 272.62671pt.
+) [15 <./mechanical_hard_2.pdf> <./mechanical_hard_2_lin.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./mechanical_hard_2_lin.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>] (./mechanical_hard_3.pdf_tex
+<mechanical_hard_3.pdf, id=11227, page=1, 411.97946pt x 315.54713pt>
+File: mechanical_hard_3.pdf Graphic file (type pdf)
+
+<use mechanical_hard_3.pdf, page 1>
+Package pdftex.def Info: mechanical_hard_3.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
+) (./mechanical_hard_3_lin.pdf_tex
+<mechanical_hard_3_lin.pdf, id=11228, page=1, 411.97946pt x 315.54713pt>
+File: mechanical_hard_3_lin.pdf Graphic file (type pdf)
+
+<use mechanical_hard_3_lin.pdf, page 1>
+Package pdftex.def Info: mechanical_hard_3_lin.pdf, page1 used on input line 52
+.
+(pdftex.def)             Requested size: 364.19667pt x 278.95343pt.
+) [16 <./mechanical_hard_2_both_close.pdf> <./mechanical_hard_3.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./mechanical_hard_3.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+>] (./mechanical_hard_3_both_close.pdf_tex
+<mechanical_hard_3_both_close.pdf, id=11825, page=1, 421.55586pt x 315.54713pt>
+File: mechanical_hard_3_both_close.pdf Graphic file (type pdf)
+<use mechanical_hard_3_both_close.pdf, page 1>
+Package pdftex.def Info: mechanical_hard_3_both_close.pdf, page1 used on input 
+line 52.
+(pdftex.def)             Requested size: 364.19667pt x 272.62671pt.
+) [17 <./mechanical_hard_3_lin.pdf> <./mechanical_hard_3_both_close.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./mechanical_hard_3_both_close.pdf): PD
+F inclusion: multiple pdfs with page group included in a single page
+>] (./mechanical_soft_1.pdf_tex
+<mechanical_soft_1.pdf, id=12435, page=1, 426.02412pt x 315.84749pt>
+File: mechanical_soft_1.pdf Graphic file (type pdf)
+
+<use mechanical_soft_1.pdf, page 1>
+Package pdftex.def Info: mechanical_soft_1.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 364.19667pt x 270.02348pt.
+) [18] (./mechanical_soft_1_lin.pdf_tex
+<mechanical_soft_1_lin.pdf, id=12441, page=1, 426.02412pt x 315.84749pt>
+File: mechanical_soft_1_lin.pdf Graphic file (type pdf)
+
+<use mechanical_soft_1_lin.pdf, page 1>
+Package pdftex.def Info: mechanical_soft_1_lin.pdf, page1 used on input line 52
+.
+(pdftex.def)             Requested size: 364.19667pt x 270.02348pt.
+)
+(./mechanical_soft_1_both_close.pdf_tex
+<mechanical_soft_1_both_close.pdf, id=12442, page=1, 435.60367pt x 315.84749pt>
+File: mechanical_soft_1_both_close.pdf Graphic file (type pdf)
+<use mechanical_soft_1_both_close.pdf, page 1>
+Package pdftex.def Info: mechanical_soft_1_both_close.pdf, page1 used on input 
+line 52.
+(pdftex.def)             Requested size: 364.19667pt x 264.0763pt.
+) [19 <./mechanical_soft_1.pdf> <./mechanical_soft_1_lin.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./mechanical_soft_1_lin.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>] (./mechanical_soft_2.pdf_tex
+<mechanical_soft_2.pdf, id=13074, page=1, 426.02412pt x 315.84749pt>
+File: mechanical_soft_2.pdf Graphic file (type pdf)
+
+<use mechanical_soft_2.pdf, page 1>
+Package pdftex.def Info: mechanical_soft_2.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 364.19667pt x 270.02348pt.
+) (./mechanical_soft_2_lin.pdf_tex
+<mechanical_soft_2_lin.pdf, id=13075, page=1, 426.02412pt x 315.84749pt>
+File: mechanical_soft_2_lin.pdf Graphic file (type pdf)
+
+<use mechanical_soft_2_lin.pdf, page 1>
+Package pdftex.def Info: mechanical_soft_2_lin.pdf, page1 used on input line 52
+.
+(pdftex.def)             Requested size: 364.19667pt x 270.02348pt.
+) [20 <./mechanical_soft_1_both_close.pdf> <./mechanical_soft_2.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./mechanical_soft_2.pdf): PDF inclusion
+: multiple pdfs with page group included in a single page
+>] (./mechanical_soft_2_both_close.pdf_tex
+<mechanical_soft_2_both_close.pdf, id=13787, page=1, 435.60367pt x 315.84749pt>
+File: mechanical_soft_2_both_close.pdf Graphic file (type pdf)
+<use mechanical_soft_2_both_close.pdf, page 1>
+Package pdftex.def Info: mechanical_soft_2_both_close.pdf, page1 used on input 
+line 52.
+(pdftex.def)             Requested size: 364.19667pt x 264.0763pt.
+) (./mechanical_soft_3.pdf_tex
+<mechanical_soft_3.pdf, id=13788, page=1, 426.02412pt x 315.84749pt>
+File: mechanical_soft_3.pdf Graphic file (type pdf)
+
+<use mechanical_soft_3.pdf, page 1>
+Package pdftex.def Info: mechanical_soft_3.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 364.19667pt x 270.02348pt.
+) [21 <./mechanical_soft_2_lin.pdf> <./mechanical_soft_2_both_close.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./mechanical_soft_2_both_close.pdf): PD
+F inclusion: multiple pdfs with page group included in a single page
+>] (./mechanical_soft_3_lin.pdf_tex
+<mechanical_soft_3_lin.pdf, id=14398, page=1, 426.02412pt x 315.84749pt>
+File: mechanical_soft_3_lin.pdf Graphic file (type pdf)
+
+<use mechanical_soft_3_lin.pdf, page 1>
+Package pdftex.def Info: mechanical_soft_3_lin.pdf, page1 used on input line 52
+.
+(pdftex.def)             Requested size: 364.19667pt x 270.02348pt.
+)
+(./mechanical_soft_3_both_close.pdf_tex
+<mechanical_soft_3_both_close.pdf, id=14399, page=1, 435.60367pt x 315.84749pt>
+File: mechanical_soft_3_both_close.pdf Graphic file (type pdf)
+<use mechanical_soft_3_both_close.pdf, page 1>
+Package pdftex.def Info: mechanical_soft_3_both_close.pdf, page1 used on input 
+line 52.
+(pdftex.def)             Requested size: 364.19667pt x 264.0763pt.
+) [22 <./mechanical_soft_3.pdf> <./mechanical_soft_3_lin.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./mechanical_soft_3_lin.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 576--586
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--371
+Underfull \hbox (badness 10000) in paragraph at lines 576--586
 
  []
 
-[15 <./mechanical_2_lin.pdf> <./mechanical_2_both_close.pdf
-
-pdfTeX warning: /usr/bin/pdflatex (file ./mechanical_2_both_close.pdf): PDF inc
-lusion: multiple pdfs with page group included in a single page
->] [16] (./Adrian_Jałoszewski_Lapunow_I.aux) ) 
+[23 <./mechanical_soft_3_both_close.pdf>] (./Adrian_Jałoszewski_Lapunow_I.aux)
+ ) 
 Here is how much of TeX's memory you used:
- 7351 strings out of 493013
- 105902 string characters out of 6135683
- 191630 words of memory out of 5000000
- 10667 multiletter control sequences out of 15000+600000
+ 7435 strings out of 493013
+ 108752 string characters out of 6135683
+ 193630 words of memory out of 5000000
+ 10715 multiletter control sequences out of 15000+600000
  16299 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,9n,98p,815b,367s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/f
-onts/enc/dvips/pl/plit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/pl
-mi.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/t
-exlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/texmf-dist/fo
-nts/enc/dvips/pl/plme.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/p
-lbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/pl/plmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/p
-l/plr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/pl/plr7.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl
-/plsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plti10.pfb>
-Output written on Adrian_Jałoszewski_Lapunow_I.pdf (16 pages, 2617393 bytes).
+ 68i,10n,98p,815b,367s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plsc.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/share/texlive/texmf-dist/fonts/e
+nc/dvips/pl/plmi.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc
+}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive
+/texmf-dist/fonts/enc/dvips/pl/plme.enc}</usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/pl/plbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/pl
+bx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/pl/plr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/
+plr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr17.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/pl/plr5.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/pl/plr7.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/pl
+sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plti10.pfb>
+Output written on Adrian_Jałoszewski_Lapunow_I.pdf (23 pages, 3299488 bytes).
 PDF statistics:
- 11647 PDF objects out of 12825 (max. 8388607)
- 7698 compressed objects within 77 object streams
+ 15429 PDF objects out of 18468 (max. 8388607)
+ 10194 compressed objects within 102 object streams
  0 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 191 words of extra memory for PDF output out of 10000 (max. 10000000)
 

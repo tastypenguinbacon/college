@@ -75,7 +75,7 @@
 				Wartości własne macierzy: $\lambda_1 = -\frac{1}{2} + \frac{\sqrt{3}}{2}$, $\lambda_2 = -\frac{1}{2} - \frac{\sqrt{3}}{2}$, układ jest więc asymptotycznie stabilny w okolicy punktu (0, 0)
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{van_der_poll_1.pdf_tex}
 					\caption{Układ nieliniowy}
 				\end{figure}\noindent
@@ -83,14 +83,14 @@
 
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{van_der_poll_1_lin.pdf_tex}
 					\caption{Układ zlinearyzowany}
 				\end{figure}\noindent
 
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{van_der_poll_1_both_close.pdf_tex}
 					\caption{Porównanie w otoczeniu punktu równowagi}
 				\end{figure}\noindent
@@ -105,26 +105,25 @@
 					Wartości własne macierzy: $\lambda_{1/2} = -1$, układ jest więc asymptotycznie stabilny w okolicy punktu (0, 0)
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.7\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{van_der_poll_2.pdf_tex}
 					\caption{Układ nieliniowy}
 				\end{figure}\noindent
 				
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.7\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{van_der_poll_2_lin.pdf_tex}
 					\caption{Układ zlinearyzowany}
 				\end{figure}\noindent
 				
-				
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.7\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{van_der_poll_2_both_close.pdf_tex}
 					\caption{Porównanie w otoczeniu punktu równowagi}
 				\end{figure}\noindent
-			\subsubsection{Współczynnik a = $\frac{5}{2}$}
+			\subsubsection{Współczynnik a = 2,5}
 				Współczynnik został dobrany tak aby trajektorie układu dla macierzy w postaci kanonicznej były postaci $x_2 = x_1^4$ -- stosunek wartości własnych powinien być równy 4. Stopień wielomianu został wybrany w ten sposób aby krzywizna trajektorii była dobrze widoczna na portretach fazowych -- (dla wielomianu drugiego stopnia $a=\frac{3}{\sqrt{2}} \approx 2,12$, dla trzeciego stopnia $a=\frac{4}{\sqrt{3}} \approx 2,31$ -- wartości na tyle bliskie tym z przypadku węzła zdegenerowanego, że trudno było rozróżnić poszczególne przypadki).
 				$$
 					A = \begin{bmatrix}
@@ -135,36 +134,36 @@
 				Wartości własne macierzy: $\lambda_1 = -\frac{1}{2}$, $\lambda_2 = -2$, układ jest więc asymptotycznie stabilny w okolicy punktu (0, 0)
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{van_der_poll_5.pdf_tex}
 					\caption{Układ nieliniowy}
 				\end{figure}\noindent
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{van_der_poll_5_lin.pdf_tex}
 					\caption{Układ zlinearyzowany}
 				\end{figure}\noindent
 
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{van_der_poll_5_both_close.pdf_tex}
 					\caption{Porównanie w otoczeniu punktu równowagi}
 				\end{figure}\noindent
 
 			\subsubsection{Współczynnik a = 0}
-				Jest to przypadek kiedy zlinearyzowany układ posiada portret fazowy typu koła o macierzy stanu:
+				Jest to przypadek kiedy zlinearyzowany układ posiada portret fazowy typu środka o macierzy stanu:
 				$$
 				A = \begin{bmatrix}
 				0 & 1 \\
 				-1 & 0
 				\end{bmatrix}
 				$$
-				Wartości własne $\lambda_1 = -j$, $\lambda_2 = j$ mają zerową część rzeczywistą -- o stabilności układu nieliniowego nie można wnioskować. Jest to przypadek niespełniający warunków opisanych w poleceniu, więc nie będzie szczególnie rozważany.
+				Wartości własne $\lambda_1 = -j$, $\lambda_2 = j$ mają zerową część rzeczywistą -- o stabilności układu nieliniowego nie można wnioskować. Jest to przypadek niespełniający warunków opisanych w poleceniu, więc nie będzie rozważany.
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{van_der_poll_0.pdf_tex}
 					\caption{Układ nieliniowy}
 				\end{figure}\noindent
@@ -184,7 +183,7 @@
 					\dot{x}_2 & = - b x_2 - a \sin x_1 
 				\end{aligned}
 			$$
-			Gdzie $x_2 = \dot{y}$ oraz $x_1 = y$. Aby wyznaczyć punkty równowagi podstawiam za pochodne 0.
+			Gdzie $x_2 = \dot{y}$ oraz $x_1 = y$. Aby wyznaczyć punkty równowagi podstawiam za pochodne 0:
 			$$
 				\begin{aligned}
 					0 & = x_2 \\
@@ -219,10 +218,26 @@
 					Wielomian charakterystyczny macierzy A jest dany jako: $\lambda^2 + b\lambda - a$, gdy parametry \textit{a, b}, ponieważ badamy układ nieliniowy, to współczynnik $a$ musi być większy od zera -- wyraz wolny wielomianu jest zawsze mniejszy od zera, z czego wynika, że w tych punktach występuje równowaga niestabilna.
 			\end{itemize}
 			Ponieważ układ zachowuje się cyklicznie względem $x_1$ z okresem $2 \pi$, wystarczy w rozważaniach układu zlinearyzowanego wziąć pod uwagę tylko punkt (0, 0).
+			\\ \\
+			Zależnie od wartości parametrów \textit{a, b} można znaleźć wyróżnić następne portrety fazowe w układzie zlinearyzowanym:
+			\begin{itemize}
+				\item[] $b = 0,\, a > 0$ -- środek 
+				\item[] $b \in (0, 2\sqrt{a}) $ -- ognisko asymptotycznie stabilne
+				\item[] $b = 2 \sqrt{a}$ -- węzeł zdegenerowany asymptotycznie stabilny
+				\item[]	$b > 2\sqrt{a}$ -- węzeł asymptotycznie stabilny
+			\end{itemize}
+			Poszczególne wykresy zostały podzielone kolorami tła zgodnie z obszarami przyciągania.
 			\subsubsection{Współczynniki a=1, b=1}
+				Jest to przypadek gdy układ zlinearyzowany jest ogniskiem asymptotycznie stabilnym z wartościami własnymi $\lambda_1 = -\frac{1}{2} + \frac{\sqrt{3}}{2}$, $\lambda_2 = -\frac{1}{2} - \frac{\sqrt{3}}{2}$, macierz zlinearyzowanego układu jest dana jako:
+				$$
+					A = \begin{bmatrix}
+						0 & 1 \\
+						-1  & -1
+					\end{bmatrix}
+				$$
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{pendulum_1.pdf_tex}
 					\caption{Układ nieliniowy}
 				\end{figure}\noindent
@@ -230,7 +245,7 @@
 
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{pendulum_1_lin.pdf_tex}
 					\caption{Układ zlinearyzowany}
 				\end{figure}\noindent
@@ -238,48 +253,67 @@
 
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{pendulum_1_both_close.pdf_tex}
 					\caption{Porównanie w otoczeniu punktu równowagi}
 				\end{figure}\noindent
 
-			\subsubsection{Współczynnik a = 4, b = 1}
+			\subsubsection{Współczynnik a = 1, b = 2}
+				Jest to przypadek gdy układ zlinearyzowany jest węzłem zdegenerowanym asymptotycznie stabilnym z wartościami własnymi $\lambda_{1/2} =-1$, macierz zlinearyzowanego układu jest dana jako:
+				$$
+					A = \begin{bmatrix}
+						0 & 1 \\
+						-1  & -2
+					\end{bmatrix}
+				$$
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{pendulum_2.pdf_tex}
 					\caption{Układ nieliniowy}
 				\end{figure}\noindent
 
-
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{pendulum_2_lin.pdf_tex}
 					\caption{Układ zlinearyzowany}
 				\end{figure}\noindent
 
-
-
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{pendulum_2_both_close.pdf_tex}
 					\caption{Porównanie w otoczeniu punktu równowagi}
 				\end{figure}\noindent
 
 			\subsubsection{Współczynnik a = 4, b = 0}
+				Jest to przypadek gdy układ zlinearyzowany jest środkiem z wartościami własnymi $\lambda_{1/2} =-1$, macierz zlinearyzowanego układu jest dana jako:
+				$$
+					A = \begin{bmatrix}
+						0 & 1 \\
+						-4  & 0
+					\end{bmatrix}
+				$$
+				Nie można nic wnioskować na temat stabilności układu, nie jest więc dokładniej rozpatrywany, gdyż nie jest objęty treścią zadania.
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{pendulum_3.pdf_tex}
 					\caption{Układ nieliniowy}
 				\end{figure}\noindent
 
-			\subsection{Współczynnik a = 1, b = 3}
+			\subsubsection{Współczynnik a = 1, b = 2,5}
+					Jest to przypadek gdy układ zlinearyzowany jest węzłem zdegenerowanym asymptotycznie stabilnym z wartościami własnymi $\lambda_{1/2} =-1$, macierz zlinearyzowanego układu jest dana jako (te same współczynniki co rozważane przy równaniach van der Polla):
+					$$
+						A = \begin{bmatrix}
+							0 & 1 \\
+							-1  & -5/2
+						\end{bmatrix}
+					$$
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}z
+					\def \svgwidth{0.8\columnwidth}z
 					\input{pendulum_4.pdf_tex}
 					\caption{Układ nieliniowy}
 				\end{figure}\noindent
@@ -287,7 +321,7 @@
 
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{pendulum_4_lin.pdf_tex}
 					\caption{Układ zlinearyzowany}
 				\end{figure}\noindent
@@ -295,68 +329,249 @@
 
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
 					\input{pendulum_4_both_close.pdf_tex}
 					\caption{Porównanie w otoczeniu punktu równowagi}
 				\end{figure}\noindent
 
 		\subsection{Układ mechaniczny}
+			Układ mechaniczny ze sprężyną jest opisany równaniem różniczkowym:
+			$$
+				\ddot{y}(t) + b\dot{y}(t) + cy(t) + d y^3(t) = 0
+			$$
+			$$
+				\begin{aligned}
+					\dot{x}_1 & = x_2\\
+					\dot{x}_2 & = -b x_2 - c x_1 - d x_1^3
+				\end{aligned}
+			$$
+			Gdzie $x_2 = \dot{y}$ oraz $x_1 = y$. Aby wyznaczyć punkty równowagi podstawiam za pochodne 0:
+			$$
+				\begin{aligned}
+					0 & = x_2\\
+					0 & = -b x_2 - c x_1 - d x_1^3
+				\end{aligned}
+			$$
+			Wynika z tego, że punkty równowagi występują dla $x_2 = 0$, $x_1 = 0$ oraz dla sprężyny miękkiej dla $x_1 = \pm \left|\frac{c}{d}\right|$. \\\\
+			Jakobian tego systemu jest następujący:
+			$$
+				J = \begin{bmatrix}
+					0 & 1 \\
+					-c - 3dx_1^2 & -b
+				\end{bmatrix}
+			$$
 			\subsubsection{Sprężyna twarda}
+				Układ ze sprężyną twardą posiada tylko jeden punkt równowagi dla $x_1 = x_2 = 0$. Macierz A jest dana w takim przypadku jako:
+				$$
+					A = \begin{bmatrix}
+						0 & 1 \\
+						-c  & -b
+					\end{bmatrix}
+				$$
+				Wielomian charakterystyczny układu zlinearyzowanego: $\lambda^2 + b \lambda + c$. Rozważane przypadki
+				\begin{itemize}
+					\item[] $b \in (0, 2\sqrt{c}) $ -- ognisko asymptotycznie stabilne
+					\item[] $b = 2 \sqrt{c}$ -- węzeł zdegenerowany asymptotycznie stabilny
+					\item[]	$b > 2\sqrt{c}$ -- węzeł asymptotycznie stabilny
+				\end{itemize}
+				
+			\subsubsection{Sprężyna twarda b = c = 1}
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
-					\input{mechanical_1.pdf_tex}
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_hard_1.pdf_tex}
 					\caption{Układ nieliniowy}
 				\end{figure}\noindent
-
-
+				
+				
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
-					\input{mechanical_1_lin.pdf_tex}
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_hard_1_lin.pdf_tex}
 					\caption{Układ zlinearyzowany}
 				\end{figure}\noindent
-
-
+				
+				
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
-					\input{mechanical_1_both_close.pdf_tex}
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_hard_1_both_close.pdf_tex}
 					\caption{Porównanie w otoczeniu punktu równowagi}
 				\end{figure}\noindent
-
+				
+			\subsubsection{Sprężyna twarda b = 2, c = 1}
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_hard_2.pdf_tex}
+					\caption{Układ nieliniowy}
+				\end{figure}\noindent
+				
+				
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_hard_2_lin.pdf_tex}
+					\caption{Układ zlinearyzowany}
+				\end{figure}\noindent
+				
+				
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_hard_2_both_close.pdf_tex}
+					\caption{Porównanie w otoczeniu punktu równowagi}
+				\end{figure}\noindent
+				
+			\subsubsection{Sprężyna twarda b = 2,5, c = 1}
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_hard_3.pdf_tex}
+					\caption{Układ nieliniowy}
+				\end{figure}\noindent
+				
+				
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_hard_3_lin.pdf_tex}
+					\caption{Układ zlinearyzowany}
+				\end{figure}\noindent
+				
+				
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_hard_3_both_close.pdf_tex}
+					\caption{Porównanie w otoczeniu punktu równowagi}
+				\end{figure}\newpage
+				
+				
 			\subsubsection{Sprężyna miękka}
+				cudo
+				W przypadku sprężyny twardej występują trzy punkty równowagi: dla $x_2 = 0$ oraz $x_1 \in \left\{0, \pm \left| \frac{c}{d}\right|\right\}$
+				\begin{itemize}
+					\item[] $x_1 = x_2 = 0$ \\
+						Macierz stanu jest identyczna jak dla sprężyny twardej - jest to punkt równowagi asymptotycznie stabilny:
+						$$
+							A = \begin{bmatrix}
+								0 & 1 \\
+								-c  & -b
+							\end{bmatrix}
+						$$
+					\item[] $x_2 = 0$ i $x_1 = \pm \left| \frac{c}{d}\right|$ -- można obydwa przypadki rozpatrywać jako jeden, bo w jakobianie zmienna ta występuje w potędze drugiej.
+						$$
+							A = \begin{bmatrix}
+								0 & 1 \\
+								-c - 3\frac{d^3}{c^2} & -b
+							\end{bmatrix}
+						$$
+					Wielomian charakterystyczny macierzy stanu: $\lambda^2 + b\lambda + c + \frac{3 d^3}{c^2}$. Aby punkt był stabilny wszystkie współczynniki wielomianu charakterystycznego muszą być nieujemne, ponieważ $b>0$, należy rozpatrzyć wyraz wolny.
+					$$
+						 c + 3\frac{d^3}{c^2} \geq 0
+					$$
+					$$
+						c^3 + 3d^3 \geq 0
+					$$
+					$$
+						c^3 \geq -3d^3
+					$$
+					$$
+						c > -\sqrt{3}d
+					$$
+					Ponieważ $d < 0$ i $c > 0$
+					$$
+						|c| = c > \sqrt{3} |d| > |d|
+					$$
+					Jest to sprzeczne z założeniem z zadania, że $|c| < |d|$ -- obydwa te punkty równowagi są niestabilne.
+				\end{itemize}
+				Wynika z tego, że jedynym punktem stabilnym jest punkt (0, 0). Dla poszczególnych parametrów układ zlinearyzowany przyjmuje następujące postacie:
+				\begin{itemize}
+					\item[] $b \in (0, 2\sqrt{c}) $ -- ognisko asymptotycznie stabilne
+					\item[] $b = 2 \sqrt{c}$ -- węzeł zdegenerowany asymptotycznie stabilny
+					\item[]	$b > 2\sqrt{c}$ -- węzeł asymptotycznie stabilny
+				\end{itemize}
+				Wykresy zostały podzielone kolorami tła:
+				\begin{itemize}
+					\item[] czerwony -- obszar odpychania
+					\item[] zielony -- obszar przyciągania
+				\end{itemize}
+			\subsubsection{Sprężyna miękka b = c = 1}
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
-					\input{mechanical_2.pdf_tex}
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_soft_1.pdf_tex}
 					\caption{Układ nieliniowy}
 				\end{figure}\noindent
-
-
+				
+				
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
-					\input{mechanical_2_lin.pdf_tex}
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_soft_1_lin.pdf_tex}
 					\caption{Układ zlinearyzowany}
 				\end{figure}\noindent
-
-
+				
+				
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_soft_1_both_close.pdf_tex}
 					\caption{Porównanie w otoczeniu punktu równowagi}
 				\end{figure}\noindent
-
-
+				
+			\subsubsection{Sprężyna miękka b = 2, c = 1}
 				\begin{figure}[H]
 					\centering
-					\def \svgwidth{0.75\columnwidth}
-					\input{mechanical_2_both_close.pdf_tex}
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_soft_2.pdf_tex}
+					\caption{Układ nieliniowy}
+				\end{figure}\noindent
+				
+				
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_soft_2_lin.pdf_tex}
+					\caption{Układ zlinearyzowany}
+				\end{figure}\noindent
+				
+				
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_soft_2_both_close.pdf_tex}
 					\caption{Porównanie w otoczeniu punktu równowagi}
 				\end{figure}\noindent
-
-
+				
+			\subsubsection{Sprężyna miękka b = 2,5, c = 1}
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_soft_3.pdf_tex}
+					\caption{Układ nieliniowy}
+				\end{figure}\noindent
+				
+				
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_soft_3_lin.pdf_tex}
+					\caption{Układ zlinearyzowany}
+				\end{figure}\noindent
+				
+				
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.8\columnwidth}
+					\input{mechanical_soft_3_both_close.pdf_tex}
+					\caption{Porównanie w otoczeniu punktu równowagi}
+				\end{figure}\noindent
+				
+				
+				
+				
 	\section{Wnioski}
 		Mimo tego, że wiele układów ma te same jakobiany oraz te same punkty równowagi, to jednak mogą zachowywać się skrajnie różnie. Najlepszym przykładem tego jest układ mechaniczny ze sprężyną miękką oraz sprężyną twardą,
 		gdzie dobór współczynnika, który jest przy członie zerującym się przy procesie linearyzacji ma wpływ na to czy układ zachowuje się asymptotycznie stabilnie, czy dla niektórych punktów startowych jego trajektoria jest

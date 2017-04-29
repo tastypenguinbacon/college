@@ -1,16 +1,22 @@
 \contentsline {section}{\numberline {1}Wst\IeC {\k e}p}{1}
-\contentsline {section}{\numberline {2}Wykonanie}{2}
-\contentsline {subsection}{\numberline {2.1}Uk\IeC {\l }ad r\IeC {\'o}wna\IeC {\'n} van der Polla}{2}
-\contentsline {subsubsection}{\numberline {2.1.1}Wsp\IeC {\'o}\IeC {\l }czynnik a = 1}{2}
-\contentsline {subsubsection}{\numberline {2.1.2}Wsp\IeC {\'o}\IeC {\l }czynnik a = 5}{3}
-\contentsline {subsubsection}{\numberline {2.1.3}Wsp\IeC {\'o}\IeC {\l }czynnik a = 0}{5}
-\contentsline {subsubsection}{\numberline {2.1.4}Wsp\IeC {\'o}\IeC {\l }czynnik a = 0,5}{5}
+\contentsline {section}{\numberline {2}Wykonanie laboratorium}{1}
+\contentsline {subsection}{\numberline {2.1}Uk\IeC {\l }ad r\IeC {\'o}wna\IeC {\'n} van der Polla}{1}
+\contentsline {subsubsection}{\numberline {2.1.1}Wsp\IeC {\'o}\IeC {\l }czynnik a = 1}{1}
+\contentsline {subsubsection}{\numberline {2.1.2}Wsp\IeC {\'o}\IeC {\l }czynnik a = 2}{3}
+\contentsline {subsubsection}{\numberline {2.1.3}Wsp\IeC {\'o}\IeC {\l }czynnik a = 2,5}{4}
+\contentsline {subsubsection}{\numberline {2.1.4}Wsp\IeC {\'o}\IeC {\l }czynnik a = 0}{6}
 \contentsline {subsection}{\numberline {2.2}Wahad\IeC {\l }o t\IeC {\l }umione}{7}
-\contentsline {subsubsection}{\numberline {2.2.1}Wsp\IeC {\'o}\IeC {\l }czynniki a=1, b=1}{7}
-\contentsline {subsubsection}{\numberline {2.2.2}Wsp\IeC {\'o}\IeC {\l }czynnik a = 4, b = 1}{8}
+\contentsline {subsubsection}{\numberline {2.2.1}Wsp\IeC {\'o}\IeC {\l }czynniki a=1, b=1}{8}
+\contentsline {subsubsection}{\numberline {2.2.2}Wsp\IeC {\'o}\IeC {\l }czynnik a = 1, b = 2}{9}
 \contentsline {subsubsection}{\numberline {2.2.3}Wsp\IeC {\'o}\IeC {\l }czynnik a = 4, b = 0}{10}
-\contentsline {subsection}{\numberline {2.3}Wsp\IeC {\'o}\IeC {\l }czynnik a = 1, b = 3}{10}
-\contentsline {subsection}{\numberline {2.4}Uk\IeC {\l }ad mechaniczny}{12}
-\contentsline {subsubsection}{\numberline {2.4.1}Spr\IeC {\k e}\IeC {\.z}yna twarda}{12}
-\contentsline {subsubsection}{\numberline {2.4.2}Spr\IeC {\k e}\IeC {\.z}yna mi\IeC {\k e}kka}{14}
-\contentsline {section}{\numberline {3}Wnioski}{15}
+\contentsline {subsubsection}{\numberline {2.2.4}Wsp\IeC {\'o}\IeC {\l }czynnik a = 1, b = 2,5}{11}
+\contentsline {subsection}{\numberline {2.3}Uk\IeC {\l }ad mechaniczny}{12}
+\contentsline {subsubsection}{\numberline {2.3.1}Spr\IeC {\k e}\IeC {\.z}yna twarda}{13}
+\contentsline {subsubsection}{\numberline {2.3.2}Spr\IeC {\k e}\IeC {\.z}yna twarda b = c = 1}{13}
+\contentsline {subsubsection}{\numberline {2.3.3}Spr\IeC {\k e}\IeC {\.z}yna twarda b = 2, c = 1}{15}
+\contentsline {subsubsection}{\numberline {2.3.4}Spr\IeC {\k e}\IeC {\.z}yna twarda b = 2,5, c = 1}{16}
+\contentsline {subsubsection}{\numberline {2.3.5}Spr\IeC {\k e}\IeC {\.z}yna mi\IeC {\k e}kka}{17}
+\contentsline {subsubsection}{\numberline {2.3.6}Spr\IeC {\k e}\IeC {\.z}yna mi\IeC {\k e}kka b = c = 1}{18}
+\contentsline {subsubsection}{\numberline {2.3.7}Spr\IeC {\k e}\IeC {\.z}yna mi\IeC {\k e}kka b = 2, c = 1}{20}
+\contentsline {subsubsection}{\numberline {2.3.8}Spr\IeC {\k e}\IeC {\.z}yna mi\IeC {\k e}kka b = 2,5, c = 1}{21}
+\contentsline {section}{\numberline {3}Wnioski}{22}
