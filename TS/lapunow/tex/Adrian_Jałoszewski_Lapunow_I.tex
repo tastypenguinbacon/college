@@ -370,12 +370,19 @@
 				$$
 				Wielomian charakterystyczny układu zlinearyzowanego: $\lambda^2 + b \lambda + c$. Rozważane przypadki
 				\begin{itemize}
-					\item[] $b \in (0, 2\sqrt{c}) $ -- ognisko asymptotycznie stabilne
+					\item[] $b \in (0, 2\sqrt{c}) $ -- o asymptotycznie stabilne
 					\item[] $b = 2 \sqrt{c}$ -- węzeł zdegenerowany asymptotycznie stabilny
 					\item[]	$b > 2\sqrt{c}$ -- węzeł asymptotycznie stabilny
 				\end{itemize}
 				
 			\subsubsection{Sprężyna twarda b = c = 1}
+				Jest to przypadek gdy układ zlinearyzowany jest ogniskiem asymptotycznie stabilnym z wartościami własnymi $\lambda_1 = -\frac{1}{2} + \frac{\sqrt{3}}{2}$, $\lambda_2 = -\frac{1}{2} - \frac{\sqrt{3}}{2}$, macierz zlinearyzowanego układu jest dana jako:
+				$$
+				A = \begin{bmatrix}
+				0 & 1 \\
+				-1  & -1
+				\end{bmatrix}
+				$$
 				\begin{figure}[H]
 					\centering
 					\def \svgwidth{0.8\columnwidth}
@@ -400,6 +407,13 @@
 				\end{figure}\noindent
 				
 			\subsubsection{Sprężyna twarda b = 2, c = 1}
+				Jest to przypadek gdy układ zlinearyzowany jest węzłem zdegenerowanym asymptotycznie stabilnym z wartościami własnymi $\lambda_{1/2} =-1$, macierz zlinearyzowanego układu jest dana jako (te same współczynniki co rozważane przy równaniach van der Polla):
+				$$
+				A = \begin{bmatrix}
+				0 & 1 \\
+				-1  & -5/2
+				\end{bmatrix}
+				$$
 				\begin{figure}[H]
 					\centering
 					\def \svgwidth{0.8\columnwidth}
@@ -424,6 +438,13 @@
 				\end{figure}\noindent
 				
 			\subsubsection{Sprężyna twarda b = 2,5, c = 1}
+				Jest to przypadek gdy układ zlinearyzowany jest ogniskiem asymptotycznie stabilnym z wartościami własnymi $\lambda_1 = -\frac{1}{2} + \frac{\sqrt{3}}{2}$, $\lambda_2 = -\frac{1}{2} - \frac{\sqrt{3}}{2}$, macierz zlinearyzowanego układu jest dana jako:
+				$$
+				A = \begin{bmatrix}
+				0 & 1 \\
+				-1  & -1
+				\end{bmatrix}
+				$$
 				\begin{figure}[H]
 					\centering
 					\def \svgwidth{0.8\columnwidth}
@@ -449,7 +470,6 @@
 				
 				
 			\subsubsection{Sprężyna miękka}
-				cudo
 				W przypadku sprężyny twardej występują trzy punkty równowagi: dla $x_2 = 0$ oraz $x_1 \in \left\{0, \pm \left| \frac{c}{d}\right|\right\}$
 				\begin{itemize}
 					\item[] $x_1 = x_2 = 0$ \\
@@ -498,6 +518,13 @@
 					\item[] zielony -- obszar przyciągania
 				\end{itemize}
 			\subsubsection{Sprężyna miękka b = c = 1}
+				Jest to przypadek gdy układ zlinearyzowany jest ogniskiem asymptotycznie stabilnym z wartościami własnymi $\lambda_1 = -\frac{1}{2} + \frac{\sqrt{3}}{2}$, $\lambda_2 = -\frac{1}{2} - \frac{\sqrt{3}}{2}$, macierz zlinearyzowanego układu jest dana jako:
+				$$
+				A = \begin{bmatrix}
+				0 & 1 \\
+				-1  & -1
+				\end{bmatrix}
+				$$
 				\begin{figure}[H]
 					\centering
 					\def \svgwidth{0.8\columnwidth}
@@ -522,6 +549,13 @@
 				\end{figure}\noindent
 				
 			\subsubsection{Sprężyna miękka b = 2, c = 1}
+				Jest to przypadek gdy układ zlinearyzowany jest węzłem zdegenerowanym asymptotycznie stabilnym z wartościami własnymi $\lambda_{1/2} =-1$, macierz zlinearyzowanego układu jest dana jako (te same współczynniki co rozważane przy równaniach van der Polla):
+				$$
+				A = \begin{bmatrix}
+				0 & 1 \\
+				-1  & -5/2
+				\end{bmatrix}
+				$$
 				\begin{figure}[H]
 					\centering
 					\def \svgwidth{0.8\columnwidth}
@@ -546,6 +580,13 @@
 				\end{figure}\noindent
 				
 			\subsubsection{Sprężyna miękka b = 2,5, c = 1}
+				Jest to przypadek gdy układ zlinearyzowany jest ogniskiem asymptotycznie stabilnym z wartościami własnymi $\lambda_1 = -\frac{1}{2} + \frac{\sqrt{3}}{2}$, $\lambda_2 = -\frac{1}{2} - \frac{\sqrt{3}}{2}$, macierz zlinearyzowanego układu jest dana jako:
+				$$
+				A = \begin{bmatrix}
+				0 & 1 \\
+				-1  & -1
+				\end{bmatrix}
+				$$
 				\begin{figure}[H]
 					\centering
 					\def \svgwidth{0.8\columnwidth}
@@ -578,9 +619,9 @@
 		nieograniczona.
 		\\ \\
 		Im rozważane otoczenie punków równowagi jest mniejsze, tym lepiej da się je przybliżyć modelami liniowymi. Wszystkie rozważane przypadki, które posiadały punkt równowagi, były w jego otoczeniu dobrze aproksymowane
-		modelem liniowym.
+		modelem liniowym. Im dalej od punktu równowagi, tym trajektorie były do siebie coraz mniej podobne -- jest to dobrze widoczne w przypadku sprężyny twardej (niezależnie od tego jaki będzie układ po linearyzacji, to i tak dla większego otoczenia zacznie przypominać ognisko), przy sprężynie miękkiej (układ w pewnych obszarach był niestabilny), przy wahadle (układ zachowywał się okresowo, a dla przykładu z ogniskiem trajektorie w pewnej odległości się prostowały wbrew modelowi liniowemu) oraz przy przypadku gdy układ opisany równaniami van der Polla po linearyzacji miał portret fazowy typu ogniska (w pewnej odległości trajektorie się prostowały).
 		\\ \\
 		Niektóre systemy nieliniowe posiadają wiele punktów równowagi -- co nie ma miejsca w układach liniowych. Dobrym przykładem tego jest wahadło, które posiada asymptotycznie stabilne punkty równowagi rozmieszczone w punktach
-		$(0, k \cdot 2\pi)$ gdzie $k \in \mathbb{Z}$ oraz niestabilne w $(0, (2k + 1)\pi)$ -- na granicy obszarów przyciągania. Z modelu liniowego wynika, że układ posiada tylko jeden punkt równowagi i do niego będzie asymptotycznie
-		zmierzał. W przypadku wahadła jest to efekt niezauważalny ludzkim okiem, ale przyrząd pomiarowy liczący bezwzględny kąt obrotu będzie podawał na zaprojektowany pod liniowy model regulator błędne informacje.
+		$(2k\pi, 0)$ gdzie $k \in \mathbb{Z}$ oraz niestabilne w $((2k + 1)\pi, 0)$ -- na granicy obszarów przyciągania. Z modelu liniowego wynika, że układ posiada tylko jeden punkt równowagi i do niego będzie asymptotycznie
+		zmierzał, co może doprowadzić do błędnego dobrania regulatora.
 \end{document}

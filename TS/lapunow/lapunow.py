@@ -348,7 +348,7 @@ upper_poly = np.array(list(map(upper_poly, x)))
 lower_poly = np.array(list(map(lower_poly, x)))
 
 for_name("mechanical_soft_1", width, height, arrows=[0.4, 0.6]) \
-    (lambda t, y: mechanical_system(y, 22, 1, -1.5),
+    (lambda t, y: mechanical_system(y, 1, 1, -1.5),
      lambda: special_init_for_negative_spring(),
      [lambda: plt.fill_between(x, lower_poly, -height / 2 * np.ones(len(x)),
                                where=lower_poly > -height / 2,

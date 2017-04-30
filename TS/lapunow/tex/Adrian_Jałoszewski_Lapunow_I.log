@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.8)  30 APR 2017 01:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.8)  30 APR 2017 02:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1247,12 +1247,12 @@ line 52.
 pdfTeX warning: /usr/bin/pdflatex (file ./mechanical_soft_3_lin.pdf): PDF inclu
 sion: multiple pdfs with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 576--586
+Underfull \hbox (badness 10000) in paragraph at lines 617--627
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 576--586
+Underfull \hbox (badness 10000) in paragraph at lines 617--627
 
  []
 
@@ -1265,7 +1265,7 @@ Here is how much of TeX's memory you used:
  10715 multiletter control sequences out of 15000+600000
  16299 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,10n,98p,815b,367s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,10n,98p,815b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plsc.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/share/texlive/texmf-dist/fonts/e
 nc/dvips/pl/plmi.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc
@@ -1282,7 +1282,7 @@ share/texlive/texmf-dist/fonts/type1/public/pl/plr5.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/pl/plr7.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/pl
 sy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plti10.pfb>
-Output written on Adrian_Jałoszewski_Lapunow_I.pdf (23 pages, 3299488 bytes).
+Output written on Adrian_Jałoszewski_Lapunow_I.pdf (23 pages, 3302234 bytes).
 PDF statistics:
  15429 PDF objects out of 18468 (max. 8388607)
  10194 compressed objects within 102 object streams
