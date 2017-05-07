@@ -1,52 +1,77 @@
-from numpy.linalg import norm as vector_length
+import itertools
+
+import numpy as np
 from numpy.ma import sqrt
 
-
-def expansion(function, initial_point, initial_step, alpha, max_iterations=10):
-    """
-    Finds the minimum of the function passed to it, computed using the expansion method
-
-    :param function: the function to minimize
-    :param initial_point: the starting point of the methods
-    :param initial_step: a vector which searches for the co
-    :param alpha: the exponent by which the next step will be computed
-    :param max_iterations: maximum number of iterations after which computations are aborted
-    :return: a list of (point, value) pairs of intermediate values and the first one that failed
-    """
-    current_point = initial_point
-    direction = initial_step / vector_length(initial_step)
-    previous_value = function(initial_point) + 1
-    search_history = []
-    for i in range(0, max_iterations):
-        current_value = function(current_point)
-        search_history.append(current_point)
-        if current_value >= previous_value:
-            return search_history
-        current_point = initial_point + direction * initial_step * alpha ** i
-        previous_value = current_value
-    return search_history
+from helpers import memoize, pairwise
 
 
-def golden_ratio(function, range_begin, range_end, accuracy=0.01, iterations=10):
-    """
-    Finds the minimum of the function passed to it, computed using the expansion method
+class Expansion(object):
+    def __init__(self, fun):
+        self._fun = memoize(fun)
 
-    :param accuracy: the width of the range when computation is stopped
-    :param function: the function to minimize
-    :param range_begin: the begin of the range
-    :param range_end: the end of the range
-    :param iterations: the iterations
-    :return: a list of (point, value) pairs of intermediate values
-    """
-    tau = (sqrt(5) - 1) / 2
-    width = range_end - range_begin
-    if iterations == 0 or width < accuracy:
-        return []
-    first_point = tau * range_begin + (1 - tau) * range_end
-    second_point = (1 - tau) * range_begin + tau * range_end
-    if function(first_point) > function(second_point):
-        solution_of_rest = golden_ratio(function, first_point, range_end, accuracy, iterations - 1)
-        return [first_point] + solution_of_rest
-    else:
-        solution_of_rest = golden_ratio(function, range_begin, second_point, accuracy, iterations - 1)
-        return [second_point] + solution_of_rest
+    def __call__(self, x0, direction, alpha):
+        curr_pt = x0
+        yield x0
+        for i in itertools.count():
+            next_pt = x0 + direction * alpha ** i
+            yield next_pt
+            if self._fun(curr_pt) < self._fun(next_pt):
+                return
+            curr_pt = next_pt
+
+    @staticmethod
+    def trim(solution, max_iterations):
+        y = None
+        for i, (x, y) in enumerate(pairwise(solution)):
+            if i >= max_iterations:
+                break
+            yield x
+        else:
+            if y is not None:
+                yield y
+
+
+class GoldenRatio(object):
+    _tau = (sqrt(5) - 1) / 2
+
+    def __init__(self, fun):
+        self._fun = memoize(fun)
+
+    def __call__(self, range_begin, range_end, accuracy):
+        yield range_begin
+        yield range_end
+        while True:
+            span = range_end - range_begin
+            if np.linalg.norm(span) < accuracy:
+                break
+            left, right = range_begin + span * (1 - self._tau), range_begin + span * self._tau
+            if self._fun(left) < self._fun(right):
+                yield left
+                range_end = right
+            else:
+                yield right
+                range_begin = left
+
+
+class Directional(object):
+    def __init__(self, fun):
+        self._golden_ratio = GoldenRatio(fun)
+        self._expansion = Expansion(fun)
+
+    def __call__(self, x0, direction):
+        in_direction = Expansion.trim(self._expansion(x0, direction, 2), 100)
+        in_direction = list(in_direction)
+        if len(in_direction) > 2:
+            begin, end = in_direction[-3], in_direction[-1]
+        else:
+            begin, end = in_direction[0], in_direction[1]
+        solution = self._golden_ratio(begin, end, 10e-5)
+        cudo = (list(solution))
+        return cudo[-1]
+
+
+if __name__ == '__main__':
+    cudo = Directional(lambda x: x ** 2)
+    dirr = Expansion(lambda x: x ** 2)
+    print(cudo(10, -1))
