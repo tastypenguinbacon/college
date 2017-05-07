@@ -16,7 +16,7 @@ class GradientMethod(object):
         for i in count():
             yield current
             gradient = self._grad(current)
-            if i % renew_rate == 0 or improved:
+            if i % renew_rate == 0 or not improved:
                 direction = -gradient
             else:
                 beta = self._get_beta(current, previous, direction)
@@ -34,7 +34,7 @@ class GradientMethod(object):
 
 class FastestDescending(GradientMethod):
     def _get_beta(self, current, previous, direction):
-        return -self._grad(current)
+        return 0
 
 
 class FletcherReeves(GradientMethod):
