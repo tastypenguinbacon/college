@@ -3,18 +3,19 @@ import itertools
 import numpy as np
 from numpy.ma import sqrt
 
-from helpers import memoize, pairwise
+from helpers import pairwise, validate
 
 
 class Expansion(object):
     def __init__(self, fun):
-        self._fun = memoize(fun)
+        self._fun = fun
 
-    def __call__(self, x0, direction, alpha):
+    def __call__(self, x0, direction, alpha, step_size=0.01):
+        direction /= np.linalg.norm(direction)
         curr_pt = x0
         yield x0
         for i in itertools.count():
-            next_pt = x0 + direction * alpha ** i
+            next_pt = x0 + step_size * direction * alpha ** i
             yield next_pt
             if self._fun(curr_pt) < self._fun(next_pt):
                 return
@@ -32,12 +33,19 @@ class Expansion(object):
                 yield y
 
 
+def valid(__, range_begin, range_end, accuracy):
+    assert len(list(np.shape(range_begin))) <= 1
+    assert len(list(np.shape(range_end))) <= 1
+    assert len(list(np.shape(accuracy))) == 0
+
+
 class GoldenRatio(object):
     _tau = (sqrt(5) - 1) / 2
 
     def __init__(self, fun):
-        self._fun = memoize(fun)
+        self._fun = fun
 
+    @validate(valid)
     def __call__(self, range_begin, range_end, accuracy):
         yield range_begin
         yield range_end
@@ -54,24 +62,24 @@ class GoldenRatio(object):
                 range_begin = left
 
 
+def valid(this, x0, direction):
+    assert len(list(np.shape(x0.shape))) <= 1
+    assert len(list(np.shape(direction.shape))) <= 1
+
+
 class Directional(object):
     def __init__(self, fun):
         self._golden_ratio = GoldenRatio(fun)
         self._expansion = Expansion(fun)
 
+    @validate(valid)
     def __call__(self, x0, direction):
-        in_direction = Expansion.trim(self._expansion(x0, direction, 2), 100)
+        in_direction = Expansion.trim(self._expansion(x0, direction / 1000, 2), 100)
         in_direction = list(in_direction)
         if len(in_direction) > 2:
             begin, end = in_direction[-3], in_direction[-1]
         else:
             begin, end = in_direction[0], in_direction[1]
-        solution = self._golden_ratio(begin, end, 10e-5)
-        cudo = (list(solution))
-        return cudo[-1]
+        solution = self._golden_ratio(begin, end, 10e-10)
 
-
-if __name__ == '__main__':
-    cudo = Directional(lambda x: x ** 2)
-    dirr = Expansion(lambda x: x ** 2)
-    print(cudo(10, -1))
+        return (list(solution))[-1]

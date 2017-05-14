@@ -1,0 +1,1640 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.8)  14 MAY 2017 22:24
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**Adrian_Jałoszewski_Metody_gradientowe.tex
+(./Adrian_Jałoszewski_Metody_gradientowe.tex
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0100 (decimal 256)
+   defining Unicode char U+0101 (decimal 257)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+0108 (decimal 264)
+   defining Unicode char U+0109 (decimal 265)
+   defining Unicode char U+010A (decimal 266)
+   defining Unicode char U+010B (decimal 267)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0112 (decimal 274)
+   defining Unicode char U+0113 (decimal 275)
+   defining Unicode char U+0114 (decimal 276)
+   defining Unicode char U+0115 (decimal 277)
+   defining Unicode char U+0116 (decimal 278)
+   defining Unicode char U+0117 (decimal 279)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011C (decimal 284)
+   defining Unicode char U+011D (decimal 285)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0120 (decimal 288)
+   defining Unicode char U+0121 (decimal 289)
+   defining Unicode char U+0122 (decimal 290)
+   defining Unicode char U+0123 (decimal 291)
+   defining Unicode char U+0124 (decimal 292)
+   defining Unicode char U+0125 (decimal 293)
+   defining Unicode char U+0128 (decimal 296)
+   defining Unicode char U+0129 (decimal 297)
+   defining Unicode char U+012A (decimal 298)
+   defining Unicode char U+012B (decimal 299)
+   defining Unicode char U+012C (decimal 300)
+   defining Unicode char U+012D (decimal 301)
+   defining Unicode char U+012E (decimal 302)
+   defining Unicode char U+012F (decimal 303)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0134 (decimal 308)
+   defining Unicode char U+0135 (decimal 309)
+   defining Unicode char U+0136 (decimal 310)
+   defining Unicode char U+0137 (decimal 311)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013B (decimal 315)
+   defining Unicode char U+013C (decimal 316)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0145 (decimal 325)
+   defining Unicode char U+0146 (decimal 326)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+014C (decimal 332)
+   defining Unicode char U+014D (decimal 333)
+   defining Unicode char U+014E (decimal 334)
+   defining Unicode char U+014F (decimal 335)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0156 (decimal 342)
+   defining Unicode char U+0157 (decimal 343)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015C (decimal 348)
+   defining Unicode char U+015D (decimal 349)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+0168 (decimal 360)
+   defining Unicode char U+0169 (decimal 361)
+   defining Unicode char U+016A (decimal 362)
+   defining Unicode char U+016B (decimal 363)
+   defining Unicode char U+016C (decimal 364)
+   defining Unicode char U+016D (decimal 365)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0172 (decimal 370)
+   defining Unicode char U+0173 (decimal 371)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+01CD (decimal 461)
+   defining Unicode char U+01CE (decimal 462)
+   defining Unicode char U+01CF (decimal 463)
+   defining Unicode char U+01D0 (decimal 464)
+   defining Unicode char U+01D1 (decimal 465)
+   defining Unicode char U+01D2 (decimal 466)
+   defining Unicode char U+01D3 (decimal 467)
+   defining Unicode char U+01D4 (decimal 468)
+   defining Unicode char U+01E2 (decimal 482)
+   defining Unicode char U+01E3 (decimal 483)
+   defining Unicode char U+01E6 (decimal 486)
+   defining Unicode char U+01E7 (decimal 487)
+   defining Unicode char U+01E8 (decimal 488)
+   defining Unicode char U+01E9 (decimal 489)
+   defining Unicode char U+01EA (decimal 490)
+   defining Unicode char U+01EB (decimal 491)
+   defining Unicode char U+01F0 (decimal 496)
+   defining Unicode char U+01F4 (decimal 500)
+   defining Unicode char U+01F5 (decimal 501)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+1E02 (decimal 7682)
+   defining Unicode char U+1E03 (decimal 7683)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2010 (decimal 8208)
+   defining Unicode char U+2011 (decimal 8209)
+   defining Unicode char U+2012 (decimal 8210)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2015 (decimal 8213)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count87
+\Gm@cntv=\count88
+\c@Gm@tempcnt=\count89
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/latex/polski/polski.sty
+Package: polski 2008/02/24 v1.3.3 Polish language package
+
+Document language package `polski' v1.3.3 <2008/02/24>
+   Inputenc package detected. Catcodes not changed.
+   Switching to Polish text encoding and Polish maths fonts.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot4enc.def
+File: ot4enc.def 2016/06/19 v1.99m Standard LaTeX file
+Now handling font encoding OT4 ...
+... no UTF-8 mapping file for font encoding OT4
+)
+LaTeX Font Info:    Try loading font information for OT4+cmr on input line 346.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/polski/ot4cmr.fd
+File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT4/cmr/bx/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT4/cmss/m/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT4/cmr/m/it on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT4/cmtt/m/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT4/cmss/bx/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT4/cmr/bx/it on input line 346.
+LaTeX Font Info:    Encoding `OT1' has changed to `OT4' for symbol font
+(Font)              `operators' in the math version `normal' on input line 346.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT4/cmr/m/n on input line 346.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/plm/m/it on input line 346.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/plsy/m/n on input line 346.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/plex/m/n on input line 346.
+LaTeX Font Info:    Encoding `OT1' has changed to `OT4' for symbol font
+(Font)              `operators' in the math version `bold' on input line 346.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT4/cmr/bx/n on input line 346.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/plm/b/it on input line 346.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/plsy/b/n on input line 346.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count90
+))
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count91
+\float@exts=\toks18
+\float@box=\box26
+\@float@everytoks=\toks19
+\@floatcapt=\box27
+)
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count92
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/refcount.sty
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
+\c@tracingmulticols=\count93
+\mult@box=\box28
+\multicol@leftmargin=\dimen113
+\c@unbalance=\count94
+\c@collectmore=\count95
+\doublecol@number=\count96
+\multicoltolerance=\count97
+\multicolpretolerance=\count98
+\full@width=\dimen114
+\page@free=\dimen115
+\premulticols=\dimen116
+\postmulticols=\dimen117
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box29
+\last@line=\box30
+\maxbalancingoverflow=\dimen118
+\mult@rightbox=\box31
+\mult@grightbox=\box32
+\mult@gfirstbox=\box33
+\mult@firstbox=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\c@columnbadness=\count99
+\c@finalcolumnbadness=\count100
+\last@try=\dimen119
+\multicolovershoot=\dimen120
+\multicolundershoot=\dimen121
+\mult@nat@firstbox=\box52
+\colbreak@box=\box53
+\mc@col@check@num=\count101
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip45
+\f@ncyO@elh=\skip46
+\f@ncyO@erh=\skip47
+\f@ncyO@olh=\skip48
+\f@ncyO@orh=\skip49
+\f@ncyO@elf=\skip50
+\f@ncyO@erf=\skip51
+\f@ncyO@olf=\skip52
+\f@ncyO@orf=\skip53
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks20
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count102
+\lst@gtempboxa=\box54
+\lst@token=\toks21
+\lst@length=\count103
+\lst@currlwidth=\dimen122
+\lst@column=\count104
+\lst@pos=\count105
+\lst@lostspace=\dimen123
+\lst@width=\dimen124
+\lst@newlines=\count106
+\lst@lineno=\count107
+\lst@maxwidth=\dimen125
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count108
+\lst@skipnumbers=\count109
+\lst@framebox=\box55
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/06/28 v2.15d AMS math features
+\@mathmargin=\skip54
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen126
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen127
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count110
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count111
+\leftroot@=\count112
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count113
+\DOTSCASE@=\count114
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box56
+\strutbox@=\box57
+\big@size=\dimen128
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count115
+\c@MaxMatrixCols=\count116
+\dotsspace@=\muskip10
+\c@parentequation=\count117
+\dspbrk@lvl=\count118
+\tag@help=\toks23
+\row@=\count119
+\column@=\count120
+\maxfields@=\count121
+\andhelp@=\toks24
+\eqnshift@=\dimen129
+\alignsep@=\dimen130
+\tagshift@=\dimen131
+\tagwidth@=\dimen132
+\totwidth@=\dimen133
+\lineht@=\dimen134
+\@envbody=\toks25
+\multlinegap=\skip55
+\multlinetaggap=\skip56
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/svg/svg.sty
+Package: svg 2012/09/05 v1.0 SVG inclusion and extraction
+
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks27
+\XKV@tempa@toks=\toks28
+)
+\XKV@depth=\count122
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen135
+\captionmargin@=\dimen136
+\captionwidth=\dimen137
+\caption@tempdima=\dimen138
+\caption@indent=\dimen139
+\caption@parindent=\dimen140
+\caption@hangindent=\dimen141
+)
+\c@ContinuedFloat=\count123
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+)
+\c@KVtest=\count124
+\sf@farskip=\skip57
+\sf@captopadj=\dimen142
+\sf@capskip=\skip58
+\sf@nearskip=\skip59
+\c@subfigure=\count125
+\c@subfigure@save=\count126
+\c@lofdepth=\count127
+\c@subtable=\count128
+\c@subtable@save=\count129
+\c@lotdepth=\count130
+\sf@top=\skip60
+\sf@bottom=\skip61
+)
+(/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
+Package: import 2009/03/23  v 5.1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/transparent.sty
+Package: transparent 2016/05/16 v1.1 Transparency via pdfTeX's color stack (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+\SVG@out@width=\skip62
+\SVG@out@height=\skip63
+\c@svgfigure=\count131
+)
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: 
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(./Adrian_Jałoszewski_Metody_gradientowe.aux)
+\openout1 = `Adrian_Jałoszewski_Metody_gradientowe.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count132
+\scratchdimen=\dimen143
+\scratchbox=\box58
+\nofMPsegments=\count133
+\nofMParguments=\count134
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count135
+\MPscratchDim=\dimen144
+\MPnumerator=\count136
+\makeMPintoPDFobject=\count137
+\everyMPtoPDFconversion=\toks30
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count138
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for OML+plm on input line 27.
+
+(/usr/share/texlive/texmf-dist/tex/latex/polski/omlplm.fd
+File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 27.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/polski/omsplsy.fd
+File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 27.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/polski/omxplex.fd
+File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <10> on input line 27.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <7> on input line 27.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <5> on input line 27.
+LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(./first_1_000000.pdf_tex
+<first_1_000000.pdf, id=1, page=1, 411.97946pt x 315.54713pt>
+File: first_1_000000.pdf Graphic file (type pdf)
+
+<use first_1_000000.pdf, page 1>
+Package pdftex.def Info: first_1_000000.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) (./first_0_500000.pdf_tex
+<first_0_500000.pdf, id=2, page=1, 411.97946pt x 315.54713pt>
+File: first_0_500000.pdf Graphic file (type pdf)
+
+<use first_0_500000.pdf, page 1>
+Package pdftex.def Info: first_0_500000.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./first_1_000000.pdf>] (./
+first_0_300000.pdf_tex
+<first_0_300000.pdf, id=107, page=1, 411.97946pt x 315.54713pt>
+File: first_0_300000.pdf Graphic file (type pdf)
+
+<use first_0_300000.pdf, page 1>
+Package pdftex.def Info: first_0_300000.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) [2 <./first_0_500000.pdf> <./first_0_300000.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./first_0_300000.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>] (./second_fletcher_reeves.pdf_tex
+<second_fletcher_reeves.pdf, id=335, page=1, 411.97946pt x 315.84749pt>
+File: second_fletcher_reeves.pdf Graphic file (type pdf)
+
+<use second_fletcher_reeves.pdf, page 1>
+Package pdftex.def Info: second_fletcher_reeves.pdf, page1 used on input line 5
+2.
+(pdftex.def)             Requested size: 341.43307pt x 261.76779pt.
+)
+(./second_fletcher_reeves_values.pdf_tex
+<second_fletcher_reeves_values.pdf, id=336, page=1, 409.95471pt x 315.54713pt>
+File: second_fletcher_reeves_values.pdf Graphic file (type pdf)
+
+<use second_fletcher_reeves_values.pdf, page 1>
+Package pdftex.def Info: second_fletcher_reeves_values.pdf, page1 used on input
+ line 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+)
+(./second_fletcher_reeves_distance.pdf_tex
+<second_fletcher_reeves_distance.pdf, id=337, page=1, 403.96986pt x 315.54713pt
+>
+File: second_fletcher_reeves_distance.pdf Graphic file (type pdf)
+ <use second_fletcher_reeves_distance.pdf, page 1>
+Package pdftex.def Info: second_fletcher_reeves_distance.pdf, page1 used on inp
+ut line 52.
+(pdftex.def)             Requested size: 341.43307pt x 266.69481pt.
+) [3 <./second_fletcher_reeves.pdf> <./second_fletcher_reeves_values.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./second_fletcher_reeves_values.pdf): P
+DF inclusion: multiple pdfs with page group included in a single page
+>] (./second_fletcher_reeves_grad_norm.pdf_tex
+<second_fletcher_reeves_grad_norm.pdf, id=499, page=1, 409.95471pt x 315.54713p
+t>
+File: second_fletcher_reeves_grad_norm.pdf Graphic file (type pdf)
+ <use second_fletcher_reeves_grad_norm.pdf, page 1>
+Package pdftex.def Info: second_fletcher_reeves_grad_norm.pdf, page1 used on in
+put line 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+)
+(./second_polak_ribiere.pdf_tex
+<second_polak_ribiere.pdf, id=500, page=1, 411.97946pt x 315.84749pt>
+File: second_polak_ribiere.pdf Graphic file (type pdf)
+
+<use second_polak_ribiere.pdf, page 1>
+Package pdftex.def Info: second_polak_ribiere.pdf, page1 used on input line 52.
+
+(pdftex.def)             Requested size: 341.43307pt x 261.76779pt.
+) [4 <./second_fletcher_reeves_distance.pdf> <./second_fletcher_reeves_grad_nor
+m.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./second_fletcher_reeves_grad_norm.pdf)
+: PDF inclusion: multiple pdfs with page group included in a single page
+>] (./second_polak_ribiere_values.pdf_tex
+<second_polak_ribiere_values.pdf, id=594, page=1, 409.95471pt x 315.54713pt>
+File: second_polak_ribiere_values.pdf Graphic file (type pdf)
+
+<use second_polak_ribiere_values.pdf, page 1>
+Package pdftex.def Info: second_polak_ribiere_values.pdf, page1 used on input l
+ine 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+)
+(./second_polak_ribiere_distance.pdf_tex
+<second_polak_ribiere_distance.pdf, id=595, page=1, 403.96986pt x 315.54713pt>
+File: second_polak_ribiere_distance.pdf Graphic file (type pdf)
+
+<use second_polak_ribiere_distance.pdf, page 1>
+Package pdftex.def Info: second_polak_ribiere_distance.pdf, page1 used on input
+ line 52.
+(pdftex.def)             Requested size: 341.43307pt x 266.69481pt.
+) [5 <./second_polak_ribiere.pdf> <./second_polak_ribiere_values.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./second_polak_ribiere_values.pdf): PDF
+ inclusion: multiple pdfs with page group included in a single page
+>] (./second_polak_ribiere_grad_norm.pdf_tex
+<second_polak_ribiere_grad_norm.pdf, id=756, page=1, 409.95471pt x 315.54713pt>
+File: second_polak_ribiere_grad_norm.pdf Graphic file (type pdf)
+<use second_polak_ribiere_grad_norm.pdf, page 1>
+Package pdftex.def Info: second_polak_ribiere_grad_norm.pdf, page1 used on inpu
+t line 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+) (./second_full_beta.pdf_tex
+<second_full_beta.pdf, id=757, page=1, 411.97946pt x 315.84749pt>
+File: second_full_beta.pdf Graphic file (type pdf)
+
+<use second_full_beta.pdf, page 1>
+Package pdftex.def Info: second_full_beta.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.76779pt.
+) [6 <./second_polak_ribiere_distance.pdf> <./second_polak_ribiere_grad_norm.pd
+f
+
+pdfTeX warning: /usr/bin/pdflatex (file ./second_polak_ribiere_grad_norm.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+>] (./second_full_beta_values.pdf_tex
+<second_full_beta_values.pdf, id=852, page=1, 409.95471pt x 315.54713pt>
+File: second_full_beta_values.pdf Graphic file (type pdf)
+
+<use second_full_beta_values.pdf, page 1>
+Package pdftex.def Info: second_full_beta_values.pdf, page1 used on input line 
+52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+) (./second_full_beta_distance.pdf_tex <second_full_beta_distance.pdf, id=853, 
+page=1, 403.96986pt x 315.54713pt>
+File: second_full_beta_distance.pdf Graphic file (type pdf)
+
+<use second_full_beta_distance.pdf, page 1>
+Package pdftex.def Info: second_full_beta_distance.pdf, page1 used on input lin
+e 52.
+(pdftex.def)             Requested size: 341.43307pt x 266.69481pt.
+) [7 <./second_full_beta.pdf> <./second_full_beta_values.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./second_full_beta_values.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+>] (./second_full_beta_grad_norm.pdf_tex
+<second_full_beta_grad_norm.pdf, id=1015, page=1, 409.95471pt x 315.54713pt>
+File: second_full_beta_grad_norm.pdf Graphic file (type pdf)
+
+<use second_full_beta_grad_norm.pdf, page 1>
+Package pdftex.def Info: second_full_beta_grad_norm.pdf, page1 used on input li
+ne 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+) (./second_fast_fall.pdf_tex
+<second_fast_fall.pdf, id=1016, page=1, 411.97946pt x 315.84749pt>
+File: second_fast_fall.pdf Graphic file (type pdf)
+
+<use second_fast_fall.pdf, page 1>
+Package pdftex.def Info: second_fast_fall.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.76779pt.
+) [8 <./second_full_beta_distance.pdf> <./second_full_beta_grad_norm.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./second_full_beta_grad_norm.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>] (./second_fast_fall_values.pdf_tex
+<second_fast_fall_values.pdf, id=1111, page=1, 409.95471pt x 315.54713pt>
+File: second_fast_fall_values.pdf Graphic file (type pdf)
+
+<use second_fast_fall_values.pdf, page 1>
+Package pdftex.def Info: second_fast_fall_values.pdf, page1 used on input line 
+52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+) (./second_fast_fall_distance.pdf_tex <second_fast_fall_distance.pdf, id=1112,
+ page=1, 403.96986pt x 315.54713pt>
+File: second_fast_fall_distance.pdf Graphic file (type pdf)
+
+<use second_fast_fall_distance.pdf, page 1>
+Package pdftex.def Info: second_fast_fall_distance.pdf, page1 used on input lin
+e 52.
+(pdftex.def)             Requested size: 341.43307pt x 266.69481pt.
+) [9 <./second_fast_fall.pdf> <./second_fast_fall_values.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./second_fast_fall_values.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+>] (./second_fast_fall_grad_norm.pdf_tex
+<second_fast_fall_grad_norm.pdf, id=1273, page=1, 409.95471pt x 315.54713pt>
+File: second_fast_fall_grad_norm.pdf Graphic file (type pdf)
+
+<use second_fast_fall_grad_norm.pdf, page 1>
+Package pdftex.def Info: second_fast_fall_grad_norm.pdf, page1 used on input li
+ne 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 191.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 191.
+
+(./second_fast_fall_2_2.pdf_tex
+<second_fast_fall_2_2.pdf, id=1274, page=1, 411.97946pt x 315.84749pt>
+File: second_fast_fall_2_2.pdf Graphic file (type pdf)
+
+<use second_fast_fall_2_2.pdf, page 1>
+Package pdftex.def Info: second_fast_fall_2_2.pdf, page1 used on input line 52.
+
+(pdftex.def)             Requested size: 341.43307pt x 261.76779pt.
+) [10 <./second_fast_fall_distance.pdf> <./second_fast_fall_grad_norm.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./second_fast_fall_grad_norm.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>] (./second_fast_fall_2_2_values.pdf_tex
+<second_fast_fall_2_2_values.pdf, id=1369, page=1, 409.95471pt x 315.54713pt>
+File: second_fast_fall_2_2_values.pdf Graphic file (type pdf)
+
+<use second_fast_fall_2_2_values.pdf, page 1>
+Package pdftex.def Info: second_fast_fall_2_2_values.pdf, page1 used on input l
+ine 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+)
+(./second_fast_fall_2_2_distance.pdf_tex
+<second_fast_fall_2_2_distance.pdf, id=1370, page=1, 403.96986pt x 315.54713pt>
+File: second_fast_fall_2_2_distance.pdf Graphic file (type pdf)
+<use second_fast_fall_2_2_distance.pdf, page 1>
+Package pdftex.def Info: second_fast_fall_2_2_distance.pdf, page1 used on input
+ line 52.
+(pdftex.def)             Requested size: 341.43307pt x 266.69481pt.
+) [11 <./second_fast_fall_2_2.pdf> <./second_fast_fall_2_2_values.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./second_fast_fall_2_2_values.pdf): PDF
+ inclusion: multiple pdfs with page group included in a single page
+>] (./second_fast_fall_2_2_grad_norm.pdf_tex
+<second_fast_fall_2_2_grad_norm.pdf, id=1532, page=1, 409.95471pt x 315.54713pt
+>
+File: second_fast_fall_2_2_grad_norm.pdf Graphic file (type pdf)
+ <use second_fast_fall_2_2_grad_norm.pdf, page 1>
+Package pdftex.def Info: second_fast_fall_2_2_grad_norm.pdf, page1 used on inpu
+t line 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+)
+(./thirddavidon_fletcher_powell_1_000000.pdf_tex
+<thirddavidon_fletcher_powell_1_000000.pdf, id=1533, page=1, 411.97946pt x 315.
+54713pt>
+File: thirddavidon_fletcher_powell_1_000000.pdf Graphic file (type pdf)
+ <use thirddavidon_fletcher_powell_1_000000.pdf, page 1>
+Package pdftex.def Info: thirddavidon_fletcher_powell_1_000000.pdf, page1 used 
+on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) [12 <./second_fast_fall_2_2_distance.pdf> <./second_fast_fall_2_2_grad_norm.p
+df
+
+pdfTeX warning: /usr/bin/pdflatex (file ./second_fast_fall_2_2_grad_norm.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+>] (./thirdthirddavidon_fletcher_powell_1_000000_0_500000.pdf_tex
+<thirdthirddavidon_fletcher_powell_1_000000_0_500000.pdf, id=1633, page=1, 411.
+97946pt x 315.54713pt>
+File: thirdthirddavidon_fletcher_powell_1_000000_0_500000.pdf Graphic file (typ
+e pdf)
+
+<use thirdthirddavidon_fletcher_powell_1_000000_0_500000.pdf, page 1>
+Package pdftex.def Info: thirdthirddavidon_fletcher_powell_1_000000_0_500000.pd
+f, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+)
+(./thirdthirdthirddavidon_fletcher_powell_1_000000_0_500000_0_300000.pdf_tex
+<thirdthirdthirddavidon_fletcher_powell_1_000000_0_500000_0_300000.pdf, id=1634
+, page=1, 411.97946pt x 315.54713pt>
+File: thirdthirdthirddavidon_fletcher_powell_1_000000_0_500000_0_300000.pdf Gra
+phic file (type pdf)
+
+<use thirdthirdthirddavidon_fletcher_powell_1_000000_0_500000_0_300000.pdf, pag
+e 1>
+Package pdftex.def Info: thirdthirdthirddavidon_fletcher_powell_1_000000_0_5000
+00_0_300000.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) [13 <./thirddavidon_fletcher_powell_1_000000.pdf> <./thirdthirddavidon_fletch
+er_powell_1_000000_0_500000.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./thirdthirddavidon_fletcher_powell_1_0
+00000_0_500000.pdf): PDF inclusion: multiple pdfs with page group included in a
+ single page
+>] (./thirdwolfe_broyden_davidon_1_000000.pdf_tex
+<thirdwolfe_broyden_davidon_1_000000.pdf, id=1851, page=1, 411.97946pt x 315.54
+713pt>
+File: thirdwolfe_broyden_davidon_1_000000.pdf Graphic file (type pdf)
+ <use thirdwolfe_broyden_davidon_1_000000.pdf, page 1>
+Package pdftex.def Info: thirdwolfe_broyden_davidon_1_000000.pdf, page1 used on
+ input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+)
+(./thirdthirdwolfe_broyden_davidon_1_000000_0_500000.pdf_tex
+<thirdthirdwolfe_broyden_davidon_1_000000_0_500000.pdf, id=1852, page=1, 411.97
+946pt x 315.54713pt>
+File: thirdthirdwolfe_broyden_davidon_1_000000_0_500000.pdf Graphic file (type 
+pdf)
+
+<use thirdthirdwolfe_broyden_davidon_1_000000_0_500000.pdf, page 1>
+Package pdftex.def Info: thirdthirdwolfe_broyden_davidon_1_000000_0_500000.pdf,
+ page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) [14 <./thirdthirdthirddavidon_fletcher_powell_1_000000_0_500000_0_300000.pdf>
+ <./thirdwolfe_broyden_davidon_1_000000.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./thirdwolfe_broyden_davidon_1_000000.p
+df): PDF inclusion: multiple pdfs with page group included in a single page
+>] (./thirdthirdthirdwolfe_broyden_davidon_1_000000_0_500000_0_300000.pdf_tex
+<thirdthirdthirdwolfe_broyden_davidon_1_000000_0_500000_0_300000.pdf, id=2052, 
+page=1, 411.97946pt x 315.54713pt>
+File: thirdthirdthirdwolfe_broyden_davidon_1_000000_0_500000_0_300000.pdf Graph
+ic file (type pdf)
+
+<use thirdthirdthirdwolfe_broyden_davidon_1_000000_0_500000_0_300000.pdf, page 
+1>
+Package pdftex.def Info: thirdthirdthirdwolfe_broyden_davidon_1_000000_0_500000
+_0_300000.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) (./thirdbroyedn_fletcher_goldfarb_shanno_1_000000.pdf_tex
+<thirdbroyedn_fletcher_goldfarb_shanno_1_000000.pdf, id=2053, page=1, 411.97946
+pt x 315.54713pt>
+File: thirdbroyedn_fletcher_goldfarb_shanno_1_000000.pdf Graphic file (type pdf
+)
+
+<use thirdbroyedn_fletcher_goldfarb_shanno_1_000000.pdf, page 1>
+Package pdftex.def Info: thirdbroyedn_fletcher_goldfarb_shanno_1_000000.pdf, pa
+ge1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) [15 <./thirdthirdwolfe_broyden_davidon_1_000000_0_500000.pdf> <./thirdthirdth
+irdwolfe_broyden_davidon_1_000000_0_500000_0_300000.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./thirdthirdthirdwolfe_broyden_davidon_
+1_000000_0_500000_0_300000.pdf): PDF inclusion: multiple pdfs with page group i
+ncluded in a single page
+>] (./thirdthirdbroyedn_fletcher_goldfarb_shanno_1_000000_0_500000.pdf_tex
+<thirdthirdbroyedn_fletcher_goldfarb_shanno_1_000000_0_500000.pdf, id=2280, pag
+e=1, 411.97946pt x 315.54713pt>
+File: thirdthirdbroyedn_fletcher_goldfarb_shanno_1_000000_0_500000.pdf Graphic 
+file (type pdf)
+
+<use thirdthirdbroyedn_fletcher_goldfarb_shanno_1_000000_0_500000.pdf, page 1>
+Package pdftex.def Info: thirdthirdbroyedn_fletcher_goldfarb_shanno_1_000000_0_
+500000.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+)
+(./thirdthirdthirdbroyedn_fletcher_goldfarb_shanno_1_000000_0_500000_0_300000.p
+df_tex
+<thirdthirdthirdbroyedn_fletcher_goldfarb_shanno_1_000000_0_500000_0_300000.pdf
+, id=2281, page=1, 411.97946pt x 315.54713pt>
+File: thirdthirdthirdbroyedn_fletcher_goldfarb_shanno_1_000000_0_500000_0_30000
+0.pdf Graphic file (type pdf)
+
+<use thirdthirdthirdbroyedn_fletcher_goldfarb_shanno_1_000000_0_500000_0_300000
+.pdf, page 1>
+Package pdftex.def Info: thirdthirdthirdbroyedn_fletcher_goldfarb_shanno_1_0000
+00_0_500000_0_300000.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) [16 <./thirdbroyedn_fletcher_goldfarb_shanno_1_000000.pdf> <./thirdthirdbroye
+dn_fletcher_goldfarb_shanno_1_000000_0_500000.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./thirdthirdbroyedn_fletcher_goldfarb_s
+hanno_1_000000_0_500000.pdf): PDF inclusion: multiple pdfs with page group incl
+uded in a single page
+>] (./thirdpearson_1_1_000000.pdf_tex
+<thirdpearson_1_1_000000.pdf, id=2497, page=1, 411.97946pt x 315.54713pt>
+File: thirdpearson_1_1_000000.pdf Graphic file (type pdf)
+
+<use thirdpearson_1_1_000000.pdf, page 1>
+Package pdftex.def Info: thirdpearson_1_1_000000.pdf, page1 used on input line 
+52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+)
+(./thirdthirdpearson_1_1_000000_0_500000.pdf_tex
+<thirdthirdpearson_1_1_000000_0_500000.pdf, id=2498, page=1, 411.97946pt x 315.
+54713pt>
+File: thirdthirdpearson_1_1_000000_0_500000.pdf Graphic file (type pdf)
+ <use thirdthirdpearson_1_1_000000_0_500000.pdf, page 1>
+Package pdftex.def Info: thirdthirdpearson_1_1_000000_0_500000.pdf, page1 used 
+on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) [17 <./thirdthirdthirdbroyedn_fletcher_goldfarb_shanno_1_000000_0_500000_0_30
+0000.pdf> <./thirdpearson_1_1_000000.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./thirdpearson_1_1_000000.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+>] (./thirdthirdthirdpearson_1_1_000000_0_500000_0_300000.pdf_tex
+<thirdthirdthirdpearson_1_1_000000_0_500000_0_300000.pdf, id=2698, page=1, 411.
+97946pt x 315.54713pt>
+File: thirdthirdthirdpearson_1_1_000000_0_500000_0_300000.pdf Graphic file (typ
+e pdf)
+
+<use thirdthirdthirdpearson_1_1_000000_0_500000_0_300000.pdf, page 1>
+Package pdftex.def Info: thirdthirdthirdpearson_1_1_000000_0_500000_0_300000.pd
+f, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+)
+(./thirdpearson_2_1_000000.pdf_tex
+<thirdpearson_2_1_000000.pdf, id=2699, page=1, 411.97946pt x 315.54713pt>
+File: thirdpearson_2_1_000000.pdf Graphic file (type pdf)
+
+<use thirdpearson_2_1_000000.pdf, page 1>
+Package pdftex.def Info: thirdpearson_2_1_000000.pdf, page1 used on input line 
+52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) [18 <./thirdthirdpearson_1_1_000000_0_500000.pdf> <./thirdthirdthirdpearson_1
+_1_000000_0_500000_0_300000.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./thirdthirdthirdpearson_1_1_000000_0_5
+00000_0_300000.pdf): PDF inclusion: multiple pdfs with page group included in a
+ single page
+>] (./thirdthirdpearson_2_1_000000_0_500000.pdf_tex
+<thirdthirdpearson_2_1_000000_0_500000.pdf, id=2927, page=1, 411.97946pt x 315.
+54713pt>
+File: thirdthirdpearson_2_1_000000_0_500000.pdf Graphic file (type pdf)
+ <use thirdthirdpearson_2_1_000000_0_500000.pdf, page 1>
+Package pdftex.def Info: thirdthirdpearson_2_1_000000_0_500000.pdf, page1 used 
+on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+)
+(./thirdthirdthirdpearson_2_1_000000_0_500000_0_300000.pdf_tex
+<thirdthirdthirdpearson_2_1_000000_0_500000_0_300000.pdf, id=2928, page=1, 411.
+97946pt x 315.54713pt>
+File: thirdthirdthirdpearson_2_1_000000_0_500000_0_300000.pdf Graphic file (typ
+e pdf)
+
+<use thirdthirdthirdpearson_2_1_000000_0_500000_0_300000.pdf, page 1>
+Package pdftex.def Info: thirdthirdthirdpearson_2_1_000000_0_500000_0_300000.pd
+f, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) [19 <./thirdpearson_2_1_000000.pdf> <./thirdthirdpearson_2_1_000000_0_500000.
+pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./thirdthirdpearson_2_1_000000_0_500000
+.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] (./thirdmccormick_1_000000.pdf_tex
+<thirdmccormick_1_000000.pdf, id=3144, page=1, 411.97946pt x 315.54713pt>
+File: thirdmccormick_1_000000.pdf Graphic file (type pdf)
+
+<use thirdmccormick_1_000000.pdf, page 1>
+Package pdftex.def Info: thirdmccormick_1_000000.pdf, page1 used on input line 
+52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+)
+(./thirdthirdmccormick_1_000000_0_500000.pdf_tex
+<thirdthirdmccormick_1_000000_0_500000.pdf, id=3145, page=1, 411.97946pt x 315.
+54713pt>
+File: thirdthirdmccormick_1_000000_0_500000.pdf Graphic file (type pdf)
+ <use thirdthirdmccormick_1_000000_0_500000.pdf, page 1>
+Package pdftex.def Info: thirdthirdmccormick_1_000000_0_500000.pdf, page1 used 
+on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+) [20 <./thirdthirdthirdpearson_2_1_000000_0_500000_0_300000.pdf> <./thirdmccor
+mick_1_000000.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./thirdmccormick_1_000000.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+>] (./thirdthirdthirdmccormick_1_000000_0_500000_0_300000.pdf_tex
+<thirdthirdthirdmccormick_1_000000_0_500000_0_300000.pdf, id=3345, page=1, 411.
+97946pt x 315.54713pt>
+File: thirdthirdthirdmccormick_1_000000_0_500000_0_300000.pdf Graphic file (typ
+e pdf)
+
+<use thirdthirdthirdmccormick_1_000000_0_500000_0_300000.pdf, page 1>
+Package pdftex.def Info: thirdthirdthirdmccormick_1_000000_0_500000_0_300000.pd
+f, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.51884pt.
+)
+(./fourth_davidon_fletcher_powell.pdf_tex
+<fourth_davidon_fletcher_powell.pdf, id=3346, page=1, 411.97946pt x 315.84749pt
+>
+File: fourth_davidon_fletcher_powell.pdf Graphic file (type pdf)
+ <use fourth_davidon_fletcher_powell.pdf, page 1>
+Package pdftex.def Info: fourth_davidon_fletcher_powell.pdf, page1 used on inpu
+t line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.76779pt.
+) [21 <./thirdthirdmccormick_1_000000_0_500000.pdf> <./thirdthirdthirdmccormick
+_1_000000_0_500000_0_300000.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./thirdthirdthirdmccormick_1_000000_0_5
+00000_0_300000.pdf): PDF inclusion: multiple pdfs with page group included in a
+ single page
+>] (./fourth_davidon_fletcher_powell_values.pdf_tex
+<fourth_davidon_fletcher_powell_values.pdf, id=3574, page=1, 409.95471pt x 315.
+54713pt>
+File: fourth_davidon_fletcher_powell_values.pdf Graphic file (type pdf)
+ <use fourth_davidon_fletcher_powell_values.pdf, page 1>
+Package pdftex.def Info: fourth_davidon_fletcher_powell_values.pdf, page1 used 
+on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+)
+(./fourth_davidon_fletcher_powell_distance.pdf_tex
+<fourth_davidon_fletcher_powell_distance.pdf, id=3575, page=1, 403.96986pt x 31
+5.54713pt>
+File: fourth_davidon_fletcher_powell_distance.pdf Graphic file (type pdf)
+ <use fourth_davidon_fletcher_powell_distance.pdf, page 1>
+Package pdftex.def Info: fourth_davidon_fletcher_powell_distance.pdf, page1 use
+d on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 266.69481pt.
+) [22 <./fourth_davidon_fletcher_powell.pdf> <./fourth_davidon_fletcher_powell_
+values.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./fourth_davidon_fletcher_powell_values
+.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] (./fourth_davidon_fletcher_powell_grad_norm.pdf_tex
+<fourth_davidon_fletcher_powell_grad_norm.pdf, id=3733, page=1, 409.95471pt x 3
+15.54713pt>
+File: fourth_davidon_fletcher_powell_grad_norm.pdf Graphic file (type pdf)
+ <use fourth_davidon_fletcher_powell_grad_norm.pdf, page 1>
+Package pdftex.def Info: fourth_davidon_fletcher_powell_grad_norm.pdf, page1 us
+ed on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+)
+(./fourth_wolfe_broyden_davidon.pdf_tex
+<fourth_wolfe_broyden_davidon.pdf, id=3734, page=1, 411.97946pt x 315.84749pt>
+File: fourth_wolfe_broyden_davidon.pdf Graphic file (type pdf)
+
+<use fourth_wolfe_broyden_davidon.pdf, page 1>
+Package pdftex.def Info: fourth_wolfe_broyden_davidon.pdf, page1 used on input 
+line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.76779pt.
+) [23 <./fourth_davidon_fletcher_powell_distance.pdf> <./fourth_davidon_fletche
+r_powell_grad_norm.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./fourth_davidon_fletcher_powell_grad_n
+orm.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+>] (./fourth_wolfe_broyden_davidon_values.pdf_tex
+<fourth_wolfe_broyden_davidon_values.pdf, id=3823, page=1, 409.95471pt x 315.54
+713pt>
+File: fourth_wolfe_broyden_davidon_values.pdf Graphic file (type pdf)
+ <use fourth_wolfe_broyden_davidon_values.pdf, page 1>
+Package pdftex.def Info: fourth_wolfe_broyden_davidon_values.pdf, page1 used on
+ input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+)
+(./fourth_wolfe_broyden_davidon_distance.pdf_tex
+<fourth_wolfe_broyden_davidon_distance.pdf, id=3824, page=1, 403.96986pt x 315.
+54713pt>
+File: fourth_wolfe_broyden_davidon_distance.pdf Graphic file (type pdf)
+ <use fourth_wolfe_broyden_davidon_distance.pdf, page 1>
+Package pdftex.def Info: fourth_wolfe_broyden_davidon_distance.pdf, page1 used 
+on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 266.69481pt.
+) [24 <./fourth_wolfe_broyden_davidon.pdf> <./fourth_wolfe_broyden_davidon_valu
+es.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./fourth_wolfe_broyden_davidon_values.p
+df): PDF inclusion: multiple pdfs with page group included in a single page
+>] (./fourth_wolfe_broyden_davidon_grad_norm.pdf_tex
+<fourth_wolfe_broyden_davidon_grad_norm.pdf, id=3982, page=1, 409.95471pt x 315
+.54713pt>
+File: fourth_wolfe_broyden_davidon_grad_norm.pdf Graphic file (type pdf)
+ <use fourth_wolfe_broyden_davidon_grad_norm.pdf, page 1>
+Package pdftex.def Info: fourth_wolfe_broyden_davidon_grad_norm.pdf, page1 used
+ on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+)
+(./fourth_broyedn_fletcher_goldfarb_shanno.pdf_tex
+<fourth_broyedn_fletcher_goldfarb_shanno.pdf, id=3983, page=1, 411.97946pt x 31
+5.84749pt>
+File: fourth_broyedn_fletcher_goldfarb_shanno.pdf Graphic file (type pdf)
+ <use fourth_broyedn_fletcher_goldfarb_shanno.pdf, page 1>
+Package pdftex.def Info: fourth_broyedn_fletcher_goldfarb_shanno.pdf, page1 use
+d on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.76779pt.
+) [25 <./fourth_wolfe_broyden_davidon_distance.pdf> <./fourth_wolfe_broyden_dav
+idon_grad_norm.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./fourth_wolfe_broyden_davidon_grad_nor
+m.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] (./fourth_broyedn_fletcher_goldfarb_shanno_values.pdf_tex
+<fourth_broyedn_fletcher_goldfarb_shanno_values.pdf, id=4072, page=1, 409.95471
+pt x 315.54713pt>
+File: fourth_broyedn_fletcher_goldfarb_shanno_values.pdf Graphic file (type pdf
+)
+
+<use fourth_broyedn_fletcher_goldfarb_shanno_values.pdf, page 1>
+Package pdftex.def Info: fourth_broyedn_fletcher_goldfarb_shanno_values.pdf, pa
+ge1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+)
+(./fourth_broyedn_fletcher_goldfarb_shanno_distance.pdf_tex
+<fourth_broyedn_fletcher_goldfarb_shanno_distance.pdf, id=4073, page=1, 403.969
+86pt x 315.54713pt>
+File: fourth_broyedn_fletcher_goldfarb_shanno_distance.pdf Graphic file (type p
+df)
+
+<use fourth_broyedn_fletcher_goldfarb_shanno_distance.pdf, page 1>
+Package pdftex.def Info: fourth_broyedn_fletcher_goldfarb_shanno_distance.pdf, 
+page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 266.69481pt.
+) [26 <./fourth_broyedn_fletcher_goldfarb_shanno.pdf> <./fourth_broyedn_fletche
+r_goldfarb_shanno_values.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./fourth_broyedn_fletcher_goldfarb_shan
+no_values.pdf): PDF inclusion: multiple pdfs with page group included in a sing
+le page
+>] (./fourth_broyedn_fletcher_goldfarb_shanno_grad_norm.pdf_tex
+<fourth_broyedn_fletcher_goldfarb_shanno_grad_norm.pdf, id=4225, page=1, 409.95
+471pt x 315.54713pt>
+File: fourth_broyedn_fletcher_goldfarb_shanno_grad_norm.pdf Graphic file (type 
+pdf)
+
+<use fourth_broyedn_fletcher_goldfarb_shanno_grad_norm.pdf, page 1>
+Package pdftex.def Info: fourth_broyedn_fletcher_goldfarb_shanno_grad_norm.pdf,
+ page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+)
+(./fourth_pearson_1.pdf_tex
+<fourth_pearson_1.pdf, id=4226, page=1, 411.97946pt x 315.84749pt>
+File: fourth_pearson_1.pdf Graphic file (type pdf)
+
+<use fourth_pearson_1.pdf, page 1>
+Package pdftex.def Info: fourth_pearson_1.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.76779pt.
+) [27 <./fourth_broyedn_fletcher_goldfarb_shanno_distance.pdf> <./fourth_broyed
+n_fletcher_goldfarb_shanno_grad_norm.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./fourth_broyedn_fletcher_goldfarb_shan
+no_grad_norm.pdf): PDF inclusion: multiple pdfs with page group included in a s
+ingle page
+>] (./fourth_pearson_1_values.pdf_tex
+<fourth_pearson_1_values.pdf, id=4303, page=1, 409.95471pt x 315.54713pt>
+File: fourth_pearson_1_values.pdf Graphic file (type pdf)
+
+<use fourth_pearson_1_values.pdf, page 1>
+Package pdftex.def Info: fourth_pearson_1_values.pdf, page1 used on input line 
+52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+) (./fourth_pearson_1_distance.pdf_tex <fourth_pearson_1_distance.pdf, id=4304,
+ page=1, 403.96986pt x 315.54713pt>
+File: fourth_pearson_1_distance.pdf Graphic file (type pdf)
+
+<use fourth_pearson_1_distance.pdf, page 1>
+Package pdftex.def Info: fourth_pearson_1_distance.pdf, page1 used on input lin
+e 52.
+(pdftex.def)             Requested size: 341.43307pt x 266.69481pt.
+) [28 <./fourth_pearson_1.pdf> <./fourth_pearson_1_values.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./fourth_pearson_1_values.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+>] (./fourth_pearson_1_grad_norm.pdf_tex
+<fourth_pearson_1_grad_norm.pdf, id=4459, page=1, 409.95471pt x 315.54713pt>
+File: fourth_pearson_1_grad_norm.pdf Graphic file (type pdf)
+
+<use fourth_pearson_1_grad_norm.pdf, page 1>
+Package pdftex.def Info: fourth_pearson_1_grad_norm.pdf, page1 used on input li
+ne 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+) (./fourth_pearson_2.pdf_tex
+<fourth_pearson_2.pdf, id=4460, page=1, 411.97946pt x 315.84749pt>
+File: fourth_pearson_2.pdf Graphic file (type pdf)
+
+<use fourth_pearson_2.pdf, page 1>
+Package pdftex.def Info: fourth_pearson_2.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.76779pt.
+) [29 <./fourth_pearson_1_distance.pdf> <./fourth_pearson_1_grad_norm.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./fourth_pearson_1_grad_norm.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>] (./fourth_pearson_2_values.pdf_tex
+<fourth_pearson_2_values.pdf, id=4542, page=1, 409.95471pt x 315.54713pt>
+File: fourth_pearson_2_values.pdf Graphic file (type pdf)
+
+<use fourth_pearson_2_values.pdf, page 1>
+Package pdftex.def Info: fourth_pearson_2_values.pdf, page1 used on input line 
+52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+) (./fourth_pearson_2_distance.pdf_tex <fourth_pearson_2_distance.pdf, id=4543,
+ page=1, 403.96986pt x 315.54713pt>
+File: fourth_pearson_2_distance.pdf Graphic file (type pdf)
+
+<use fourth_pearson_2_distance.pdf, page 1>
+Package pdftex.def Info: fourth_pearson_2_distance.pdf, page1 used on input lin
+e 52.
+(pdftex.def)             Requested size: 341.43307pt x 266.69481pt.
+) [30 <./fourth_pearson_2.pdf> <./fourth_pearson_2_values.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./fourth_pearson_2_values.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+>] (./fourth_pearson_2_grad_norm.pdf_tex
+<fourth_pearson_2_grad_norm.pdf, id=4704, page=1, 409.95471pt x 315.54713pt>
+File: fourth_pearson_2_grad_norm.pdf Graphic file (type pdf)
+
+<use fourth_pearson_2_grad_norm.pdf, page 1>
+Package pdftex.def Info: fourth_pearson_2_grad_norm.pdf, page1 used on input li
+ne 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.81404pt.
+) (./fourth_mccormick.pdf_tex
+<fourth_mccormick.pdf, id=4705, page=1, 411.97946pt x 315.84749pt>
+File: fourth_mccormick.pdf Graphic file (type pdf)
+
+<use fourth_mccormick.pdf, page 1>
+Package pdftex.def Info: fourth_mccormick.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 341.43307pt x 261.76779pt.
+) [31 <./fourth_pearson_2_distance.pdf> <./fourth_pearson_2_grad_norm.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./fourth_pearson_2_grad_norm.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>] (./fourth_mccormick_values.pdf_tex
+<fourth_mccormick_values.pdf, id=4801, page=1, 410.11235pt x 315.54713pt>
+File: fourth_mccormick_values.pdf Graphic file (type pdf)
+
+<use fourth_mccormick_values.pdf, page 1>
+Package pdftex.def Info: fourth_mccormick_values.pdf, page1 used on input line 
+52.
+(pdftex.def)             Requested size: 341.43307pt x 262.71294pt.
+) (./fourth_mccormick_distance.pdf_tex <fourth_mccormick_distance.pdf, id=4802,
+ page=1, 404.12749pt x 315.54713pt>
+File: fourth_mccormick_distance.pdf Graphic file (type pdf)
+
+<use fourth_mccormick_distance.pdf, page 1>
+Package pdftex.def Info: fourth_mccormick_distance.pdf, page1 used on input lin
+e 52.
+(pdftex.def)             Requested size: 341.43307pt x 266.5937pt.
+) [32 <./fourth_mccormick.pdf> <./fourth_mccormick_values.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./fourth_mccormick_values.pdf): PDF inc
+lusion: multiple pdfs with page group included in a single page
+>] (./fourth_mccormick_grad_norm.pdf_tex
+<fourth_mccormick_grad_norm.pdf, id=4957, page=1, 410.11235pt x 315.54713pt>
+File: fourth_mccormick_grad_norm.pdf Graphic file (type pdf)
+
+<use fourth_mccormick_grad_norm.pdf, page 1>
+Package pdftex.def Info: fourth_mccormick_grad_norm.pdf, page1 used on input li
+ne 52.
+(pdftex.def)             Requested size: 341.43307pt x 262.71294pt.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 553--560
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--560
+
+ []
+
+[33 <./fourth_mccormick_distance.pdf> <./fourth_mccormick_grad_norm.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ./fourth_mccormick_grad_norm.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>] [34] (./Adrian_Jałoszewski_Metody_gradientowe.aux) ) 
+Here is how much of TeX's memory you used:
+ 7614 strings out of 493013
+ 120222 string characters out of 6135683
+ 188584 words of memory out of 5000000
+ 10819 multiletter control sequences out of 15000+600000
+ 11062 words of font info for 35 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 68i,9n,98p,824b,367s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/tex
+mf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dv
+ips/pl/plsc.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/us
+r/share/texlive/texmf-dist/fonts/enc/dvips/pl/plms.enc}</usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/pl/plbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/pl/plbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/pl/plr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/pl/plr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plsy10.pf
+b>
+Output written on Adrian_Jałoszewski_Metody_gradientowe.pdf (34 pages, 2253221
+ bytes).
+PDF statistics:
+ 5077 PDF objects out of 5155 (max. 8388607)
+ 3357 compressed objects within 34 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 326 words of extra memory for PDF output out of 10000 (max. 10000000)
+

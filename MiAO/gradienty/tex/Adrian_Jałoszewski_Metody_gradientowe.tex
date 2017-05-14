@@ -1,0 +1,560 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{svg}
+
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+
+\begin{document}
+    \noindent
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\multicolumn{4}{|l|}{Metody gradientowe} \\
+			\hline
+			Adrian Jałoszewski & 19 IV 2017 & Środa 14:00 &  \\
+			\hline
+		\end{tabular}
+	}
+	\section{Cel ćwiczenia}
+		Celem ćwiczenia jest zapoznanie się z algorytmami gradientowymi oraz algorytmami zmiennej metryki w rozwiązywaniu problemów minimalizacji.
+	\section{Przebieg ćwiczenia}
+		Ćwiczenie polegało na minimalizacji dwóch rodzajów funkcji celu:
+		$$
+			Q(x,y) = x_1^2 + a x_2^2
+		$$
+		gdzie $a \in \{1, 0.5, 0.3 \}$ oraz:
+		$$
+			Q(x,y) = 6x_1^2 + 6x_1x_2 + x_2^2 +4,5(e^{x_1}-x_1-1) + 1,5(e^{x_2} -x_2-1)
+		$$
+		Zadania różniły się między sobą używanymi do tego metodami oraz punktami startowymi i warunkami stopu
+	    \subsection{Ćwiczenie pierwsze}
+		    Ćwiczenie pierwsze polegało na obserwacji efektu zygzakowania w przypadku gdy kierunek najszybszego spadku nie pokrywał się z kierunkiem w którym znajduje się minimum. W tym przypadku była minimalizowana forma kwadratowa. Punktem startowym dla wszystkich przypadków był punkt (10, 10).
+		    \begin{figure}[H]
+		        \centering
+		        \def \svgwidth{0.75\columnwidth}
+		        \input{first_1_000000.pdf_tex}
+		        \caption{Współczynnik a = 1}
+		    \end{figure}\noindent
+			Ponieważ dla współczynnika $a = 1$ macierz minimalizowanej formy kwadratowej jest macierzą jednostkową, kierunek najszybszego spadku pokrywa się z kierunkiem minimum -- minimum jest osiągane w jednym kroku.
+			$$
+				\nabla x^T A x = \nabla x^T I x = \nabla x^T x = 2 x
+			$$
+			Gdzie wektor W ogólnym przypadku gradient ma następującą postać:
+			$$
+				\nabla ( x_1^2 + a x_2^2) = 2 \cdot \left[x_1 \,\,\, ax_2\right]^T
+			$$ 
+			Wektor ten nie jest współliniowy z wektorem $ \left[x_1 \,\,\,x_2\right]^T$, a przez to nie wskazuje w kierunku punktu (0, 0) gdzie się znajduje minimum funkcji. Im większa różnica w kierunku tych wektorów tym większy efekt zygzakowania.
+		    \begin{figure}[H]
+		        \centering
+		        \def \svgwidth{0.75\columnwidth}
+		        \input{first_0_500000.pdf_tex}
+		        \caption{Współczynnik a = 0.5}
+		    \end{figure}\noindent
+		
+		
+		    \begin{figure}[H]
+		        \centering
+		        \def \svgwidth{0.75\columnwidth}
+		        \input{first_0_300000.pdf_tex}
+		        \caption{Współczynnik a = 0.3}
+		    \end{figure}\noindent
+
+		\subsection{Ćwiczenie drugie}
+			Ćwiczenie drugie polegało na zbadaniu zachowania poszczególnych metod gradientowych dla drugiej funkcji. Osiąga ona swoje minimum w punkcie (0, 0).
+		   	
+			\subsubsection{Metoda Fletchera-Reevesa -- startująca z punktu (-3, 3)}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{second_fletcher_reeves.pdf_tex}
+			        \caption{wyznaczone punkty}
+			    \end{figure}\noindent
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{second_fletcher_reeves_values.pdf_tex}
+			        \caption{Różnica między minimum, a aktualną wartością}
+			    \end{figure}\noindent
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{second_fletcher_reeves_distance.pdf_tex}
+			        \caption{Odległość od minimum}
+			    \end{figure}\noindent
+			    
+    			\begin{figure}[H]
+    				\centering
+    				\def \svgwidth{0.75\columnwidth}
+    				\input{second_fletcher_reeves_grad_norm.pdf_tex}
+    				\caption{norma z gradientu}
+    			\end{figure}\noindent
+		
+			\subsubsection{Metoda Polaka-Ribiera -- startujjąca z punktu (-3, 3)}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{second_polak_ribiere.pdf_tex}
+			        \caption{wyznaczone punkty}
+			    \end{figure}\noindent
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{second_polak_ribiere_values.pdf_tex}
+			        \caption{różnica między minimum, a aktualną wartością}
+			    \end{figure}\noindent
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{second_polak_ribiere_distance.pdf_tex}
+			        \caption{odległość od minimum}
+			    \end{figure}\noindent
+				
+				\begin{figure}[H]
+					\centering
+					\def \svgwidth{0.75\columnwidth}
+					\input{second_polak_ribiere_grad_norm.pdf_tex}
+					\caption{norma z gradientu}
+				\end{figure}\noindent
+			\subsubsection{Pełen wzór na współczynnik $\beta$ -- startujący z punktu (-3, 3)}		
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{second_full_beta.pdf_tex}
+			        \caption{wyznaczone punkty}
+			    \end{figure}\noindent
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{second_full_beta_values.pdf_tex}
+			        \caption{różnica między minimum, a aktualną wartością}
+			    \end{figure}\noindent
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{second_full_beta_distance.pdf_tex}
+			        \caption{odległość od minimum}
+			    \end{figure}\noindent
+			    
+    			\begin{figure}[H]
+    				\centering
+    				\def \svgwidth{0.75\columnwidth}
+    				\input{second_full_beta_grad_norm.pdf_tex}
+    				\caption{norma z gradientu}
+    			\end{figure}\noindent
+			    
+			 \subsubsection{Metoda najszybszego spadku zaczynająca w punkcie (-3, 3)}
+			 \begin{figure}[H]
+			 	\centering
+			 	\def \svgwidth{0.75\columnwidth}
+			 	\input{second_fast_fall.pdf_tex}
+			 	\caption{wyznaczone punkty}
+			 \end{figure}\noindent
+			 
+			 \begin{figure}[H]
+			 	\centering
+			 	\def \svgwidth{0.75\columnwidth}
+			 	\input{second_fast_fall_values.pdf_tex}
+			 	\caption{różnica między minimum, a aktualną wartością}
+			 \end{figure}\noindent
+			 
+			 \begin{figure}[H]
+			 	\centering
+			 	\def \svgwidth{0.75\columnwidth}
+			 	\input{second_fast_fall_distance.pdf_tex}
+			 	\caption{odległość od minimum}
+			 \end{figure}\noindent
+			\begin{figure}[H]
+				\centering
+				\def \svgwidth{0.75\columnwidth}
+				\input{second_fast_fall_grad_norm.pdf_tex}
+				\caption{norma z gradientu}
+			\end{figure}\noindent
+			
+			
+			\subsubsection{Metoda najszybszego spadku -- startująca z punktu (-3, 1)}
+				Jest to dobry przykład tego jak dobranie punktu początkowego może mieć wpływ na szybkość zbieżności metody. Poziomice są tu przecinane przez proste na któ©ych było poszukiwane minimum.
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{second_fast_fall_2_2.pdf_tex}
+			        \caption{wyznaczone punkty}
+			    \end{figure}\noindent
+				Odpowiednie dobranie punktów startowych sprawiło, że metoda ta znalazła minimum znacznie szybciej niż w przypadku gdy startowała z punktu (-3, 3). Punkt startowy jest dobrany tak aby wyeliminować zygzakowanie w poszukiwaniu minimum.
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{second_fast_fall_2_2_values.pdf_tex}
+			        \caption{różnica między minimum, a aktualną wartością}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{second_fast_fall_2_2_distance.pdf_tex}
+			        \caption{odległość od minimum}
+			    \end{figure}\noindent
+			    
+				\begin{figure}[H]
+				   	\centering
+				   	\def \svgwidth{0.75\columnwidth}
+				   	\input{second_fast_fall_2_2_grad_norm.pdf_tex}
+				   	\caption{norma z gradientu}
+				\end{figure}\noindent
+			    
+
+		\subsection{Ćwiczenie trzecie}
+			Celem zadania trzeciego jest zbadania metod zmiennej metryki w kontekście optymalizacji funkcji celu w postaci formy kwadratowej dla różnych metod dla różnych współczynników $a$. Jest to ta sama funkcja, co była rozważana w ćwiczeniu pierwszym z tym samym punktem startowym (10, 10).
+			\subsubsection{Metoda Davidona-Fletchera-Powella}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirddavidon_fletcher_powell_1_000000.pdf_tex}
+			        \caption{Współczynnik $a = 1$}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdthirddavidon_fletcher_powell_1_000000_0_500000.pdf_tex}
+			        \caption{Współczynnik $a = 0.5$}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdthirdthirddavidon_fletcher_powell_1_000000_0_500000_0_300000.pdf_tex}
+			        \caption{Współczynnik $a = 0.3$}
+			    \end{figure}\noindent
+		
+			\subsection{Metoda Wolfe'a-Broydena-Davidona}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdwolfe_broyden_davidon_1_000000.pdf_tex}
+			        \caption{Współczynnik $a=1$}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdthirdwolfe_broyden_davidon_1_000000_0_500000.pdf_tex}
+			        \caption{Współczynnik $a=0.5$}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdthirdthirdwolfe_broyden_davidon_1_000000_0_500000_0_300000.pdf_tex}
+			        \caption{Współczynnik $a=0.3$}
+			    \end{figure}\noindent
+		
+			\subsubsection{Metoda Broydena-Fletchera-Goldfarba-Shanno}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdbroyedn_fletcher_goldfarb_shanno_1_000000.pdf_tex}
+			        \caption{Współczynnik $a=1$}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdthirdbroyedn_fletcher_goldfarb_shanno_1_000000_0_500000.pdf_tex}
+			        \caption{Współczynnik $a=0.5$}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdthirdthirdbroyedn_fletcher_goldfarb_shanno_1_000000_0_500000_0_300000.pdf_tex}
+			        \caption{Współczynnik $a=0.3$}
+			    \end{figure}\noindent
+		
+			\subsubsection{Pierwsza metoda Pearsona}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdpearson_1_1_000000.pdf_tex}
+			        \caption{Współczynnik $a=1$}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdthirdpearson_1_1_000000_0_500000.pdf_tex}
+			        \caption{Współczynnik $a=0.5$}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdthirdthirdpearson_1_1_000000_0_500000_0_300000.pdf_tex}
+			        \caption{Współczynnik $a=0.3$}
+			    \end{figure}\noindent
+		
+			\subsubsection{Druga metoda Pearsona}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdpearson_2_1_000000.pdf_tex}
+			        \caption{Współczynnik $a=1$}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdthirdpearson_2_1_000000_0_500000.pdf_tex}
+			        \caption{Współczynnik $a=0.5$}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdthirdthirdpearson_2_1_000000_0_500000_0_300000.pdf_tex}
+			        \caption{Współczynnik $a=0.3$}
+			    \end{figure}\noindent
+		
+			\subsubsection{Metoda McCormicka}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdmccormick_1_000000.pdf_tex}
+			        \caption{Współczynnik $a=1$}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdthirdmccormick_1_000000_0_500000.pdf_tex}
+			        \caption{Współczynnik $a=0.5$}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{thirdthirdthirdmccormick_1_000000_0_500000_0_300000.pdf_tex}
+			        \caption{Współczynnik $a=0.3$}
+			    \end{figure}\noindent
+			Wszystkie metody znajdują w przypadku macierzy jednostkowej rozwiązanie w jednym kroku -- nie wypadają w tym gorzej niż metody gradientowe. Wszystkie metody znajdują minimum szybko 
+		\subsection{Ćwiczenie czwarte}
+			Ćwiczenie czwarte polega na zbadaniu zachowania metod zmiennej metryki dla tej samej funkcji celu, co była rozważana w zadaniu drugim.
+			\subsubsection{Metoda Davidona-Fletchera-Powella}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_davidon_fletcher_powell.pdf_tex}
+			        \caption{wyznaczone punkty}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_davidon_fletcher_powell_values.pdf_tex}
+			        \caption{różnica między minimum, a aktualną wartością}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_davidon_fletcher_powell_distance.pdf_tex}
+			        \caption{odległość od minimum}
+			    \end{figure}\noindent
+				\begin{figure}[H]
+				   	\centering
+				   	\def \svgwidth{0.75\columnwidth}
+				   	\input{fourth_davidon_fletcher_powell_grad_norm.pdf_tex}
+				   	\caption{norma z gradientu}
+				\end{figure}\noindent
+			\subsubsection{Metoda Wolfe'a-Broydena-Davidona}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_wolfe_broyden_davidon.pdf_tex}
+			        \caption{wyznaczone punkty}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_wolfe_broyden_davidon_values.pdf_tex}
+			        \caption{różnica między minimum, a aktualną wartością}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_wolfe_broyden_davidon_distance.pdf_tex}
+			        \caption{odległość od minimum}
+			    \end{figure}\noindent
+			    
+				\begin{figure}[H]
+				   	\centering
+				   	\def \svgwidth{0.75\columnwidth}
+				   	\input{fourth_wolfe_broyden_davidon_grad_norm.pdf_tex}
+				   	\caption{norma z gradientu}
+				\end{figure}\noindent
+			\subsubsection{Metoda Broydena-Fletchera-Goldfarba-Shanno}
+		
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_broyedn_fletcher_goldfarb_shanno.pdf_tex}
+			        \caption{wyznaczone punkty}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_broyedn_fletcher_goldfarb_shanno_values.pdf_tex}
+			        \caption{różnica między minimum, a aktualną wartością}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_broyedn_fletcher_goldfarb_shanno_distance.pdf_tex}
+			        \caption{odległość od minimum}
+			    \end{figure}\noindent
+				\begin{figure}[H]
+				   	\centering
+				   	\def \svgwidth{0.75\columnwidth}
+				   	\input{fourth_broyedn_fletcher_goldfarb_shanno_grad_norm.pdf_tex}
+				   	\caption{norma z gradientu}
+				\end{figure}\noindent
+		
+			\subsubsection{Pierwsza metoda Pearsona}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_pearson_1.pdf_tex}
+			        \caption{wyznaczone punkty}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_pearson_1_values.pdf_tex}
+			        \caption{różnica między minimum, a aktualną wartością}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_pearson_1_distance.pdf_tex}
+			        \caption{odległość od minimum}
+			    \end{figure}\noindent
+			    
+   			   \begin{figure}[H]
+    			   	\centering
+    			   	\def \svgwidth{0.75\columnwidth}
+    			   	\input{fourth_pearson_1_grad_norm.pdf_tex}
+    			   	\caption{norma z gradientu}
+   			   \end{figure}\noindent
+		
+			\subsubsection{Druga metoda Pearsona}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_pearson_2.pdf_tex}
+			        \caption{wyznaczone punkty}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_pearson_2_values.pdf_tex}
+			        \caption{różnica między minimum, a aktualną wartością}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_pearson_2_distance.pdf_tex}
+			        \caption{odległość od minimum}
+			    \end{figure}\noindent
+				
+				\begin{figure}[H]
+				  	\centering
+				  	\def \svgwidth{0.75\columnwidth}
+				  	\input{fourth_pearson_2_grad_norm.pdf_tex}
+				  	\caption{norma z gradientu}
+				\end{figure}\noindent		
+			\subsubsection{Metoda McCormicka}
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_mccormick.pdf_tex}
+			        \caption{wyznaczone punkty}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_mccormick_values.pdf_tex}
+			        \caption{różnica między minimum, a aktualną wartością}
+			    \end{figure}\noindent
+			
+			
+			    \begin{figure}[H]
+			        \centering
+			        \def \svgwidth{0.75\columnwidth}
+			        \input{fourth_mccormick_distance.pdf_tex}
+			        \caption{odległość od minimum}
+			    \end{figure}\noindent
+				
+			   \begin{figure}[H]
+			    	\centering
+			    	\def \svgwidth{0.75\columnwidth}
+			    	\input{fourth_mccormick_grad_norm.pdf_tex}
+			    	\caption{norma z gradientu}
+			   \end{figure}\noindent
+	\section{Wnioski i obserwacje}
+		Większość metod gradientowych sprawdza się bardzo dobrze w zadaniach optymalizacji. Są one bardzo szybko zbieżne, jednak mogą popaść w zygzakowanie, czemu się przeciwdziała wprowadzając przekształcenia zwiększające ich efektywność. Norma z Gradientu w wielu przypadkach bardzo szybko maleje, od tej reguły odstaje jednak kilka metod: Metoda McCormicka, Pierwsza Metoda Pearsona, Metoda Broydena-Fletchera-Goldfarba-Shanno oraz Metoda Najszybszego Spadku.
+		\\
+		\\
+		Wyniki te jednak mogą być silnie zależne od punktu startowego, co widać po metodzie najszybszego spadku, która dzięki temu może mieć zastosowanie w pewnych zagadnieniach, redukując w ten sposób konieczną moc obliczeniową (gdyż jest to najprostsza metoda, dla której pozostałe są usprawnieniami).
+		\\
+		\\
+		Metody te mogą się oddalać od minimum w trakcie jego poszukiwań, zmniejszają jednak mimo to wartość funkcji celu. Część metod korzysta z tego, że w miejscach, gdzie funkcja jest bardziej stroma można znaleźć szybciej minimum. 
+\end{document}
