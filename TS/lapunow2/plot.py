@@ -1,101 +1,60 @@
-import numpy as np
-from matplotlib import pyplot as plt
-from scipy.integrate import ode
+import os
+from collections import namedtuple
 
-from diff_equations import get_jacobian_for_point, linear_form
+import matplotlib.pyplot as plt
 
-
-def pythagoras(start, end):
-    return np.sqrt((end[0] - start[0]) ** 2 + (end[1] - start[1]) ** 2)
+PlotData = namedtuple('PlotData', ['x', 'y'])
 
 
-def add_arrow(curve, arrows, color, relative_size=10):
-    arrows = arrows[:]
-    for i in range(0, len(arrows)):
-        arrows[i] += np.random.uniform(-0.1, 0.1)
-    arrows.append(1)
-    prev, length = curve[0], 0
-    for point in curve[1:]:
-        length += pythagoras(point, prev)
-        prev = point
-    if length != 0:
-        prev, partial_length, i = curve[0], 0, 0
-        for point in curve[1:]:
-            partial_length += pythagoras(point, prev)
-            if partial_length / length > arrows[i]:
-                arrow_start_x = prev[0]
-                arrow_start_y = prev[1]
-                arrow_end_x = point[0]
-                arrow_end_y = point[1]
-                ax = plt.axes()
-                ax.arrow(arrow_start_x, arrow_start_y,
-                         (arrow_end_x - arrow_start_x) * 0.001,
-                         (arrow_end_y - arrow_start_y) * 0.001,
-                         head_width=0.2 * relative_size / 10,
-                         head_length=0.2 * relative_size / 10, color=color)
-                i += 1
-            prev = point
+class Plot(object):
+    def __init__(self, height, width):
+        self.figure = plt.figure()
+        self.subplots = {}
+        self.width = width
+        self.height = height
+        self.file_name = ''
+        for i in range(width * height):
+            vertical, horizontal = i // width + 1, i % width + 1
+            index = (vertical, horizontal)
+            self.subplots[index] = self.figure.add_subplot(height, width, i + 1)
+
+    def plot(self, i, j, data, *args, **kwargs):
+        subplot = self.subplots[(i, j)]
+        subplot.plot(data.x, data.y, *args, **kwargs)
+        return self
+
+    def decorate_subplot(self, i, j, subplot_modifier):
+        subplot_modifier(self.subplots[i, j])
+        return self
+
+    def save(self, name, *args, **kwargs):
+        path_elements = name.split('/')[:-1]
+        path = '/'.join(path_elements)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        self.file_name = name.split('.')[0]
+        self.figure.savefig(name, bbox_inches='tight', *args, **kwargs)
+        return self
+
+    def show(self):
+        plt.show()
+        return self
+
+    def close(self):
+        plt.close(self.figure)
 
 
-fileNames = []
+def grid(is_enabled):
+    return lambda s: s.grid(is_enabled)
 
 
-def for_name(name, width, height, arrows=None, linear=0):
-    if arrows is None:
-        arrows = [0.2, 0.3]
-
-    fileNames.append(name)
-
-    @plot(name + ".svg", width, height)
-    def phase_portrait(diff_equation, get_starting_points, fillings=None):
-        if fillings is None:
-            fillings = []
-        sp = get_starting_points()
-        colors_and_functions = [('C0', diff_equation, "system nieliniowy")]
-        jacobian = get_jacobian_for_point(np.array([0, 0]), diff_equation)
-        if linear == 1:
-            colors_and_functions = [('C1', lambda t, y: linear_form(y, jacobian), "system zlinearyzowany")]
-        if linear == 2:
-            colors_and_functions.append(('C1', lambda t, y: linear_form(y, jacobian), "system zlinearyzowany"))
-
-        for color, function, label in colors_and_functions:
-            for initial_value in sp:
-                solver = ode(function).set_integrator('zvode', method='bdf')
-                solver.set_initial_value(initial_value, 0)
-                dt, points = 0.01, [initial_value]
-
-                while solver.successful() and solver.t < 100:
-                    point = solver.integrate(solver.t + dt)
-                    points.append(point)
-                    if np.abs(point[0]) > width / 2 or np.abs(point[1]) > height / 2:
-                        break
-
-                points = np.real(points)
-                plt.plot(points[:, 0], points[:, 1], color, linewidth=0.5)
-                add_arrow(points, arrows, relative_size=np.sqrt(width * height), color=color)
-            plt.plot([0], [0], color=color, label=label)
-        for filling in fillings:
-            filling()
-
-    return phase_portrait
+def title(title):
+    return lambda s: s.title.set_text(title)
 
 
-def plot(file_name, width, height):
-    def plot_decorator(f):
-        def wrapped(function_name, init_point_provider, fillings=None):
-            if fillings is None:
-                fillings = []
-            fig = plt.figure()
-            f(function_name, init_point_provider, fillings)
-            plt.axis([-width / 2, width / 2, -height / 2, height / 2])
-            plt.xlabel("x1")
-            plt.ylabel("x2")
-            plt.legend(loc='lower right', prop={'size': 6})
-            plt.savefig('tex/svg/' + file_name, bbox_inches='tight')
-            fig.canvas.mpl_connect('button_press_event',
-                                   lambda event: print("x=%f, y=%f" % (event.xdata, event.ydata)))
-            plt.close()
+def axis(axis):
+    return lambda s: s.axis(axis)
 
-        return wrapped
 
-    return plot_decorator
+def plot_arrow(arrow, *args, **kwargs):
+    return lambda subplot: subplot.arrow(arrow.x, arrow.y, arrow.len_x, arrow.len_y, *args, **kwargs)
