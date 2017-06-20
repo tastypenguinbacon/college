@@ -1,0 +1,161 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{svg}
+
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+
+
+\begin{document}
+	\noindent
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|c|c|c|c|}
+			\hline 
+			\multicolumn{4}{|l|}{Funkcja kary} \\ 
+			\hline 
+			Adrian Jałoszewski & 10 V 2017 & Środa 14:00 &  \\ 
+			\hline 
+		\end{tabular}
+	} 
+	\section{Cel ćwiczenia}
+        Celem ćwiczenia jest zapoznanie się z metodami funkcji kary wewnętrznej oraz zewnętrznej oraz z
+        ograniczeniami ich stosowalności.
+	\section{Przebieg ćwiczenia}
+        \subsection{Zadanie 1}
+            Zadanie ma na celu minimalizować funkcję celu:
+            $$
+                f(x_1, x_2) = x_1^2 + x_2^2
+            $$
+            Przy ograniczeniu równościowym:
+            $$
+                x_2 = 1
+            $$
+            Podstawiając $x_2 = 1$ otrzymuje się równanie paraboli $x_1^2 + 1$, które posiada minimum
+            dla $x_1 = 0$. Minimum wyznaczone analitycznie znajduje się więc w punkcie $(x_1, x_2) = 
+            (0, 1)$.
+            \\ \\
+            Ponieważ mamy do czynienia z ograniczeniem równościowym, to należy je zapisać jako:
+            $$
+                \begin{aligned}
+                    g_1(x) = x_2 - 1 \leq& 0 \\
+                    g_2(x) = -x_2 + 1 \leq& leq 0
+                \end{aligned}
+            $$
+            Ponieważ w funkcji kary występuje człon $\max(g_i(x), 0)$, a zawsze jedno z ograniczeń
+            będzie niedodatnie można funkcję kary przedstawić jako:
+            $$
+                \Phi = 2^i (x_2 - 1) ^ 2
+            $$
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{first_allowed.pdf_tex}
+                \caption{Funkcja celu, obszar rozwiązań dopuszczalnych oraz punkty wyznaczone}
+            \end{figure}\noindent
+            Odległość wyznaczonych tą metodą punktów od rozwiązania analitycznego w zależności od
+            iteracji jest przedstawiona na poniższym wykresie. Iteracje są tu przesunięte o 1, gdyż 
+            zerowa iteracja przedstawia przypadek gdy nie ma funkcji kary.
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{first_distance.pdf_tex}
+                \caption{Odległość od punktu startowego}
+            \end{figure}\noindent
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{first_ratio.pdf_tex}
+                \caption{Stosunek dwóch następujących po sobie wartości}
+            \end{figure}\noindent
+        \subsection{Zadanie 2}
+            Zadanie jest źle postawione, ponieważ obydwie proste są do siebie równoległe i nie posiadają
+            punktów wspólnych (są względem siebie przesunięte). 
+            \\ \\
+            Funkcja celu jest dana jako odległość od punktu (0, 0), jest to więc przeciwprostokątna
+            trójkąta prostokątnego o bokach rownych współrzędnym $x_1$ oraz $x_2$. Jest to więc:
+            $$
+                f(x_1, x_2) = \sqrt{x_1^2 + x_2^2}
+            $$
+            Ograniczenia równościowe zadane w treści zadania: 
+            $$
+                \begin{aligned}
+                    g_1(x) = x_1 + x_2 - 1 =& 0 \\
+                    g_2(x) = x_1 + x_2 - 2 =& 0
+                \end{aligned}
+            $$
+            Podobnie jak w poprzednim punkcie rozważania sprowadzają się do kwadratów każdego z
+            ograniczeń.
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{second_scatter_points.pdf_tex}
+                \caption{Wyznaczone punkty}
+            \end{figure}\noindent
+            Poszczególne punkty leżą na prostej przechodzącej przez środek i będącej prostopadłą
+            do prostych stanowiących ograniczenia. 
+        \subsection{Zadanie 3}
+            Dana jest funkcja do minimalizacji:
+            $$
+                f(x_1, x_2) = \frac{1}{3} (x_1 + 1) ^3 + x_2
+            $$
+            Funkcja ta jest ograniczona przez:
+            $$
+                \begin{aligned}
+                    g_1(x) =& x_1 - 1 \geq 0 \\
+                    g_2(x) =& x_2 \geq 0 
+                \end{aligned}
+            $$
+            Ponieważ każda funkcja składa się sumy dwóch rosnących funkcji (na zadanych ograniczeniach)
+            jednej zmiennej, a na każdą ze zmiennych nałożone są niezależne niezależne od siebie 
+            ograniczenia, to minimum znajduje się dla najmniejszych $x_1$ oraz $x_2$ w punkcie 
+            $(x_1, x_2) = (1, 0)$. 
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{third_optimization.pdf_tex}
+                \caption{Wyznaczanie minimum dla różnych parametrów}
+            \end{figure}\noindent
+            Można zauważyć, że im mniejszy współczynnik $c$, tym więcej iteracji jest potrzebnych do
+            dokonania minimalizacji, gdyż współczynnik $k$ musi być więcej razy dzielony, aby uzyskać
+            daną wartość.
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{third_iterations.pdf_tex}
+                \caption{Liczba iteracji w zależności od wartości parametrów}
+            \end{figure}\noindent
+    \section{Wnioski i obserwacje z wykonanego ćwiczenia}
+        \subsection{Zadanie 1}
+            Optymalizacja przy pomocy zewnętrznej funkcji kary jest metodą bardzo szybko zbieżną ze
+            względu na występujący czynnik wykładniczy. Satysfakcjonujący wynik jest uzyskiwany już
+            po dziesięciu iteracjach. Użyta funkcja spełnia warunki bycia funkcją kary -- zeruje się 
+            dla zbioru dopuszczalnego ($x_2 = 1$) oraz dla pozostałych punktów przyjmuje wartości
+            dodatnie. Wraz ze wzrostem współczynnika k ($2^i$) rośnie jej wartość oraz nie jest
+            ograniczona od góry.
+        \subsection{Zadanie 2}
+            Mimo tego, że zadanie jest źle postawione, funkcja kary pozwala na znalezienie wyniku,
+            którego lokalizacja zależy od tego w jakim stopniu karamy rozwiązania bardziej odległe od
+            prostych.
+        \subsection{Zadanie 3}
+            Metoda wewnętrznej funkcji kary jest zdecydowanie mniej skuteczna od metody zewnętrznej
+            funkcji kary. Jest to spowodowane tym, że wiele metod optymalizujących funkcje jest 
+            najzwyczajniej w stanie przeskoczyć narzucone przez nią ograniczenia, a po drugiej
+            stronie ograniczeń funkcja ta potrafi nawet zmierzać do minus nieskończoności. Metoda ta
+            zdaje się być skuteczna w przypadku, gdy mamy do czynienia z bardzo dużą rozdzielczością 
+            poszukiwania, jednak i w tym przypadku zdecydowanie lepiej jest zastosować zewnętrzną
+            funkcję kary. W celu wizualizacji danych byłem zmuszony tutaj zastosować pewnego rodzaju
+            oszustwo, które polegało na podawaniu pewnej znacznie większej od pozostałych wartości,
+            tak aby solvery nie były w stanie wejść na tamten obszar. Ponieważ zbiór $X_0$ jest tutaj
+            niepusty, ograniczenia są ćwiartką płaszczyzny -- zbiór wypukły, a funkcja celu również 
+            tworzy zbiór wypukły, a ich kombinacja tworzy zbiór ściśle wypukły, to jest to poprawna
+            wewnętrzna funkcja celu. 
+\end{document}
