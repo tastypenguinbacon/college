@@ -1,7 +1,7 @@
 import os
 from subprocess import call
 from time import time
-
+import PyQt4.QtCore.QString as QString
 import matplotlib.pyplot as plt
 
 from diff_equations import *

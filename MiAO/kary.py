@@ -2,8 +2,7 @@ from itertools import count, islice
 
 import matplotlib.pyplot as plt
 import numpy as np
-
-from algorithms.gradient import FastestDescending
+from scipy.optimize import minimize
 
 
 def gradient(function):
@@ -29,23 +28,25 @@ def function(x):
 
 def penalty_function(x):
     x1, x2 = x[0], x[1]
-    return np.exp((x2 - 1) ** 2)
+    return np.abs(x2 - 1) ** 2
 
 
 def penalize(i):
-    return lambda x: function(x) + i * penalty_function(x) / 10
+    return lambda x: function(x) + i * penalty_function(x)
 
 
 def solver():
     for i in count():
-        solv = FastestDescending(penalize(i), gradient(penalize(i)))
-        yield list(solv.trim(solv(np.array([-3, 3]))))
+        solv = minimize(penalize(i), np.array([0, 0]), method='Powell')
+        assert solv.success
+        yield solv.x
 
 
-cudo = list(islice(map(lambda p: p[-1], solver()), 0, 1000))
-x = list(map(lambda array: array[0], cudo))
-y = list(map(lambda array: array[1], cudo))
-
+cudo = list(islice(solver(), 0, 1000))
+x = list(map(lambda p: p[0], cudo))
+y = list(map(lambda p: p[1], cudo))
+print(cudo)
 plt.plot(x, y, 'C3+')
+plt.axis([np.min(x), np.max(x), -1, 1.5])
 plt.grid(True)
 plt.show()

@@ -1,0 +1,221 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{svg}
+
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+
+
+\begin{document}
+	\noindent
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|c|c|c|c|}
+			\hline 
+			\multicolumn{4}{|l|}{Programowanie liniowe} \\ 
+			\hline 
+			Adrian Jałoszewski & 26 IV 2017 & Środa 14:00 &  \\ 
+			\hline 
+		\end{tabular}
+	} 
+	\section{Cel ćwiczenia}
+        Celem ćwiczenia jest dokonanie optymalizacji dwóch funkcji celu na zadanych ograniczeniach.
+        Jednym z przypadków jest zadanie maksymalizacji zysków przy ograniczeniach wynikających z
+        możliwości przerobowych przedsięcbiorstwa. Drugie zadanie polega na takim doborze rezystancji 
+        aby mając ustalone napiecia na poszczególnych rzezystancjach i ograniczenia na przepływający 
+        przez nie prąd zminimalizować zużycie mocy przez układ.
+	\section{Przebieg ćwiczenia}
+		\subsection{Zadanie 1}
+            Ćwiczenie należy rozpocząć od przedstawienia zagadnienia w postaci zagadnienia 
+            programowania liniowego. Oznaczmy $x_A$, $x_B$, $x_C$ jako kolejno ilość wytworzonego 
+            danego typu. Wtedy zgodnie z zadanymi ograniczeniami zachodzi:
+            $$
+                \begin{aligned}
+                    0.3 \cdot x_A + 0.5 \cdot x_B + 0.4 \cdot x_C \leq & 1800 \\
+                    0.1 \cdot x_A + 0.08 \cdot x_B + 0.12 \cdot x_C \leq & 500 \\
+                    0.06 \cdot x_A + 0.04 \cdot x_B + 0.05 \cdot x_C \leq & 200 \\
+                    x_A, x_B, x_C \geq & 0
+                \end{aligned}
+            $$
+            Funkcja celu jest zadana w tym przypadku jako:
+            $$
+                f(x_A, x_B, x_C) = 400 \cdot x_A + 300 \cdot x_B + 200 \cdot x_C
+            $$
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{first.pdf_tex}
+                \caption{Graficzne przedstawienie rozwiązania}
+            \end{figure}\noindent
+            Podstawa  wielościanu będącego ograniczeniami w zadaniu jest następująca:
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{bottom.pdf_tex}
+                \caption{Podstawa graniastosłupe}
+            \end{figure}\noindent
+            Kropki zaznaczają znalezione maksimum, które się znajduje w przybliżeniu w punkcie
+            $(x_A, x_B, x_C) = (1556, 2667, 0)$, wynosi ono 1 422 222.
+        \subsection{Zadanie 2} 
+            Najpierw należy sprowadzić zadany układ do postaci kanonicznej zadania programowania
+            liniowego. Jest to zadanie minimalizacji z ograniczeniami na to aby wartości prądów były
+            nieujemne i ograniczenia górne na ich kombinacje liniowe.
+            \\ \\
+            Minimalizowana funkcja celu dana jest wzorem na sumę mocy wydzielanych na poszczególnych
+            rezystorach:
+            $$
+                f(I_1, I_2, I_3, I_4, I_5) = 6 I_1 + 10 I_2 + 4 I_3 + 7 I_4 + 3 I_5
+            $$
+            Każde z ograniczeń postaci:
+            $$
+                I_i - D_i \leq I_i \leq I_i + D_i
+            $$
+            można sprowadzić do następującej pary ograniczeń:
+            $$
+                \begin{aligned}
+                    I_i \leq I_i + D_i \\
+                    - I_i \leq D_i - I_i
+                \end{aligned}
+            $$
+            Aby układ był realizowalny fizycznie muszą być spełnione prawa Kirchhoffa. Ponieważ
+            napięciowe prawa są już narzucone wystarczy wypisać prawa prądowe dla dwóch węzłów:
+            $$
+                \begin{aligned} 
+                    I_1 =& I_3 + I_4 \\
+                    I_2 + I_3 =& I_5
+                \end{aligned}
+            $$
+            Obydwie te równości można zapisać w postaci czterech nierównośći: 
+            $$
+                \begin{aligned}
+                    I_1 - I_3 - I_4 \leq & 0 \\
+                    -I_1 + I_3 + I_4 \leq & 0 \\
+                    I_2 + I_3 - I_5 \leq & 0 \\
+                    -I_2 - I_3 + I_5 \leq & 0
+                \end{aligned}
+            $$
+            Mimo tego, że jest to układ mostka -- nie trzeba rozważać przypadku kiedy prąd przez 
+            rezystor $R_3$ płynie w drugą stronę -- kierunek przepływu prądu jest już narzucony
+            przez ograniczenia narzucone w treści zadania.
+            \\ \\
+            W ten sposób wszystkie ograniczenia można przedstawić w następującej postaci:
+            $$
+                \begin{bmatrix}
+                    1 & 0 & 0 & 0 & 0 \\
+                    -1 & 0 & 0 & 0 & 0 \\
+
+                    0 & 1 & 0 & 0 & 0 \\
+                    0 & -1 & 0 & 0 & 0 \\
+
+                    0 & 0 & 1 & 0 & 0 \\
+                    0 & 0 & -1 & 0 & 0 \\
+
+                    0 & 0 & 0 & 1 & 0 \\
+                    0 & 0 & 0 & -1 & 0 \\
+
+                    0 & 0 & 0 & 0 & 1 \\
+                    0 & 0 & 0 & 0 & -1 \\
+
+                    1 & 0 & -1 & -1 & 0 \\
+                    -1 & 0 & 1 & 1 & 0 \\
+
+                    0 & 1 & 1 & 0 & -1 \\
+                    0 & -1 & -1 & 0 & 1
+                \end{bmatrix} 
+                \cdot
+                \begin{bmatrix}
+                    I_1 \\
+                    I_2 \\
+                    I_3 \\
+                    I_4 \\
+                    I_5
+                \end{bmatrix}
+                \leq 
+                \begin{bmatrix}
+                    5\\
+                    -3\\
+
+                    3\\
+                    -1\\
+
+                    3\\
+                    -1\\
+
+                    3\\
+                    -1\\
+
+                    4\\
+                    -4\\
+                    
+                    0\\
+                    0\\
+                    
+                    0\\
+                    0
+                \end{bmatrix}
+            $$
+            Oraz warunki o nieujemności prądów:
+            $$
+                I_1, I_2, I_3, I_4, I_5 \geq 0
+            $$
+            Wyznaczenie wartości prądów jest w zupełności wystarczające do wyznaczenia wartości
+            rezystancji, gdyż są podane również napięcia. Gdyby rozwiązywać te zadanie wykorzystując
+            rezystancje jako zmienne decyzyjne funkcja celu nie byłaby funkcją liniową, a 
+            ograniczenia uległyby komplikacjom.
+            \\
+            \\
+            Minimum o wartości 65 mW otrzymuje się dla prądów o wartości $(I_1, I_2, I_3, I_4, I_5)
+            = (4, 1, 3, 1, 4)$ miliamperów, czyli dla rezystancji o wartościach: 
+            $$
+                (R_1, R_2, R_3, R_4, R_5) = 
+                \mathrm{(1.5k\Omega, 10k\Omega, 1.333k\Omega, 7k\Omega, 0.75k\Omega)}
+            $$
+            Do rozważań ilości rozwiązań należy wziąć pod uwagę fakt, że warunki z zadania składają
+            się na układ trzech równań i czterech nierówności. Z równań wynika, że:
+            $$
+                \begin{aligned}
+                    I_5 =& 4 \\
+                    I_2 =& 4 - I_3 \\
+                    I_1 =& I_3 + I_4
+                \end{aligned}
+            $$
+            Podstawiając te trzy wartości do czterech nierówności można je zredukować do dwóch
+            zmiennych:
+            $$
+                \begin{aligned}
+                    3 \leq I_3 + I_4 \leq 5 \\
+                    1 \leq 4 - I_3 \leq 3 \\
+                    1 \leq I_3 \leq 3 \\
+                    1 \leq I_4 \leq 3 
+                \end{aligned}
+            $$
+            Można to już przedstawić na płaszczyźnie i policzyć wierzchołki wielokąta w ten sposób
+            uzyskanego:
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{hexagon.pdf_tex}
+                \caption{Wielokąt wyznaczany przez pozostałe zmienne}
+            \end{figure}\noindent
+            Potencjalnych rozwiązań jest więc sześć.
+	\section{Wnioski z wykonanego ćwiczenia}
+        Ćwiczenie te przyniosło sporo doświadczenia, jeżeli chodzi o wizualizację danych.
+        Rozwiązanie poszczególnych zagadnień programowania liniowego jak i ich ułożenie było
+        zdecydowanie prostsze od wizualizacji uzyskanych w ćwiczeniu wyników.
+        \\ \\
+        O ile ćwiczenie pierwsze nie wnosiło zbyt wiele do tematu, o tyle ćwiczenie drugie 
+        pokazało jak można sprowadzić zadanie, które dla zadanych zmiennych optymalizacyjnych
+        nie jest zadaniem programowania liniowego (rezystancje) do zadania programowania liniowego
+        (wykorzystanie prądów), a w szczególności do jego postaci kanonicznej.
+        \\ \\
+        Cennym doświadczeniem było również zastosowanie dostarczonych wraz z bilbiotekami solwerów,
+        gdyż pokazało to na czym w rzeczywistości polegają zagadnienia związane z optymalizacją.
+\end{document}
