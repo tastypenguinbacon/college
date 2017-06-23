@@ -1,0 +1,130 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{svg}
+
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+
+
+\begin{document}
+	\noindent
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|c|c|c|c|}
+			\hline 
+			\multicolumn{4}{|l|}{Optymalizacja wielokryterialna} \\ 
+			\hline 
+			Adrian Jałoszewski & 24 V 2017 & Środa 14:00 &  \\ 
+			\hline 
+		\end{tabular}
+	} 
+	\section{Cel ćwiczenia}
+        Celem ćwiczenia jest zapoznanie się zastosowaniami optymalizacji wielokryterialnej na
+        przykładzie optymalizacji parametrów dwójnika elektrycznego, regulatora proporcjonalnego 
+        z inercją oraz dla przypadku, gdzie mamy do czynienia z wysokim kosztem pozyskania danych.
+	\section{Przebieg ćwiczenia}
+        \subsection{Zadanie 1}
+            Zadanie polega na optymalizacji dwójnika elektrycznego pod względem sprawności oraz 
+            wydzielanej mocy na rezystancji $R_a$. Równanie napięciowe Kirchhoffa dla tego układu:
+            $$
+                E - iR_i - iR_a = 0
+            $$
+            Wynika z tego, że prąd płynący przez obwód jest zadany wzorem:
+            $$
+                i = \frac{E}{R_i + R_a}
+            $$
+            Moc wydzielana na rezystancji jest dana zależnością:
+            $$
+                P_a = R_a i^2 = \frac{R_a}{(R_i + R_a)^2} E ^ 2
+            $$
+            Sprawność jest zadana jako stosunek mocy wydzielanej na rezystancji $R_a$ do mocy
+            wydzielanej na obydwu rezystancjach.
+            $$
+                \mu = \frac{P_a}{P_a + P_i} = \frac{R_ai^2}{R_ai^2 + R_ii^2} = \frac{R_a}{R_a + R_i}
+            $$
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{power.pdf_tex}
+                \caption{Moc wydzielana na rezystancji $R_a$}
+            \end{figure}\noindent
+            
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{efficiency.pdf_tex}
+                \caption{Sprawność układu}
+            \end{figure}\noindent
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{contour_overlay.pdf_tex}
+                \caption{Zbiór rozwiązań kompromisowych}
+            \end{figure}\noindent
+        \subsection{Zadanie 2}
+            Zadanie polega na dobraniu tak parametrów układu regulacji aby zminimalizować uchyb
+            statyczny, równocześnie minimalizując przeregulowanie. Zakładam, że zakłócenie jest
+            zerowe. Można wtedy układ sprowadzić do natępującej formy:
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{changed_system.pdf_tex}
+                \caption{Zbiór rozwiązań kompromisowych}
+            \end{figure}\noindent
+            Transmitancja układu otwartego jest wtedy dana jako:
+            $$
+                G_o(s) = \frac{K}{T_oT_rs^2 + (T_o + T_r)s + 1}
+            $$
+            Transmitancja układu zamkniętego jest wtedy dana jako:
+            $$
+                G(s) = \frac{K}{T_oT_rs^2 + (T_o + T_r)s + (K + 1)}
+            $$
+            Aby można było rozważać ten układ w kategoriach stabilności, musi on być stabilny. Ponieważ
+            parametr odpowiadający za tłumienie w układzie jest dodatni, to układ jest stabilny
+            asymptotycznie pod warunkiem, że wyraz wolny jest dodatni $K > -1$.
+            \\ \\
+            Uchyb statyczny jest dany wzorem:
+            $$
+                e_s =  \lim_{t \to \infty} e(t) = \lim_{s \to 0} sE(s)
+            $$
+            Gdzie $E(s)$ jest dane wzorem:
+            $$
+                E(s) = W(s) - Y(s) = W(s) - G_o(s) E(s)
+            $$
+            $$
+                E(s) = \frac{W(s)}{1 + G_o(s)}
+            $$
+            Ponieważ jest to układ liniowy, a rozważanie samego uchybu statycznego jest mało miarodajne
+            można przyjąć dowolną wartość dla sygnału skokowego i rozważać względną wartość uchybu:
+            $$
+                e_w(s) = \frac{\frac{1}{s}}{(1 + \frac{K}{T_oT_rs^2 + (T_o + T_r)s + 1})}
+            $$
+            $$
+                e_{ws} = \lim_{s \to 0} s \frac{\frac{1}{s}}{(1 + \frac{K}{T_oT_rs^2 + 
+                    (T_o + T_r)s + 1})} = \frac{1}{1 + K}
+            $$
+            Do wyznaczenia względnego przeregulowania można posłużyć się wzorem:
+            $$
+                PO = \exp\left(
+                    - \frac{\zeta \pi}{\sqrt{1 - \zeta^2}}
+                \right)
+            $$
+            $\zeta$ jest tutaj współczynnikiem tłumienia, który można odczytać z wzoru na transmitancję
+            układu, gdy jest postaci:
+            $$
+                G(s) = \frac{K}{T^2s^2 + 2\zeta Ts + 1}
+            $$
+        \subsection{Zadanie 3}
+    \section{Wnioski i obserwacje z wykonanego ćwiczenia}
+        \subsection{Zadanie 1}
+        \subsection{Zadanie 2}
+        \subsection{Zadanie 3}
+\end{document}
