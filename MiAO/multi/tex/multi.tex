@@ -45,6 +45,11 @@
             $$
                 P_a = R_a i^2 = \frac{R_a}{(R_i + R_a)^2} E ^ 2
             $$
+            Ponieważ wartość ta jest zależna od wartości napięcia źródła zasilania, lepiej jest zastąpić
+            te kryterium przy pomocy kryterium równoważnego:
+            $$
+                \eta = \frac{P_a}{E^2} = \frac{R_a}{(R_i + R_a)^2}
+            $$
             Sprawność jest zadana jako stosunek mocy wydzielanej na rezystancji $R_a$ do mocy
             wydzielanej na obydwu rezystancjach.
             $$
@@ -53,8 +58,8 @@
             \begin{figure}[H]
                 \centering
                 \def \svgwidth{0.7\columnwidth}
-                \input{power.pdf_tex}
-                \caption{Moc wydzielana na rezystancji $R_a$}
+                \input{power.pdf_tex}k
+                \caption{Moc wydzielana na rezystancji $R_a$ w stosunku do kwadratu napięcia}
             \end{figure}\noindent
             
             \begin{figure}[H]
@@ -72,14 +77,7 @@
         \subsection{Zadanie 2}
             Zadanie polega na dobraniu tak parametrów układu regulacji aby zminimalizować uchyb
             statyczny, równocześnie minimalizując przeregulowanie. Zakładam, że zakłócenie jest
-            zerowe. Można wtedy układ sprowadzić do natępującej formy:
-            \begin{figure}[H]
-                \centering
-                \def \svgwidth{0.7\columnwidth}
-                \input{changed_system.pdf_tex}
-                \caption{Zbiór rozwiązań kompromisowych}
-            \end{figure}\noindent
-            Transmitancja układu otwartego jest wtedy dana jako:
+            zerowe. Transmitancja układu otwartego jest wtedy dana jako:
             $$
                 G_o(s) = \frac{K}{T_oT_rs^2 + (T_o + T_r)s + 1}
             $$
@@ -112,19 +110,153 @@
                     (T_o + T_r)s + 1})} = \frac{1}{1 + K}
             $$
             Do wyznaczenia względnego przeregulowania można posłużyć się wzorem:
-            $$
+            \begin{equation}
                 PO = \exp\left(
                     - \frac{\zeta \pi}{\sqrt{1 - \zeta^2}}
                 \right)
-            $$
+                \label{eq:overshoot}
+            \end{equation}
             $\zeta$ jest tutaj współczynnikiem tłumienia, który można odczytać z wzoru na transmitancję
             układu, gdy jest postaci:
             $$
                 G(s) = \frac{K}{T^2s^2 + 2\zeta Ts + 1}
             $$
+            Transmitancję całego układu należy jednak najpierw sprowadzić do tej formy:
+            $$
+                G(s) = \frac{K}{T_rT_os^2 + (T_r + T_o)s + K + 1} =
+                    \frac{\frac{K}{K+1}}{\frac{T_rT_o}{K + 1}s^2 + \frac{T_r + T_o} {K + 1} s + 1}
+            $$
+            Można na podstawie tego odczytać, że:
+            $$
+                \begin{aligned}
+                    T =& \sqrt{\frac{T_rT_o}{K + 1}} \\
+                    \zeta =& \frac{T_r + T_o}{2 T (K + 1)}
+                \end{aligned}
+            $$
+            Równanie \ref{eq:overshoot}  posiada ograniczenie, że $\zeta < 1$, gdy współczynnik 
+            ten jest większy należy przyjąć przeregulowanie jako zerowe, gdyż zjawisko te wtedy 
+            nie występuje. Podstawiając do równanania na współczynnik $\zeta$ wartość współczynnika
+            $T$ otrzymuje się:
+            \begin{equation}
+                \zeta = \frac{T_0 + T_r}{2} \frac{1}{\sqrt{T_rT_o}} \frac{1}{K + 1}
+                \label{eq:zeta}
+            \end{equation}
+            Aby pozbycć się $T_o$ z zależności \ref{eq:zeta} można zmienić bez straty zmienić zmienną
+            decyzyjną $T_o$ na zmieną decyzyjną $x$ będącą ilorazem średniej arytmetycznej oraz 
+            geometrycznej. Rozwiązanie te ma zaletę uniezależnienia rozważań od wartości parametru
+            $T_o$, wadą tego rozwiązania jest natomiast, że nie odwzorowanie to nie jest injekcją.
+            $$
+                x = \frac{T_o + T_r}{2\sqrt{T_rT_o}} = \frac{1}{2} 
+                \left(
+                    \sqrt{\frac{T_o}{T_r}} + \sqrt{\frac{T_r}{T_o}}
+                \right)
+            $$
+            Konieczne jest wyznaczenie pochodnej $\frac{\mathrm{d}x}{\mathrm{d}T_r}$ w celu ustalenia
+            zachowania tego odwzorowania.
+            $$
+                \frac{\mathrm{d}x}{\mathrm{d}T_r} = \frac{1}{4} \left(
+                    \frac{T_o}{T_r^{3/2}} +
+                    \frac{1}{T_o T_r^{1/2}}
+                \right)
+            $$
+            Z wartości pochodnej wynika, że:
+            \begin{itemize}
+                \item Dla $T_r > T_o$ odwzorowanie jest rosnące
+                \item Dla $T_r < T_o$ odwzorowanie jest malejące
+                \item Dla $T_r = T_o$ odwzorowanie osiąga minium równe 1
+            \end{itemize}
+            Dla wartości $T_r \to \infty$ oraz $T_r \to 0$ wartość odwzorowania zmierza do 
+            nieskończoności.  Z tego oraz z wartości pochodnych funkcji wynika, że dla każdej 
+            wartości $T_r$ za wyjątkiem $T_r = T_o$ odwzorowanie te posiada przyjmuje tę samą 
+            wartość dla dwóch różnych argumentów, a jego przeciwdziedzina należy do $[1, +\infty)$.
+            \\ \\
+            Dokonując zamiany wartości otrzymuję następujący wzór na współczynnik $\zeta$:
+            \begin{equation}
+                \zeta = \frac{x}{K+1}
+            \end{equation}
+            Po wprowadzeniu tej zmiany równanie na wartość uchybu statycznego nie ulega zmianom. Zamiana
+            ta ma tylko wpływ na postać równania przeregulowania, które po podstawieniu ma teraz postać:
+            \begin{equation}
+                PO = \exp\left(
+                    - \frac{\frac{x}{K+1} \pi}{\sqrt{1 - \left(\frac{x}{K+1}\right)^2}}
+                \right)
+                \label{eq:overshoot2}
+            \end{equation}
+            Z ograniczenia $\zeta < 1$ wynika ograniczenie $x < K + 1$. Jak to nie jest spełnione, 
+            to w układzie nie występuje zjawisko przeregulowania (na wykresie nad białą linią).
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{overshoot.pdf_tex}
+                \caption{Wartość przesterowania}
+            \end{figure}\noindent
+            Ponieważ wartości uchybu statycznego są zależne tylko od jednej zmiennej można je
+            przedstawić na dwuwymiarowym wykresie.
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{static2d.pdf_tex}
+                \caption{Wartość uchybu statycznego}
+            \end{figure}\noindent
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{overshoot_static_overlay.pdf_tex}
+                \caption{Brak przesterowania i uchyb ustalony}
+            \end{figure}\noindent
+            Na podstawie tego można wywnioskować, że najlepszym przypadkiem jest ten dla którego nie ma 
+            przeregulowania, a wartość uchybu jest zerowa $K \to \infty$.
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{badumpts.pdf_tex}
+                \caption{Przebieg odpowiedzi skokowej dla dobranych parametrów}
+            \end{figure}\noindent
         \subsection{Zadanie 3}
+            Zadanie polega na maksymalizacji współczynnika skuteczności leku przy równoczesnej
+            minimalizacji jego nieskuteczności. Wartości są ograniczone poprzez $Q_1 + Q_2 \leq 100\%$
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{scatter.pdf_tex}
+                \caption{Porównanie kryteriów}
+            \end{figure}\noindent
+            Do rozważań skuteczności leku warto wziąć pod uwagę procent badanych, który doświadczył
+            jakiejkolwiek poprawy zdrowia dany jako $Q_3 = 100\% - Q_2$, do którego należy jednak 
+            podejść krytycznie ze względu na możliwość wystąpienia efektu placebo.
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{together.pdf_tex}
+                \caption{Porównanie skuteczności}
+            \end{figure}\noindent
+            Jest to zdecydowanie lepszy przypadek w rozważaniu, gdyż biorąc w rozważania wskaźniki $Q_1$
+            oraz $Q_3$ mamy do czynienia z zagadnieniem maksymalizacji dwóch wskaźników. Ograniczenia są
+            wtedy nastepujące:
+            $$
+                \begin{aligned}
+                    Q_1 + Q_2 \leq& 100\% \\
+                    Q_1 + 100\% - Q_3 \leq& 100\% \\
+                    Q_1 \leq& Q_3
+                \end{aligned}
+            $$
+            \begin{figure}[H]
+                \centering
+                \def \svgwidth{0.7\columnwidth}
+                \input{together.pdf_tex}
+                \caption{Porównanie skuteczności oraz braku nieskuteczności}
+            \end{figure}\noindent
     \section{Wnioski i obserwacje z wykonanego ćwiczenia}
         \subsection{Zadanie 1}
+            
         \subsection{Zadanie 2}
+            W tym przykładzie bardzo dobrze można uwidocznić jak zmiana zmiennych decyzyjnych może 
+            pomóc uogólnić rozważania. Warto zauważyć, że w tym przypadku optymalizacji jest wziętych
+            pod uwagę za mało kryteriów. Przykładowo -- rozwiązaniami, które posiadają tę samą wartość
+            funkcji celu jest zarówno przypadek tłumienia krytycznego jak i przypadek, który się zbliży
+            do wartości ustalonej na dzień przed zużyciem wodoru przez Słońce. 
         \subsection{Zadanie 3}
+            Podobnie jak w poprzednim zadaniu, tak i tutaj zamiana zmiennych decyzyjnych pozwala
+            uprościć rozważania, jednak w tym przypadku upaszczanie polega na zamianie zagadnienia
+            równoczesnej minimalizacji i maksymalizacji wskaźników na maksymalizację obydwu.
 \end{document}
