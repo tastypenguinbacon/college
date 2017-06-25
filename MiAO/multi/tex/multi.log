@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.8)  24 JUN 2017 20:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.1.8)  25 JUN 2017 15:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -888,117 +888,125 @@ File: efficiency.pdf Graphic file (type pdf)
 <use efficiency.pdf, page 1>
 Package pdftex.def Info: efficiency.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 318.66948pt x 250.50958pt.
-)
+) (./contour_overlay.pdf_tex
+<contour_overlay.pdf, id=14, page=1, 423.99937pt x 315.84749pt>
+File: contour_overlay.pdf Graphic file (type pdf)
 
-! LaTeX Error: File `contour_overlay.pdf_tex' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: pdf_tex)
-
-Enter file name: 
-[2 <./power.pdf> <./efficiency.pdf
+<use contour_overlay.pdf, page 1>
+Package pdftex.def Info: contour_overlay.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 318.66948pt x 237.40071pt.
+) [2 <./power.pdf> <./efficiency.pdf
 
 pdfTeX warning: pdflatex (file ./efficiency.pdf): PDF inclusion: multiple pdfs 
 with page group included in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 87--93
+Underfull \hbox (badness 10000) in paragraph at lines 101--107
 
  []
 
-[3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 164.
+[3 <./contour_overlay.pdf>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 178.
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 164.
-
-Underfull \hbox (badness 10000) in paragraph at lines 168--174
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 178.
+ [4]
+Underfull \hbox (badness 10000) in paragraph at lines 182--188
 
  []
 
 (./overshoot.pdf_tex
-<overshoot.pdf, id=1918, page=1, 398.5936pt x 315.84749pt>
+<overshoot.pdf, id=1986, page=1, 398.5936pt x 315.84749pt>
 File: overshoot.pdf Graphic file (type pdf)
 
 <use overshoot.pdf, page 1>
 Package pdftex.def Info: overshoot.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 318.66948pt x 252.53374pt.
-) [4] (./static2d.pdf_tex
-<static2d.pdf, id=1923, page=1, 414.84799pt x 315.54713pt>
+) (./static2d.pdf_tex
+<static2d.pdf, id=1987, page=1, 414.84799pt x 315.54713pt>
 File: static2d.pdf Graphic file (type pdf)
 
 <use static2d.pdf, page 1>
 Package pdftex.def Info: static2d.pdf, page1 used on input line 52.
 (pdftex.def)             Requested size: 318.66948pt x 242.38942pt.
-)
+) [5 <./overshoot.pdf>]
+(./overshoot_static_overlay.pdf_tex
+<overshoot_static_overlay.pdf, id=2938, page=1, 403.8836pt x 302.11806pt>
+File: overshoot_static_overlay.pdf Graphic file (type pdf)
 
-! LaTeX Error: File `overshoot_static_overlay.pdf_tex' not found.
+<use overshoot_static_overlay.pdf, page 1>
+Package pdftex.def Info: overshoot_static_overlay.pdf, page1 used on input line
+ 52.
+(pdftex.def)             Requested size: 318.66948pt x 238.3756pt.
+) (./badumpts.pdf_tex
+<badumpts.pdf, id=2939, page=1, 419.21115pt x 315.54713pt>
+File: badumpts.pdf Graphic file (type pdf)
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: pdf_tex)
+<use badumpts.pdf, page 1>
+Package pdftex.def Info: badumpts.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 318.66948pt x 239.87607pt.
+) [6 <./static2d.pdf> <./overshoot_static_overlay.pdf
 
-Enter file name: 
+pdfTeX warning: pdflatex (file ./overshoot_static_overlay.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+>] (./scatter.pdf_tex
+<scatter.pdf, id=3037, page=1, 412.82794pt x 315.84749pt>
+File: scatter.pdf Graphic file (type pdf)
 
-! LaTeX Error: File `badumpts.pdf_tex' not found.
+<use scatter.pdf, page 1>
+Package pdftex.def Info: scatter.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 318.66948pt x 243.81538pt.
+) (./only_working.pdf_tex
+<only_working.pdf, id=3038, page=1, 419.21431pt x 315.84749pt>
+File: only_working.pdf Graphic file (type pdf)
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: pdf_tex)
+<use only_working.pdf, page 1>
+Package pdftex.def Info: only_working.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 318.66948pt x 240.10442pt.
+) [7 <./badumpts.pdf> <./scatter.pdf
 
-Enter file name: 
-[5 <./overshoot.pdf> <./static2d.pdf
+pdfTeX warning: pdflatex (file ./scatter.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+>] (./together.pdf_tex
+<together.pdf, id=3173, page=1, 409.95471pt x 315.94862pt>
+File: together.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ./static2d.pdf): PDF inclusion: multiple pdfs wi
+<use together.pdf, page 1>
+Package pdftex.def Info: together.pdf, page1 used on input line 52.
+(pdftex.def)             Requested size: 318.66948pt x 245.60489pt.
+) [8 <./only_working.pdf> <./together.pdf
+
+pdfTeX warning: pdflatex (file ./together.pdf): PDF inclusion: multiple pdfs wi
 th page group included in a single page
->]
-
-! LaTeX Error: File `scatter.pdf_tex' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: pdf_tex)
-
-Enter file name: 
-
-! LaTeX Error: File `together.pdf_tex' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: pdf_tex)
-
-Enter file name: 
-
-! LaTeX Error: File `together.pdf_tex' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: pdf_tex)
-
-Enter file name: 
-[6] (./multi.aux) ) 
+>] [9] (./multi.aux) ) 
 Here is how much of TeX's memory you used:
- 7209 strings out of 493013
- 101569 string characters out of 6135683
- 191940 words of memory out of 5000000
- 10603 multiletter control sequences out of 15000+600000
+ 7247 strings out of 493013
+ 102430 string characters out of 6135683
+ 193948 words of memory out of 5000000
+ 10628 multiletter control sequences out of 15000+600000
  9883 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,9n,98p,791b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plme.enc}{
-/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texlive/t
-exmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texlive/texmf-dist/fonts/enc/
-dvips/pl/plms.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plbx12.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/pl/plmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/pl/plmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr12.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr6.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/p
-l/plsy8.pfb>
-Output written on multi.pdf (6 pages, 1398786 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plme.en
+c}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/share/texlive/texmf-dist/fonts/e
+nc/dvips/pl/plmi.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plbx12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/pl/plmi12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/pl/plmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/pl/plmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr12.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/pl/plr6.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/pl/plr8.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/pl/plsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/pl/plsy8.pfb>
+Output written on multi.pdf (9 pages, 1546110 bytes).
 PDF statistics:
- 2947 PDF objects out of 2984 (max. 8388607)
- 1954 compressed objects within 20 object streams
+ 3393 PDF objects out of 3580 (max. 8388607)
+ 2244 compressed objects within 23 object streams
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

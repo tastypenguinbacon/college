@@ -33,7 +33,8 @@
 	\section{Przebieg ćwiczenia}
         \subsection{Zadanie 1}
             Zadanie polega na optymalizacji dwójnika elektrycznego pod względem sprawności oraz 
-            wydzielanej mocy na rezystancji $R_a$. Równanie napięciowe Kirchhoffa dla tego układu:
+            wydzielanej mocy na rezystancji $R_a$. Rezystancja $R_i$ jest ograniczona -- jej wartość 
+            mieści się w przedziale $[3, 5]$. Równanie napięciowe Kirchhoffa dla tego układu:
             $$
                 E - iR_i - iR_a = 0
             $$
@@ -48,17 +49,17 @@
             Ponieważ wartość ta jest zależna od wartości napięcia źródła zasilania, lepiej jest zastąpić
             te kryterium przy pomocy kryterium równoważnego:
             $$
-                \eta = \frac{P_a}{E^2} = \frac{R_a}{(R_i + R_a)^2}
+                \mu = \frac{P_a}{E^2} = \frac{R_a}{(R_i + R_a)^2}
             $$
             Sprawność jest zadana jako stosunek mocy wydzielanej na rezystancji $R_a$ do mocy
             wydzielanej na obydwu rezystancjach.
             $$
-                \mu = \frac{P_a}{P_a + P_i} = \frac{R_ai^2}{R_ai^2 + R_ii^2} = \frac{R_a}{R_a + R_i}
+                \eta = \frac{P_a}{P_a + P_i} = \frac{R_ai^2}{R_ai^2 + R_ii^2} = \frac{R_a}{R_a + R_i}
             $$
             \begin{figure}[H]
                 \centering
                 \def \svgwidth{0.7\columnwidth}
-                \input{power.pdf_tex}k
+                \input{power.pdf_tex}
                 \caption{Moc wydzielana na rezystancji $R_a$ w stosunku do kwadratu napięcia}
             \end{figure}\noindent
             
@@ -68,11 +69,24 @@
                 \input{efficiency.pdf_tex}
                 \caption{Sprawność układu}
             \end{figure}\noindent
+            Można zauważyć, że człon $\frac{R_a}{R_a + R_i}$ występuje w obydwu wskaźnikach jakości.
+            Można w ten sposób uzależnić wskaźniki jakości od siebie i jednej z wartości. Otrzymuje
+            się w ten sposób zależność mocy wydzielonej jako:
+            \begin{equation}
+                \mu = \frac{1}{R_i} (1 - \eta) \eta
+                \label{eq:funs}
+            \end{equation}
+            Jest to rodzina paraboli o wierzchołkach leżących na prostej $\eta = \frac{1}{2}$, 
+            z parametrem $R_i$, który określa jego położenie. Istnieje również prostsza zależność 
+            $\mu = \frac{1}{R_a}\eta^2$, jednak jej wadą jest to, że dla każdej paraboli istnieje
+            parabola lepsza -- taka o mniejszym $R_a$, a ponieważ tylko 0 jest ograniczeniem, to 
+            taka parabola nie istnieje. Dlatego do wyznaczenia zbioru kompromisów lepiej jest
+            wziąć zależność \ref{eq:funs}.
             \begin{figure}[H]
                 \centering
                 \def \svgwidth{0.7\columnwidth}
                 \input{contour_overlay.pdf_tex}
-                \caption{Zbiór rozwiązań kompromisowych}
+                \caption{Rodzina zbiorów rozwiązań kompromisowych}
             \end{figure}\noindent
         \subsection{Zadanie 2}
             Zadanie polega na dobraniu tak parametrów układu regulacji aby zminimalizować uchyb
@@ -198,14 +212,20 @@
                 \input{static2d.pdf_tex}
                 \caption{Wartość uchybu statycznego}
             \end{figure}\noindent
+            Zależność kryteriów od siebie jest dana jako:
+            $$
+                PO = \exp\left(\frac{-\pi}{\sqrt{(xe_{ws})^{-2} - 1}}\right)
+            $$
             \begin{figure}[H]
                 \centering
                 \def \svgwidth{0.7\columnwidth}
                 \input{overshoot_static_overlay.pdf_tex}
-                \caption{Brak przesterowania i uchyb ustalony}
+                \caption{Zależności między kryteriami}
             \end{figure}\noindent
             Na podstawie tego można wywnioskować, że najlepszym przypadkiem jest ten dla którego nie ma 
-            przeregulowania, a wartość uchybu jest zerowa $K \to \infty$.
+            przeregulowania, a wartość uchybu jest zerowa $K \to \infty$. Zbiór kompromisów dla tego
+            przypadku składa się z jednego punkut, gdyż dla pozostałych zawsze znajdzie się lepszy
+            (z większym współczynnikiem $x$ -- większa rozbieżność między stałymi czasowymi. 
             \begin{figure}[H]
                 \centering
                 \def \svgwidth{0.7\columnwidth}
@@ -227,7 +247,7 @@
             \begin{figure}[H]
                 \centering
                 \def \svgwidth{0.7\columnwidth}
-                \input{together.pdf_tex}
+                \input{only_working.pdf_tex}
                 \caption{Porównanie skuteczności}
             \end{figure}\noindent
             Jest to zdecydowanie lepszy przypadek w rozważaniu, gdyż biorąc w rozważania wskaźniki $Q_1$
@@ -244,19 +264,33 @@
                 \centering
                 \def \svgwidth{0.7\columnwidth}
                 \input{together.pdf_tex}
-                \caption{Porównanie skuteczności oraz braku nieskuteczności}
+                \caption{Porównanie skuteczności, nieskuteczności oraz braku nieskuteczności}
             \end{figure}\noindent
+            Zbiorem kompromisow w tym przypadku są próbki 1, 3, 5, gdyż pozostałe przypadki spełniają 
+            jedno lub więcej kryteriów gorzej niż pozostałe.
     \section{Wnioski i obserwacje z wykonanego ćwiczenia}
         \subsection{Zadanie 1}
-            
+            Zbiór kompromisów jest tutaj fragmentem paraboli znajdującym się po jednej ze stron 
+            wierzchołka. Zależność pomiędzy poszczególnymi kryteriami można tutaj wyznaczyć na 
+            dwa sposoby, jednak ze względu na brak ograniczeń na jedną ze zmiennych decyzyjnych
+            tylko przy pomocy jednej z nich dało się wyznaczyć zbiór kompromisów.
         \subsection{Zadanie 2}
             W tym przykładzie bardzo dobrze można uwidocznić jak zmiana zmiennych decyzyjnych może 
             pomóc uogólnić rozważania. Warto zauważyć, że w tym przypadku optymalizacji jest wziętych
             pod uwagę za mało kryteriów. Przykładowo -- rozwiązaniami, które posiadają tę samą wartość
             funkcji celu jest zarówno przypadek tłumienia krytycznego jak i przypadek, który się zbliży
-            do wartości ustalonej na dzień przed zużyciem wodoru przez Słońce. 
+            do wartości ustalonej na dzień przed zużyciem wodoru przez Słońce. Istnieje tutaj tylko
+            jeden punkt w zbiorze kompromisów, gdyż dla każdego innego przypadku ze względu na brak
+            ograniczeń we wzmocnieniu da się znaleźć przypadek lepszy -- zwiększenie rozbieżności 
+            pomiędzy stałymi czasowymi skutkuje w przesunięciu wykresu bliżej osi. Jedynie jeden 
+            punkt wspólny dla wszystkich wykresów równocześnie minimalizuje jeden ze wskaźników lepiej
+            niż pozostałe. 
         \subsection{Zadanie 3}
             Podobnie jak w poprzednim zadaniu, tak i tutaj zamiana zmiennych decyzyjnych pozwala
             uprościć rozważania, jednak w tym przypadku upaszczanie polega na zamianie zagadnienia
-            równoczesnej minimalizacji i maksymalizacji wskaźników na maksymalizację obydwu.
+            równoczesnej minimalizacji i maksymalizacji wskaźników na maksymalizację obydwu. Warto
+            zwrócić tutaj uwagę na to, że wariantem leku, który by wszedł na rynek byłby wariant 
+            trzeci, gdyż jest on najskuteczniejszy, jednak biorąc pod uwagę możliwośc niezadowolenia
+            konsumentów z niedziałającego leku warto również wziąć pod uwagę jego nieskuteczność 
+            lub też jakąkolwiek skuteczność i na podstawie nich skonstruować funkcję celu.
 \end{document}
