@@ -1,0 +1,59 @@
+\documentclass[a4paper, 12pt, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{svg}
+
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+
+\lstset{
+    language=Matlab,
+    basicstyle=\ttfamily,
+    keepspaces=true,
+    frame=single,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false
+}
+
+\author{Konrad Czaja, Adrian Jałoszewski,\\Dorota Kowalik}
+\title{Akwizycja danych z sensorów urządzeń mobilnych}
+\date{11 października 2017}
+
+
+\begin{document}
+    \maketitle
+	\section{Cel ćwiczenia}
+        Celem ćwiczenia jest implementacja algorytmu zliczającego kroki na
+        podstawie danych zebranych z czujników urządzenia mobilnego z systemem
+        Android. Algorytm ten powinien być odporny na zachowania inne niż chód
+        oraz możliwy do zastosowania w ciągłej akwizycji danych.
+	\section{Ciągła akwizycja danych}
+        \lstinputlisting{./scripts/sample.m}
+    \section{Wybór miejsca ułożenia smartfonu}
+% tutaj może dać jakiś schemat ludzia        
+    \section{Algorytm zliczający kroki}
+%        \begin{figure}[H]
+%            \centering
+%            \def \svgwidth{0.7\columnwidth}
+%            \input{todo.tex}
+%            \caption{Schemat blokowy algorytmu}
+%        \end{figure}\noindent
+    \section{Implementacja algorytmu}
+        \lstinputlisting{./scripts/sample.m}
+    \section{Połączenie algorytmu z ciągłą akwizycją danych}   
+        \lstinputlisting{./scripts/sample.m}
+    \section{Wyniki testów}
+        \subsection{Wyniki dla danych zebranych zawczasu}
+        \subsection{Wyniki dla ciągłej akwizycji danych}
+    \section{Wnioski i obserwacje}
+\end{document}
