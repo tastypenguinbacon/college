@@ -3,7 +3,7 @@ pids=()
 
 for svgfile in *.svg; do
     file_name=$(echo $svgfile | sed -r 's/(.+)\..+|(.*)/\1\2/')
-    pids+=$(inkscape -z -e $file_name.png -h 1024 $svgfile &)
+    pids+=$(inkscape -z -e $file_name.png -h 720 $svgfile &)
 done
 
 for pid in $pids; do
