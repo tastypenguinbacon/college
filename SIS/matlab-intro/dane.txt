@@ -1,0 +1,7 @@
+Przyk³adowe dane
+
+
+2011 100 3.5 jeden
+2012 130 2.5 dwa
+2013 105 4.1 trzy
+
