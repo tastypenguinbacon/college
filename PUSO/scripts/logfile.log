@@ -1,0 +1,7 @@
+pią, 17 lis 2017, 01:27:31 CET
+pingwin  tty7         2017-11-10 00:37 (:0)
+  PID TTY          TIME CMD
+ 8318 pts/6    00:00:00 vim
+ 8328 pts/6    00:00:00 bash
+ 8350 pts/6    00:00:00 sh
+ 8353 pts/6    00:00:00 ps

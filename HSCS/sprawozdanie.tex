@@ -1,0 +1,54 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{svg}
+
+\pdfsuppresswarningpagegroup=1
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+
+\lstset{
+    language=Fortran,
+    basicstyle=\ttfamily,
+    keepspaces=true,
+    frame=single,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false,
+    extendedchars=true,
+    inputencoding=utf8,
+}
+
+\author{Adrian Jałoszewski}
+\title{The implementation of ''walking one'' algorithm at SIEMENS 1200}
+\date{}
+
+\begin{document}
+    \maketitle
+    \section{Introduction}
+        \subsection{Uses of the algorithm}
+            The ''walking one'' algorithm is one of the most well known
+            algorithms used for testing the independence of operations
+            performed by changing the state of consecutive bits.
+            
+            It is used for checking whether there is coupling between 
+            independent bits (for example -- turning the sixth bit has effect on
+            the fifth one).
+        \subsection{Algorithm description}
+            
+            It is implemented using a bitfield consisting of zeros and a single 
+            one as the algorithms output.  Every step of the algorithm is 
+            basically a cyclic bitshift by one bit in a given direction. The
+            shift direction should be specified during the design phase and be
+            constant throughout the algorithms runtime.
+    \section{Implementation}
+\end{document}

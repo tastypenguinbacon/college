@@ -1,0 +1,45 @@
+\documentclass[a4paper, 12pt, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{polski}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{etoolbox,refcount}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{svg}
+
+\pdfsuppresswarningpagegroup=1
+\newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
+
+\lstset{
+    language=Matlab,
+    basicstyle=\ttfamily,
+    keepspaces=true,
+    frame=single,
+    tabsize=4,
+    showspaces=false,
+    showstringspaces=false,
+    extendedchars=true,
+    inputencoding=utf8,
+    literate={ó}{{\'o}}1 {ę}{{\k{e}}}1 {ł}{{\l{}}}1 {ż}{{\.z}}1
+        {ś}{{\'s}}1 {ć}{{\'c}}1 {ą}{{\k{a}}}1 {ź}{{\'z}}1 {ń}{{\'n}}1
+}
+
+\author{Adrian Jałoszewski}
+\title{Ćwiczenie 2: Detekcja twarzy}
+\date{23 października 2017}
+
+\begin{document}
+    \maketitle
+    \section{Wpływ doboru parametrów na detekcję twarzy}
+    \section{Wyznaczanie modelu koloru skóry}
+    \section{Operacja zamknięcia w procesie detekcji twarzy}
+    \section{Inne metody lokalizacji twarzy na obrazie}
+    \section{Rezultaty detekcji twarzy przy pomocy kaskad Haara}
+    \section{Metoda detekcji twarzy przy pomocy kaskad Haara}
+\end{document}
