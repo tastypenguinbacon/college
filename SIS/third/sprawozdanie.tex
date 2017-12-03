@@ -3,15 +3,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \usepackage{polski}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{etoolbox,refcount}
+\usepackage{graphicx} \usepackage{float} \usepackage{etoolbox,refcount}
 \usepackage{multicol}
 \usepackage{fancyhdr}
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage{tabularx}
-\usepackage{svg}
 
 \pdfsuppresswarningpagegroup=1
 \newgeometry{left=2.5cm, right=2.5cm, bottom=2.5cm, top=2.5cm}
@@ -37,9 +34,169 @@
 \begin{document}
     \maketitle
     \section{Wpływ doboru parametrów na detekcję twarzy}
+        Ponieważ ten podpunkt cwicznea wymaga badania wykrywania twarzy w
+        zależności od:
+        \begin{itemize}
+            \item[--] progu binaryzacji
+            \item[--] elementu strukturalnego
+            \item[--] minimalnej wielkości obiektu
+        \end{itemize}
+        Ze względu na to, że element strukturalny składa się z jegor rodzaju 
+        oraz wielkości dla ułatwienia rozważań przyjąłem, że minimalna wielkość
+        obiektu powinna wynosić 400, a pozostałe trzy parametry (licząc element
+        strukturalny jako dwa parametry) powinny być zmienne.
+        \\ \\
+        Zastosowanie takiego podejścia jest uzasadnione tym, że twarz i tak
+        będzie prawdopodobnie większa od najmniejszego elementu. Funkcja
+        \texttt{szukaj\_twarz} zawiera już wybór największego elementu, przez 
+        co wykluczy elementy najmniejsze. Wyjątkiem od tej sytuacji jest
+        przypadek gdy twarz nie zostanie wykryta w miejscu gdzie powinna być, 
+        a element zbyt mały będzie przypominał twarz -- wtedy zostanie wykryty
+        błędny obiekt zamiast zwrócenia braku wykrytej twarzy.
+        \\ \\
+        Przykład dla obrazu \texttt{testowy\_0\_0000.jpg}:
+        \begin{center}
+            \begin{tabular}{|l|c|r|}
+                \hline
+                Próg binaryzacji & Element strukutralny & Poprawne wykrycie twarzy 
+                \\ \hline
+                0.3 & diamond 2 & tak \\ \hline
+                $>$ 0.6 & diamond 2 & nie -- wycinek szyi uznany za twarz\\ \hline
+                0.3, 0.4 & diamond 3 & tak  \\ \hline
+                0.6 & diamond 3 & nie -- wycinek szyi uznany za twarz\\ \hline
+                0.7 & diamond 3 & nie -- prawe oko\\ \hline
+                0.3, 0.4, 0.5, 0.7 & diamond 5 & tak \\ \hline
+                0.3, 0.4, 0.5 & diamond 10 & tak \\ \hline
+                0.7 & diamond 10 & nie -- prawy policzek \\ \hline
+                0.3, 0.4, 0.5, 0.6 & diamond 15 & tak \\ \hline
+                0.3, 0.4, 0.5, 0.6, 0.7 & diamond 20 & tak \\ \hline
+            \end{tabular}
+        \end{center}
+        Podobne wyniki były uzyskane dla pozostałych elementów strukturalnych
+        (disk, rectangle) i ich rozmiarów (1, 3, 4, 15, 20). Rozpatrywane progi
+        binaryzacji: 0.3, 0.4, 0.5, 0.6, 0.7. Przypadki, których nie ma w tabelce
+        są tymi dla których algorytm \texttt{szukaj\_twarz} nie znalazł twarzy.
+        \\ \\
+        Problematyczne były przypadki dla niektórych z obrazów, gdzie kolor skóry
+        był podobny do tła -- wymagały one większych progów binaryzacji (np.
+        obraz \texttt{testowy\_0\_0001.jpg}, disk 15, próg 0.5). W przypadku zbyt
+        dużych progów binaryzacji wykrywane były fragmenty ciała, które miały 
+        kolor skóry najbliższy średniemu i miały dużą płaską powierzchnię (zwykle 
+        fragment szyi) -- fragmenty twarzy wtedy nie spełniały wtedy warunku 
+        proporcji lub miały łącznie mniej pikseli niż fragment szyi (kryteria w 
+        algorytmie \texttt{szukaj\_twarz}).
+        \\ \\
+        W przypadku gdy algorytm miał do czynienia z twarzami na obrazach o
+        większych rozdzielczościach należało zmienić parametry, tak aby brały pod 
+        uwagę wielkośc obrazów, albo takowe przeskalować (zwiększyłoby to
+        uniwersalność algorytmu).
     \section{Wyznaczanie modelu koloru skóry}
+        W przypadku wyznaczenia na podstawie ROI unika się generalizacji, która
+        musi brać pod uwagę większy zakres kolorów skóry -- możliwość pomylenia
+        skóry ze ścianą, jeżeli ta jest podobnego koloru do jednego z
+        potencjalnych kolorów. Oprócz tego można w tym przypadku lepiej 
+        uwzględnić karnację.
+        \subsection{Zaznaczenie ROI twarzy}
+            W tym kroku wyznaczany jest obszar w którym się znajduje twarz --
+            w ten sposób wycinane są fragmenty nie będące twarzą do następnych
+            kroków.
+        \subsection{Konwersja RGB-YCbCr i wybór składowych Cb oraz Cr}
+            W przypadku formatu RGB wszystkie kolorory mają wpływ na jasność
+            obrazu. Po przekształceniu w YCbCr mamy do czynia z przypadkiem,
+            gdzie składkowa Y odpowiada za jasność -- po jej usunięciu zostają
+            tylko składowe niezależne od jasności.
+        \subsection{Obliczenie wektora średniej i macierzy kowariancji}
+            Wyznaczana jest wartość średnia oraz zależność pomiędzy składowymi
+            Cb oraz Cr.
+        \subsection{Obliczenie wielowymiarowego rozkładu normalnego}
+            Dla obrazu wynikowego jest liczone prawdopodobieństwo, że dany
+            piksel jest koloru skóry. Jest to rozkład normalny o średniej i
+            macierzy kowariancji wyznaczonej w poprzednim podpunkcie.
+
     \section{Operacja zamknięcia w procesie detekcji twarzy}
+        Jest to dokonanie operacji erozji na wynik operacji dylatacji. Operacja
+        dylatacji zwiększa powierzchnię pokrywaną przez białe komórki (jeżeli
+        jedna z komórek w elemencie strukturalnym jest biała, to wynik też jest
+        biały) operacja erozji zwiększa powierzchnię pokrywaną przez czarne 
+        komórki (jeżeli jedna komórka elementu strukturalnego czarna -- wynik 
+        czarny). Przez takie połączenie tych operacji dwa oddzielne obiekty
+        mogą być scalone (mogły być rozdzielone w wyniku binaryzacji), przez
+        co przy usuwaniu zbyt małych elementów nie są usuwane elementy istotne.
+
     \section{Inne metody lokalizacji twarzy na obrazie}
+        \begin{itemize}
+            \item[--] Głębokie Konwolucyjne Sieci Neuronowe (CNN) -- 
+                wykorzystywane głównie w celach klasyfikacyjnych, czy obraz
+                jest twarzą
+            \item[--] Sieci Neuronowe Fast R-CNN -- wykrywanie położenia obrazu
+                przy pomocy sieci neuronowych
+            \item[--] Histogram of Oriented Gradients -- obraz jest dzielony
+                na obszary dla których jest liczony histogram gradientów, 
+                wykrywanie odbywa się na podstawie wyniku łączenia histogramów
+            \item[--] Edge-Orientation Matching -- rozpoznawnanie na podstawie
+                orientacji krawędzi
+            \item[--] Wykorzystanie Metryki Hausdorffa -- wyznaczenie odległości
+                między obrazami
+            \item[--] Cascading Classifiers -- łączenie klasyfikatorów,
+                podając wyjście z poprzedniego klasyfikatora jako dodatkowa
+                informacja do następnych klasyfikatorów
+            \item[--] Wykrycie twarzy na podstawie charakterystycznych ruchów.
+        \end{itemize}
     \section{Rezultaty detekcji twarzy przy pomocy kaskad Haara}
+        \subsection{Bez ustawiania dodatkowych parametrów}
+            Poprawnie wykryte zostały wszystkie twarze ustawione frontalnie.
+            Niewykryte zostały twarze ustawione profilem, zdarzały się przy 
+            nich pomyłki. Twarze ustawione skośnie do kamery były wykryte w
+            wielu przypadkach.
+        \subsection{Profile face}
+            Z tym ustawiem wykryte zostało wiele twarzy, które zostały
+            ustawione profilem do kamery. Nie wszystkie jedak zostaly z nich 
+            wykryte. Bardzo często jedno ucho w połączeniu z okiem zdawało się
+            być brane za twarz z profilu, przez co wykrywane były połówki
+            twarzy, a czasami również całe twarze.
+        \subsection{Eye pair big / small}
+            Bardzo często wykrywało parę oczu, zdarzały się przypadki, gdzie
+            jednak nie były wykrywane. Czasami z oczami mylone były nozdrza.
+            Często niewykrywane były oczy na obrazach, gdzie osoba patrzy pod
+            kątem na kamerę, a obrazy z profilu nie były wykrywane nigdy (brak
+            drugiego oka). Zdarzały się przypadki, gdzie obok jednego oka brane
+            było coś w czym było rozpoznawane oko (np. kosmyk włosów), albo
+            dwa takie obiekty.
+        \subsection{Upper body}
+            Wykrywało też twarz w przypadku jak miało do czynienia z popiersiem,
+            w innych przypadkach często doszukiwało się jej tam gdzie jej nie ma
+            -- wadą tego jest to, że obszar wykryty jako popiersie jest bardzo
+            duży, podobnie jak liczba błędnych wykryć.
+        \subsection{Max/Min size}
+            W zależności ustawienia tych parametrów były ignorowane obiekty,
+            które były mniejsze lub większe od określonego rozmiaru. Wyrzucało
+            to przypadki gdzie były wykrywane fragmenty ubioru lub włosów
+            mniejsze od spodziewanej twarzy oraz rzeczy od niej większe -- wadą
+            tego rozwiązania jest konieczna znajomość tego jaki fragment obrazu
+            będzie zajmowany przez twarz i obliczenie rozmiaru twarzy w 
+            zależności od rozdzielczości obrazu. Ustawienia wybrane dla obrazów
+            o małej rozdzielczości nie sprawdzały się dla obrazów o dużej
+            rozdzielczości jeżeli chodzi o maksymalny rozmiar oraz odwrotnie
+            jeżeli chodzi o minimalny.
     \section{Metoda detekcji twarzy przy pomocy kaskad Haara}
+        Metoda kaskad Haara polega na uczeniu klasyfikatora przy pomocy wielu
+        obrazów zarówno takich zawierających twarz jak i takich 
+        niezawierających twarzy. Uczenie odbywa się poprzez wykrywanie cech 
+        Haara -- są to ramki czarno-białe. Po nałożeniu takiej ramki na obraz 
+        od sumy pikseli, które się pokrywają z polami białymi jest odejmowana
+        suma pól znajdujących się pod polami czarnymi.
+        \\ \\
+        Następnie jest liczona jest ważona suma słabych klasyfikatorów (nazwa
+        ponieważ jako same w sobie nie są w stanie wykryć twarzy).
+        \\ \\
+        Metoda kaskad Haara polega na tym, że się stosuje poszczególne
+        klasyfikatory, podając wynik poprzedniego jako wejście następnego.
+        Jeżeli któryś z klasyfikatorów stwierdzi, że na obrazie nie znajduje 
+        się twarz należy przypadek ten odrzucić, jeżeli ostatni z
+        klasyfikatorów stwierdzi, że mamy do czynienia z twarzą -- algorytm 
+        wykrył twarz.
+        \\ \\ 
+        Po nauczeniu klasyfikatora kaskad Haara podobne operacje są wykonywane 
+        na obrazie na którym chcemy dokonać detekcji, a wynik jest porównywany
+        do tego uzyskanego na zbiorze uczącym.
 \end{document}
