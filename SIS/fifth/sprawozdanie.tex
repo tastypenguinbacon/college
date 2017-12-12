@@ -30,107 +30,124 @@
 }
 
 \author{Adrian Jałoszewski}
-\title{Ćwiczenie 3: Detekcja ruchu}
-\date{23 października 2017}
+\title{Ćwiczenie 5: AUDIO -- analiza sygnału mowy}
+\date{4 listopada 2017}
 
 \begin{document}
     \maketitle
-    \section{Operacja SAD}
-        SAD -- sum of absolute differences -- suma wartości bezwzględnych
-        z różnicy pikseli dwóch kolejnych ramek sekwencji wideo.
-        $$
-            d_{\tau}(I_t, I_{t-1}) = \sum_{x, y} |I_t(x,y) - I_{t-1}(x,y)|
-        $$
-        W przypadku ruchu zmieniają się piksele obrazu, dlatego też zmienia
-        się suma modułów ich różnic. Algorytm ten może być uogólniony z modułu
-        na normę -- można wtedy traktować poszczególne piksele jako wektory
-        w przestrzeni trójwymiarowej. Aby uniezależnić ruch od oświetlenia 
-        można zastosować np. transformację RGB na YCbCr i potraktować składowe
-        Cb oraz Cr jako wektor dwuwymiarowy.
-    \section{Motion Threshold dla SAD oraz parametry bloków Add i Abs}
-        Motion Threshold dla operacji SAD powinien wynosić 320 000 - jest to wartość
-        powyżej której na obrazie występował ruch.
-        \\ \\
-        Na wejściu bloku Add znajdują się dwie liczby całkowite 8-bit bez znaku,
-        przez co mają zakres od 0 do 255. Po odjęciu skrajnych wartości od siebie
-        możemy mieć wynik w zakresie od -255 do 255, co można zapisać na liczbie
-        siedmiobitowej ze znakiem, dlatego też powinna być tu ustawiona liczba 
-        całkowita ze znakiem o 16 bitach. Modół z niej ma już zasięg tylko od
-        0 do 255, więc blok abs powinien przyjmować liczby całkowite 16-bit ze 
-        znakiem, a na wyjściu mieć liczby całkowite 8-bit bez znaku.
-    \section{Uniezależnienie wyników od zakłóceń i zwiększenie skuteczności detekcji}
-        Aby uniezależnić wynik od zakłóceń można wstępnie przeprowadzić na obrazie
-        filtrację medianową o stosunkowo małym rozmiarze (3x3 -- 5x5), pozwoli to
-        na usunięcie szumów występujących na obrazie. 
-        \\ \\        
-        Równie dobrym pomysłem jest zastosowanie ważonej średniej ruchomej pomiędzy 
-        pikselami ze współczynnikami wykładniczymi. Ze względu na szybki zanik 
-        wartości z początku nie wymagałoby to ich odejmowania. Jednak złe dobranie 
-        parametrów może tu poskutkować opóźnieniem w pojawieniu się ruchu --
-        ruch będzie dopiero obserwowalny po kilku klatkach.
-    \section{Parametry $\tau$ oraz Motion Threshold}
-        Algorytm MHI działa dobrze dla następujących parametrów:
+    \section{Parametry sygnału z ćw. 1} 
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{Hamming.png}
+            \caption{Kroki preprocessingu sygnału}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{FFT.png}
+            \caption{Transformata Fouriera sygnału}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{FFT_2.png}
+            \caption{Przybliżenie na harmoniczne}
+        \end{figure}
+        Po dłuższym zastanowieniu można zauważyć, że w skrypcie
+        odpowiedzialnym za dokonanie analizy sygnału filtr jest
+        ustawiony odwrotnie i dokonuje deemfazy zamiast preemfazy.
+        Toteż w miejscu, gdzie jest tu sygnał poddany preemfazie 
+        powinien znajdować się sygnał deemfazy (przynajmniej
+        zgodnie z innymi źródłami znalezionymi w internecie).
+        Błąd polega na tym, że w skrypcie licznik jest zamieniony
+        z mianownikiem -- jest to deemfaza.
         \begin{itemize}
-            \item[--] $\tau=256$ oraz Motion Threshold = 28
-            \item[--] $\tau=128$ oraz Motion Threshold = 40
+            \item[--] $F_1$ = 207.5 Hz, $F_2$ =416 Hz, $F_3$ = 620 Hz
+            \item[--] $T$ = 4.83ms
         \end{itemize}
-        Gdzie parametr Motion Threshold jest minimalną różnicą przy której wykrywany
-        jest ruch -- zbyt małe różnice nie są traktowane jako ruch. Parametr $\tau$ 
-        jest informacją o zanikaniu ruchu -- przez tyle iteracji w przypadku 
-        niewykrycia ruchu dla danej komórki jest on wygaszany (odejmowana jest 
-        jedynka).
+        Wartości te są powiązane tak, że pierwsza harmoniczna jest
+        równa odwrotności okresu, a druga i trzecia są pierwszą 
+        harmoniczną przemnożoną odpowiednio przez 2 i 3.
+    \section{Okna czasowe dla sygnałów dyskretnych}
+        Podczas analizy sygnału analogowego metodą DFT występuje zjawisko
+        przecieku. Okna czasowe są wykorzystywane do jego minimalizacji.
+        Zjawisko przecieku polega na tym, że w przypadku braku próbkowania
+        z częstotliwościami występującymi w sygnale, to rozkłada się na
+        częstotliwości występujące w FFT. Dzięki stosowaniu okien czasowych
+        można ograniczyć zjawisko przecieku bez konieczności poszerzania okna.
+
+        Zastosowanie okien może jednak spowodować utratę informacji
+        (wycinany jest fragment historii sygnału).
+    \section{Filtr preemfazy}
+        Preemfaza jest używana aby uniezależnić sygnał od szumu. Szum ma zwykle
+        duże częstotliwości, dlatego też składowe o wyższych częstotliwościach 
+        mają wzmacnianą amplitudę -- oddziela się je od szumów. 
         \\ \\
-        Jako uwaga boczna -- jest to dosyć sprytne podejście do algorytmu, które wymaga
-        przemyślenia. Zdecydowanie lepiej by było dla tej implementacji MHI jakby zamiast
-        mnożenia i dodawania były tam zwykłe instrukcje warunkowe.
-    \section{Inny algorytm -- Lucas-Kanade}
-        \textbf{Algorytmy przepływu optycznego (optical flow)} -- jest to grupa
-        algorytmów służących do wykrywania względnego ruchu pomiędzy 
-        obserwatorem i sceną. Są one wykorzystywane do wykrywania ruchu w
-        systemach wizyjnych.
+        Przeciwieństwem preemfazy jest deemfaza -- jak już mamy do czynienia z 
+        dalszym przetwarzaniem sygnału można cofnąć efekt preemfazy.
+    \section{Tabela oraz formanty w przestrzeni formantów F1-F2-F3}
+        Pierwsze trzy formanty sygnału pobranego:
+        $$
+            987.55\mathrm{Hz}, \mathrm{1945.09Hz}, \mathrm{2955.24Hz}
+        $$
+        \textbf{Formanty są niepowiązane z harmonicznymi sygnału}. Formant 
+        jest pasmem częstotliwości dla których częstotliwości składowe
+        ulegają szczególnemu wzmocnieniu.
         \\ \\
-        Metody te mają na celu wyznaczenie rucchu pomiędzy dwiema ramkami obrazu
-        w chwilach czasowych $t$ oraz $t + \Delta t$ dla każdego z wokseli
-        obrazu trójwymiarowego. Poprzez zastosowanie przekroji może to być 
-        wykorzystane do wyznaczenia ruchu na płaszczyźnie.
-        \\ \\
-        Przypadek dwówymiarowy jest określony przez równanie:
-        $$
-            I(x + \Delta x, y + \Delta y, t + \Delta t) = I(x, y, t)
-        $$
-        Oznacza to, że jasność pewnego piksela w czasie w pewnym punkcie po
-        jego przesunięciu pozostaje stała (piksel zostal przesunięty w czasie
-        $\Delta t$ o wektor $[\Delta x, \Delta y]$, nie tracąc przy tym na
-        jasności. Rozwijając te równanie w szereg taylora dla małych 
-        przesunięć w czasie mamy:
-        $$
-            I(x + \Delta x, y + \Delta y, t + \Delta t) = I(x, y, t) +
-                \frac{\partial I}{\partial x} \Delta x +
-                \frac{\partial I}{\partial y} \Delta y +
-                \frac{\partial I}{\partial t} \Delta t +
-                R(x, y, t)
-        $$
-        Gdzie R jest dla małych różnic w czasie pomijalnie małe. Wynika z tego,
-        że:
-        $$
-            \frac{\partial I}{\partial x} \Delta x +
-            \frac{\partial I}{\partial y} \Delta y +
-            \frac{\partial I}{\partial t} \Delta t = 0
-        $$
-        Dzieląc przez $\Delta t$
-        $$
-            \frac{\partial I}{\partial x} \frac{\Delta x}{\Delta t} +
-            \frac{\partial I}{\partial y} \frac{\Delta y}{\Delta t} +
-            \frac{\partial I}{\partial t} = 0
-        $$
-        Dla bardzo małych różnic czasu można zastosować przybliżenie:
-        $$
-            \frac{\partial I}{\partial x} V_x +
-            \frac{\partial I}{\partial y} V_y +
-            \frac{\partial I}{\partial t} = 0
-        $$
-        Należy dla każdego piksela wyznaczyć $V_x$ oraz $V_y$. Ze względu na to,
-        że równanie te ma dwie niewiadome stosuje się dodatkowe ograniczenia, 
-        które mają na celu ujednoznacznić wynik. Np. Metoda Lucasa-Kanade,
-        która korzysta z macierzy pseudoodwrotnej.
+        Poniższe dane są uzyskane na podstawie danych w pełni uzyskanych
+        od innych osób, ponieważ na stanowisku były problemy z kartą
+        dźwiękową. Na poniższym wykresie dane uśrednione zaznaczone są 
+        kółkiem, a kropkami oznaczone są poszczególne punkty pomiarowe.
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{clusters_correct.png}
+            \caption{Formanty w przestrzeni F1-F2-F3 oraz średnie dla
+                samogłosek}
+        \end{figure}
+        Legenda na wykresie jest niepoprawna (zauważone po wykonaniu
+        laboratorium).
+        \begin{itemize}
+            \item[--] a -- czerwony
+            \item[--] e -- zielony
+            \item[--] i -- niebieski
+            \item[--] o -- cyjan
+            \item[--] u -- magenta
+            \item[--] y -- czarny
+        \end{itemize}
+        \begin{table}[H]
+            \centering
+            \caption{Formanty dla samogłosek}
+            \begin{tabular}{|l|l|r|r|r|}
+                \hline
+                 & Class & F1 & F2 & F3 \\ \hline 
+                a\_1\_jp & 'a' & 676.83 & 1079.9 & 2423.2 \\ \hline
+                a\_1\_mjk & 'a' & 669.95 & 1134.8 & 2497 \\ \hline
+                a\_1\_mrjs & 'a' & 216.73 & 1040.9 & 1841.6 \\ \hline
+                a\_2\_mrjs & 'a' & 867.67 & 1318 & 3105.3 \\ \hline
+                a\_3\_mrjs & 'a' & 174.71 & 1012.1 & 1851.7 \\ \hline
+                e\_1\_jp & 'e' & 581.19 & 1564.5 & 2184.6 \\ \hline
+                e\_1\_mjk & 'e' & 581.5 & 1623.4 & 2282 \\ \hline
+                e\_1\_mrjs & 'e' & 677.19 & 1855.8 & 2684.8 \\ \hline
+                e\_2\_mrjs & 'e' & 632.22 & 1944.5 & 3115.3 \\ \hline
+                e\_3\_mrjs & 'e' & 174.5 & 710.15 & 1832.3 \\ \hline
+                i\_1\_jp & 'i' & 274.91 & 1874.5 & 2726.6 \\ \hline
+                i\_1\_mjk & 'i' & 266.06 & 1634.3 & 2947.7 \\ \hline
+                i\_1\_mrjs & 'i' & 227.5 & 583.42 & 2505.1 \\ \hline
+                i\_2\_mrjs & 'i' & 199.79 & 1305.3 & 2427.7 \\ \hline
+                i\_3\_mrjs & 'i' & 167.3 & 1590.3 & 2614.9 \\ \hline
+                o\_1\_jp & 'o' & 170.02 & 744.59 & 2524.6 \\ \hline
+                o\_1\_mjk & 'o' & 535.37 & 885.03 & 2586.5 \\ \hline
+                o\_1\_mrjs & 'o' & 570.6 & 2378.8 & 3300.1 \\ \hline
+                o\_2\_mrjs & 'o' & 357.86 & 778.55 & 2531.1 \\ \hline
+                o\_3\_mrjs & 'o' & 234.11 & 685.71 & 2425.5 \\ \hline
+                u\_1\_jp & 'u' & 216.72  & 588.7 & 2485.1 \\ \hline
+                u\_1\_mjk & 'u' & 151.78 & 571.16 & 2575.6 \\ \hline
+                u\_1\_mrjs & 'u' & 272.5 & 573.01 & 2606.6 \\ \hline
+                u\_2\_mrjs & 'u' & 323.06 & 2231.9 & 2778.1 \\ \hline
+                u\_3\_mrjs & 'u' & 254.24 & 667.9 & 2508.9 \\ \hline
+                y\_1\_jp & 'y' & 233.55 & 1657.7 & 2373.7 \\ \hline
+                y\_1\_mjk & 'y' & 356.98 & 1815.6 & 2543.7 \\ \hline
+                y\_1\_mrjs & 'y' & 421.75 & 2238.5 & 2824.2 \\ \hline
+                y\_2\_mrjs & 'y' & 406.26 & 1984.8 & 2568.9 \\ \hline
+                y\_3\_mrjs & 'y' & 322.38 & 1867.1 & 2513.4 \\ \hline
+            \end{tabular}
+        \end{table}
 \end{document}
